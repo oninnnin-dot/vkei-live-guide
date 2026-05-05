@@ -1,0 +1,131 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VenueCard from '@components/VenueCard.astro';
+import venues from '@data/venues.json';
+import type { Venue } from '@/types';
+
+const title = 'V系ライブハウス会場攻略一覧｜小箱・初参戦・ロッカー情報';
+const description = '若手V系・マイナーV系・地下寄りイベントで使われる小箱から大箱、ホール、屋外イベントスペースまで、会場種別、情報確度、ロッカー注意、帰宅難易度を確認できます。';
+const activeVenues = (venues as Venue[]).filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly);
+const filters = [
+  { id: 'all', label: 'すべて' },
+  { id: 'small', label: '小箱' },
+  { id: 'mid', label: '中箱' },
+  { id: 'large', label: '大箱' },
+  { id: 'hall', label: 'ホール' },
+  { id: 'outdoor_stage', label: '屋外ステージ' },
+  { id: 'event_space', label: 'イベントスペース' },
+  { id: 'vkei-high', label: 'V系向き高' },
+  { id: 'minor-vkei', label: 'マイナーV系向き' },
+  { id: 'release-event', label: 'リリイベ向き' },
+  { id: 'yokohama', label: '横浜' },
+  { id: 'shibuya', label: '渋谷' },
+  { id: 'shimokitazawa', label: '下北沢' },
+  { id: 'ikebukuro', label: '池袋' },
+  { id: 'needs-check', label: '要確認' },
+  { id: 'all', label: 'アーカイブ除外' },
+  { id: 'tip-locker', label: 'ロッカー注意' },
+  { id: 'tip-cloak', label: 'クローク確認' },
+  { id: 'tip-station-locker', label: '駅ロッカー推奨' },
+  { id: 'tip-cash', label: '現金必要' },
+  { id: 'tip-coin', label: '100円玉必要' },
+  { id: 'tip-no-reentry', label: '再入場不可注意' },
+  { id: 'tip-basement', label: '地下会場' },
+  { id: 'tip-stairs', label: '階段混雑注意' },
+  { id: 'tip-restroom', label: 'トイレ少なめ' },
+  { id: 'tip-return-crowd', label: '終演後混雑' },
+  { id: 'tip-neighborhood', label: '近隣待機注意' },
+  { id: 'tip-kabukicho', label: '歌舞伎町エリア注意' },
+  { id: 'tip-shibuya-crowd', label: '渋谷人混み注意' },
+  { id: 'tip-travel-baggage', label: '遠征荷物注意' },
+  { id: 'tip-merch-baggage', label: '物販後荷物注意' },
+  { id: 'tip-solo', label: 'ぼっち参戦向き' },
+  { id: 'tip-entry-check', label: '初参戦は入口確認' },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '会場攻略' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Venue Types</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブ会場攻略一覧</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        小箱ライブハウスだけでなく、中箱、大箱、ホール、屋外ステージ、リリースイベント系スペースも分類して掲載します。Grok/X由来の候補は情報確度を分けて扱います。
+      </p>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="デフォルトは現役会場のみ" tone="warning">
+        <p>閉館済み、通常一覧非表示、アーカイブ扱いの会場はこの一覧に表示しません。SNS由来・未検証の情報は必ず会場公式やチケットサイトで確認してください。</p>
+      </NoticeBox>
+    </div>
+  </section>
+  <section class="container-navi py-8" data-venue-filters>
+    <SectionTitle title="条件で絞り込む" lead="会場種別、エリア、V系向き度、情報確度、注意タグで絞り込めます。" />
+    <div class="flex gap-2 overflow-x-auto pb-4" role="list" aria-label="会場フィルター">
+      {
+        filters.map((filter, index) => (
+          <button
+            class={`focus-ring shrink-0 rounded-md border px-4 py-2 text-sm font-black transition ${
+              index === 0 ? 'border-violet bg-violet text-white' : 'border-line bg-panel text-mist hover:border-violet/70'
+            }`}
+            type="button"
+            data-filter-button
+            data-filter={filter.id}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            {filter.label}
+          </button>
+        ))
+      }
+    </div>
+    <p class="mb-4 text-sm text-muted"><span data-visible-count>{activeVenues.length}</span>件表示中</p>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {activeVenues.map((venue) => <VenueCard venue={venue} />)}
+    </div>
+    <div class="hidden rounded-lg border border-line bg-panel p-5 text-sm leading-7 text-muted" data-empty-state>
+      条件に合う現役会場がありません。フィルターを変えて確認してください。
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const filterRoot = document.querySelector('[data-venue-filters]');
+  if (filterRoot) {
+    const buttons = Array.from(filterRoot.querySelectorAll('[data-filter-button]'));
+    const cards = Array.from(filterRoot.querySelectorAll('[data-venue-card]'));
+    const count = filterRoot.querySelector('[data-visible-count]');
+    const empty = filterRoot.querySelector('[data-empty-state]');
+
+    const setActive = (filter) => {
+      let visible = 0;
+      buttons.forEach((button) => {
+        const pressed = button.getAttribute('data-filter') === filter;
+        button.setAttribute('aria-pressed', String(pressed));
+        button.classList.toggle('border-violet', pressed);
+        button.classList.toggle('bg-violet', pressed);
+        button.classList.toggle('text-white', pressed);
+        button.classList.toggle('border-line', !pressed);
+        button.classList.toggle('bg-panel', !pressed);
+        button.classList.toggle('text-mist', !pressed);
+      });
+
+      cards.forEach((card) => {
+        const tags = (card.getAttribute('data-filter-tags') || '').split(' ');
+        const show = filter === 'all' || tags.includes(filter);
+        card.classList.toggle('hidden', !show);
+        if (show) visible += 1;
+      });
+
+      if (count) count.textContent = String(visible);
+      if (empty) empty.classList.toggle('hidden', visible !== 0);
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => setActive(button.getAttribute('data-filter') || 'all'));
+    });
+  }
+</script>

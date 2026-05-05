@@ -1,0 +1,42 @@
+---
+const navItems = [
+  { href: '/weekend', label: 'ライブを探す' },
+  { href: '/venues', label: '会場攻略' },
+  { href: '/venues/types', label: '会場種類' },
+  { href: '/guides/small-venue', label: '小箱初参戦' },
+  { href: '/guides/livehouse-tips', label: '豆知識' },
+  { href: '/guides/beginner', label: '初参戦' },
+  { href: '/guides/belongings', label: '持ち物' },
+  { href: '/tools/budget', label: '遠征費' },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-line/80 bg-ink/92 backdrop-blur">
+  <div class="container-navi flex min-h-16 items-center justify-between gap-4 py-3">
+    <a href="/" class="focus-ring flex items-center gap-3 rounded-md" aria-label="V系ライブ遠征ナビ トップへ">
+      <span class="grid size-10 place-items-center rounded-lg border border-violet/50 bg-panel text-lg font-black text-white shadow-glow">V</span>
+      <span class="leading-tight">
+        <span class="block text-sm font-black tracking-wide text-white">V系ライブ遠征ナビ</span>
+        <span class="block text-xs text-muted">小箱の不安を消す実用ナビ</span>
+      </span>
+    </a>
+    <nav class="hidden items-center gap-1 md:flex" aria-label="主要メニュー">
+      {
+        navItems.map((item) => (
+          <a class="focus-ring rounded-md px-3 py-2 text-sm font-bold text-muted transition hover:bg-white/5 hover:text-white" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+  <nav class="container-navi flex gap-2 overflow-x-auto pb-3 md:hidden" aria-label="スマホ用主要メニュー">
+    {
+      navItems.map((item) => (
+        <a class="focus-ring shrink-0 rounded-md border border-line bg-panel px-3 py-2 text-sm font-bold text-mist" href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

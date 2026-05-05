@@ -1,0 +1,291 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import InfoBlock from '@components/InfoBlock.astro';
+import LinkCard from '@components/LinkCard.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VenueScore from '@components/VenueScore.astro';
+import venues from '@data/venues.json';
+import type { Venue } from '@/types';
+
+export function getStaticPaths() {
+  return (venues as Venue[]).map((venue) => ({
+    params: { slug: venue.slug },
+    props: { venue },
+  }));
+}
+
+interface Props {
+  venue: Venue;
+}
+
+const { venue } = Astro.props;
+const scaleLabel = {
+  small: '小箱',
+  'small-mid': '小〜中箱',
+  mid: '中箱',
+  large: '大箱',
+  unknown: '規模要確認',
+}[venue.venueScale];
+const typeLabel = {
+  small_livehouse: '小箱ライブハウス',
+  mid_livehouse: '中箱ライブハウス',
+  large_livehouse: '大型ライブハウス',
+  hall: 'ホール',
+  theater: '劇場',
+  outdoor_stage: '屋外ステージ',
+  event_space: 'イベントスペース',
+  closed_archive: '閉館アーカイブ',
+  unknown: '要確認',
+}[venue.venueType ?? 'unknown'];
+const broadTypeLabel = {
+  small_livehouse: 'ライブハウス',
+  mid_livehouse: 'ライブハウス',
+  large_livehouse: 'ライブハウス',
+  hall: 'ホール',
+  theater: '劇場',
+  outdoor_stage: '屋外イベントスペース',
+  event_space: 'イベントスペース',
+  closed_archive: '閉館アーカイブ',
+  unknown: '要確認',
+}[venue.venueType ?? 'unknown'];
+const affinityLabel = {
+  high: 'V系向き高',
+  medium: 'V系向き中',
+  low: 'V系向き低',
+  unknown: 'V系向き要確認',
+}[venue.vkeiAffinity];
+const confidenceLabel = {
+  verified: '公式確認済み',
+  partially_verified: '一部確認',
+  social_only: 'SNS由来',
+  unknown: '要確認',
+}[venue.sourceConfidence ?? 'unknown'];
+const sourceTypeLabel = {
+  official: '公式',
+  ticket_site: 'チケットサイト',
+  social: 'SNS',
+  mixed: '複合',
+  unknown: '要確認',
+}[venue.sourceType ?? 'unknown'];
+const vkeiUseTypeLabel = {
+  minor_vkei: 'マイナーV系',
+  vkei_regular: 'V系定番',
+  vkei_occasional: 'V系開催あり',
+  release_event: 'リリースイベント',
+  large_scale: '大規模公演',
+  copy_band: 'コピーバンド・関連',
+  related_event: '関連イベント',
+  unknown: '要確認',
+}[venue.vkeiUseType ?? 'unknown'];
+const needsSourceWarning = venue.sourceConfidence === 'social_only' || venue.sourceConfidence === 'unknown';
+const title = `${venue.name} 会場攻略｜小箱・ロッカー・待機場所・帰り方`;
+const description = `${venue.name}へV系ライブで行く前に確認したい、小箱感、若手V系向き、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意をまとめます。`;
+const relatedLinks = [
+  { title: 'V系ライブハウス豆知識', description: '荷物、ロッカー、ドリンク代、整理番号、撮影ルール、終演後の動き方を確認。', href: '/guides/livehouse-tips', cta: '読む' },
+  { title: '小さいライブハウスの初参戦ガイド', description: '小箱での荷物、立ち位置、整理番号、ロッカー、帰り方を確認。', href: '/guides/small-venue', cta: '読む' },
+  { title: '持ち物チェックリスト', description: 'チケット、身分証、モバイルバッテリー、雨具、物販用バッグをチェック。', href: '/guides/belongings', cta: '確認する' },
+  { title: '遠征費シミュレーター', description: 'チケット代、交通費、ホテル代、物販予算を入力して合計を確認。', href: '/tools/budget', cta: '計算する' },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '会場攻略', href: '/venues' }, { label: venue.name }]} />
+  <section class="container-navi py-8">
+    <div class="grid gap-6 lg:grid-cols-[1fr_0.42fr]">
+      <div>
+        <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">{venue.area}</p>
+        <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">{venue.name}</h1>
+        <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+          {venue.station}から徒歩目安{venue.walkMinutes}分。{typeLabel}としての動き方、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意を確認できます。
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{typeLabel}</span>
+          <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{scaleLabel}</span>
+          <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{affinityLabel}</span>
+          {venue.minorVkeiFriendly && <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">若手V系向き</span>}
+          <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">情報確度: {confidenceLabel}</span>
+          {venue.archiveOnly && <span class="rounded-full border border-amber/60 bg-amber/10 px-3 py-1 text-xs font-black text-mist">アーカイブ</span>}
+        </div>
+      </div>
+      <div class="grid gap-3">
+        <VenueScore label="初参戦向き度" value={venue.beginnerFriendly || 1} />
+        <VenueScore label="ぼっち参戦向き度" value={venue.soloFriendly || 1} />
+        <VenueScore label="帰宅難易度" value={venue.returnDifficulty || 1} highMeans="hard" />
+        <VenueScore label="ロッカー注意度" value={venue.lockerRisk || 1} highMeans="hard" />
+      </div>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="公演情報は公式確認" tone="warning">
+        <p>公演日・出演者・開場/開演時間・チケット状況・入場順・ドリンク代・物販ルールは変わる場合があります。必ず公式サイト、チケットサイト、会場公式スケジュール、主催案内を確認してください。</p>
+      </NoticeBox>
+    </div>
+    {needsSourceWarning && (
+      <div class="mt-4">
+        <NoticeBox title="SNS由来情報の注意" tone="warning">
+          <p>この会場情報はSNS上の言及をもとに仮登録しています。会場公式・チケットサイトでの確認が完了するまで、掲載内容は要確認として扱います。</p>
+        </NoticeBox>
+      </div>
+    )}
+    {venue.archiveOnly && (
+      <div class="mt-4">
+        <NoticeBox title="アーカイブ扱いの会場" tone="warning">
+          <p>この会場は現役会場一覧には表示していません。過去会場・閉館済み会場としての記録用ページです。</p>
+        </NoticeBox>
+      </div>
+    )}
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="初参戦前に確認すること" lead="設備や入場ルールは公演ごとに変わるため、当日案内と公式情報を優先してください。" />
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        venue.preCheckItems.map((item) => (
+          <div class="rounded-lg border border-line bg-panel p-4 text-sm font-black text-white shadow-glow">{item}</div>
+        ))
+      }
+    </div>
+    {venue.tipTags.length > 0 && (
+      <div class="mt-8">
+        <h2 class="text-xl font-black text-white">この会場の注意タグ</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {venue.tipTags.map((tag) => <span class="rounded-full border border-cyan/35 bg-cyan/10 px-3 py-1 text-xs font-black text-mist">{tag}</span>)}
+        </div>
+      </div>
+    )}
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="荷物・ロッカー攻略" />
+    <div class="grid gap-4 md:grid-cols-3">
+      <InfoBlock title="ロッカー戦略" text={venue.lockerStrategy} />
+      <InfoBlock title="クローク戦略" text={venue.cloakStrategy} />
+      <InfoBlock title="荷物戦略" text={venue.baggageStrategy} />
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="入場・終演後・ぼっち参戦メモ" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <InfoBlock title="入場・整理番号の注意" text={venue.entryStrategy} />
+      <InfoBlock title="終演後の注意" text={venue.returnStrategy} />
+      <InfoBlock title="ぼっち参戦メモ" text={venue.soloStrategy} />
+      <InfoBlock title="初参戦メモ" text={venue.beginnerStrategy} />
+      <InfoBlock title="ドリンク代・現金" text={venue.drinkStrategy} />
+      <InfoBlock title="物販後の荷物" text={venue.merchStrategy} />
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="会場別の豆知識" lead="公式文や他サイト文のコピーではなく、参戦準備用の独自メモとして要点化しています。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        venue.tips.map((tip) => (
+          <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
+            <p class="text-xs font-black uppercase tracking-[0.16em] text-cyan">{tip.category} / {tip.confidence}</p>
+            <h2 class="mt-2 text-lg font-black text-white">{tip.title}</h2>
+            <p class="mt-3 text-sm leading-7 text-muted">{tip.body}</p>
+            <p class="mt-4 text-xs text-muted">sourceType: {tip.sourceType} / 確認日: {tip.lastVerifiedAt}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="細かい注意メモ" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <InfoBlock title="現金" text={venue.cashNote} />
+      <InfoBlock title="100円玉" text={venue.coinNote} />
+      <InfoBlock title="トイレ" text={venue.restroomNote} />
+      <InfoBlock title="電波" text={venue.signalNote} />
+      <InfoBlock title="階段・通路" text={venue.stairsNote} />
+      <InfoBlock title="近隣" text={venue.neighborhoodNote} />
+      <InfoBlock title="撮影可否" text={venue.photographyNote} />
+      <InfoBlock title="再入場" text={venue.reentryNote} />
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="豆知識データの確度" />
+    <div class="rounded-lg border border-line bg-panel p-5 shadow-glow">
+      <dl class="grid gap-3 text-sm md:grid-cols-3">
+        <div>
+          <dt class="text-muted">sourceConfidence</dt>
+          <dd class="mt-1 font-black text-white">{venue.sourceConfidence}（{confidenceLabel}）</dd>
+        </div>
+        <div>
+          <dt class="text-muted">lastTipVerifiedAt</dt>
+          <dd class="mt-1 font-black text-white">{venue.lastTipVerifiedAt}</dd>
+        </div>
+        <div>
+          <dt class="text-muted">sourceType</dt>
+          <dd class="mt-1 font-black text-white">{venue.sourceType}（{sourceTypeLabel}）</dd>
+        </div>
+      </dl>
+      <div class="mt-5 space-y-2 text-sm leading-7 text-muted">
+        {venue.warnings.map((warning) => <p>{warning}</p>)}
+      </div>
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="会場分類・情報確度" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <InfoBlock title="会場種別" text={`${venue.name}は「${typeLabel}」として分類しています。大枠では「${broadTypeLabel}」扱いです。`} />
+      <InfoBlock title="小箱V系向きかどうか" text={venue.minorVkeiFriendly ? `${affinityLabel}。若手V系・マイナーV系の候補として確認しやすい会場です。` : `${affinityLabel}。小箱V系専用ではないため、対象公演は公式スケジュールで確認してください。`} />
+      <InfoBlock title="情報確度" text={`sourceConfidence: ${venue.sourceConfidence} / sourceType: ${venue.sourceType}（${confidenceLabel}・${sourceTypeLabel}）。X由来・SNS由来の情報は未確定の場合があります。`} />
+      <InfoBlock title="現在の扱い" text={venue.currentUseNote || `${vkeiUseTypeLabel}枠として管理しています。`} />
+      <InfoBlock title="V系での使われ方" text={`${vkeiUseTypeLabel} / 優先度${venue.priority}。公演傾向は時期で変わるため、公式情報で確認してください。`} />
+      <InfoBlock title="最終確認日" text={`最終確認日: ${venue.lastVerifiedAt}。小箱・イベントスペースの運用は変わりやすいため、断定せず事前確認を推奨します。`} />
+      {venue.sourceMemo && <InfoBlock title="情報メモ" text={venue.sourceMemo} />}
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="小箱・V系向きメモ" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <InfoBlock title="この会場は小箱かどうか" text={`${venue.name}は「${scaleLabel}」として管理しています。小箱ほどステージとの距離が近く、荷物や立ち位置の影響が大きくなります。`} />
+      <InfoBlock title="若手V系・マイナーV系向きか" text={venue.minorVkeiFriendly ? `${affinityLabel}。若手V系・マイナーV系・地下寄りイベントの確認候補にしやすい会場です。` : `${affinityLabel}。公演傾向は時期で変わるため、公式スケジュールで確認してください。`} />
+      <InfoBlock title="初参戦で注意すること" text={venue.beginnerNote} />
+      <InfoBlock title="ぼっち参戦で困りやすいこと" text={venue.soloNote ?? '一人参戦では、開場前の待機場所と終演後の帰り道を先に決めておくと安心です。'} />
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="会場周辺・待機・荷物" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <InfoBlock title="開場前に待ちやすい場所の注意" text={venue.waitingNote} />
+      <InfoBlock title="周辺で時間を潰せる場所" text={venue.timeKillingNote ?? '周辺で時間を潰せる場所は、地図アプリで事前確認推奨です。未確認の店舗名は断定しません。'} />
+      <InfoBlock title="近くのコンビニ" text={venue.convenienceNote} />
+      <InfoBlock title="ロッカー情報" text={venue.lockerNote} />
+      <InfoBlock title="ロッカーが埋まった場合の代替案" text={venue.lockerAlternativeNote ?? '駅ロッカー、手荷物預かり、ホテル預け、乗換駅での預けを代替候補にしてください。'} />
+      <InfoBlock title="荷物対策" text={venue.baggageNote} />
+      <InfoBlock title="雨の日の待機注意" text={venue.rainNote} />
+      <InfoBlock title="夜の帰り道の注意" text={venue.nightSafetyNote} />
+      <InfoBlock title="終演後の帰宅難易度" text={venue.returnNote} />
+      <InfoBlock title="最終確認日" text={`会場データの最終確認日: ${venue.lastVerifiedAt}。小箱会場の情報は変わりやすいため、最新情報は必ず公式で確認してください。`} />
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="公演情報確認リンク" lead="当サイトでは公演情報を転載しません。公演日、出演者、開場/開演、チケット状況はリンク先で確認してください。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {venue.officialUrl ? (
+        <LinkCard title="会場公式リンク" description={`${venue.name}の公式サイトまたは会場公式情報です。`} href={venue.officialUrl} note="公式スケジュール、アクセス、問い合わせ先を確認してください。" />
+      ) : (
+        <NoticeBox title="公式URLは要確認" tone="warning">
+          <p>この会場の公式URLは未登録です。会場名で検索し、公式情報を確認してください。</p>
+        </NoticeBox>
+      )}
+      {venue.ticketSearchLinks.map((link) => <LinkCard title={link.label} description="該当公演の販売状況、受付期間、入場条件はリンク先で確認してください。" href={link.url} note="販売状況は保証しません。" />)}
+    </div>
+  </section>
+  {venue.sourceNotes.length > 0 && (
+    <section class="container-navi py-8">
+      <SectionTitle title="データ運用メモ" />
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <ul class="space-y-2 text-sm leading-7 text-muted">
+          {venue.sourceNotes.map((note) => <li>{note}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+  <section class="container-navi py-8">
+    <SectionTitle title="関連記事" />
+    <div class="grid gap-4 md:grid-cols-3">
+      {relatedLinks.map((link) => <LinkCard {...link} />)}
+    </div>
+  </section>
+</Layout>

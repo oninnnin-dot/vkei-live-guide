@@ -1,0 +1,25 @@
+---
+interface Props {
+  label: string;
+  value: number;
+  highMeans?: 'good' | 'hard';
+}
+
+const { label, value, highMeans = 'good' } = Astro.props;
+const clamped = Math.max(1, Math.min(5, Math.round(value)));
+const color = highMeans === 'good' ? 'bg-cyan' : 'bg-amber';
+---
+
+<div class="rounded-md border border-line bg-black/20 p-3">
+  <div class="flex items-center justify-between gap-3">
+    <span class="text-xs font-bold text-muted">{label}</span>
+    <span class="text-sm font-black text-white">{clamped}/5</span>
+  </div>
+  <div class="mt-2 grid grid-cols-5 gap-1" aria-hidden="true">
+    {
+      Array.from({ length: 5 }).map((_, index) => (
+        <span class={`h-2 rounded-full ${index < clamped ? color : 'bg-line'}`}></span>
+      ))
+    }
+  </div>
+</div>

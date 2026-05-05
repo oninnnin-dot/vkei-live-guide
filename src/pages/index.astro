@@ -1,0 +1,112 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import LinkCard from '@components/LinkCard.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VenueCard from '@components/VenueCard.astro';
+import venues from '@data/venues.json';
+import type { Venue } from '@/types';
+
+const title = 'V系ライブ遠征ナビ｜小箱・会場攻略・初参戦・持ち物ガイド';
+const description = '若手V系・マイナーV系・地下寄りライブに行く前に確認したい、小さいライブハウスの会場攻略、ロッカー、待機場所、終演後の帰り方、初参戦の流れ、持ち物、遠征費をまとめる実用ナビ。';
+const prioritySlugs = ['ikebukuro-edge', 'ikebukuro-blackhole', 'sugamo-shishio', 'shinjuku-club-science', 'shinjuku-heist', 'wildside-tokyo', 'higashi-koenji-20000v'];
+const priorityVenues = (venues as Venue[])
+  .filter((venue) => prioritySlugs.includes(venue.slug) && venue.status === 'active' && venue.showInVenueList && !venue.archiveOnly)
+  .sort((a, b) => prioritySlugs.indexOf(a.slug) - prioritySlugs.indexOf(b.slug));
+
+const mainLinks = [
+  {
+    title: '今週末のV系ライブを探す',
+    description: 'イープラス、ローチケ、LivePocket、TIGET、vk.gy、会場公式スケジュールへの入口をまとめています。',
+    href: '/weekend',
+    cta: '公式リンクを見る',
+  },
+  {
+    title: '小箱会場攻略を見る',
+    description: '小箱度、V系向き度、ロッカー、待機場所、雨の日、終演後の帰りやすさを会場ごとに確認できます。',
+    href: '/venues',
+    cta: '会場一覧へ',
+  },
+  {
+    title: '小箱初参戦ガイドを見る',
+    description: '整理番号、荷物、ロッカー、ドリンク代、立ち位置、終演後の動き方を小箱向けに整理。',
+    href: '/guides/small-venue',
+    cta: '小箱の流れを確認',
+  },
+  {
+    title: '持ち物チェックリスト',
+    description: 'チケット、身分証、モバイルバッテリー、ロッカー対策、雨具などをブラウザ上でチェック。',
+    href: '/guides/belongings',
+    cta: 'チェックする',
+  },
+  {
+    title: '遠征費シミュレーター',
+    description: 'チケット代、交通費、ホテル代、物販予算などを入れて、遠征費の合計をその場で計算。',
+    href: '/tools/budget',
+    cta: '計算する',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Hero
+    title="V系ライブ遠征ナビ"
+    catchcopy="ライブ情報は公式で探す。小箱の不安はここで消す。"
+    description="V系ライブに行く前に確認したい、ライブハウス周辺情報、ロッカー、待機場所、コンビニ、終演後の帰り方、初参戦の不安、遠征費をまとめる実用ナビ。若手V系・マイナーV系・地下寄りイベントで使われる小さめのライブハウスにも対応します。"
+    actions={[
+      { href: '/weekend', label: '今週末のV系ライブを探す', primary: true },
+      { href: '/venues', label: '小箱会場攻略を見る' },
+      { href: '/guides/small-venue', label: '小箱初参戦ガイド' },
+      { href: '/tools/budget', label: '遠征費シミュレーター' },
+    ]}
+  />
+  <section class="container-navi py-10">
+    <NoticeBox title="このサイトの役割" tone="warning">
+      <p>
+        公演情報・チケット情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。当サイトは小箱を含む会場周辺情報、遠征準備、荷物対策、帰宅判断を補助するサイトです。
+      </p>
+    </NoticeBox>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="Start"
+      title="ライブが決まる前も、決まった後も使う"
+      lead="チケット探しの入口から、小箱初参戦の流れ、会場別の動き方、当日の持ち物までスマホで確認しやすい導線にしています。"
+    />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {mainLinks.map((link) => <LinkCard {...link} />)}
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="Small venues"
+      title="小箱V系でよく使われる会場"
+      lead="若手V系・マイナーV系・地下寄りイベントの確認候補になりやすい現役会場だけを表示しています。閉館済み会場はおすすめ枠に出しません。"
+    />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {priorityVenues.map((venue) => <VenueCard venue={venue} compact />)}
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="No scraping"
+      title="転載しない、取りに行かない、公式へ送る"
+      lead="MVPではスクレイピング、外部DB、外部API、X API、無断画像利用を使わず、MarkdownとJSONで静的に更新できる構成にしています。"
+    />
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">公式確認を前提</p>
+        <p class="mt-2 text-sm leading-7 text-muted">公演日、出演者、チケット販売状況は各公式ページで確認する導線にします。</p>
+      </div>
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">小箱の不安に集中</p>
+        <p class="mt-2 text-sm leading-7 text-muted">ロッカー、待機場所、雨、夜の帰り道、ぼっち参戦の動き方を独自に整理します。</p>
+      </div>
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">静的で壊れにくい</p>
+        <p class="mt-2 text-sm leading-7 text-muted">Astro、Markdown、JSONだけで更新しやすく、0円公開しやすい構成です。</p>
+      </div>
+    </div>
+  </section>
+</Layout>

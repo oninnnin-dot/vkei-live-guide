@@ -1,0 +1,96 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LinkCard from '@components/LinkCard.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+
+const title = 'V系ライブ会場の種類｜小箱・中箱・大箱・ホール・リリイベ会場の違い';
+const description = 'V系ライブで使われる小箱ライブハウス、中箱、大型ライブハウス、ホール、屋外ステージ、リリースイベント会場の違いを、初参戦・荷物・ロッカー・待機場所・帰り方の視点で整理します。';
+
+const venueTypes = [
+  {
+    title: '小箱ライブハウスとは',
+    body: 'ステージと客席の距離が近く、若手V系・マイナーV系・地下寄りイベントでも使われやすい規模です。荷物の量、立ち位置、開場前の待機場所が体感に直結しやすいので、軽装と事前確認が大切です。',
+  },
+  {
+    title: '中箱ライブハウスとは',
+    body: '小箱より動線に余裕がある一方で、整理番号や入場順、物販後の荷物管理は引き続き重要です。ロッカーやクロークの有無は公演ごとに変わる場合があります。',
+  },
+  {
+    title: '大型ライブハウスとは',
+    body: 'Zepp系など、動員の大きい公演で使われることが多い会場です。入場列、ドリンク交換、終演後の駅混雑が大きくなりやすいため、帰宅ルートと集合場所を先に決めておくと安心です。',
+  },
+  {
+    title: 'ホール公演とは',
+    body: '座席指定やホール独自ルールがある公演が中心です。ライブハウスと比べて荷物は持ちやすい場合がありますが、客席内の飲食、撮影、再入場などは必ず公式案内を確認してください。',
+  },
+  {
+    title: '屋外ステージとは',
+    body: '天候、気温、周辺通行、観覧エリアのルールに左右されます。雨具、暑さ寒さ対策、長時間待機の負担を考えて、無理のない装備にしてください。',
+  },
+  {
+    title: 'リリースイベント会場とは',
+    body: '商業施設やイベントスペースで行われることがあり、ライブハウスとは入場・観覧・特典会のルールが異なります。施設側の案内と主催案内を必ず確認してください。',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '会場攻略', href: '/venues' }, { label: '会場の種類' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Venue Types</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブ会場の種類</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        小箱、中箱、大箱、ホール、屋外ステージ、リリイベ会場では、荷物・ロッカー・待機場所・帰り方の注意点が変わります。会場の種類を知っておくと、初参戦でも準備しやすくなります。
+      </p>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="公演情報は公式確認" tone="warning">
+        <p>このページは会場種別ごとの準備を整理するページです。公演日、出演者、開場/開演時間、チケット状況、入場順、物販ルールは必ず公式サイト・チケットサイト・会場公式スケジュールで確認してください。</p>
+      </NoticeBox>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="会場タイプ別の違い" lead="ライブハウス以外の会場は、V系小箱と同じ感覚で動かないほうが安全です。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        venueTypes.map((item) => (
+          <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
+            <h2 class="text-xl font-black text-white">{item.title}</h2>
+            <p class="mt-3 text-sm leading-7 text-muted">{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="初参戦で注意する違い" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <article class="rounded-lg border border-line bg-panel p-5">
+        <h2 class="text-xl font-black text-white">荷物・ロッカー・待機場所</h2>
+        <p class="mt-3 text-sm leading-7 text-muted">
+          小箱は荷物が邪魔になりやすく、ロッカーが少ない・埋まる可能性があります。ホールや大型会場でも、クローク有無や持ち込み制限は公演ごとに違います。店舗名や設備は未確認なら断定せず、地図アプリと公式案内で直前確認してください。
+        </p>
+      </article>
+      <article class="rounded-lg border border-line bg-panel p-5">
+        <h2 class="text-xl font-black text-white">終演後の帰りやすさ</h2>
+        <p class="mt-3 text-sm leading-7 text-muted">
+          小箱は駅までの夜道、大型会場は退場混雑、屋外イベントは天候と駅導線が不安になりやすいポイントです。終演が遅くなりそうな公演では、終電、乗換、ホテル、タクシー候補を先に見ておくと焦りにくくなります。
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="次に見るページ" />
+    <div class="grid gap-4 md:grid-cols-3">
+      <LinkCard title="会場攻略一覧" description="会場種別、情報確度、ロッカー注意度、帰宅難易度で絞り込めます。" href="/venues" cta="会場を見る" />
+      <LinkCard title="小さいライブハウスの初参戦ガイド" description="小箱での整理番号、荷物、立ち位置、ぼっち参戦の動き方を整理します。" href="/guides/small-venue" cta="読む" />
+      <LinkCard title="今週末のV系ライブを探す" description="公演情報は転載せず、公式チケットサイトと会場公式スケジュールへ案内します。" href="/weekend" cta="公式リンクへ" />
+    </div>
+  </section>
+</Layout>

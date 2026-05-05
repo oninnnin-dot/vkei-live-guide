@@ -1,0 +1,46 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+
+const title = '運営者情報｜V系ライブ遠征ナビ';
+const description = 'V系ライブ遠征ナビのサイト目的、情報の扱い、公式情報確認のお願い、問い合わせ・掲載依頼導線について。';
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '運営者情報' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">About</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">運営者情報</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        V系ライブ遠征ナビは、公演情報の網羅ではなく、小箱を含むライブハウスへ行く前の不安を減らすための実用サイトです。
+      </p>
+    </div>
+  </section>
+  <section class="container-navi space-y-8 py-8">
+    <div>
+      <SectionTitle title="サイト目的" />
+      <div class="rounded-lg border border-line bg-panel p-5 text-sm leading-7 text-muted">
+        <p>公式チケットサイト、会場公式スケジュール、アーティスト公式でライブを見つけた後に、小さいライブハウス周辺、ロッカー、待機場所、夜の帰り道、雨の日、遠征費を確認できる場所を目指しています。</p>
+      </div>
+    </div>
+    <div>
+      <SectionTitle title="情報の扱い" />
+      <div class="rounded-lg border border-line bg-panel p-5 text-sm leading-7 text-muted">
+        <p>公演名、日程、出演者、販売状況を大量転載せず、公式・準公式サイトへのリンクを中心に案内します。小箱会場の設備や待機ルールは変わりやすいため、断定表現を避け、事前確認推奨として扱います。</p>
+      </div>
+    </div>
+    <NoticeBox title="公式情報確認のお願い" tone="warning">
+      <p>チケット、入場、物販、会場設備、終演時間などは必ず公式サイト、チケットサイト、主催、会場公式スケジュールをご確認ください。</p>
+    </NoticeBox>
+    <div id="contact">
+      <SectionTitle title="問い合わせ・掲載依頼" lead="MVPではフォームURLを設定するだけで使える静的導線を想定しています。" />
+      <div class="rounded-lg border border-line bg-panel p-5 text-sm leading-7 text-muted">
+        <p>問い合わせ・掲載依頼は、運用開始時にGoogleフォームのURLを設定してください。フォームを使う場合も、掲載可否や情報修正は公式確認を前提に判断します。</p>
+        <p class="mt-3">設定例: <code class="rounded bg-black/30 px-2 py-1 text-mist">https://forms.gle/your-form-id</code></p>
+      </div>
+    </div>
+  </section>
+</Layout>

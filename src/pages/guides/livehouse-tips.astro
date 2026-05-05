@@ -1,0 +1,122 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LinkCard from '@components/LinkCard.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import { commonTips } from '../../data/commonTips';
+
+const title = 'V系ライブハウス参戦前に知っておきたい豆知識';
+const description = 'V系ライブハウス初参戦前に知っておきたい、荷物、ロッカー、クローク、ドリンク代、整理番号、物販後の荷物、撮影ルール、再入場、トイレ、電波、終演後の帰り方をまとめます。';
+
+const guideBlocks = [
+  {
+    title: '荷物は最小限',
+    body: '小箱ではフロアの余裕が少ないことがあります。キャリーや大きいリュックは持ち込まず、ロッカー・クローク・駅ロッカーへ預ける前提で準備してください。',
+  },
+  {
+    title: 'ロッカーとクロークの違い',
+    body: 'ロッカーは自分で出し入れする設備、クロークは会場や主催に預ける運用です。料金、受付時間、袋サイズ、再利用可否は公演ごとに変わる場合があります。',
+  },
+  {
+    title: '駅ロッカーを使うべきケース',
+    body: '遠征荷物がある、物販で荷物が増える、ソールド公演、会場ロッカーが少ない、クローク運用が未確認のときは駅ロッカーを候補にします。',
+  },
+  {
+    title: 'ドリンク代と現金',
+    body: 'ドリンク代は現金指定の可能性があります。500円から700円前後を想定し、1,000円札と小銭を残しておくと安心です。',
+  },
+  {
+    title: '整理番号と入場順',
+    body: '整理番号は座席指定ではなく、入場順の目安です。開場前の整列場所、呼び出し方法、遅れた場合の扱いは公演ごとに確認してください。',
+  },
+  {
+    title: '物販後の荷物問題',
+    body: 'Tシャツ、タオル、チェキ、特典などで荷物が増えます。物販用バッグと預け先を先に決めると、入場後に慌てにくくなります。',
+  },
+  {
+    title: '撮影・録音ルール',
+    body: '撮影、録音、録画は基本的に公式許可がある場合のみです。出演者ごとにルールが違うこともあるため、当日の案内を優先してください。',
+  },
+  {
+    title: '再入場不可の注意',
+    body: '再入場不可の公演では、入場後に外へ出られない前提で動きます。トイレ、飲み物、荷物整理、現金確認を入場前に済ませてください。',
+  },
+  {
+    title: '小箱のトイレ問題',
+    body: '小さいライブハウスではトイレが少ない場合があります。開演直前と終演後は混みやすいので、駅や商業施設で先に済ませる選択肢もあります。',
+  },
+  {
+    title: '地下会場の電波問題',
+    body: '地下やビル内の会場では通信が弱いことがあります。電子チケットは入口前で表示確認し、スマホの充電も残しておきます。',
+  },
+  {
+    title: '終演後の帰り方',
+    body: '終演後はロッカー・クローク・駅までの導線が混みやすくなります。終電、夜行バス、ホテル、乗換を先に確認しておくと安心です。',
+  },
+  {
+    title: '近隣で溜まらない',
+    body: '住宅、店舗、ビル内会場では、会場前で長く溜まると迷惑になりやすいです。整列開始までは駅周辺や周辺施設で時間調整してください。',
+  },
+  {
+    title: 'ぼっち参戦で困らない動き方',
+    body: '一人参戦では、待機場所、入場後の立ち位置、終演後の帰り道を先に決めておくと落ち着けます。SNSで無理に絡まなくても大丈夫です。',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: 'ガイド', href: '/guides/beginner' }, { label: 'ライブハウス豆知識' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Livehouse Tips</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブハウス参戦前に知っておきたい豆知識</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        小箱・中箱ライブハウスで困りやすい荷物、ロッカー、ドリンク代、整理番号、撮影可否、再入場、終演後の帰り方を、初参戦でも確認しやすい形でまとめます。
+      </p>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="公式確認のお願い" tone="warning">
+        <p>会場設備・ロッカー・クローク・ドリンク代・再入場・撮影可否は、公演や時期によって変わる場合があります。最新情報は必ず会場公式・主催者告知・チケットサイト・当日案内で確認してください。</p>
+      </NoticeBox>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="共通豆知識データ" lead="全会場で参照できる共通テンプレートです。会場別ページでは、この共通知識に会場ごとの注意を足しています。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        commonTips.map((tip) => (
+          <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
+            <p class="text-xs font-black uppercase tracking-[0.16em] text-cyan">{tip.category} / {tip.confidence}</p>
+            <h2 class="mt-2 text-lg font-black text-white">{tip.title}</h2>
+            <p class="mt-3 text-sm leading-7 text-muted">{tip.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="参戦前のチェックポイント" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        guideBlocks.map((block) => (
+          <article class="rounded-lg border border-line bg-panel p-5">
+            <h2 class="text-lg font-black text-white">{block.title}</h2>
+            <p class="mt-3 text-sm leading-7 text-muted">{block.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="会場別に確認する" />
+    <div class="grid gap-4 md:grid-cols-3">
+      <LinkCard title="会場攻略一覧" description="ロッカー注意、クローク確認、地下会場、終演後混雑などのタグで絞り込めます。" href="/venues" cta="会場を見る" />
+      <LinkCard title="小さいライブハウス初参戦" description="小箱での立ち位置、荷物、整理番号、ぼっち参戦の動きを確認します。" href="/guides/small-venue" cta="読む" />
+      <LinkCard title="持ち物チェックリスト" description="当日忘れやすいチケット、現金、モバイルバッテリー、雨具をチェックできます。" href="/guides/belongings" cta="確認する" />
+    </div>
+  </section>
+</Layout>
