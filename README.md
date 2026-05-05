@@ -212,6 +212,8 @@ lead: "ページ冒頭の説明"
 5. Build output directory は `dist` にします。
 6. 公開URLが決まったら `astro.config.mjs` の `site` を本番URLに変更します。
 
+このMVPではCloudflare PagesでCSSアセットが欠けても表示崩れが起きにくいよう、`astro.config.mjs` で `build.inlineStylesheets: "always"` を設定しています。公開後に表示が崩れる場合は、Cloudflare PagesのBuild output directoryが必ず `dist` になっているか確認してください。
+
 ## GitHub Pagesで公開する場合の注意
 
 GitHub Pagesでも静的サイトとして公開できます。
