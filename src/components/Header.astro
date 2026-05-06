@@ -12,7 +12,7 @@ const navItems = [
 ---
 
 <header class="sticky top-0 z-40 border-b border-line/80 bg-ink/95 backdrop-blur">
-  <div class="container-navi flex min-h-16 flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between">
+  <div class="container-navi flex min-h-16 flex-col gap-3 overflow-hidden py-3 lg:flex-row lg:items-center lg:justify-between">
     <a href="/" class="focus-ring flex shrink-0 items-center gap-3 rounded-md" aria-label="V系ライブ遠征ナビ トップへ">
       <span class="grid size-10 place-items-center rounded-lg border border-violet/50 bg-panel text-lg font-black text-white shadow-glow">V</span>
       <span class="leading-tight">
@@ -20,10 +20,10 @@ const navItems = [
         <span class="block text-xs text-muted">小箱の不安を消す実用ナビ</span>
       </span>
     </a>
-    <nav class="grid w-full min-w-0 grid-cols-2 gap-2 sm:grid-cols-4 md:flex md:w-auto md:flex-wrap md:justify-end" aria-label="主要メニュー">
+    <nav class="grid w-full min-w-0 grid-cols-2 gap-2 lg:flex lg:w-auto lg:flex-wrap lg:justify-end" aria-label="主要メニュー">
       {
         navItems.map((item) => (
-          <a class="focus-ring inline-flex min-h-10 items-center justify-center rounded-md border border-line bg-panel/70 px-3 py-2 text-center text-sm font-bold leading-snug text-mist transition hover:border-violet/70 hover:bg-white/5 hover:text-white md:shrink-0" href={item.href}>
+          <a class="focus-ring inline-flex min-h-10 min-w-0 items-center justify-center rounded-md border border-line bg-panel/70 px-2.5 py-2 text-center text-sm font-bold leading-snug text-mist transition hover:border-violet/70 hover:bg-white/5 hover:text-white lg:shrink-0 lg:px-3" href={item.href}>
             {item.label}
           </a>
         ))
