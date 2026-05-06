@@ -1,26 +1,26 @@
 ---
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import '@styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   canonical?: string;
   ogTitle?: string;
   ogDescription?: string;
 }
 
 const {
-  title,
-  description,
+  title = 'V系ライブ遠征ナビ｜会場攻略・初参戦・持ち物ガイド',
+  description = 'V系ライブに行く前に確認したい会場周辺情報、ロッカー、持ち物、初参戦の流れ、遠征費、終演後の帰宅をまとめる実用ナビ。',
   canonical,
   ogTitle = title,
   ogDescription = description,
 } = Astro.props;
 
-const siteBase = Astro.site ?? new URL('https://vkei-ensei-navi.example.com');
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteBase).toString();
+const siteUrl = 'https://vkei-live-guide.pages.dev';
+const pageUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -28,28 +28,33 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteBase).toString
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={pageUrl} />
+
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="V系ライブ遠征ナビ" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content="V系ライブ遠征ナビ" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+
+    <meta name="theme-color" content="#09090b" />
   </head>
-  <body>
-    <Header />
-    <div class="border-b border-line bg-amber/10">
-      <div class="container-navi py-3 text-xs leading-6 text-mist md:text-sm">
-        公演日・出演者・開場/開演時間・チケット状況は変更される場合があります。会場設備・ロッカー・クローク・ドリンク代・再入場・撮影可否も、公演や時期によって変わる場合があります。最新情報は必ず公式サイト・チケットサイト・会場公式スケジュール・主催者告知・当日案内で確認してください。当サイトは会場周辺情報と遠征準備を補助する目的で運営しています。
-      </div>
+
+  <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.22),transparent_32rem),radial-gradient(circle_at_top_right,rgba(236,72,153,0.18),transparent_28rem),linear-gradient(180deg,#09090b_0%,#181024_45%,#09090b_100%)]">
+      <Header />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
     </div>
-    <main>
-      <slot />
-    </main>
-    <Footer />
   </body>
 </html>
