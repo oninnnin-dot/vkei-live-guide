@@ -5,14 +5,17 @@ interface Props {
 }
 
 const { title = '確認メモ', tone = 'default' } = Astro.props;
+
 const toneClass = {
-  default: 'border-violet/45 bg-violet/10',
-  warning: 'border-amber/55 bg-amber/10',
-  success: 'border-cyan/55 bg-cyan/10',
+  default: 'border-violet-400/40 bg-violet-500/10',
+  warning: 'border-amber-400/50 bg-amber-500/10',
+  success: 'border-cyan-400/50 bg-cyan-500/10',
 }[tone];
 ---
 
-<aside class={`rounded-lg border ${toneClass} p-4 text-sm leading-7 text-mist`}>
-  <p class="mb-2 font-black text-white">{title}</p>
-  <slot />
-</aside>
+<div class:list={["rounded-2xl border p-4 text-sm leading-7 text-zinc-200", toneClass]}>
+  <h2 class="mb-2 font-bold text-white">{title}</h2>
+  <div>
+    <slot />
+  </div>
+</div>
