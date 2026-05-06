@@ -12,23 +12,38 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-40 border-b border-line/80 bg-ink/95 backdrop-blur">
-  <div class="container-navi flex min-h-16 flex-col gap-3 overflow-hidden py-3 lg:flex-row lg:items-center lg:justify-between">
-    <a href="/" class="focus-ring flex shrink-0 items-center gap-3 rounded-md" aria-label="V系ライブ遠征ナビ トップへ">
-      <span class="grid size-10 place-items-center rounded-lg border border-violet/50 bg-panel text-lg font-black text-white shadow-glow">V</span>
-      <span class="leading-tight">
-        <span class="block text-sm font-black tracking-wide text-white">V系ライブ遠征ナビ</span>
-        <span class="block text-xs text-muted">小箱の不安を消す実用ナビ</span>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    <a href="/" class="flex items-center gap-3 text-white">
+      <span class="grid h-9 w-9 place-items-center rounded-full bg-fuchsia-500 font-black">
+        V
+      </span>
+      <span>
+        <span class="block text-sm font-black leading-tight">V系ライブ遠征ナビ</span>
+        <span class="block text-xs text-zinc-400">小箱の不安を消す実用ナビ</span>
       </span>
     </a>
-    <nav class="grid w-full min-w-0 grid-cols-2 gap-2 lg:flex lg:w-auto lg:flex-wrap lg:justify-end" aria-label="主要メニュー">
-      {
-        navItems.map((item) => (
-          <a class="focus-ring inline-flex min-h-10 min-w-0 items-center justify-center rounded-md border border-line bg-panel/70 px-2.5 py-2 text-center text-sm font-bold leading-snug text-mist transition hover:border-violet/70 hover:bg-white/5 hover:text-white lg:shrink-0 lg:px-3" href={item.href}>
-            {item.label}
-          </a>
-        ))
-      }
+
+    <nav class="hidden items-center gap-2 md:flex">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="rounded-full px-3 py-2 text-sm font-semibold text-zinc-300 transition hover:bg-white/10 hover:text-white"
+        >
+          {item.label}
+        </a>
+      ))}
     </nav>
   </div>
+
+  <nav class="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-zinc-200"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
 </header>
