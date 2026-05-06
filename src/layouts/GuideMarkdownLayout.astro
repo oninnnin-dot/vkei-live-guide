@@ -11,7 +11,7 @@ const { frontmatter } = Astro.props;
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Guide</p>
-      <div class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl" role="heading" aria-level="1">{frontmatter.pageTitle ?? frontmatter.title}</div>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">{frontmatter.pageTitle ?? frontmatter.title}</h1>
       {frontmatter.lead && <p class="mt-4 text-base leading-8 text-muted md:text-lg">{frontmatter.lead}</p>}
     </div>
     <div class="mt-8">

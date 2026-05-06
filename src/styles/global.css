@@ -47,6 +47,11 @@ input {
   font: inherit;
 }
 
+a,
+button {
+  overflow-wrap: anywhere;
+}
+
 .container-navi {
   width: min(1120px, calc(100% - 32px));
   margin-inline: auto;

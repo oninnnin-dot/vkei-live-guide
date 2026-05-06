@@ -23,11 +23,11 @@ const { title, catchcopy, description, actions = [] } = Astro.props;
       <p class="mt-5 text-xl font-black leading-relaxed text-mist md:text-2xl">{catchcopy}</p>
       <p class="mt-4 max-w-2xl text-base leading-8 text-muted">{description}</p>
       {actions.length > 0 && (
-        <div class="mt-7 grid gap-3 sm:grid-cols-2">
+        <div class="mt-7 flex flex-col gap-3 md:grid md:grid-cols-2">
           {
             actions.map((action) => (
               <a
-                class={`focus-ring inline-flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-center text-sm font-black transition ${
+                class={`focus-ring inline-flex min-h-12 w-full items-center justify-center rounded-md px-5 py-3 text-center text-sm font-black leading-snug transition ${
                   action.primary
                     ? 'bg-violet text-white hover:bg-magenta'
                     : 'border border-line bg-panel text-mist hover:border-violet/70 hover:bg-white/5'

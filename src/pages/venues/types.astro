@@ -41,7 +41,7 @@ const venueTypes = [
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Venue Types</p>
-      <div class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl" role="heading" aria-level="1">V系ライブ会場の種類</div>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブ会場の種類</h1>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
         小箱、中箱、大箱、ホール、屋外ステージ、リリイベ会場では、荷物・ロッカー・待機場所・帰り方の注意点が変わります。会場の種類を知っておくと、初参戦でも準備しやすくなります。
       </p>
@@ -59,7 +59,7 @@ const venueTypes = [
       {
         venueTypes.map((item) => (
           <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
-            <div class="text-xl font-black text-white" role="heading" aria-level="2">{item.title}</div>
+            <h2 class="text-xl font-black text-white">{item.title}</h2>
             <p class="mt-3 text-sm leading-7 text-muted">{item.body}</p>
           </article>
         ))
@@ -71,13 +71,13 @@ const venueTypes = [
     <SectionTitle title="初参戦で注意する違い" />
     <div class="grid gap-4 md:grid-cols-2">
       <article class="rounded-lg border border-line bg-panel p-5">
-        <div class="text-xl font-black text-white" role="heading" aria-level="2">荷物・ロッカー・待機場所</div>
+        <h2 class="text-xl font-black text-white">荷物・ロッカー・待機場所</h2>
         <p class="mt-3 text-sm leading-7 text-muted">
           小箱は荷物が邪魔になりやすく、ロッカーが少ない・埋まる可能性があります。ホールや大型会場でも、クローク有無や持ち込み制限は公演ごとに違います。店舗名や設備は未確認なら断定せず、地図アプリと公式案内で直前確認してください。
         </p>
       </article>
       <article class="rounded-lg border border-line bg-panel p-5">
-        <div class="text-xl font-black text-white" role="heading" aria-level="2">終演後の帰りやすさ</div>
+        <h2 class="text-xl font-black text-white">終演後の帰りやすさ</h2>
         <p class="mt-3 text-sm leading-7 text-muted">
           小箱は駅までの夜道、大型会場は退場混雑、屋外イベントは天候と駅導線が不安になりやすいポイントです。終演が遅くなりそうな公演では、終電、乗換、ホテル、タクシー候補を先に見ておくと焦りにくくなります。
         </p>

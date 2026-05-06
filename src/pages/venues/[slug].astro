@@ -96,7 +96,7 @@ const relatedLinks = [
     <div class="grid gap-6 lg:grid-cols-[1fr_0.42fr]">
       <div>
         <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">{venue.area}</p>
-        <div class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl" role="heading" aria-level="1">{venue.name}</div>
+        <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">{venue.name}</h1>
         <p class="mt-4 text-base leading-8 text-muted md:text-lg">
           {venue.station}から徒歩目安{venue.walkMinutes}分。{typeLabel}としての動き方、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意を確認できます。
         </p>
@@ -147,7 +147,7 @@ const relatedLinks = [
     </div>
     {venue.tipTags.length > 0 && (
       <div class="mt-8">
-        <div class="text-xl font-black text-white" role="heading" aria-level="2">この会場の注意タグ</div>
+        <h2 class="text-xl font-black text-white">この会場の注意タグ</h2>
         <div class="mt-3 flex flex-wrap gap-2">
           {venue.tipTags.map((tag) => <span class="rounded-full border border-cyan/35 bg-cyan/10 px-3 py-1 text-xs font-black text-mist">{tag}</span>)}
         </div>
@@ -180,7 +180,7 @@ const relatedLinks = [
         venue.tips.map((tip) => (
           <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
             <p class="text-xs font-black uppercase tracking-[0.16em] text-cyan">{tip.category} / {tip.confidence}</p>
-            <div class="mt-2 text-lg font-black text-white" role="heading" aria-level="2">{tip.title}</div>
+            <h2 class="mt-2 text-lg font-black text-white">{tip.title}</h2>
             <p class="mt-3 text-sm leading-7 text-muted">{tip.body}</p>
             <p class="mt-4 text-xs text-muted">sourceType: {tip.sourceType} / 確認日: {tip.lastVerifiedAt}</p>
           </article>
