@@ -2,30 +2,35 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="mt-16 border-t border-line bg-black/20">
-  <div class="container-navi grid gap-8 py-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+<footer class="mt-16 border-t border-white/10 bg-black px-4 py-10">
+  <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
     <div>
-      <p class="text-lg font-black text-white">V系ライブ遠征ナビ</p>
-      <p class="mt-3 max-w-xl text-sm leading-7 text-muted">
-        ライブ情報は公式で探す。小箱の不安はここで消す。公演・チケット情報の転載ではなく、遠征準備とライブハウス周辺の不安整理を目的にした静的サイトです。
+      <h2 class="text-lg font-black text-white">V系ライブ遠征ナビ</h2>
+      <p class="mt-3 text-sm leading-7 text-zinc-400">
+        ライブ情報は公式で探す。小箱の不安はここで消す。
+        公演・チケット情報の転載ではなく、遠征準備とライブハウス周辺の不安整理を目的にした静的サイトです。
       </p>
     </div>
+
     <div>
-      <p class="text-sm font-black text-white">サイト情報</p>
-      <ul class="mt-3 space-y-2 text-sm text-muted">
-        <li><a class="hover:text-white" href="/about">運営者情報</a></li>
-        <li><a class="hover:text-white" href="/disclaimer">免責事項</a></li>
-        <li><a class="hover:text-white" href="/weekend">公式リンク集</a></li>
+      <h2 class="text-sm font-bold text-white">サイト情報</h2>
+      <ul class="mt-3 space-y-2 text-sm text-zinc-400">
+        <li><a href="/about" class="hover:text-white">運営者情報</a></li>
+        <li><a href="/disclaimer" class="hover:text-white">免責事項</a></li>
+        <li><a href="/weekend" class="hover:text-white">公式リンク集</a></li>
       </ul>
     </div>
+
     <div>
-      <p class="text-sm font-black text-white">運用方針</p>
-      <p class="mt-3 text-sm leading-7 text-muted">
-        スクレイピング、外部DB、有料API、無断画像利用は行いません。最新情報は必ず公式サイトで確認してください。
+      <h2 class="text-sm font-bold text-white">運用方針</h2>
+      <p class="mt-3 text-sm leading-7 text-zinc-400">
+        スクレイピング、外部DB、有料API、無断画像利用は行いません。
+        最新情報は必ず公式サイトで確認してください。
       </p>
     </div>
   </div>
-  <div class="border-t border-line/70 py-4 text-center text-xs text-muted">
+
+  <p class="mx-auto mt-8 max-w-6xl text-xs text-zinc-500">
     © {year} V系ライブ遠征ナビ
-  </div>
+  </p>
 </footer>
