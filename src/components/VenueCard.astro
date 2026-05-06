@@ -40,6 +40,7 @@ const confidenceLabel = {
   verified: '公式確認済み',
   partially_verified: '一部確認',
   social_only: 'SNS由来',
+  verified_or_historical: '履歴確認済み',
   unknown: '要確認',
 }[venue.sourceConfidence ?? 'unknown'];
 
@@ -76,8 +77,23 @@ const tipFilterMap: Record<string, string> = {
   初参戦は入口確認: 'tip-entry-check',
 };
 const tipFilterTags = (venue.tipTags ?? []).map((tag) => tipFilterMap[tag]).filter(Boolean);
-const visibleTipTags = (venue.tipTags ?? []).slice(0, compact ? 4 : 6);
+const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
+const accessLabel = venue.station
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
+  : '最寄り駅 要確認';
+const sourceNotesText = Array.isArray(venue.sourceNotes) ? venue.sourceNotes.join(' ') : String(venue.sourceNotes ?? '');
+const searchText = [
+  venue.name,
+  ...(venue.aliases ?? []),
+  venue.area,
+  venue.prefecture,
+  venue.region,
+  venue.station,
+  venue.venueType,
+  venue.vkeiUseType,
+  ...(venue.tipTags ?? []),
+].filter(Boolean).join(' ');
 
 const filterTags = [
   'all',
@@ -88,7 +104,10 @@ const filterTags = [
   venue.vkeiAffinity === 'high' ? 'vkei-high' : '',
   venue.minorVkeiFriendly ? 'minor-vkei' : '',
   venue.vkeiUseType === 'release_event' ? 'release-event' : '',
+  venue.vkeiUseType === 'large_scale' || venue.venueType === 'hall' ? 'large-hall' : '',
   ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence) ? 'needs-check' : '',
+  venue.region,
+  venue.prefecture,
   venue.areaGroup,
   venue.area === '横浜' || venue.areaGroup?.includes('yokohama') ? 'yokohama' : '',
   venue.area === '渋谷' || venue.areaGroup?.includes('shibuya') ? 'shibuya' : '',
@@ -103,15 +122,30 @@ const filterTags = [
 ---
 
 <article
-  class="flex h-full min-w-0 flex-col rounded-lg border border-line bg-panel p-5 shadow-glow"
+  class={`flex h-full min-w-0 flex-col rounded-lg border border-line bg-panel p-5 shadow-glow ${venue.archiveOnly || venue.status === 'closed' || !venue.showInVenueList ? 'hidden' : ''}`}
   data-venue-card
+  data-default-visible={venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
+  data-archive={venue.archiveOnly ? 'true' : 'false'}
+  data-status={venue.status}
+  data-name={venue.name}
+  data-region={venue.region}
+  data-prefecture={venue.prefecture}
+  data-area={venue.area}
+  data-type={venue.venueType}
+  data-scale={venue.venueScale}
+  data-affinity={venue.vkeiAffinity}
+  data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
+  data-priority={venue.priority}
+  data-locker-risk={venue.lockerRisk}
+  data-tags={(venue.tipTags ?? []).join('|')}
+  data-search={searchText}
   data-filter-tags={filterTags}
 >
   <div class="flex items-start justify-between gap-3">
     <div class="min-w-0">
-      <p class="text-xs font-black uppercase tracking-[0.16em] text-cyan">{venue.area}</p>
+      <span class="inline-flex rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-xs font-black text-cyan">{venue.area} / {venue.prefecture}</span>
       <h3 class="mt-2 text-xl font-black leading-tight text-white">{venue.name}</h3>
-      <p class="mt-2 text-sm text-muted">最寄り: {venue.station} / 徒歩目安 {venue.walkMinutes}分</p>
+      <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
     </div>
   </div>
   <div class="mt-4 flex flex-wrap gap-2">
@@ -161,7 +195,9 @@ const filterTags = [
       <dd class="min-w-0 text-right font-black text-white">{venue.lastVerifiedAt}</dd>
     </div>
   </dl>
-  <p class="mt-4 flex-1 text-sm leading-7 text-muted">{venue.currentUseNote || venue.beginnerNote}</p>
+  {venue.archiveOnly && <p class="mt-3 rounded-md border border-amber/50 bg-amber/10 px-3 py-2 text-xs font-black text-mist">閉館アーカイブ</p>}
+  {!compact && <p class="mt-4 flex-1 text-sm leading-7 text-muted">{venue.currentUseNote || venue.beginnerNote}</p>}
+  {compact && sourceNotesText && <p class="mt-4 flex-1 text-xs leading-6 text-muted">{sourceNotesText}</p>}
   <a class="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-violet px-4 py-2 text-sm font-black text-white transition hover:bg-magenta" href={`/venues/${venue.slug}`}>
     詳細を見る
   </a>

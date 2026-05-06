@@ -16,8 +16,8 @@ export type VenueType =
   | 'event_space'
   | 'closed_archive'
   | 'unknown';
-export type SourceConfidence = 'verified' | 'partially_verified' | 'social_only' | 'unknown';
-export type SourceType = 'official' | 'ticket_site' | 'social' | 'mixed' | 'unknown';
+export type SourceConfidence = 'verified' | 'partially_verified' | 'social_only' | 'verified_or_historical' | 'unknown';
+export type SourceType = 'official' | 'ticket_site' | 'ticket_site_or_user_list' | 'social' | 'mixed' | 'unknown';
 export type VkeiUseType =
   | 'minor_vkei'
   | 'vkei_regular'
@@ -63,6 +63,9 @@ export type VenueTip = {
 export type Venue = {
   slug: string;
   name: string;
+  aliases: string[];
+  prefecture: string;
+  region: string;
   area: string;
   areaGroup: string;
   status: VenueStatus;
@@ -78,7 +81,7 @@ export type Venue = {
   vkeiUseType: VkeiUseType;
   priority: VenuePriority;
   station: string;
-  walkMinutes: number;
+  walkMinutes: number | null;
   officialUrl: string;
   lastVerifiedAt: string;
   showInVenueList: boolean;

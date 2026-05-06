@@ -44,6 +44,18 @@ npm run build
 
 ただし、当サイトの価値は公演情報の網羅ではありません。公演情報は公式サイト、チケットサイト、会場公式スケジュールで確認してもらい、当サイトではロッカー、待機場所、コンビニ、雨の日、夜の帰り道、初参戦、ぼっち参戦、遠征費を整理します。
 
+## 全国会場マスター
+
+`data/venues.json` に全国のV系ライブで使われることがある会場マスターを追加しています。
+
+扱う情報は、会場名、表記ゆれ、地域、都道府県、エリア、会場分類、V系利用傾向、情報確度です。公演情報、出演者、日程、開場/開演時間、受付状況、チケット状況は登録しません。
+
+新規追加した会場は、公式URLや設備情報が未確認のものを `sourceConfidence: "partially_verified"`、`sourceType: "ticket_site_or_user_list"` として管理し、`sourceNotes` に「公式URL・設備情報は要確認」を残します。
+
+表記ゆれは `aliases` で管理します。たとえば `池袋EDGE` には `EDGE ikebukuro` や `EDGE Ikebukuro` を入れ、検索では正式名と別表記の両方にヒットするようにしています。
+
+閉館済み・過去会場は `status: "closed"`, `archiveOnly: true`, `showInVenueList: false` にし、現役会場一覧には表示しません。
+
 ## Grok/X由来会場の扱い
 
 Grok/X由来で候補にした会場は `grokSuggested: true` で管理します。SNS上の言及だけで十分に確認できていない場合は、`sourceConfidence: "social_only"` または `sourceConfidence: "partially_verified"` にします。
@@ -66,8 +78,8 @@ Grok/X由来で候補にした会場は `grokSuggested: true` で管理します
 - `venueScale`: `small`, `small-mid`, `mid`, `large`, `unknown`
 - `vkeiAffinity`: `high`, `medium`, `low`, `unknown`
 - `minorVkeiFriendly`: 若手V系・マイナーV系向きなら `true`
-- `sourceConfidence`: `verified`, `partially_verified`, `social_only`, `unknown`
-- `sourceType`: `official`, `ticket_site`, `social`, `mixed`, `unknown`
+- `sourceConfidence`: `verified`, `partially_verified`, `social_only`, `verified_or_historical`, `unknown`
+- `sourceType`: `official`, `ticket_site`, `ticket_site_or_user_list`, `social`, `mixed`, `unknown`
 - `sourceMemo`: 情報確認や分類のメモ
 - `grokSuggested`: Grok/X由来候補なら `true`
 - `currentUseNote`: 現在の扱い。ライブハウス以外は特に明記
@@ -101,6 +113,32 @@ Grok/X由来で候補にした会場は `grokSuggested: true` で管理します
 - `sourceNotes`: 公式URL確認や要確認事項
 
 追加すると `/venues` と `/venues/{slug}` が自動生成されます。
+
+全国会場マスターを再マージする場合は、`scripts/merge-national-venues.mjs` を確認してから実行します。
+
+```bash
+node scripts/merge-national-venues.mjs
+```
+
+このスクリプトは既存の会場攻略メモを保持し、新規会場には最小限の会場マスターデータを補完します。
+
+## /venues の検索機能
+
+`/venues` はスマホ向けの会場検索ページです。
+
+- 会場名、aliases、エリア、都道府県、地域、最寄り駅、注意タグで検索できます
+- 地域、都道府県、会場種別、V系向き度、注意タグを組み合わせて絞り込めます
+- クイックチップで東京、神奈川、大阪、名古屋、小箱、大箱、ロッカー注意などをすばやく選べます
+- 検索条件はURLクエリに反映され、再読み込みしても同じ条件で表示できます
+- デフォルトでは閉館済み会場を表示しません
+
+対応クエリは `q`, `region`, `prefecture`, `type`, `affinity`, `tag`, `sort`, `archive` です。
+
+## /venues/regions
+
+`/venues/regions` は、全国会場マスターを地域別に見るページです。
+
+地域、都道府県、会場名、会場種別、V系向き度、マイナーV系向き、詳細ページリンクを表示します。ここでも公演情報、出演者、日程、チケット状況は掲載せず、公式サイト・チケットサイト・会場公式スケジュールで確認する運用です。
 
 豆知識関連の初期値は `scripts/apply-venue-tips.mjs` で整備しています。会場を増やした後に同じ形式へそろえる場合は、内容を確認してから以下を実行します。
 

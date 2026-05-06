@@ -60,11 +60,13 @@ const confidenceLabel = {
   verified: '公式確認済み',
   partially_verified: '一部確認',
   social_only: 'SNS由来',
+  verified_or_historical: '履歴確認済み',
   unknown: '要確認',
 }[venue.sourceConfidence ?? 'unknown'];
 const sourceTypeLabel = {
   official: '公式',
   ticket_site: 'チケットサイト',
+  ticket_site_or_user_list: 'チケットサイト・手動リスト',
   social: 'SNS',
   mixed: '複合',
   unknown: '要確認',
@@ -82,6 +84,10 @@ const vkeiUseTypeLabel = {
 const needsSourceWarning = venue.sourceConfidence === 'social_only' || venue.sourceConfidence === 'unknown';
 const title = `${venue.name} 会場攻略｜小箱・ロッカー・待機場所・帰り方`;
 const description = `${venue.name}へV系ライブで行く前に確認したい、小箱感、若手V系向き、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意をまとめます。`;
+const accessText = venue.station
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安${venue.walkMinutes}分` : 'からの所要時間は要確認'}`
+  : '最寄り駅は要確認';
+const sourceNotes = Array.isArray(venue.sourceNotes) ? venue.sourceNotes : venue.sourceNotes ? [venue.sourceNotes] : [];
 const relatedLinks = [
   { title: 'V系ライブハウス豆知識', description: '荷物、ロッカー、ドリンク代、整理番号、撮影ルール、終演後の動き方を確認。', href: '/guides/livehouse-tips', cta: '読む' },
   { title: '小さいライブハウスの初参戦ガイド', description: '小箱での荷物、立ち位置、整理番号、ロッカー、帰り方を確認。', href: '/guides/small-venue', cta: '読む' },
@@ -98,7 +104,7 @@ const relatedLinks = [
         <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">{venue.area}</p>
         <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">{venue.name}</h1>
         <p class="mt-4 text-base leading-8 text-muted md:text-lg">
-          {venue.station}から徒歩目安{venue.walkMinutes}分。{typeLabel}としての動き方、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意を確認できます。
+          {accessText}。{typeLabel}としての動き方、ロッカー、待機場所、夜の帰り道、初参戦・ぼっち参戦の注意を確認できます。
         </p>
         <div class="mt-5 flex flex-wrap gap-2">
           <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{typeLabel}</span>
@@ -272,12 +278,12 @@ const relatedLinks = [
       {venue.ticketSearchLinks.map((link) => <LinkCard title={link.label} description="該当公演の販売状況、受付期間、入場条件はリンク先で確認してください。" href={link.url} note="販売状況は保証しません。" />)}
     </div>
   </section>
-  {venue.sourceNotes.length > 0 && (
+  {sourceNotes.length > 0 && (
     <section class="container-navi py-8">
       <SectionTitle title="データ運用メモ" />
       <div class="rounded-lg border border-line bg-panel p-5">
         <ul class="space-y-2 text-sm leading-7 text-muted">
-          {venue.sourceNotes.map((note) => <li>{note}</li>)}
+          {sourceNotes.map((note) => <li>{note}</li>)}
         </ul>
       </div>
     </section>
