@@ -12,15 +12,21 @@ const isExternal = href.startsWith('http');
 ---
 
 <a
-  class="focus-ring group flex h-full min-w-0 flex-col rounded-lg border border-line bg-panel p-5 shadow-glow transition hover:-translate-y-0.5 hover:border-violet/70"
   href={href}
   target={isExternal ? '_blank' : undefined}
-  rel={isExternal ? 'noopener noreferrer' : undefined}
+  rel={isExternal ? 'noreferrer' : undefined}
+  class="block rounded-2xl border border-white/10 bg-zinc-950/80 p-5 shadow-lg shadow-black/30 transition hover:-translate-y-0.5 hover:border-fuchsia-400/50 hover:bg-zinc-900"
 >
-  <span class="text-lg font-black leading-snug text-white">{title}</span>
-  <span class="mt-2 flex-1 text-sm leading-7 text-muted">{description}</span>
-  {note && <span class="mt-4 rounded-md border border-line bg-black/20 px-3 py-2 text-xs leading-6 text-muted">{note}</span>}
-  <span class="mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-violet px-4 py-2 text-center text-sm font-black leading-snug text-white transition group-hover:bg-magenta">
+  <h3 class="text-lg font-black text-white">{title}</h3>
+  <p class="mt-3 text-sm leading-7 text-zinc-300">{description}</p>
+
+  {note && (
+    <p class="mt-3 rounded-xl bg-white/5 p-3 text-xs leading-6 text-zinc-400">
+      {note}
+    </p>
+  )}
+
+  <span class="mt-4 inline-flex min-h-10 items-center rounded-full bg-fuchsia-500 px-4 py-2 text-sm font-bold text-white">
     {cta}
   </span>
 </a>
