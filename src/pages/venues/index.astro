@@ -1,484 +1,112 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Hero from '@components/Hero.astro';
+import LinkCard from '@components/LinkCard.astro';
 import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
 import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ会場検索｜全国ライブハウス・小箱・ホール一覧';
-const description = '会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。';
-const allVenues = venues as Venue[];
-const activeCount = allVenues.filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
-const regionOrder = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
-const regionOptions = regionOrder.filter((region) => allVenues.some((venue) => venue.region === region));
-const prefectureOptions = [...new Set(allVenues.map((venue) => venue.prefecture).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
-const tipTagOptions = [...new Set(allVenues.flatMap((venue) => venue.tipTags ?? []))].filter(Boolean).sort((a, b) => a.localeCompare(b, 'ja'));
-const venueTypeOptions = [
-  ['small_livehouse', '小箱ライブハウス'],
-  ['mid_livehouse', '中箱ライブハウス'],
-  ['large_livehouse', '大型ライブハウス'],
-  ['hall', 'ホール'],
-  ['theater', '劇場'],
-  ['outdoor_stage', '屋外ステージ'],
-  ['event_space', 'イベントスペース'],
-];
-const affinityOptions = [
-  ['high', 'V系向き高'],
-  ['medium', 'V系向き中'],
-  ['low', 'V系向き低'],
-  ['unknown', '要確認'],
-];
-const quickChips = [
-  { label: '東京', kind: 'region', value: '東京' },
-  { label: '神奈川', kind: 'region', value: '神奈川' },
-  { label: '大阪', kind: 'prefecture', value: '大阪府' },
-  { label: '名古屋', kind: 'query', value: '名古屋' },
-  { label: '小箱', kind: 'type', value: 'small_livehouse' },
-  { label: '中箱', kind: 'type', value: 'mid_livehouse' },
-  { label: '大箱', kind: 'type', value: 'large_livehouse' },
-  { label: 'V系向き高', kind: 'affinity', value: 'high' },
-  { label: 'マイナーV系向き', kind: 'minor', value: 'true' },
-  { label: 'ロッカー注意', kind: 'tag', value: 'ロッカー注意' },
-  { label: '駅ロッカー推奨', kind: 'tag', value: '駅ロッカー推奨' },
-  { label: 'クローク確認', kind: 'tag', value: 'クローク確認' },
-  { label: 'ぼっち参戦向き', kind: 'tag', value: 'ぼっち参戦向き' },
-  { label: '終演後注意', kind: 'tag', value: '終演後注意' },
-  { label: '歌舞伎町エリア注意', kind: 'tag', value: '歌舞伎町エリア注意' },
-  { label: '渋谷人混み注意', kind: 'tag', value: '渋谷人混み注意' },
-];
-const shortcuts = [
-  { label: '東京の小箱', q: '', region: '東京', type: 'small_livehouse' },
-  { label: '池袋周辺', q: '池袋' },
-  { label: '渋谷周辺', q: '渋谷' },
-  { label: '横浜・神奈川', q: '', region: '神奈川' },
-  { label: 'ロッカー注意の会場', tag: 'ロッカー注意' },
-  { label: 'ぼっち参戦向き', tag: 'ぼっち参戦向き' },
-  { label: '大箱・ホール', type: 'large_livehouse,hall' },
-  { label: 'アーカイブ除外', archive: '0' },
+const title = 'V系ライブ遠征ナビ｜小箱・会場攻略・初参戦・持ち物ガイド';
+const description = '若手V系・マイナーV系・地下寄りライブに行く前に確認したい、小さいライブハウスの会場攻略、ロッカー、待機場所、終演後の帰り方、初参戦の流れ、持ち物、遠征費をまとめる実用ナビ。';
+const prioritySlugs = ['ikebukuro-edge', 'ikebukuro-blackhole', 'sugamo-shishio', 'shinjuku-club-science', 'shinjuku-heist', 'wildside-tokyo', 'higashi-koenji-20000v'];
+const priorityVenues = (venues as Venue[])
+  .filter((venue) => prioritySlugs.includes(venue.slug) && venue.status === 'active' && venue.showInVenueList && !venue.archiveOnly)
+  .sort((a, b) => prioritySlugs.indexOf(a.slug) - prioritySlugs.indexOf(b.slug));
+
+const mainLinks = [
+  {
+    title: '今週末のV系ライブを探す',
+    description: 'イープラス、ローチケ、LivePocket、TIGET、vk.gy、会場公式スケジュールへの入口をまとめています。',
+    href: '/weekend',
+    cta: '公式リンクを見る',
+  },
+  {
+    title: '小箱会場攻略を見る',
+    description: '小箱度、V系向き度、ロッカー、待機場所、雨の日、終演後の帰りやすさを会場ごとに確認できます。',
+    href: '/venues',
+    cta: '会場一覧へ',
+  },
+  {
+    title: '小箱初参戦ガイドを見る',
+    description: '整理番号、荷物、ロッカー、ドリンク代、立ち位置、終演後の動き方を小箱向けに整理。',
+    href: '/guides/small-venue',
+    cta: '小箱の流れを確認',
+  },
+  {
+    title: '持ち物チェックリスト',
+    description: 'チケット、身分証、モバイルバッテリー、ロッカー対策、雨具などをブラウザ上でチェック。',
+    href: '/guides/belongings',
+    cta: 'チェックする',
+  },
+  {
+    title: '遠征費シミュレーター',
+    description: 'チケット代、交通費、ホテル代、物販予算などを入れて、遠征費の合計をその場で計算。',
+    href: '/tools/budget',
+    cta: '計算する',
+  },
 ];
 ---
 
 <Layout title={title} description={description}>
-  <Breadcrumbs items={[{ label: '会場攻略' }]} />
-  <section class="container-navi py-8">
-    <div class="max-w-3xl">
-      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Venue Search</p>
-      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブ会場を探す</h1>
-      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
-        会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。
+  <Hero
+    title="V系ライブ遠征ナビ"
+    catchcopy="ライブ情報は公式で探す。小箱の不安はここで消す。"
+    description="V系ライブに行く前に確認したい、ライブハウス周辺情報、ロッカー、待機場所、コンビニ、終演後の帰り方、初参戦の不安、遠征費をまとめる実用ナビ。若手V系・マイナーV系・地下寄りイベントで使われる小さめのライブハウスにも対応します。"
+    actions={[
+      { href: '/weekend', label: '今週末のV系ライブを探す', primary: true },
+      { href: '/venues', label: '小箱会場攻略を見る' },
+      { href: '/guides/small-venue', label: '小箱初参戦ガイド' },
+      { href: '/tools/budget', label: '遠征費シミュレーター' },
+    ]}
+  />
+  <section class="container-navi py-10">
+    <NoticeBox title="このサイトの役割" tone="warning">
+      <p>
+        公演情報・チケット情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。当サイトは小箱を含む会場周辺情報、遠征準備、荷物対策、帰宅判断を補助するサイトです。
       </p>
-    </div>
-    <div class="mt-6">
-      <NoticeBox title="公演情報は掲載しません" tone="warning">
-        <p>このページは会場名・地域・会場分類・V系利用傾向を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト・チケットサイト・会場公式スケジュールで確認してください。</p>
-      </NoticeBox>
-    </div>
-    <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="おすすめショートカット">
-      {
-        shortcuts.map((shortcut) => (
-          <button
-            class="focus-ring min-h-11 rounded-md border border-line bg-panel px-4 py-3 text-sm font-black text-mist transition hover:border-violet/70 hover:bg-white/5 hover:text-white"
-            type="button"
-            data-shortcut={JSON.stringify(shortcut)}
-          >
-            {shortcut.label}
-          </button>
-        ))
-      }
+    </NoticeBox>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="Start"
+      title="ライブが決まる前も、決まった後も使う"
+      lead="チケット探しの入口から、小箱初参戦の流れ、会場別の動き方、当日の持ち物までスマホで確認しやすい導線にしています。"
+    />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {mainLinks.map((link) => <LinkCard {...link} />)}
     </div>
   </section>
-
-  <section class="container-navi pb-12" data-venue-search data-total={allVenues.length} data-active-total={activeCount}>
-    <div class="sticky top-[12rem] z-30 rounded-lg border border-line bg-ink/95 p-4 shadow-glow backdrop-blur lg:top-20">
-      <div class="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-        <div>
-          <label class="block text-sm font-black text-white" for="venue-search-input">会場名・エリア・駅名で検索</label>
-          <input
-            class="mt-2 min-h-12 w-full rounded-md border border-line bg-black/35 px-4 text-base font-bold text-white outline-none transition placeholder:text-muted focus:border-cyan"
-            id="venue-search-input"
-            name="q"
-            type="search"
-            placeholder="会場名・エリア・駅名で検索"
-            autocomplete="off"
-            data-search-input
-          />
-        </div>
-        <div>
-          <label class="block text-sm font-black text-white" for="venue-sort-select">並び替え</label>
-          <select class="mt-2 min-h-12 rounded-md border border-line bg-black/35 px-4 text-sm font-bold text-white" id="venue-sort-select" data-sort-select>
-            <option value="recommended">おすすめ順</option>
-            <option value="name">会場名順</option>
-            <option value="region">地域順</option>
-            <option value="small">小箱優先</option>
-            <option value="affinity">V系向き度順</option>
-            <option value="locker">ロッカー注意順</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="mt-4 flex gap-2 overflow-x-auto pb-1" aria-label="スマホ用クイックフィルター">
-        {
-          quickChips.map((chip) => (
-            <button
-              class="focus-ring min-h-11 shrink-0 rounded-full border border-line bg-panel px-4 py-2 text-sm font-black text-mist transition hover:border-violet/70"
-              type="button"
-              data-chip-kind={chip.kind}
-              data-chip-value={chip.value}
-              aria-pressed="false"
-            >
-              {chip.label}
-            </button>
-          ))
-        }
-      </div>
-
-      <details class="mt-4 rounded-md border border-line bg-black/20 p-3">
-        <summary class="cursor-pointer text-sm font-black text-white">絞り込み</summary>
-        <div class="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-          <label class="grid gap-2 text-sm font-bold text-mist">
-            地域
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-region>
-              <option value="">すべて</option>
-              {regionOptions.map((region) => <option value={region}>{region}</option>)}
-            </select>
-          </label>
-          <label class="grid gap-2 text-sm font-bold text-mist">
-            都道府県
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-prefecture>
-              <option value="">すべて</option>
-              {prefectureOptions.map((prefecture) => <option value={prefecture}>{prefecture}</option>)}
-            </select>
-          </label>
-          <label class="grid gap-2 text-sm font-bold text-mist">
-            会場種別
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-type>
-              <option value="">すべて</option>
-              {venueTypeOptions.map(([value, label]) => <option value={value}>{label}</option>)}
-            </select>
-          </label>
-          <label class="grid gap-2 text-sm font-bold text-mist">
-            V系向き度
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-affinity>
-              <option value="">すべて</option>
-              {affinityOptions.map(([value, label]) => <option value={value}>{label}</option>)}
-            </select>
-          </label>
-          <label class="grid gap-2 text-sm font-bold text-mist md:col-span-2">
-            注意タグ
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-tag>
-              <option value="">タグを追加</option>
-              {tipTagOptions.map((tag) => <option value={tag}>{tag}</option>)}
-            </select>
-          </label>
-          <label class="flex min-h-11 items-center gap-3 rounded-md border border-line bg-black/20 px-3 text-sm font-bold text-mist">
-            <input class="size-4 accent-violet" type="checkbox" data-filter-archive />
-            閉館済みも表示
-          </label>
-        </div>
-      </details>
-
-      <div class="mt-4 hidden flex-wrap gap-2" data-active-filters></div>
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <p class="text-sm font-bold text-muted"><span data-total-count>{allVenues.length}</span>件中 <span data-visible-count>{activeCount}</span>件を表示中</p>
-        <button class="focus-ring min-h-10 rounded-md border border-line bg-panel px-4 text-sm font-black text-mist transition hover:border-violet/70" type="button" data-reset-filters>
-          すべて解除
-        </button>
-      </div>
-    </div>
-
-    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3" data-results>
-      {allVenues.map((venue) => <VenueCard venue={venue} compact />)}
-    </div>
-
-    <div class="mt-6 hidden rounded-lg border border-line bg-panel p-6 text-center shadow-glow" data-empty-state>
-      <h2 class="text-xl font-black text-white">該当する会場が見つかりませんでした</h2>
-      <p class="mt-3 text-sm leading-7 text-muted">検索語を短くするか、地域・タグの条件を減らして再検索してください。</p>
-      <button class="focus-ring mt-5 min-h-11 rounded-md bg-violet px-5 text-sm font-black text-white transition hover:bg-magenta" type="button" data-reset-filters>
-        条件をリセット
-      </button>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="Small venues"
+      title="小箱V系でよく使われる会場"
+      lead="若手V系・マイナーV系・地下寄りイベントの確認候補になりやすい現役会場だけを表示しています。閉館済み会場はおすすめ枠に出しません。"
+    />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {priorityVenues.map((venue) => <VenueCard venue={venue} compact />)}
     </div>
   </section>
-
-  <script is:inline>
-  const root = document.querySelector('[data-venue-search]');
-  if (root) {
-    const input = root.querySelector('[data-search-input]');
-    const sortSelect = root.querySelector('[data-sort-select]');
-    const regionSelect = root.querySelector('[data-filter-region]');
-    const prefectureSelect = root.querySelector('[data-filter-prefecture]');
-    const typeSelect = root.querySelector('[data-filter-type]');
-    const affinitySelect = root.querySelector('[data-filter-affinity]');
-    const tagSelect = root.querySelector('[data-filter-tag]');
-    const archiveCheckbox = root.querySelector('[data-filter-archive]');
-    const activeBox = root.querySelector('[data-active-filters]');
-    const count = root.querySelector('[data-visible-count]');
-    const totalCount = root.querySelector('[data-total-count]');
-    const results = root.querySelector('[data-results]');
-    const empty = root.querySelector('[data-empty-state]');
-    const cards = Array.from(root.querySelectorAll('[data-venue-card]'));
-    const chips = Array.from(root.querySelectorAll('[data-chip-kind]'));
-    const resets = Array.from(root.querySelectorAll('[data-reset-filters]'));
-    const shortcutButtons = Array.from(document.querySelectorAll('[data-shortcut]'));
-    const priorityRank = { A: 0, B: 1, C: 2, D: 3 };
-    const affinityRank = { high: 0, medium: 1, low: 2, unknown: 3 };
-    const scaleRank = { small: 0, 'small-mid': 1, mid: 2, large: 3, unknown: 4 };
-    const labelMap = {
-      small_livehouse: '小箱ライブハウス',
-      mid_livehouse: '中箱ライブハウス',
-      large_livehouse: '大型ライブハウス',
-      hall: 'ホール',
-      theater: '劇場',
-      outdoor_stage: '屋外ステージ',
-      event_space: 'イベントスペース',
-      high: 'V系向き高',
-      medium: 'V系向き中',
-      low: 'V系向き低',
-      unknown: '要確認',
-    };
-    const state = {
-      q: '',
-      region: '',
-      prefecture: '',
-      types: new Set(),
-      affinity: '',
-      tags: new Set(),
-      minor: false,
-      archive: false,
-      sort: 'recommended',
-    };
-    const norm = (value) => String(value || '').toLocaleLowerCase('ja-JP').trim();
-    const splitParam = (value) => String(value || '').split(',').map((item) => item.trim()).filter(Boolean);
-    const setFromParams = () => {
-      const params = new URLSearchParams(window.location.search);
-      state.q = params.get('q') || '';
-      state.region = params.get('region') || '';
-      state.prefecture = params.get('prefecture') || '';
-      state.types = new Set(splitParam(params.get('type')));
-      state.affinity = params.get('affinity') || '';
-      state.tags = new Set(splitParam(params.get('tag')));
-      state.minor = params.get('minor') === '1';
-      state.archive = params.get('archive') === '1';
-      state.sort = params.get('sort') || 'recommended';
-    };
-    const syncControls = () => {
-      if (input) input.value = state.q;
-      if (regionSelect) regionSelect.value = state.region;
-      if (prefectureSelect) prefectureSelect.value = state.prefecture;
-      if (typeSelect) typeSelect.value = state.types.size === 1 ? [...state.types][0] : '';
-      if (affinitySelect) affinitySelect.value = state.affinity;
-      if (archiveCheckbox) archiveCheckbox.checked = state.archive;
-      if (sortSelect) sortSelect.value = state.sort;
-      chips.forEach((chip) => {
-        const kind = chip.getAttribute('data-chip-kind');
-        const value = chip.getAttribute('data-chip-value') || '';
-        const pressed =
-          (kind === 'region' && state.region === value) ||
-          (kind === 'prefecture' && state.prefecture === value) ||
-          (kind === 'query' && state.q === value) ||
-          (kind === 'type' && state.types.has(value)) ||
-          (kind === 'affinity' && state.affinity === value) ||
-          (kind === 'tag' && state.tags.has(value)) ||
-          (kind === 'minor' && state.minor);
-        chip.setAttribute('aria-pressed', String(pressed));
-        chip.classList.toggle('border-violet', pressed);
-        chip.classList.toggle('bg-violet', pressed);
-        chip.classList.toggle('text-white', pressed);
-        chip.classList.toggle('border-line', !pressed);
-        chip.classList.toggle('bg-panel', !pressed);
-        chip.classList.toggle('text-mist', !pressed);
-      });
-    };
-    const writeUrl = () => {
-      const params = new URLSearchParams();
-      if (state.q) params.set('q', state.q);
-      if (state.region) params.set('region', state.region);
-      if (state.prefecture) params.set('prefecture', state.prefecture);
-      if (state.types.size) params.set('type', [...state.types].join(','));
-      if (state.affinity) params.set('affinity', state.affinity);
-      if (state.tags.size) params.set('tag', [...state.tags].join(','));
-      if (state.minor) params.set('minor', '1');
-      if (state.archive) params.set('archive', '1');
-      if (state.sort !== 'recommended') params.set('sort', state.sort);
-      const next = `${window.location.pathname}${params.toString() ? `?${params}` : ''}`;
-      window.history.replaceState({}, '', next);
-    };
-    const cardMatches = (card) => {
-      const search = norm(card.getAttribute('data-search'));
-      const cardTags = String(card.getAttribute('data-tags') || '').split('|').filter(Boolean);
-      const defaultVisible = card.getAttribute('data-default-visible') === 'true';
-      const archive = card.getAttribute('data-archive') === 'true';
-      if (!defaultVisible && !(state.archive && archive)) return false;
-      if (state.q && !search.includes(norm(state.q))) return false;
-      if (state.region && card.getAttribute('data-region') !== state.region) return false;
-      if (state.prefecture && card.getAttribute('data-prefecture') !== state.prefecture) return false;
-      if (state.types.size && !state.types.has(card.getAttribute('data-type') || '')) return false;
-      if (state.affinity && card.getAttribute('data-affinity') !== state.affinity) return false;
-      if (state.minor && card.getAttribute('data-minor') !== 'true') return false;
-      for (const tag of state.tags) {
-        if (!cardTags.includes(tag)) return false;
-      }
-      return true;
-    };
-    const compareCards = (a, b) => {
-      if (state.sort === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'ja');
-      if (state.sort === 'region') {
-        const left = `${a.dataset.region || ''}${a.dataset.prefecture || ''}${a.dataset.name || ''}`;
-        const right = `${b.dataset.region || ''}${b.dataset.prefecture || ''}${b.dataset.name || ''}`;
-        return left.localeCompare(right, 'ja');
-      }
-      if (state.sort === 'small') {
-        const left = scaleRank[a.dataset.scale] ?? 9;
-        const right = scaleRank[b.dataset.scale] ?? 9;
-        if (left !== right) return left - right;
-      }
-      if (state.sort === 'affinity') {
-        const left = affinityRank[a.dataset.affinity] ?? 9;
-        const right = affinityRank[b.dataset.affinity] ?? 9;
-        if (left !== right) return left - right;
-      }
-      if (state.sort === 'locker') {
-        const left = Number(a.dataset.lockerRisk || 0);
-        const right = Number(b.dataset.lockerRisk || 0);
-        if (left !== right) return right - left;
-      }
-      const priorityDiff = (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9);
-      if (priorityDiff !== 0) return priorityDiff;
-      const affinityDiff = (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9);
-      if (affinityDiff !== 0) return affinityDiff;
-      const minorDiff = (b.dataset.minor === 'true' ? 1 : 0) - (a.dataset.minor === 'true' ? 1 : 0);
-      if (minorDiff !== 0) return minorDiff;
-      return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'ja');
-    };
-    const removeFilter = (kind, value) => {
-      if (kind === 'q') state.q = '';
-      if (kind === 'region') state.region = '';
-      if (kind === 'prefecture') state.prefecture = '';
-      if (kind === 'type') state.types.delete(value);
-      if (kind === 'affinity') state.affinity = '';
-      if (kind === 'tag') state.tags.delete(value);
-      if (kind === 'minor') state.minor = false;
-      if (kind === 'archive') state.archive = false;
-      apply();
-    };
-    const renderActive = () => {
-      const items = [];
-      if (state.q) items.push(['q', state.q, `検索: ${state.q}`]);
-      if (state.region) items.push(['region', state.region, `地域: ${state.region}`]);
-      if (state.prefecture) items.push(['prefecture', state.prefecture, `都道府県: ${state.prefecture}`]);
-      for (const type of state.types) items.push(['type', type, `種別: ${labelMap[type] || type}`]);
-      if (state.affinity) items.push(['affinity', state.affinity, `V系向き度: ${labelMap[state.affinity] || state.affinity}`]);
-      if (state.minor) items.push(['minor', 'true', 'マイナーV系向き']);
-      for (const tag of state.tags) items.push(['tag', tag, `タグ: ${tag}`]);
-      if (state.archive) items.push(['archive', '1', '閉館済みも表示']);
-      activeBox.innerHTML = '';
-      activeBox.classList.toggle('hidden', items.length === 0);
-      activeBox.classList.toggle('flex', items.length > 0);
-      for (const [kind, value, label] of items) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'focus-ring min-h-9 rounded-full border border-violet/50 bg-violet/15 px-3 text-xs font-black text-white';
-        button.textContent = `${label} ×`;
-        button.addEventListener('click', () => removeFilter(kind, value));
-        activeBox.append(button);
-      }
-    };
-    const apply = () => {
-      const visible = [];
-      cards.forEach((card) => {
-        const show = cardMatches(card);
-        card.classList.toggle('hidden', !show);
-        if (show) visible.push(card);
-      });
-      visible.sort(compareCards).forEach((card) => results.append(card));
-      if (count) count.textContent = String(visible.length);
-      if (totalCount) totalCount.textContent = String(cards.length);
-      if (empty) empty.classList.toggle('hidden', visible.length !== 0);
-      renderActive();
-      syncControls();
-      writeUrl();
-    };
-    const reset = () => {
-      state.q = '';
-      state.region = '';
-      state.prefecture = '';
-      state.types = new Set();
-      state.affinity = '';
-      state.tags = new Set();
-      state.minor = false;
-      state.archive = false;
-      state.sort = 'recommended';
-      apply();
-    };
-    input?.addEventListener('input', () => {
-      state.q = input.value.trim();
-      apply();
-    });
-    sortSelect?.addEventListener('change', () => {
-      state.sort = sortSelect.value || 'recommended';
-      apply();
-    });
-    regionSelect?.addEventListener('change', () => {
-      state.region = regionSelect.value;
-      apply();
-    });
-    prefectureSelect?.addEventListener('change', () => {
-      state.prefecture = prefectureSelect.value;
-      apply();
-    });
-    typeSelect?.addEventListener('change', () => {
-      state.types = new Set(typeSelect.value ? [typeSelect.value] : []);
-      apply();
-    });
-    affinitySelect?.addEventListener('change', () => {
-      state.affinity = affinitySelect.value;
-      apply();
-    });
-    tagSelect?.addEventListener('change', () => {
-      if (tagSelect.value) state.tags.add(tagSelect.value);
-      tagSelect.value = '';
-      apply();
-    });
-    archiveCheckbox?.addEventListener('change', () => {
-      state.archive = archiveCheckbox.checked;
-      apply();
-    });
-    chips.forEach((chip) => {
-      chip.addEventListener('click', () => {
-        const kind = chip.getAttribute('data-chip-kind');
-        const value = chip.getAttribute('data-chip-value') || '';
-        if (kind === 'region') state.region = state.region === value ? '' : value;
-        if (kind === 'prefecture') state.prefecture = state.prefecture === value ? '' : value;
-        if (kind === 'query') state.q = state.q === value ? '' : value;
-        if (kind === 'type') state.types.has(value) ? state.types.delete(value) : state.types.add(value);
-        if (kind === 'affinity') state.affinity = state.affinity === value ? '' : value;
-        if (kind === 'tag') state.tags.has(value) ? state.tags.delete(value) : state.tags.add(value);
-        if (kind === 'minor') state.minor = !state.minor;
-        apply();
-      });
-    });
-    shortcutButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const shortcut = JSON.parse(button.getAttribute('data-shortcut') || '{}');
-        state.q = shortcut.q ?? '';
-        state.region = shortcut.region ?? '';
-        state.prefecture = shortcut.prefecture ?? '';
-        state.types = new Set(splitParam(shortcut.type));
-        state.affinity = shortcut.affinity ?? '';
-        state.tags = new Set(shortcut.tag ? [shortcut.tag] : []);
-        state.minor = shortcut.minor === '1';
-        state.archive = shortcut.archive === '1';
-        state.sort = 'recommended';
-        apply();
-      });
-    });
-    resets.forEach((button) => button.addEventListener('click', reset));
-    window.addEventListener('popstate', () => {
-      setFromParams();
-      apply();
-    });
-    setFromParams();
-    apply();
-  }
-  </script>
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="No scraping"
+      title="転載しない、取りに行かない、公式へ送る"
+      lead="MVPではスクレイピング、外部DB、外部API、X API、無断画像利用を使わず、MarkdownとJSONで静的に更新できる構成にしています。"
+    />
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">公式確認を前提</p>
+        <p class="mt-2 text-sm leading-7 text-muted">公演日、出演者、チケット販売状況は各公式ページで確認する導線にします。</p>
+      </div>
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">小箱の不安に集中</p>
+        <p class="mt-2 text-sm leading-7 text-muted">ロッカー、待機場所、雨、夜の帰り道、ぼっち参戦の動き方を独自に整理します。</p>
+      </div>
+      <div class="rounded-lg border border-line bg-panel p-5">
+        <p class="font-black text-white">静的で壊れにくい</p>
+        <p class="mt-2 text-sm leading-7 text-muted">Astro、Markdown、JSONだけで更新しやすく、0円公開しやすい構成です。</p>
+      </div>
+    </div>
+  </section>
 </Layout>
