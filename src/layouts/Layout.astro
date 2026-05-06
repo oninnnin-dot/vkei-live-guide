@@ -1,0 +1,55 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import '@styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogTitle = title,
+  ogDescription = description,
+} = Astro.props;
+
+const siteBase = Astro.site ?? new URL('https://vkei-ensei-navi.example.com');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteBase).toString();
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="V系ライブ遠征ナビ" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <Header />
+    <div class="border-b border-line bg-amber/10">
+      <div class="container-navi py-3 text-xs leading-6 text-mist md:text-sm">
+        公演日・出演者・開場/開演時間・チケット状況は変更される場合があります。会場設備・ロッカー・クローク・ドリンク代・再入場・撮影可否も、公演や時期によって変わる場合があります。最新情報は必ず公式サイト・チケットサイト・会場公式スケジュール・主催者告知・当日案内で確認してください。当サイトは会場周辺情報と遠征準備を補助する目的で運営しています。
+      </div>
+    </div>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

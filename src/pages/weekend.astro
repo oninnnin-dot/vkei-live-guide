@@ -1,0 +1,108 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LinkCard from '@components/LinkCard.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VenueCard from '@components/VenueCard.astro';
+import venues from '@data/venues.json';
+import type { Venue } from '@/types';
+
+const title = '今週末のV系ライブを探す｜公式チケットサイト・会場公式リンク集';
+const description = 'V系ライブを探すための公式・準公式リンク集。公演情報は転載せず、イープラス、ローチケ、LivePocket、TIGET、vk.gy、会場公式スケジュールへの確認導線をまとめます。';
+const prioritySlugs = [
+  'ikebukuro-edge',
+  'ikebukuro-blackhole',
+  'sugamo-shishio',
+  'shibuya-rex',
+  'harajuku-ruido',
+  'yokohama-baysis',
+  'music-lab-hamashobo',
+  'higashi-koenji-20000v',
+  'wildside-tokyo',
+  'shinjuku-club-science',
+];
+const priorityVenues = (venues as Venue[])
+  .filter((venue) => prioritySlugs.includes(venue.slug) && venue.status === 'active' && venue.showInVenueList && !venue.archiveOnly)
+  .sort((a, b) => prioritySlugs.indexOf(a.slug) - prioritySlugs.indexOf(b.slug));
+const releaseEventSlugs = ['magnet-by-shibuya109-rooftop', 'ikebukuro-global-ring-theatre'];
+const releaseEventVenues = (venues as Venue[])
+  .filter((venue) => releaseEventSlugs.includes(venue.slug) && venue.status === 'active' && venue.showInVenueList && !venue.archiveOnly)
+  .sort((a, b) => releaseEventSlugs.indexOf(a.slug) - releaseEventSlugs.indexOf(b.slug));
+
+const ticketLinks = [
+  {
+    title: 'イープラス',
+    description: 'ヴィジュアル系ライブ・イベント検索の入口。地域や日付で絞り込みたいときに確認。',
+    href: 'https://eplus.jp/sf/live/visual',
+    note: '公演名・日程・販売状況はリンク先で最新情報を確認してください。',
+  },
+  {
+    title: 'ローチケ',
+    description: 'ヴィジュアル系ライブ・コンサートのチケット情報を探す入口。',
+    href: 'https://l-tike.com/concert/hogaku/visual/',
+    note: '販売方式や手数料は公演ごとに異なります。',
+  },
+  {
+    title: 'LivePocket',
+    description: '小規模・インディーズ系イベント検索に使いやすい電子チケットサービス。',
+    href: 'https://t.livepocket.jp/search?word=%E3%83%B4%E3%82%A3%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E7%B3%BB',
+    note: '検索結果が変わるため、キーワードや会場名でも再検索してください。',
+  },
+  {
+    title: 'TIGET',
+    description: '主催・小箱イベント検索、取り置き、電子チケット確認に使いやすい入口。',
+    href: 'https://tiget.net/',
+    note: 'サイト内検索でアーティスト名、会場名、ヴィジュアル系などを確認してください。',
+  },
+  {
+    title: 'vk.gy',
+    description: 'V系ライブ一覧を確認できる情報サイト。公式発表との照合前提で使う補助リンク。',
+    href: 'https://vk.gy/lives/',
+    note: '最終確認はアーティスト・主催・会場の公式情報を優先してください。',
+  },
+  {
+    title: '各会場公式スケジュール',
+    description: '小箱公演は会場公式スケジュールに先に載ることがあります。会場攻略ページから公式リンクを確認できます。',
+    href: '/venues',
+    note: '会場公式でも開場/開演、物販、入場順は公演ごとに確認してください。',
+    cta: '会場一覧へ',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '今週末のV系ライブを探す' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Official Links</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">今週末のV系ライブは公式サイトで探す</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        当サイトでは公演情報を転載しません。最新の公演日、出演者、開場/開演時間、チケット状況は、各公式チケットサイト・会場公式スケジュールで確認してください。ライブが決まったら、会場攻略ページでロッカー、待機場所、帰り道、初参戦の注意点を確認できます。
+      </p>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="公演情報の扱い" tone="warning">
+        <p>公演名、出演者、日程、開場/開演時間、チケット状況は転載・自動取得しません。公式・準公式リンク先で必ず最新情報を確認してください。</p>
+      </NoticeBox>
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="今週末のV系ライブを探す公式リンク" lead="検索キーワードは「ヴィジュアル系」「V系」「会場名」「アーティスト名」を組み合わせると見つけやすくなります。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {ticketLinks.map((link) => <LinkCard {...link} />)}
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="小箱・地下寄りイベントを探しやすい会場" lead="ライブが決まったら、まずロッカー、待機場所、夜の帰り道を確認してください。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {priorityVenues.map((venue) => <VenueCard venue={venue} compact />)}
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <SectionTitle title="リリイベ・屋外イベント系も探す" lead="ライブハウスではない会場は、待機場所、雨天対応、観覧ルールが公演ごとに変わりやすいので公式確認を優先してください。" />
+    <div class="grid gap-4 md:grid-cols-2">
+      {releaseEventVenues.map((venue) => <VenueCard venue={venue} compact />)}
+    </div>
+  </section>
+</Layout>

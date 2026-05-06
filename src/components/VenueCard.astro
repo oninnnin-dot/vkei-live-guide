@@ -1,0 +1,204 @@
+---
+import type { Venue } from '@/types';
+import VenueScore from './VenueScore.astro';
+
+interface Props {
+  venue: Venue;
+  compact?: boolean;
+}
+
+const { venue, compact = false } = Astro.props;
+
+const scaleLabel = {
+  small: '小箱',
+  'small-mid': '小〜中箱',
+  mid: '中箱',
+  large: '大箱',
+  unknown: '規模要確認',
+}[venue.venueScale];
+
+const typeLabel = {
+  small_livehouse: '小箱ライブハウス',
+  mid_livehouse: '中箱ライブハウス',
+  large_livehouse: '大型ライブハウス',
+  hall: 'ホール',
+  theater: '劇場',
+  outdoor_stage: '屋外ステージ',
+  event_space: 'イベントスペース',
+  closed_archive: '閉館アーカイブ',
+  unknown: '要確認',
+}[venue.venueType ?? 'unknown'];
+
+const affinityLabel = {
+  high: 'V系向き高',
+  medium: 'V系向き中',
+  low: 'V系向き低',
+  unknown: 'V系向き要確認',
+}[venue.vkeiAffinity];
+
+const confidenceLabel = {
+  verified: '公式確認済み',
+  partially_verified: '一部確認',
+  social_only: 'SNS由来',
+  verified_or_historical: '履歴確認済み',
+  unknown: '要確認',
+}[venue.sourceConfidence ?? 'unknown'];
+
+const badges = [
+  typeLabel,
+  scaleLabel,
+  affinityLabel,
+  venue.minorVkeiFriendly ? 'マイナーV系向き' : '',
+  venue.vkeiUseType === 'release_event' ? 'リリイベ向き' : '',
+  venue.soloFriendly >= 4 ? 'ぼっち参戦向き' : '',
+  venue.lockerRisk >= 4 ? 'ロッカー注意' : '',
+  venue.returnDifficulty >= 4 ? '終演後注意' : '',
+  ['新宿club SCIENCE', '新宿HEIST'].includes(venue.name) ? '歌舞伎町エリア注意' : '',
+  venue.area === '横浜' ? '横浜遠征向き' : '',
+].filter(Boolean);
+
+const tipFilterMap: Record<string, string> = {
+  ロッカー注意: 'tip-locker',
+  クローク確認: 'tip-cloak',
+  駅ロッカー推奨: 'tip-station-locker',
+  現金必要: 'tip-cash',
+  '100円玉必要': 'tip-coin',
+  再入場不可注意: 'tip-no-reentry',
+  地下会場: 'tip-basement',
+  階段混雑注意: 'tip-stairs',
+  トイレ少なめ: 'tip-restroom',
+  終演後混雑: 'tip-return-crowd',
+  近隣待機注意: 'tip-neighborhood',
+  歌舞伎町エリア注意: 'tip-kabukicho',
+  渋谷人混み注意: 'tip-shibuya-crowd',
+  遠征荷物注意: 'tip-travel-baggage',
+  物販後荷物注意: 'tip-merch-baggage',
+  ぼっち参戦向き: 'tip-solo',
+  初参戦は入口確認: 'tip-entry-check',
+};
+const tipFilterTags = (venue.tipTags ?? []).map((tag) => tipFilterMap[tag]).filter(Boolean);
+const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
+const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
+const accessLabel = venue.station
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
+  : '最寄り駅 要確認';
+const sourceNotesText = Array.isArray(venue.sourceNotes) ? venue.sourceNotes.join(' ') : String(venue.sourceNotes ?? '');
+const searchText = [
+  venue.name,
+  ...(venue.aliases ?? []),
+  venue.area,
+  venue.prefecture,
+  venue.region,
+  venue.station,
+  venue.venueType,
+  venue.vkeiUseType,
+  ...(venue.tipTags ?? []),
+].filter(Boolean).join(' ');
+
+const filterTags = [
+  'all',
+  venue.venueScale === 'small' ? 'small' : '',
+  venue.venueScale === 'small-mid' || venue.venueScale === 'mid' ? 'mid' : '',
+  venue.venueScale === 'large' ? 'large' : '',
+  venue.venueType,
+  venue.vkeiAffinity === 'high' ? 'vkei-high' : '',
+  venue.minorVkeiFriendly ? 'minor-vkei' : '',
+  venue.vkeiUseType === 'release_event' ? 'release-event' : '',
+  venue.vkeiUseType === 'large_scale' || venue.venueType === 'hall' ? 'large-hall' : '',
+  ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence) ? 'needs-check' : '',
+  venue.region,
+  venue.prefecture,
+  venue.areaGroup,
+  venue.area === '横浜' || venue.areaGroup?.includes('yokohama') ? 'yokohama' : '',
+  venue.area === '渋谷' || venue.areaGroup?.includes('shibuya') ? 'shibuya' : '',
+  venue.area === '下北沢' || venue.areaGroup?.includes('shimokitazawa') ? 'shimokitazawa' : '',
+  venue.area === '池袋' || venue.areaGroup?.includes('ikebukuro') ? 'ikebukuro' : '',
+  venue.beginnerFriendly >= 4 ? 'beginner' : '',
+  venue.soloFriendly >= 4 ? 'solo' : '',
+  venue.lockerRisk >= 4 ? 'locker' : '',
+  venue.returnDifficulty >= 4 ? 'return' : '',
+  ...tipFilterTags,
+].filter(Boolean).join(' ');
+---
+
+<article
+  class={`flex h-full min-w-0 flex-col rounded-lg border border-line bg-panel p-5 shadow-glow ${venue.archiveOnly || venue.status === 'closed' || !venue.showInVenueList ? 'hidden' : ''}`}
+  data-venue-card
+  data-default-visible={venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
+  data-archive={venue.archiveOnly ? 'true' : 'false'}
+  data-status={venue.status}
+  data-name={venue.name}
+  data-region={venue.region}
+  data-prefecture={venue.prefecture}
+  data-area={venue.area}
+  data-type={venue.venueType}
+  data-scale={venue.venueScale}
+  data-affinity={venue.vkeiAffinity}
+  data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
+  data-priority={venue.priority}
+  data-locker-risk={venue.lockerRisk}
+  data-tags={(venue.tipTags ?? []).join('|')}
+  data-search={searchText}
+  data-filter-tags={filterTags}
+>
+  <div class="flex items-start justify-between gap-3">
+    <div class="min-w-0">
+      <span class="inline-flex rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-xs font-black text-cyan">{venue.area} / {venue.prefecture}</span>
+      <h3 class="mt-2 text-xl font-black leading-tight text-white">{venue.name}</h3>
+      <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2">
+    {
+      badges.map((badge) => (
+        <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{badge}</span>
+      ))
+    }
+  </div>
+  {visibleTipTags.length > 0 && (
+    <div class="mt-3 flex flex-wrap gap-2">
+      {visibleTipTags.map((tag) => <span class="rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-[11px] font-black text-mist">{tag}</span>)}
+      {hiddenTipCount > 0 && <span class="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[11px] font-black text-muted">+{hiddenTipCount}</span>}
+    </div>
+  )}
+  {!compact && (
+    <div class="mt-5 grid gap-2">
+      <VenueScore label="初参戦向き度" value={venue.beginnerFriendly} />
+      <VenueScore label="ぼっち参戦向き度" value={venue.soloFriendly} />
+      <VenueScore label="ロッカー注意度" value={venue.lockerRisk} highMeans="hard" />
+      <VenueScore label="終演後帰宅難易度" value={venue.returnDifficulty} highMeans="hard" />
+    </div>
+  )}
+  <dl class="mt-4 grid gap-2 text-sm">
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">会場種別</dt>
+      <dd class="min-w-0 text-right font-black text-white">{typeLabel}</dd>
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">規模</dt>
+      <dd class="min-w-0 text-right font-black text-white">{scaleLabel}</dd>
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">V系向き度</dt>
+      <dd class="min-w-0 text-right font-black text-white">{affinityLabel}</dd>
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">マイナーV系向き</dt>
+      <dd class="min-w-0 text-right font-black text-white">{venue.minorVkeiFriendly ? '向き' : '要確認'}</dd>
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">情報確度</dt>
+      <dd class="min-w-0 text-right font-black text-white">{confidenceLabel} <span class="text-xs text-muted">({venue.sourceConfidence})</span></dd>
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
+      <dt class="text-muted">確認日</dt>
+      <dd class="min-w-0 text-right font-black text-white">{venue.lastVerifiedAt}</dd>
+    </div>
+  </dl>
+  {venue.archiveOnly && <p class="mt-3 rounded-md border border-amber/50 bg-amber/10 px-3 py-2 text-xs font-black text-mist">閉館アーカイブ</p>}
+  {!compact && <p class="mt-4 flex-1 text-sm leading-7 text-muted">{venue.currentUseNote || venue.beginnerNote}</p>}
+  {compact && sourceNotesText && <p class="mt-4 flex-1 text-xs leading-6 text-muted">{sourceNotesText}</p>}
+  <a class="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-violet px-4 py-2 text-sm font-black text-white transition hover:bg-magenta" href={`/venues/${venue.slug}`}>
+    詳細を見る
+  </a>
+</article>

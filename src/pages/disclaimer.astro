@@ -1,0 +1,29 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import InfoBlock from '@components/InfoBlock.astro';
+
+const title = '免責事項｜V系ライブ遠征ナビ';
+const description = 'V系ライブ遠征ナビの免責事項。公演情報・チケット情報の公式確認、会場情報変更、外部リンク、著作権・肖像権への配慮について。';
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '免責事項' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Disclaimer</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">免責事項</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        当サイトを利用する前に、以下の方針をご確認ください。
+      </p>
+    </div>
+  </section>
+  <section class="container-navi py-8">
+    <div class="grid gap-4 md:grid-cols-2">
+      <InfoBlock title="公演情報・チケット情報" text="公演名、日程、出演者、開場/開演時間、販売状況、入場条件は必ず公式サイト、主催、会場公式スケジュール、チケット販売ページで確認してください。当サイトは正確性を保証しません。" />
+      <InfoBlock title="会場情報" text="小箱会場のロッカー、クローク、ドリンク代、物販待機、入場方法、アクセス情報は変更される場合があります。掲載内容は参考情報として扱ってください。" />
+      <InfoBlock title="外部リンク" text="外部リンク先の内容、販売状況、トラブル、損害について当サイトは責任を負いません。利用前にリンク先の規約と案内をご確認ください。" />
+      <InfoBlock title="著作権・肖像権" text="アーティスト写真、公式ロゴ、ライブ告知画像、チケットサイト掲載文を無断利用しません。権利上の懸念がある場合は確認後に修正・削除します。" />
+    </div>
+  </section>
+</Layout>
