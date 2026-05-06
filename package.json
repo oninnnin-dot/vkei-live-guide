@@ -4,9 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "styles": "tailwindcss -i ./src/styles/global.css -o ./src/styles/compiled.css --minify",
-    "dev": "npm run styles && astro dev --host 127.0.0.1",
-    "build": "npm run styles && astro build",
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
     "preview": "astro preview --host 127.0.0.1"
   },
   "dependencies": {

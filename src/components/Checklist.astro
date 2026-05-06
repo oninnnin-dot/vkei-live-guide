@@ -89,7 +89,8 @@ const groups = [
       const checked = boxes.filter((box) => box.checked).map((box) => box.value);
       localStorage.setItem(storageKey, JSON.stringify(checked));
       if (count) count.textContent = `${checked.length}/${boxes.length}`;
-      if (progress) progress.style.width = `${boxes.length === 0 ? 0 : (checked.length / boxes.length) * 100}%`;
+      const percent = boxes.length === 0 ? 0 : (checked.length / boxes.length)*100;
+      if (progress) progress.style.width = `${percent}%`;
     };
 
     boxes.forEach((box) => box.addEventListener('change', sync));
