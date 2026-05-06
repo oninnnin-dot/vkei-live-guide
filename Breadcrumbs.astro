@@ -1,0 +1,29 @@
+---
+import type { BreadcrumbItem } from '@/types';
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="container-navi py-5 text-xs text-muted" aria-label="パンくずリスト">
+  <ol class="flex flex-wrap items-center gap-2">
+    <li><a class="hover:text-white" href="/">トップ</a></li>
+    {
+      items.map((item) => (
+        <>
+          <li aria-hidden="true" class="text-line">/</li>
+          <li>
+            {item.href ? (
+              <a class="hover:text-white" href={item.href}>{item.label}</a>
+            ) : (
+              <span class="text-mist">{item.label}</span>
+            )}
+          </li>
+        </>
+      ))
+    }
+  </ol>
+</nav>
