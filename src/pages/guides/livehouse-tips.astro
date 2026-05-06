@@ -70,7 +70,7 @@ const guideBlocks = [
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Livehouse Tips</p>
-      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブハウス参戦前に知っておきたい豆知識</h1>
+      <div class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl" role="heading" aria-level="1">V系ライブハウス参戦前に知っておきたい豆知識</div>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
         小箱・中箱ライブハウスで困りやすい荷物、ロッカー、ドリンク代、整理番号、撮影可否、再入場、終演後の帰り方を、初参戦でも確認しやすい形でまとめます。
       </p>
@@ -89,7 +89,7 @@ const guideBlocks = [
         commonTips.map((tip) => (
           <article class="rounded-lg border border-line bg-panel p-5 shadow-glow">
             <p class="text-xs font-black uppercase tracking-[0.16em] text-cyan">{tip.category} / {tip.confidence}</p>
-            <h2 class="mt-2 text-lg font-black text-white">{tip.title}</h2>
+            <div class="mt-2 text-lg font-black text-white" role="heading" aria-level="2">{tip.title}</div>
             <p class="mt-3 text-sm leading-7 text-muted">{tip.body}</p>
           </article>
         ))
@@ -103,7 +103,7 @@ const guideBlocks = [
       {
         guideBlocks.map((block) => (
           <article class="rounded-lg border border-line bg-panel p-5">
-            <h2 class="text-lg font-black text-white">{block.title}</h2>
+            <div class="text-lg font-black text-white" role="heading" aria-level="2">{block.title}</div>
             <p class="mt-3 text-sm leading-7 text-muted">{block.body}</p>
           </article>
         ))

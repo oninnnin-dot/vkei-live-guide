@@ -15,22 +15,31 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    #09070f;
+    radial-gradient(circle at 18% 0%, rgba(155, 92, 255, 0.24), transparent 34rem),
+    radial-gradient(circle at 92% 12%, rgba(255, 79, 175, 0.14), transparent 28rem),
+    linear-gradient(145deg, #050308 0%, #12091c 46%, #080611 100%);
   background-size: 32px 32px;
   color: #f6f1ff;
   text-rendering: optimizeLegibility;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -41,6 +50,16 @@ input {
 .container-navi {
   width: min(1120px, calc(100% - 32px));
   margin-inline: auto;
+}
+
+.shadow-glow {
+  box-shadow:
+    0 0 0 1px rgba(155, 92, 255, 0.22),
+    0 18px 60px rgba(0, 0, 0, 0.32);
+}
+
+.bg-panel {
+  background-color: rgba(21, 17, 31, 0.82);
 }
 
 .focus-ring {
