@@ -1,5 +1,5 @@
 ---
-import type { Venue } from '@/types';
+type Venue = Record<string, any>;
 
 interface Props {
   venue: Venue;
@@ -8,15 +8,15 @@ interface Props {
 
 const { venue, compact = false } = Astro.props;
 
-const scaleLabel = {
+const scaleLabelMap: Record<string, string> = {
   small: '小箱',
   'small-mid': '小〜中箱',
   mid: '中箱',
   large: '大箱',
   unknown: '規模要確認',
-}[venue.venueScale ?? 'unknown'];
+};
 
-const typeLabel = {
+const typeLabelMap: Record<string, string> = {
   small_livehouse: '小箱ライブハウス',
   mid_livehouse: '中箱ライブハウス',
   large_livehouse: '大型ライブハウス',
@@ -26,35 +26,41 @@ const typeLabel = {
   event_space: 'イベントスペース',
   closed_archive: '閉館アーカイブ',
   unknown: '要確認',
-}[venue.venueType ?? 'unknown'];
+};
 
-const affinityLabel = {
+const affinityLabelMap: Record<string, string> = {
   high: 'V系向き高',
   medium: 'V系向き中',
   low: 'V系向き低',
   unknown: 'V系向き要確認',
-}[venue.vkeiAffinity ?? 'unknown'];
+};
 
-const confidenceLabel = {
+const confidenceLabelMap: Record<string, string> = {
   verified: '公式確認済み',
   partially_verified: '一部確認',
   social_only: 'SNS由来',
   verified_or_historical: '履歴確認済み',
   unknown: '要確認',
-}[venue.sourceConfidence ?? 'unknown'];
+};
+
+const scaleLabel = scaleLabelMap[venue.venueScale ?? 'unknown'] ?? '規模要確認';
+const typeLabel = typeLabelMap[venue.venueType ?? 'unknown'] ?? '要確認';
+const affinityLabel = affinityLabelMap[venue.vkeiAffinity ?? 'unknown'] ?? 'V系向き要確認';
+const confidenceLabel = confidenceLabelMap[venue.sourceConfidence ?? 'unknown'] ?? '要確認';
 
 const badges = [
   typeLabel,
   scaleLabel,
   affinityLabel,
   venue.minorVkeiFriendly ? 'マイナーV系向き' : '',
-  venue.soloFriendly >= 4 ? 'ぼっち参戦向き' : '',
-  venue.lockerRisk >= 4 ? 'ロッカー注意' : '',
-  venue.returnDifficulty >= 4 ? '終演後注意' : '',
+  Number(venue.soloFriendly ?? 0) >= 4 ? 'ぼっち参戦向き' : '',
+  Number(venue.lockerRisk ?? 0) >= 4 ? 'ロッカー注意' : '',
+  Number(venue.returnDifficulty ?? 0) >= 4 ? '終演後注意' : '',
 ].filter(Boolean);
 
-const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
-const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
+const tipTags = Array.isArray(venue.tipTags) ? venue.tipTags : [];
+const visibleTipTags = tipTags.slice(0, 3);
+const hiddenTipCount = Math.max(tipTags.length - visibleTipTags.length, 0);
 
 const accessLabel = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
@@ -101,6 +107,7 @@ const sourceNotesText = Array.isArray(venue.sourceNotes)
           {tag}
         </span>
       ))}
+
       {hiddenTipCount > 0 && (
         <span class="rounded-full bg-white/10 px-2.5 py-1 text-xs text-zinc-200">
           +{hiddenTipCount}
@@ -115,14 +122,17 @@ const sourceNotesText = Array.isArray(venue.sourceNotes)
         <dt class="text-xs text-zinc-500">会場種別</dt>
         <dd class="mt-1 font-semibold text-zinc-200">{typeLabel}</dd>
       </div>
+
       <div>
         <dt class="text-xs text-zinc-500">規模</dt>
         <dd class="mt-1 font-semibold text-zinc-200">{scaleLabel}</dd>
       </div>
+
       <div>
         <dt class="text-xs text-zinc-500">V系向き度</dt>
         <dd class="mt-1 font-semibold text-zinc-200">{affinityLabel}</dd>
       </div>
+
       <div>
         <dt class="text-xs text-zinc-500">情報確度</dt>
         <dd class="mt-1 font-semibold text-zinc-200">{confidenceLabel}</dd>
@@ -139,6 +149,12 @@ const sourceNotesText = Array.isArray(venue.sourceNotes)
   {compact && sourceNotesText && (
     <p class="mt-4 text-sm leading-6 text-zinc-400">
       {sourceNotesText}
+    </p>
+  )}
+
+  {venue.lastVerifiedAt && (
+    <p class="mt-4 text-xs text-zinc-500">
+      最終確認: {venue.lastVerifiedAt}
     </p>
   )}
 
