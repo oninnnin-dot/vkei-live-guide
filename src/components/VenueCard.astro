@@ -1,6 +1,5 @@
 ---
 import type { Venue } from '@/types';
-import VenueScore from './VenueScore.astro';
 
 interface Props {
   venue: Venue;
@@ -30,32 +29,56 @@ const typeLabel = {
 }[venue.venueType ?? 'unknown'];
 
 const affinityLabel = {
-  high: 'V系向き高',
-  medium: 'V系向き中',
-  low: 'V系向き低',
-  unknown: 'V系向き要確認',
+  high: 'V系利用傾向: 高',
+  medium: 'V系利用傾向: 中',
+  low: 'V系利用傾向: 低',
+  unknown: 'V系利用傾向: 要確認',
 }[venue.vkeiAffinity];
 
 const confidenceLabel = {
-  verified: '公式確認済み',
-  partially_verified: '一部確認',
-  social_only: 'SNS由来',
-  verified_or_historical: '履歴確認済み',
+  verified: '公式・一次情報確認済み',
+  partially_verified: '一部確認済み',
+  social_only: 'SNS言及ベース',
+  verified_or_historical: '履歴情報として確認',
   unknown: '要確認',
 }[venue.sourceConfidence ?? 'unknown'];
 
-const badges = [
+const sourceNotes = Array.isArray(venue.sourceNotes)
+  ? venue.sourceNotes
+  : venue.sourceNotes
+    ? [String(venue.sourceNotes)]
+    : [];
+const sourceNotesText = sourceNotes.join(' ');
+const equipmentNeedsCheck =
+  sourceNotesText.includes('設備情報は要確認') ||
+  sourceNotesText.includes('公式URL・設備情報は要確認') ||
+  ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence ?? 'unknown');
+
+const lockerText = [venue.lockerNote, venue.lockerStrategy, venue.cloakStrategy]
+  .filter(Boolean)
+  .join(' ');
+const hasSpecificLockerText =
+  /ロッカーなし|店内ロッカーなし|ロッカーはない|ロッカーはある|会場ロッカーはある|クローク利用|クローク利用前提|コインロッカーはない/.test(lockerText);
+const lockerFactLabel = hasSpecificLockerText
+  ? lockerText
+  : equipmentNeedsCheck
+    ? '設備情報は公式・主催者案内で要確認'
+    : lockerText || 'ロッカー・クローク情報は未登録';
+
+const accessLabel = venue.station
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
+  : '最寄り駅 要確認';
+
+const displayBadges = [
   typeLabel,
   scaleLabel,
-  affinityLabel,
-  venue.minorVkeiFriendly ? 'マイナーV系向き' : '',
-  venue.vkeiUseType === 'release_event' ? 'リリイベ向き' : '',
-  venue.soloFriendly >= 4 ? 'ぼっち参戦向き' : '',
-  venue.lockerRisk >= 4 ? 'ロッカー注意' : '',
-  venue.returnDifficulty >= 4 ? '終演後注意' : '',
-  ['新宿club SCIENCE', '新宿HEIST'].includes(venue.name) ? '歌舞伎町エリア注意' : '',
-  venue.area === '横浜' ? '横浜遠征向き' : '',
+  venue.minorVkeiFriendly ? '若手・マイナーV系候補' : '',
+  venue.vkeiUseType === 'release_event' ? 'リリースイベント枠' : '',
+  venue.archiveOnly ? '閉館アーカイブ' : '',
 ].filter(Boolean);
+
+const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
+const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
 
 const tipFilterMap: Record<string, string> = {
   ロッカー注意: 'tip-locker',
@@ -77,12 +100,7 @@ const tipFilterMap: Record<string, string> = {
   初参戦は入口確認: 'tip-entry-check',
 };
 const tipFilterTags = (venue.tipTags ?? []).map((tag) => tipFilterMap[tag]).filter(Boolean);
-const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
-const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
-const accessLabel = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
-  : '最寄り駅 要確認';
-const sourceNotesText = Array.isArray(venue.sourceNotes) ? venue.sourceNotes.join(' ') : String(venue.sourceNotes ?? '');
+
 const searchText = [
   venue.name,
   ...(venue.aliases ?? []),
@@ -91,7 +109,13 @@ const searchText = [
   venue.region,
   venue.station,
   venue.venueType,
+  venue.venueScale,
+  venue.vkeiAffinity,
   venue.vkeiUseType,
+  typeLabel,
+  scaleLabel,
+  affinityLabel,
+  lockerFactLabel,
   ...(venue.tipTags ?? []),
 ].filter(Boolean).join(' ');
 
@@ -106,6 +130,7 @@ const filterTags = [
   venue.vkeiUseType === 'release_event' ? 'release-event' : '',
   venue.vkeiUseType === 'large_scale' || venue.venueType === 'hall' ? 'large-hall' : '',
   ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence) ? 'needs-check' : '',
+  hasSpecificLockerText ? 'locker-fact' : '',
   venue.region,
   venue.prefecture,
   venue.areaGroup,
@@ -113,10 +138,6 @@ const filterTags = [
   venue.area === '渋谷' || venue.areaGroup?.includes('shibuya') ? 'shibuya' : '',
   venue.area === '下北沢' || venue.areaGroup?.includes('shimokitazawa') ? 'shimokitazawa' : '',
   venue.area === '池袋' || venue.areaGroup?.includes('ikebukuro') ? 'ikebukuro' : '',
-  venue.beginnerFriendly >= 4 ? 'beginner' : '',
-  venue.soloFriendly >= 4 ? 'solo' : '',
-  venue.lockerRisk >= 4 ? 'locker' : '',
-  venue.returnDifficulty >= 4 ? 'return' : '',
   ...tipFilterTags,
 ].filter(Boolean).join(' ');
 ---
@@ -136,7 +157,7 @@ const filterTags = [
   data-affinity={venue.vkeiAffinity}
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
-  data-locker-risk={venue.lockerRisk}
+  data-locker-info={hasSpecificLockerText ? '1' : '0'}
   data-tags={(venue.tipTags ?? []).join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}
@@ -148,56 +169,55 @@ const filterTags = [
       <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
     </div>
   </div>
+
   <div class="mt-4 flex flex-wrap gap-2">
-    {
-      badges.map((badge) => (
-        <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{badge}</span>
-      ))
-    }
+    {displayBadges.map((badge) => (
+      <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{badge}</span>
+    ))}
   </div>
+
   {visibleTipTags.length > 0 && (
     <div class="mt-3 flex flex-wrap gap-2">
       {visibleTipTags.map((tag) => <span class="rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-[11px] font-black text-mist">{tag}</span>)}
-      {hiddenTipCount > 0 && <span class="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[11px] font-black text-muted">+{hiddenTipCount}</span>}
+      {hiddenTipCount > 0 && <span class="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[11px] font-black text-muted">他{hiddenTipCount}件</span>}
     </div>
   )}
-  {!compact && (
-    <div class="mt-5 grid gap-2">
-      <VenueScore label="初参戦向き度" value={venue.beginnerFriendly} />
-      <VenueScore label="ぼっち参戦向き度" value={venue.soloFriendly} />
-      <VenueScore label="ロッカー注意度" value={venue.lockerRisk} highMeans="hard" />
-      <VenueScore label="終演後帰宅難易度" value={venue.returnDifficulty} highMeans="hard" />
-    </div>
-  )}
+
   <dl class="mt-4 grid gap-2 text-sm">
     <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
       <dt class="text-muted">会場種別</dt>
       <dd class="min-w-0 text-right font-black text-white">{typeLabel}</dd>
     </div>
     <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">規模</dt>
-      <dd class="min-w-0 text-right font-black text-white">{scaleLabel}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">V系向き度</dt>
+      <dt class="text-muted">V系利用傾向</dt>
       <dd class="min-w-0 text-right font-black text-white">{affinityLabel}</dd>
     </div>
     <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">マイナーV系向き</dt>
-      <dd class="min-w-0 text-right font-black text-white">{venue.minorVkeiFriendly ? '向き' : '要確認'}</dd>
+      <dt class="text-muted">設備確認</dt>
+      <dd class="min-w-0 text-right font-black text-white">{equipmentNeedsCheck ? '設備情報は要確認' : '設備情報メモあり'}</dd>
     </div>
     <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
       <dt class="text-muted">情報確度</dt>
-      <dd class="min-w-0 text-right font-black text-white">{confidenceLabel} <span class="text-xs text-muted">({venue.sourceConfidence})</span></dd>
+      <dd class="min-w-0 text-right font-black text-white">{confidenceLabel}</dd>
     </div>
     <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
       <dt class="text-muted">確認日</dt>
       <dd class="min-w-0 text-right font-black text-white">{venue.lastVerifiedAt}</dd>
     </div>
   </dl>
-  {venue.archiveOnly && <p class="mt-3 rounded-md border border-amber/50 bg-amber/10 px-3 py-2 text-xs font-black text-mist">閉館アーカイブ</p>}
-  {!compact && <p class="mt-4 flex-1 text-sm leading-7 text-muted">{venue.currentUseNote || venue.beginnerNote}</p>}
-  {compact && sourceNotesText && <p class="mt-4 flex-1 text-xs leading-6 text-muted">{sourceNotesText}</p>}
+
+  {!compact && (
+    <p class="mt-4 flex-1 text-sm leading-7 text-muted">
+      {venue.currentUseNote || venue.beginnerNote || sourceNotesText}
+    </p>
+  )}
+
+  {compact && (
+    <p class="mt-4 flex-1 text-xs leading-6 text-muted">
+      ロッカー/クローク: {lockerFactLabel}
+    </p>
+  )}
+
   <a class="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-violet px-4 py-2 text-sm font-black text-white transition hover:bg-magenta" href={`/venues/${venue.slug}`}>
     詳細を見る
   </a>

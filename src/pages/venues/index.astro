@@ -34,6 +34,10 @@ const quickChips = [
   { label: '神奈川', kind: 'region', value: '神奈川' },
   { label: '大阪', kind: 'prefecture', value: '大阪府' },
   { label: '名古屋', kind: 'query', value: '名古屋' },
+  { label: '池袋', kind: 'query', value: '池袋' },
+  { label: '渋谷', kind: 'query', value: '渋谷' },
+  { label: '新宿', kind: 'query', value: '新宿' },
+  { label: '横浜', kind: 'query', value: '横浜' },
   { label: '小箱', kind: 'type', value: 'small_livehouse' },
   { label: '中箱', kind: 'type', value: 'mid_livehouse' },
   { label: '大箱', kind: 'type', value: 'large_livehouse' },
@@ -51,7 +55,10 @@ const shortcuts = [
   { label: '東京の小箱', q: '', region: '東京', type: 'small_livehouse' },
   { label: '池袋周辺', q: '池袋' },
   { label: '渋谷周辺', q: '渋谷' },
+  { label: '新宿周辺', q: '新宿' },
   { label: '横浜・神奈川', q: '', region: '神奈川' },
+  { label: '大阪・心斎橋', q: '大阪 心斎橋' },
+  { label: '名古屋', q: '名古屋' },
   { label: 'ロッカー注意の会場', tag: 'ロッカー注意' },
   { label: 'ぼっち参戦向き', tag: 'ぼっち参戦向き' },
   { label: '大箱・ホール', type: 'large_livehouse,hall' },
@@ -111,8 +118,8 @@ const shortcuts = [
             <option value="name">会場名順</option>
             <option value="region">地域順</option>
             <option value="small">小箱優先</option>
-            <option value="affinity">V系向き度順</option>
-            <option value="locker">ロッカー注意順</option>
+            <option value="affinity">V系利用傾向順</option>
+            <option value="locker">ロッカー情報あり優先</option>
           </select>
         </div>
       </div>
@@ -158,7 +165,7 @@ const shortcuts = [
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
-            V系向き度
+            V系利用傾向
             <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-affinity>
               <option value="">すべて</option>
               {affinityOptions.map(([value, label]) => <option value={value}>{label}</option>)}
@@ -235,6 +242,10 @@ const shortcuts = [
       medium: 'V系向き中',
       low: 'V系向き低',
       unknown: '要確認',
+      small: '小箱',
+      'small-mid': '小〜中箱',
+      mid: '中箱',
+      large: '大箱',
     };
     const state = {
       q: '',
@@ -247,7 +258,8 @@ const shortcuts = [
       archive: false,
       sort: 'recommended',
     };
-    const norm = (value) => String(value || '').toLocaleLowerCase('ja-JP').trim();
+    const norm = (value) => String(value || '').normalize('NFKC').toLocaleLowerCase('ja-JP').trim();
+    const queryTerms = (value) => norm(value).split(/\s+/).filter(Boolean);
     const splitParam = (value) => String(value || '').split(',').map((item) => item.trim()).filter(Boolean);
     const setFromParams = () => {
       const params = new URLSearchParams(window.location.search);
@@ -304,12 +316,20 @@ const shortcuts = [
       window.history.replaceState({}, '', next);
     };
     const cardMatches = (card) => {
-      const search = norm(card.getAttribute('data-search'));
+      const search = norm([
+        card.getAttribute('data-search'),
+        card.dataset.type,
+        labelMap[card.dataset.type],
+        card.dataset.scale,
+        labelMap[card.dataset.scale],
+        card.dataset.affinity,
+        labelMap[card.dataset.affinity],
+      ].filter(Boolean).join(' '));
       const cardTags = String(card.getAttribute('data-tags') || '').split('|').filter(Boolean);
       const defaultVisible = card.getAttribute('data-default-visible') === 'true';
       const archive = card.getAttribute('data-archive') === 'true';
       if (!defaultVisible && !(state.archive && archive)) return false;
-      if (state.q && !search.includes(norm(state.q))) return false;
+      if (state.q && !queryTerms(state.q).every((term) => search.includes(term))) return false;
       if (state.region && card.getAttribute('data-region') !== state.region) return false;
       if (state.prefecture && card.getAttribute('data-prefecture') !== state.prefecture) return false;
       if (state.types.size && !state.types.has(card.getAttribute('data-type') || '')) return false;
@@ -338,8 +358,8 @@ const shortcuts = [
         if (left !== right) return left - right;
       }
       if (state.sort === 'locker') {
-        const left = Number(a.dataset.lockerRisk || 0);
-        const right = Number(b.dataset.lockerRisk || 0);
+        const left = Number(a.dataset.lockerInfo || 0);
+        const right = Number(b.dataset.lockerInfo || 0);
         if (left !== right) return right - left;
       }
       const priorityDiff = (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9);
@@ -367,7 +387,7 @@ const shortcuts = [
       if (state.region) items.push(['region', state.region, `地域: ${state.region}`]);
       if (state.prefecture) items.push(['prefecture', state.prefecture, `都道府県: ${state.prefecture}`]);
       for (const type of state.types) items.push(['type', type, `種別: ${labelMap[type] || type}`]);
-      if (state.affinity) items.push(['affinity', state.affinity, `V系向き度: ${labelMap[state.affinity] || state.affinity}`]);
+      if (state.affinity) items.push(['affinity', state.affinity, `V系利用傾向: ${labelMap[state.affinity] || state.affinity}`]);
       if (state.minor) items.push(['minor', 'true', 'マイナーV系向き']);
       for (const tag of state.tags) items.push(['tag', tag, `タグ: ${tag}`]);
       if (state.archive) items.push(['archive', '1', '閉館済みも表示']);
