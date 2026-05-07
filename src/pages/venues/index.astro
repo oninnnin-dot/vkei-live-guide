@@ -70,8 +70,8 @@ const shortcuts = [
   <Breadcrumbs items={[{ label: '会場攻略' }]} />
   <section class="container-navi py-8">
     <div class="max-w-3xl">
-      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Venue Search</p>
-      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブ会場を探す</h1>
+      <p class="gothic-label">Venue Search</p>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">V系ライブ会場を探す</h1>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
         会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。
       </p>
@@ -85,7 +85,7 @@ const shortcuts = [
       {
         shortcuts.map((shortcut) => (
           <button
-            class="focus-ring min-h-11 rounded-md border border-line bg-panel px-4 py-3 text-sm font-black text-mist transition hover:border-violet/70 hover:bg-white/5 hover:text-white"
+            class="gothic-button-secondary focus-ring min-h-11 rounded-md px-4 py-3 text-sm font-black transition"
             type="button"
             data-shortcut={JSON.stringify(shortcut)}
           >
@@ -97,12 +97,12 @@ const shortcuts = [
   </section>
 
   <section class="container-navi pb-12" data-venue-search data-total={allVenues.length} data-active-total={activeCount}>
-    <div class="sticky top-[12rem] z-30 rounded-lg border border-line bg-ink/95 p-4 shadow-glow backdrop-blur lg:top-20">
+    <div class="gothic-panel sticky top-[11.5rem] z-30 rounded-xl p-4 backdrop-blur lg:top-20">
       <div class="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-          <label class="block text-sm font-black text-white" for="venue-search-input">会場名・エリア・駅名で検索</label>
+          <label class="gothic-label block" for="venue-search-input">会場名・エリア・駅名で検索</label>
           <input
-            class="mt-2 min-h-12 w-full rounded-md border border-line bg-black/35 px-4 text-base font-bold text-white outline-none transition placeholder:text-muted focus:border-cyan"
+            class="gothic-input mt-2 min-h-12 w-full rounded-md px-4 text-base font-bold outline-none transition placeholder:text-muted"
             id="venue-search-input"
             name="q"
             type="search"
@@ -112,14 +112,14 @@ const shortcuts = [
           />
         </div>
         <div>
-          <label class="block text-sm font-black text-white" for="venue-sort-select">並び替え</label>
-          <select class="mt-2 min-h-12 rounded-md border border-line bg-black/35 px-4 text-sm font-bold text-white" id="venue-sort-select" data-sort-select>
+          <label class="gothic-label block" for="venue-sort-select">並び替え</label>
+          <select class="gothic-input mt-2 min-h-12 rounded-md px-4 text-sm font-bold" id="venue-sort-select" data-sort-select>
             <option value="recommended">おすすめ順</option>
             <option value="name">会場名順</option>
             <option value="region">地域順</option>
             <option value="small">小箱優先</option>
             <option value="affinity">V系利用傾向順</option>
-            <option value="locker">ロッカー情報あり優先</option>
+            <option value="locker">ロッカー危険度高い順</option>
           </select>
         </div>
       </div>
@@ -128,7 +128,7 @@ const shortcuts = [
         {
           quickChips.map((chip) => (
             <button
-              class="focus-ring min-h-11 shrink-0 rounded-full border border-line bg-panel px-4 py-2 text-sm font-black text-mist transition hover:border-violet/70"
+              class="gothic-chip focus-ring min-h-11 shrink-0 rounded-md px-4 py-2 text-sm font-black transition hover:border-amber/70"
               type="button"
               data-chip-kind={chip.kind}
               data-chip-value={chip.value}
@@ -140,45 +140,45 @@ const shortcuts = [
         }
       </div>
 
-      <details class="mt-4 rounded-md border border-line bg-black/20 p-3">
-        <summary class="cursor-pointer text-sm font-black text-white">絞り込み</summary>
+      <details class="gothic-card mt-4 rounded-xl p-3">
+        <summary class="cursor-pointer font-classical text-base font-black text-mist">絞り込み</summary>
         <div class="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
           <label class="grid gap-2 text-sm font-bold text-mist">
             地域
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-region>
+            <select class="gothic-input min-h-11 rounded-md px-3" data-filter-region>
               <option value="">すべて</option>
               {regionOptions.map((region) => <option value={region}>{region}</option>)}
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
             都道府県
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-prefecture>
+            <select class="gothic-input min-h-11 rounded-md px-3" data-filter-prefecture>
               <option value="">すべて</option>
               {prefectureOptions.map((prefecture) => <option value={prefecture}>{prefecture}</option>)}
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
             会場種別
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-type>
+            <select class="gothic-input min-h-11 rounded-md px-3" data-filter-type>
               <option value="">すべて</option>
               {venueTypeOptions.map(([value, label]) => <option value={value}>{label}</option>)}
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
             V系利用傾向
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-affinity>
+            <select class="gothic-input min-h-11 rounded-md px-3" data-filter-affinity>
               <option value="">すべて</option>
               {affinityOptions.map(([value, label]) => <option value={value}>{label}</option>)}
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist md:col-span-2">
             注意タグ
-            <select class="min-h-11 rounded-md border border-line bg-black/35 px-3 text-white" data-filter-tag>
+            <select class="gothic-input min-h-11 rounded-md px-3" data-filter-tag>
               <option value="">タグを追加</option>
               {tipTagOptions.map((tag) => <option value={tag}>{tag}</option>)}
             </select>
           </label>
-          <label class="flex min-h-11 items-center gap-3 rounded-md border border-line bg-black/20 px-3 text-sm font-bold text-mist">
+          <label class="gothic-chip flex min-h-11 items-center gap-3 rounded-md px-3 text-sm font-bold">
             <input class="size-4 accent-violet" type="checkbox" data-filter-archive />
             閉館済みも表示
           </label>
@@ -188,7 +188,7 @@ const shortcuts = [
       <div class="mt-4 hidden flex-wrap gap-2" data-active-filters></div>
       <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
         <p class="text-sm font-bold text-muted"><span data-total-count>{allVenues.length}</span>件中 <span data-visible-count>{activeCount}</span>件を表示中</p>
-        <button class="focus-ring min-h-10 rounded-md border border-line bg-panel px-4 text-sm font-black text-mist transition hover:border-violet/70" type="button" data-reset-filters>
+        <button class="gothic-button-secondary focus-ring min-h-10 rounded-md px-4 text-sm font-black transition" type="button" data-reset-filters>
           すべて解除
         </button>
       </div>
@@ -198,10 +198,10 @@ const shortcuts = [
       {allVenues.map((venue) => <VenueCard venue={venue} compact />)}
     </div>
 
-    <div class="mt-6 hidden rounded-lg border border-line bg-panel p-6 text-center shadow-glow" data-empty-state>
-      <h2 class="text-xl font-black text-white">該当する会場が見つかりませんでした</h2>
+    <div class="gothic-card mt-6 hidden rounded-xl p-6 text-center" data-empty-state>
+      <h2 class="font-classical text-xl font-black text-mist">該当する会場が見つかりませんでした</h2>
       <p class="mt-3 text-sm leading-7 text-muted">検索語を短くするか、地域・タグの条件を減らして再検索してください。</p>
-      <button class="focus-ring mt-5 min-h-11 rounded-md bg-violet px-5 text-sm font-black text-white transition hover:bg-magenta" type="button" data-reset-filters>
+      <button class="gothic-button focus-ring mt-5 min-h-11 rounded-md px-5 text-sm font-black transition" type="button" data-reset-filters>
         条件をリセット
       </button>
     </div>
@@ -293,12 +293,7 @@ const shortcuts = [
           (kind === 'tag' && state.tags.has(value)) ||
           (kind === 'minor' && state.minor);
         chip.setAttribute('aria-pressed', String(pressed));
-        chip.classList.toggle('border-violet', pressed);
-        chip.classList.toggle('bg-violet', pressed);
-        chip.classList.toggle('text-white', pressed);
-        chip.classList.toggle('border-line', !pressed);
-        chip.classList.toggle('bg-panel', !pressed);
-        chip.classList.toggle('text-mist', !pressed);
+        chip.classList.toggle('gothic-chip-active', pressed);
       });
     };
     const writeUrl = () => {
@@ -358,8 +353,8 @@ const shortcuts = [
         if (left !== right) return left - right;
       }
       if (state.sort === 'locker') {
-        const left = Number(a.dataset.lockerInfo || 0);
-        const right = Number(b.dataset.lockerInfo || 0);
+        const left = Number(a.dataset.lockerRisk || 0);
+        const right = Number(b.dataset.lockerRisk || 0);
         if (left !== right) return right - left;
       }
       const priorityDiff = (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9);
@@ -397,7 +392,7 @@ const shortcuts = [
       for (const [kind, value, label] of items) {
         const button = document.createElement('button');
         button.type = 'button';
-        button.className = 'focus-ring min-h-9 rounded-full border border-violet/50 bg-violet/15 px-3 text-xs font-black text-white';
+        button.className = 'gothic-chip-active focus-ring min-h-9 rounded-md px-3 text-xs font-black';
         button.textContent = `${label} ×`;
         button.addEventListener('click', () => removeFilter(kind, value));
         activeBox.append(button);

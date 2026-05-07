@@ -6,13 +6,13 @@ interface Props {
 
 const { title = '確認メモ', tone = 'default' } = Astro.props;
 const toneClass = {
-  default: 'border-violet/45 bg-violet/10',
-  warning: 'border-amber/55 bg-amber/10',
-  success: 'border-cyan/55 bg-cyan/10',
+  default: 'border-amber/35 bg-black/35',
+  warning: 'border-amber/55 bg-violet/20',
+  success: 'border-amber/55 bg-[#0b1020]/55',
 }[tone];
 ---
 
-<aside class={`rounded-lg border ${toneClass} p-4 text-sm leading-7 text-mist`}>
-  <p class="mb-2 font-black text-white">{title}</p>
+<aside class={`rounded-xl border ${toneClass} p-4 text-sm leading-7 text-mist shadow-glow`}>
+  <p class="font-classical mb-2 font-black text-mist">{title}</p>
   <slot />
 </aside>

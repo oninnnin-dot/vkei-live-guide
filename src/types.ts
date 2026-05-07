@@ -17,7 +17,16 @@ export type VenueType =
   | 'closed_archive'
   | 'unknown';
 export type SourceConfidence = 'verified' | 'partially_verified' | 'social_only' | 'verified_or_historical' | 'unknown';
-export type SourceType = 'official' | 'ticket_site' | 'ticket_site_or_user_list' | 'social' | 'mixed' | 'unknown';
+export type SourceType =
+  | 'official'
+  | 'ticket_site'
+  | 'ticket_site_or_user_list'
+  | 'blog'
+  | 'venue_database'
+  | 'review_site'
+  | 'social'
+  | 'mixed'
+  | 'unknown';
 export type VkeiUseType =
   | 'minor_vkei'
   | 'vkei_regular'
@@ -58,6 +67,92 @@ export type VenueTip = {
   confidence: VenueTipConfidence;
   sourceType: 'official' | 'summary' | 'social' | 'mixed' | 'unknown';
   lastVerifiedAt: string;
+};
+
+export type VenueFactCategory =
+  | 'access'
+  | 'locker'
+  | 'cloak'
+  | 'baggage'
+  | 'nearby'
+  | 'return'
+  | 'parking'
+  | 'rule'
+  | 'drink'
+  | 'facility'
+  | 'safety'
+  | 'entry'
+  | 'restroom'
+  | 'signal'
+  | 'stairs'
+  | 'view'
+  | 'weather'
+  | 'other';
+
+export type VenueFact = {
+  category: VenueFactCategory;
+  label: string;
+  body: string;
+  sourceLabel: string;
+  sourceUrl: string;
+  sourceType: SourceType;
+  checkedAt: string;
+  confidence: SourceConfidence;
+  note?: string;
+};
+
+export type VenueProfileStatus = 'none' | 'limited' | 'available' | 'sometimes' | 'unknown';
+
+export type LockerProfile = {
+  status: 'none' | 'limited' | 'available' | 'unknown';
+  summary: string;
+  timing: string;
+  countNote: string;
+  priceNote: string;
+  coinNote: string;
+  bestMove: string;
+  riskLevel: number;
+};
+
+export type CloakProfile = {
+  status: 'available' | 'sometimes' | 'none' | 'unknown';
+  summary: string;
+  priceNote: string;
+  timing: string;
+  bagTypeNote: string;
+  bestMove: string;
+  riskLevel: number;
+};
+
+export type BaggageDecision = {
+  tinyBag: string;
+  backpack: string;
+  suitcase: string;
+  afterMerch: string;
+  goodTicketNumber: string;
+};
+
+export type PracticalSummary = {
+  headline: string;
+  points: string[];
+};
+
+export type BlogSignal = {
+  topic: string;
+  summary: string;
+  sourceType: 'official' | 'personal_blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'mixed' | 'unknown';
+  confidence: 'high' | 'medium' | 'low' | 'unknown';
+  sourceName: string;
+  sourceUrl: string;
+  checkedAt: string;
+  copyrightNote: string;
+};
+
+export type SourceLink = {
+  label: string;
+  url: string;
+  type: 'official' | 'personal_blog' | 'blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'mixed' | 'unknown' | 'venue_database' | 'review_site';
+  checkedAt: string;
 };
 
 export type Venue = {
@@ -123,6 +218,25 @@ export type Venue = {
   reentryNote: string;
   lastTipVerifiedAt: string;
   tipTags: string[];
+  factChecks?: VenueFact[];
+  lockerProfile?: LockerProfile;
+  cloakProfile?: CloakProfile;
+  baggageDecision?: BaggageDecision;
+  arrivalStrategy?: string;
+  entryStrategyPlain?: string;
+  merchBaggageStrategy?: string;
+  afterShowStrategy?: string;
+  beginnerOneLine?: string;
+  soloOneLine?: string;
+  badWeatherNote?: string;
+  stationLockerNote?: string;
+  goodNumberWarning?: string;
+  carryCaseWarning?: string;
+  floorBaggageWarning?: string;
+  practicalSummary?: PracticalSummary;
+  blogSignals?: BlogSignal[];
+  sourceLinks?: SourceLink[];
+  infoFreshnessWarning?: string;
   ticketSearchLinks: TicketSearchLink[];
   sourceNotes: string[];
 };

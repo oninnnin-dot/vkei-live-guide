@@ -28,42 +28,22 @@ const typeLabel = {
   unknown: '要確認',
 }[venue.venueType ?? 'unknown'];
 
-const affinityLabel = {
-  high: 'V系利用傾向: 高',
-  medium: 'V系利用傾向: 中',
-  low: 'V系利用傾向: 低',
-  unknown: 'V系利用傾向: 要確認',
-}[venue.vkeiAffinity];
-
-const confidenceLabel = {
-  verified: '公式・一次情報確認済み',
-  partially_verified: '一部確認済み',
-  social_only: 'SNS言及ベース',
-  verified_or_historical: '履歴情報として確認',
-  unknown: '要確認',
-}[venue.sourceConfidence ?? 'unknown'];
-
-const sourceNotes = Array.isArray(venue.sourceNotes)
-  ? venue.sourceNotes
-  : venue.sourceNotes
-    ? [String(venue.sourceNotes)]
-    : [];
-const sourceNotesText = sourceNotes.join(' ');
-const equipmentNeedsCheck =
-  sourceNotesText.includes('設備情報は要確認') ||
-  sourceNotesText.includes('公式URL・設備情報は要確認') ||
-  ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence ?? 'unknown');
-
-const lockerText = [venue.lockerNote, venue.lockerStrategy, venue.cloakStrategy]
-  .filter(Boolean)
-  .join(' ');
-const hasSpecificLockerText =
-  /ロッカーなし|店内ロッカーなし|ロッカーはない|ロッカーはある|会場ロッカーはある|クローク利用|クローク利用前提|コインロッカーはない/.test(lockerText);
-const lockerFactLabel = hasSpecificLockerText
-  ? lockerText
-  : equipmentNeedsCheck
-    ? '設備情報は公式・主催者案内で要確認'
-    : lockerText || 'ロッカー・クローク情報は未登録';
+const officialFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType === 'official');
+const communityFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType !== 'official');
+const practicalHeadline = venue.practicalSummary?.headline ?? venue.lockerProfile?.bestMove ?? venue.baggageNote;
+const lockerRisk = venue.lockerProfile?.riskLevel ?? 3;
+const lockerStatusLabel = {
+  none: '会場ロッカーなし',
+  limited: 'ロッカー少なめ',
+  available: 'ロッカーあり',
+  unknown: 'ロッカー要確認',
+}[venue.lockerProfile?.status ?? 'unknown'];
+const cloakStatusLabel = {
+  available: 'クロークあり',
+  sometimes: 'クローク公演次第',
+  none: 'クロークなし',
+  unknown: 'クローク要確認',
+}[venue.cloakProfile?.status ?? 'unknown'];
 
 const accessLabel = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
@@ -72,8 +52,6 @@ const accessLabel = venue.station
 const displayBadges = [
   typeLabel,
   scaleLabel,
-  venue.minorVkeiFriendly ? '若手・マイナーV系候補' : '',
-  venue.vkeiUseType === 'release_event' ? 'リリースイベント枠' : '',
   venue.archiveOnly ? '閉館アーカイブ' : '',
 ].filter(Boolean);
 
@@ -114,10 +92,21 @@ const searchText = [
   venue.vkeiUseType,
   typeLabel,
   scaleLabel,
-  affinityLabel,
-  lockerFactLabel,
+  practicalHeadline,
+  venue.lockerProfile?.summary,
+  venue.lockerProfile?.bestMove,
+  venue.cloakProfile?.summary,
+  venue.arrivalStrategy,
+  venue.afterShowStrategy,
+  ...(venue.practicalSummary?.points ?? []),
+  ...(venue.blogSignals ?? []).map((signal) => signal.summary),
+  ...(venue.factChecks ?? []).map((fact) => `${fact.label} ${fact.body} ${fact.sourceLabel}`),
   ...(venue.tipTags ?? []),
 ].filter(Boolean).join(' ');
+
+const hasLockerFact = Boolean(venue.lockerProfile) || (venue.factChecks ?? []).some((fact) => ['locker', 'cloak', 'baggage'].includes(fact.category));
+const hasNearbyFact = (venue.factChecks ?? []).some((fact) => ['nearby', 'parking', 'entry', 'stairs'].includes(fact.category));
+const hasReturnFact = Boolean(venue.afterShowStrategy) || (venue.factChecks ?? []).some((fact) => fact.category === 'return');
 
 const filterTags = [
   'all',
@@ -130,7 +119,10 @@ const filterTags = [
   venue.vkeiUseType === 'release_event' ? 'release-event' : '',
   venue.vkeiUseType === 'large_scale' || venue.venueType === 'hall' ? 'large-hall' : '',
   ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence) ? 'needs-check' : '',
-  hasSpecificLockerText ? 'locker-fact' : '',
+  hasLockerFact ? 'locker-fact' : '',
+  communityFacts.length > 0 ? 'community-fact' : '',
+  hasNearbyFact ? 'nearby-fact' : '',
+  hasReturnFact ? 'return-fact' : '',
   venue.region,
   venue.prefecture,
   venue.areaGroup,
@@ -143,7 +135,7 @@ const filterTags = [
 ---
 
 <article
-  class={`flex h-full min-w-0 flex-col rounded-lg border border-line bg-panel p-5 shadow-glow ${venue.archiveOnly || venue.status === 'closed' || !venue.showInVenueList ? 'hidden' : ''}`}
+  class={`gothic-card flex h-full min-w-0 flex-col rounded-xl p-5 ${venue.archiveOnly || venue.status === 'closed' || !venue.showInVenueList ? 'hidden' : ''}`}
   data-venue-card
   data-default-visible={venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
   data-archive={venue.archiveOnly ? 'true' : 'false'}
@@ -157,68 +149,65 @@ const filterTags = [
   data-affinity={venue.vkeiAffinity}
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
-  data-locker-info={hasSpecificLockerText ? '1' : '0'}
+  data-locker-info={hasLockerFact ? '1' : '0'}
+  data-locker-risk={lockerRisk}
+  data-community-info={communityFacts.length > 0 ? '1' : '0'}
   data-tags={(venue.tipTags ?? []).join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}
 >
-  <div class="flex items-start justify-between gap-3">
-    <div class="min-w-0">
-      <span class="inline-flex rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-xs font-black text-cyan">{venue.area} / {venue.prefecture}</span>
-      <h3 class="mt-2 text-xl font-black leading-tight text-white">{venue.name}</h3>
-      <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
-    </div>
+  <div class="min-w-0 pt-2">
+    <span class="gothic-chip inline-flex rounded-md px-2.5 py-1 text-xs font-black">{venue.area} / {venue.prefecture}</span>
+    <h3 class="font-classical mt-3 text-xl font-black leading-tight text-mist">{venue.name}</h3>
+    <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
   </div>
 
   <div class="mt-4 flex flex-wrap gap-2">
     {displayBadges.map((badge) => (
-      <span class="rounded-full border border-violet/45 bg-violet/10 px-3 py-1 text-xs font-black text-mist">{badge}</span>
+      <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{badge}</span>
     ))}
   </div>
 
-  {visibleTipTags.length > 0 && (
-    <div class="mt-3 flex flex-wrap gap-2">
-      {visibleTipTags.map((tag) => <span class="rounded-full border border-cyan/35 bg-cyan/10 px-2.5 py-1 text-[11px] font-black text-mist">{tag}</span>)}
-      {hiddenTipCount > 0 && <span class="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[11px] font-black text-muted">他{hiddenTipCount}件</span>}
-    </div>
-  )}
+  <div class="mt-4 rounded-lg border border-amber/20 bg-black/25 p-3">
+    <p class="gothic-label">Baggage Move</p>
+    <p class="mt-2 text-sm font-black leading-7 text-mist">{practicalHeadline}</p>
+  </div>
 
   <dl class="mt-4 grid gap-2 text-sm">
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">会場種別</dt>
-      <dd class="min-w-0 text-right font-black text-white">{typeLabel}</dd>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
+      <dt class="text-muted">ロッカー危険度</dt>
+      <dd class="min-w-0 text-right font-black text-mist">{lockerRisk}/5</dd>
     </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">V系利用傾向</dt>
-      <dd class="min-w-0 text-right font-black text-white">{affinityLabel}</dd>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
+      <dt class="text-muted">ロッカー</dt>
+      <dd class="min-w-0 text-right font-black text-mist">{lockerStatusLabel}</dd>
     </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">設備確認</dt>
-      <dd class="min-w-0 text-right font-black text-white">{equipmentNeedsCheck ? '設備情報は要確認' : '設備情報メモあり'}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">情報確度</dt>
-      <dd class="min-w-0 text-right font-black text-white">{confidenceLabel}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-line bg-black/20 px-3 py-2">
-      <dt class="text-muted">確認日</dt>
-      <dd class="min-w-0 text-right font-black text-white">{venue.lastVerifiedAt}</dd>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
+      <dt class="text-muted">クローク</dt>
+      <dd class="min-w-0 text-right font-black text-mist">{cloakStatusLabel}</dd>
     </div>
   </dl>
 
+  {visibleTipTags.length > 0 && (
+    <div class="mt-4 flex flex-wrap gap-2">
+      {visibleTipTags.map((tag) => <span class="gothic-chip rounded-md px-2.5 py-1 text-[11px] font-black">{tag}</span>)}
+      {hiddenTipCount > 0 && <span class="rounded-md border border-amber/20 bg-black/25 px-2.5 py-1 text-[11px] font-black text-muted">他{hiddenTipCount}件</span>}
+    </div>
+  )}
+
   {!compact && (
     <p class="mt-4 flex-1 text-sm leading-7 text-muted">
-      {venue.currentUseNote || venue.beginnerNote || sourceNotesText}
+      {venue.beginnerOneLine || venue.currentUseNote || venue.beginnerNote}
     </p>
   )}
 
   {compact && (
     <p class="mt-4 flex-1 text-xs leading-6 text-muted">
-      ロッカー/クローク: {lockerFactLabel}
+      公式 {officialFacts.length}件 / 要確認メモ {communityFacts.length}件
     </p>
   )}
 
-  <a class="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-violet px-4 py-2 text-sm font-black text-white transition hover:bg-magenta" href={`/venues/${venue.slug}`}>
+  <a class="gothic-button focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2 text-sm font-black transition" href={`/venues/${venue.slug}`}>
     詳細を見る
   </a>
 </article>

@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#09070f',
-        panel: '#15111f',
-        line: '#2b213a',
-        violet: '#9b5cff',
-        magenta: '#ff4faf',
-        mist: '#f6f1ff',
-        muted: '#b7aacd',
-        amber: '#ffc857',
-        cyan: '#5eead4',
+        ink: '#050505',
+        panel: '#09070d',
+        line: '#3a2b1d',
+        violet: '#5b1020',
+        magenta: '#74182a',
+        mist: '#f5efe7',
+        muted: '#b8aa9a',
+        amber: '#b99a5b',
+        cyan: '#d6b66d',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(155, 92, 255, 0.22), 0 18px 60px rgba(0, 0, 0, 0.32)',
+        glow: '0 0 0 1px rgba(185, 154, 91, 0.18), 0 24px 70px rgba(0, 0, 0, 0.45)',
       },
     },
   },

@@ -46,8 +46,8 @@ const affinityLabel = {
 <Layout title={title} description={description}>
   <Breadcrumbs items={[{ label: '会場攻略', href: '/venues' }, { label: '地域別一覧' }]} />
   <section class="container-navi py-8">
-    <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Regions</p>
-    <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">全国V系ライブ会場マップ</h1>
+    <p class="gothic-label">Regions</p>
+    <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">全国V系ライブ会場マップ</h1>
     <p class="mt-4 max-w-3xl text-base leading-8 text-muted md:text-lg">
       地域ごとに、V系ライブで使われることがある会場を一覧表示します。会場名・地域・会場分類だけを扱い、公演詳細は公式へ誘導します。
     </p>
@@ -63,28 +63,28 @@ const affinityLabel = {
         <SectionTitle title={group.region} lead={`${group.venues.length}件の現役会場を表示しています。`} />
         <div class="grid gap-3">
           {group.venues.map((venue) => (
-            <article class="rounded-lg border border-line bg-panel p-4 shadow-glow">
+            <article class="gothic-card rounded-xl p-4">
               <div class="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
                 <div>
-                  <p class="text-xs font-black text-cyan">{venue.prefecture} / {venue.area}</p>
-                  <h2 class="mt-1 text-lg font-black text-white">{venue.name}</h2>
+                  <p class="gothic-label">{venue.prefecture} / {venue.area}</p>
+                  <h2 class="font-classical mt-1 text-lg font-black text-mist">{venue.name}</h2>
                 </div>
-                <a class="focus-ring inline-flex min-h-10 items-center justify-center rounded-md bg-violet px-4 text-sm font-black text-white transition hover:bg-magenta" href={`/venues/${venue.slug}`}>
+                <a class="gothic-button focus-ring inline-flex min-h-10 items-center justify-center rounded-md px-4 text-sm font-black transition" href={`/venues/${venue.slug}`}>
                   詳細ページ
                 </a>
               </div>
               <dl class="mt-4 grid gap-2 text-sm md:grid-cols-3">
-                <div class="rounded-md border border-line bg-black/20 px-3 py-2">
+                <div class="rounded-md border border-amber/20 bg-black/25 px-3 py-2">
                   <dt class="text-muted">会場種別</dt>
-                  <dd class="mt-1 font-black text-white">{typeLabel[venue.venueType] ?? '要確認'}</dd>
+                  <dd class="mt-1 font-black text-mist">{typeLabel[venue.venueType] ?? '要確認'}</dd>
                 </div>
-                <div class="rounded-md border border-line bg-black/20 px-3 py-2">
+                <div class="rounded-md border border-amber/20 bg-black/25 px-3 py-2">
                   <dt class="text-muted">V系向き度</dt>
-                  <dd class="mt-1 font-black text-white">{affinityLabel[venue.vkeiAffinity] ?? '要確認'}</dd>
+                  <dd class="mt-1 font-black text-mist">{affinityLabel[venue.vkeiAffinity] ?? '要確認'}</dd>
                 </div>
-                <div class="rounded-md border border-line bg-black/20 px-3 py-2">
+                <div class="rounded-md border border-amber/20 bg-black/25 px-3 py-2">
                   <dt class="text-muted">マイナーV系向き</dt>
-                  <dd class="mt-1 font-black text-white">{venue.minorVkeiFriendly ? '向き' : '要確認'}</dd>
+                  <dd class="mt-1 font-black text-mist">{venue.minorVkeiFriendly ? '向き' : '要確認'}</dd>
                 </div>
               </dl>
             </article>
