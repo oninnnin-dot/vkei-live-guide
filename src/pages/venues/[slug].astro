@@ -25,7 +25,7 @@ const scaleLabel = {
   'small-mid': '小〜中箱',
   mid: '中箱',
   large: '大箱',
-  unknown: '規模要確認',
+  unknown: '規模調査待ち',
 }[venue.venueScale];
 
 const typeLabel = {
@@ -37,7 +37,7 @@ const typeLabel = {
   outdoor_stage: '屋外ステージ',
   event_space: 'イベントスペース',
   closed_archive: '閉館アーカイブ',
-  unknown: '要確認',
+  unknown: '調査待ち',
 }[venue.venueType ?? 'unknown'];
 
 const confidenceLabel = {
@@ -45,34 +45,34 @@ const confidenceLabel = {
   partially_verified: '一部確認済み',
   social_only: 'SNS言及ベース',
   verified_or_historical: '履歴情報として確認',
-  unknown: '要確認',
+  unknown: '調査待ち',
 }[venue.sourceConfidence ?? 'unknown'];
 
 const lockerStatusLabel = {
   available: 'あり',
   none: 'なし',
   limited: '少数',
-  unknown: '未確認',
+  unknown: '調査待ち',
 }[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
 
 const cloakStatusLabel = {
   available: 'あり',
   none: 'なし',
   event_dependent: '公演による',
-  unknown: '未確認',
+  unknown: '調査待ち',
 }[venue.cloakInfo?.cloakStatus ?? 'unknown'];
 
 const availabilityLabel = {
   available: '可',
   unavailable: '不可',
-  unknown: '未確認',
+  unknown: '調査待ち',
 };
 
 const yesNoUnknownLabel = {
   yes: 'はい',
   no: 'いいえ',
   depends: '状況次第',
-  unknown: '未確認',
+  unknown: '調査待ち',
 };
 
 const logisticsConfidenceLabel = {
@@ -80,7 +80,7 @@ const logisticsConfidenceLabel = {
   mixed: '公式・外部情報混在',
   blog_report: '参戦レポ/会場DB由来',
   sns_report: 'SNS由来',
-  unknown: '未確認',
+  unknown: '調査待ち',
 };
 
 const blogResearchStatusLabel = {
@@ -94,7 +94,7 @@ const sourceGroupLabel = {
   official: '公式情報',
   personal: '個人ブログ・note・会場DB',
   social: 'SNS・Q&A',
-  unknown: '未確認情報',
+  unknown: 'その他・調査待ち',
 };
 
 const sourceGroup = (type: string) => {
@@ -105,8 +105,13 @@ const sourceGroup = (type: string) => {
 };
 
 const accessText = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : 'からの徒歩目安は要確認'}`
-  : '最寄り駅は要確認';
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : 'からの徒歩目安は調査待ち'}`
+  : '最寄り駅は調査待ち';
+
+const displayText = (value: unknown) =>
+  String(value ?? '')
+    .replaceAll('未確認', '調査待ち')
+    .replaceAll('要確認', '調査待ち');
 
 const sourceNotes = Array.isArray(venue.sourceNotes) ? venue.sourceNotes : [];
 const sourceLinks = venue.sourceLinks ?? [];
@@ -207,8 +212,8 @@ const relatedLinks = [
 
   {(venue.sourceConfidence === 'social_only' || venue.sourceConfidence === 'unknown') && (
     <section class="container-navi pb-6">
-      <NoticeBox title="要確認の会場情報です" tone="warning">
-        <p>この会場情報はSNS上の言及や未検証情報をもとに仮登録している可能性があります。会場公式・チケットサイトでの確認が完了するまで、掲載内容は要確認として扱います。</p>
+      <NoticeBox title="調査待ちの会場情報です" tone="warning">
+        <p>この会場情報はSNS上の言及や未検証情報をもとに仮登録している可能性があります。会場公式・チケットサイトでの確認が完了するまで、掲載内容は調査待ちとして扱います。</p>
       </NoticeBox>
     </section>
   )}
@@ -234,7 +239,7 @@ const relatedLinks = [
           {lockerRows.map(([label, text]) => (
             <div class="rounded-md border border-amber/20 bg-black/25 p-4">
               <dt class="gothic-label">{label}</dt>
-              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{text}</dd>
+              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{displayText(text)}</dd>
             </div>
           ))}
         </dl>
@@ -246,7 +251,7 @@ const relatedLinks = [
           {cloakRows.map(([label, text]) => (
             <div class="rounded-md border border-amber/20 bg-black/25 p-4">
               <dt class="gothic-label">{label}</dt>
-              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{text}</dd>
+              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{displayText(text)}</dd>
             </div>
           ))}
         </dl>
@@ -258,7 +263,7 @@ const relatedLinks = [
           {baggageRows.map(([label, text]) => (
             <div class="rounded-md border border-amber/20 bg-black/25 p-4">
               <dt class="gothic-label">{label}</dt>
-              <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+              <dd class="mt-2 text-sm leading-7 text-mist">{displayText(text)}</dd>
             </div>
           ))}
         </dl>
@@ -270,7 +275,7 @@ const relatedLinks = [
           {nearbyRows.map(([label, text]) => (
             <div class="rounded-md border border-amber/20 bg-black/25 p-4">
               <dt class="gothic-label">{label}</dt>
-              <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+              <dd class="mt-2 text-sm leading-7 text-mist">{displayText(text)}</dd>
             </div>
           ))}
         </dl>
@@ -283,7 +288,7 @@ const relatedLinks = [
             {dayDecisionRows.map(([label, text]) => (
               <div class="rounded-md border border-amber/20 bg-black/25 p-4">
                 <dt class="gothic-label">{label}</dt>
-                <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+                <dd class="mt-2 text-sm leading-7 text-mist">{displayText(text)}</dd>
               </div>
             ))}
           </dl>
@@ -349,16 +354,16 @@ const relatedLinks = [
                   ))}
                 </ul>
               ) : (
-                <p class="mt-3 text-sm text-muted">登録なし</p>
+                <p class="mt-3 text-sm text-muted">調査待ち</p>
               )}
             </div>
           ))}
         </div>
         {sourceNotes.length > 0 && (
           <div class="mt-5 rounded-md border border-amber/20 bg-black/25 p-4">
-            <p class="font-classical font-black text-mist">要確認メモ</p>
+            <p class="font-classical font-black text-mist">調査待ちメモ</p>
             <ul class="mt-3 space-y-2 text-sm leading-6 text-muted">
-              {sourceNotes.map((note) => <li>{note}</li>)}
+              {sourceNotes.map((note) => <li>{displayText(note)}</li>)}
             </ul>
           </div>
         )}
@@ -372,7 +377,7 @@ const relatedLinks = [
           {venue.officialUrl ? (
             <a class="gothic-button focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href={venue.officialUrl} target="_blank" rel="noopener noreferrer">会場公式を見る</a>
           ) : (
-            <p class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-6 text-muted">公式URLは未登録です。会場名で検索して最新情報を確認してください。</p>
+            <p class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-6 text-muted">公式URLは調査待ちです。会場名で検索して最新情報を確認してください。</p>
           )}
           {(venue.ticketSearchLinks ?? []).map((link) => (
             <a class="gothic-button-secondary focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>

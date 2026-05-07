@@ -13,7 +13,7 @@ const scaleLabel = {
   'small-mid': '小〜中箱',
   mid: '中箱',
   large: '大箱',
-  unknown: '規模要確認',
+  unknown: '規模調査待ち',
 }[venue.venueScale];
 
 const typeLabel = {
@@ -25,28 +25,28 @@ const typeLabel = {
   outdoor_stage: '屋外ステージ',
   event_space: 'イベントスペース',
   closed_archive: '閉館アーカイブ',
-  unknown: '要確認',
+  unknown: '調査待ち',
 }[venue.venueType ?? 'unknown'];
 
 const lockerStatusLabel = {
   available: 'あり',
   none: 'なし',
   limited: '少数',
-  unknown: '未確認',
+  unknown: '調査待ち',
 }[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
 
 const cloakStatusLabel = {
   available: 'あり',
   none: 'なし',
   event_dependent: '公演による',
-  unknown: '未確認',
+  unknown: '調査待ち',
 }[venue.cloakInfo?.cloakStatus ?? 'unknown'];
 
 const stationLockerLabel = {
   yes: 'はい',
   no: 'いいえ',
   depends: '状況次第',
-  unknown: '未確認',
+  unknown: '調査待ち',
 }[venue.lockerInfo?.stationLockerRecommended ?? (
   venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown'
 )];
@@ -58,17 +58,22 @@ const blogResearchLabel = {
   not_started: '未調査',
 }[venue.blogResearch?.status ?? 'not_started'];
 
-const baggageOneLine =
-  venue.lockerInfo?.bestMove ||
-  venue.dayDecisionGuide?.baggageDay ||
-  venue.baggageGuide?.backpack ||
+const displayText = (value: unknown) =>
+  String(value ?? '')
+    .replaceAll('未確認', '調査待ち')
+    .replaceAll('要確認', '調査待ち');
+
+const baggageOneLine = displayText(
   venue.practicalSummary?.headline ||
+  venue.lockerInfo?.bestMove ||
+  venue.baggageGuide?.suitcase ||
   venue.baggageNote ||
-  '荷物が多い日は駅ロッカーかクロークを先に決める。';
+  '荷物が多い日は、駅ロッカーや宿泊先預けを先に考える。'
+);
 
 const accessLabel = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
-  : '最寄り駅 要確認';
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 調査待ち'}`
+  : '最寄り駅 調査待ち';
 
 const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
@@ -101,7 +106,7 @@ const searchText = [
   ...(venue.blogSignals ?? []).map((signal) => signal.summary),
   ...(venue.factChecks ?? []).map((fact) => `${fact.label} ${fact.body} ${fact.sourceLabel}`),
   ...(venue.tipTags ?? []),
-].filter(Boolean).join(' ');
+].filter(Boolean).map(displayText).join(' ');
 
 const lockerSortRank = {
   none: 4,

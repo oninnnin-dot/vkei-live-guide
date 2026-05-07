@@ -7,7 +7,7 @@ interface Props {
 
 const { label, value, highMeans = 'good' } = Astro.props;
 const clamped = Math.max(1, Math.min(5, Math.round(value)));
-const color = highMeans === 'good' ? 'bg-cyan' : 'bg-amber';
+const color = highMeans === 'good' ? 'bg-amber' : 'bg-violet';
 ---
 
 <div class="rounded-md border border-line bg-black/20 p-3">
