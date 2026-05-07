@@ -67,12 +67,66 @@ const lockerStatusLabel = {
   unknown: '要確認',
 }[venue.lockerProfile?.status ?? 'unknown'];
 
+const concreteLockerStatusLabel = {
+  available: 'あり',
+  none: 'なし',
+  limited: '少数',
+  unknown: '未確認',
+}[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
+
 const cloakStatusLabel = {
   available: 'あり',
   sometimes: '公演ごと',
   none: 'なし',
   unknown: '要確認',
 }[venue.cloakProfile?.status ?? 'unknown'];
+
+const concreteCloakStatusLabel = {
+  available: 'あり',
+  none: 'なし',
+  event_dependent: '公演による',
+  unknown: '未確認',
+}[venue.cloakInfo?.cloakStatus ?? 'unknown'];
+
+const availabilityLabel = {
+  available: '可',
+  unavailable: '不可',
+  unknown: '未確認',
+};
+
+const yesNoUnknownLabel = {
+  yes: 'はい',
+  no: 'いいえ',
+  unknown: '未確認',
+};
+
+const logisticsConfidenceLabel = {
+  official: '公式確認',
+  blog_report: '参戦レポ/会場DB由来',
+  mixed: '公式+要確認情報',
+  unknown: '未確認',
+};
+
+const blogResearchStatusLabel = {
+  researched: '調査済み',
+  partial: '一部調査',
+  not_found: '見つからず',
+  not_started: '未調査',
+};
+
+const sourceGroupLabel = {
+  official: '公式情報',
+  personal: '個人ブログ・note',
+  social: 'SNS・Q&A',
+  unknown: '未確認情報',
+};
+
+const sourceGroup = (type: string) => {
+  if (type === 'official') return 'official';
+  if (['personal_blog', 'blog', 'note', 'venue_database', 'review_site', 'mixed'].includes(type)) return 'personal';
+  if (['sns', 'social', 'q_and_a'].includes(type)) return 'social';
+  return 'unknown';
+};
 
 const accessText = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : 'からの徒歩目安は要確認'}`
@@ -112,6 +166,63 @@ const fieldBlocks = [
   ['雨の日', venue.badWeatherNote || venue.rainNote],
 ].filter(([, text]) => Boolean(text));
 
+const lockerRows = [
+  ['会場内ロッカー', concreteLockerStatusLabel],
+  ['説明', venue.lockerInfo?.venueLockerText],
+  ['個数感', venue.lockerInfo?.lockerCountText],
+  ['開場前利用', availabilityLabel[venue.lockerInfo?.beforeEntryUse ?? 'unknown']],
+  ['開場後利用', availabilityLabel[venue.lockerInfo?.afterEntryUse ?? 'unknown']],
+  ['小銭/100円玉', yesNoUnknownLabel[venue.lockerInfo?.coinNeeded ?? 'unknown']],
+  ['大型荷物', yesNoUnknownLabel[venue.lockerInfo?.largeBagFit ?? 'unknown']],
+  ['情報確度', logisticsConfidenceLabel[venue.lockerInfo?.sourceConfidence ?? 'unknown']],
+  ['確認日', venue.lockerInfo?.lastCheckedAt],
+].filter(([, text]) => Boolean(text));
+
+const cloakRows = [
+  ['クローク', concreteCloakStatusLabel],
+  ['説明', venue.cloakInfo?.cloakText],
+  ['料金', venue.cloakInfo?.priceText],
+  ['受付タイミング', venue.cloakInfo?.timingText],
+  ['預け方', venue.cloakInfo?.bagTypeText],
+  ['情報確度', logisticsConfidenceLabel[venue.cloakInfo?.sourceConfidence ?? 'unknown']],
+  ['確認日', venue.cloakInfo?.lastCheckedAt],
+].filter(([, text]) => Boolean(text));
+
+const baggageRows = [
+  ['小バッグ', venue.baggageGuide?.smallBag || venue.baggageDecision?.tinyBag],
+  ['リュック', venue.baggageGuide?.backpack || venue.baggageDecision?.backpack],
+  ['キャリー', venue.baggageGuide?.suitcase || venue.baggageDecision?.suitcase],
+  ['物販後', venue.baggageGuide?.afterMerch || venue.baggageDecision?.afterMerch],
+  ['良番', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
+].filter(([, text]) => Boolean(text));
+
+const nearbyRows = [
+  ['近くのコンビニ', venue.nearbyInfo?.nearestConvenienceStore],
+  ['駅ロッカー', venue.nearbyInfo?.stationLocker],
+  ['待機しやすい場所', venue.nearbyInfo?.waitingSpot],
+  ['雨の日の逃げ場', venue.nearbyInfo?.rainShelter],
+  ['入場前トイレ', venue.nearbyInfo?.restroomBeforeEntry],
+  ['現金・小銭', venue.nearbyInfo?.cashAndCoin],
+  ['終演後の帰り方', venue.nearbyInfo?.afterShowRoute],
+  ['夜道・繁華街', venue.nearbyInfo?.nightSafety],
+].filter(([, text]) => Boolean(text));
+
+const dayDecisionRows = [
+  ['荷物ありの日', venue.dayDecisionGuide?.baggageDay],
+  ['良番の日', venue.dayDecisionGuide?.goodNumberDay],
+  ['物販ありの日', venue.dayDecisionGuide?.merchDay],
+  ['雨の日', venue.dayDecisionGuide?.rainyDay],
+  ['ぼっち参戦', venue.dayDecisionGuide?.soloDay],
+  ['終演後に急ぐ日', venue.dayDecisionGuide?.hurryAfterShowDay],
+].filter(([, text]) => Boolean(text));
+
+const groupedSources = sourceLinks.reduce((groups, source) => {
+  const group = sourceGroup(source.type);
+  groups[group].push(source);
+  return groups;
+}, { official: [], personal: [], social: [], unknown: [] } as Record<'official' | 'personal' | 'social' | 'unknown', typeof sourceLinks>);
+const sourceGroupKeys = Object.keys(groupedSources) as Array<keyof typeof groupedSources>;
+
 const relatedLinks = [
   { title: 'V系ライブハウス参戦前に知っておきたい豆知識', description: '荷物、ロッカー、ドリンク代、整理番号、撮影ルール、終演後の動きを確認できます。', href: '/guides/livehouse-tips', cta: '読む' },
   { title: '小さいライブハウスのV系ライブ初参戦ガイド', description: '小箱での荷物、立ち位置、整理番号、ロッカー、帰り方を確認できます。', href: '/guides/small-venue', cta: '読む' },
@@ -131,8 +242,8 @@ const relatedLinks = [
       <div class="mt-5 flex flex-wrap gap-2">
         <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{scaleLabel}</span>
         <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">情報確度: {confidenceLabel}</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">ロッカー危険度 {venue.lockerProfile?.riskLevel ?? 3}/5</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">クローク {cloakStatusLabel}</span>
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">会場内ロッカー: {concreteLockerStatusLabel}</span>
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">クローク: {concreteCloakStatusLabel}</span>
       </div>
     </div>
 
@@ -152,6 +263,99 @@ const relatedLinks = [
           <li class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm font-bold leading-7 text-muted">{point}</li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="ロッカー情報" lead="会場内ロッカーの有無・使えるタイミング・大型荷物の扱いを明記します。" />
+    <div class="gothic-card rounded-xl p-5">
+      <dl class="grid gap-3 md:grid-cols-2">
+        {lockerRows.map(([label, text]) => (
+          <div class="rounded-md border border-amber/20 bg-black/25 p-3">
+            <dt class="gothic-label">{label}</dt>
+            <dd class="mt-2 text-sm font-black leading-7 text-mist">{text}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="クローク情報" lead="常設か公演ごとか、料金・受付タイミング・袋形式を分けて見ます。" />
+    <div class="gothic-card rounded-xl p-5">
+      <dl class="grid gap-3 md:grid-cols-2">
+        {cloakRows.map(([label, text]) => (
+          <div class="rounded-md border border-amber/20 bg-black/25 p-3">
+            <dt class="gothic-label">{label}</dt>
+            <dd class="mt-2 text-sm font-black leading-7 text-mist">{text}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="荷物別の動き方" lead="小バッグ、リュック、キャリー、物販後、良番の日で判断を変えます。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+      {baggageRows.map(([label, text]) => (
+        <article class="gothic-card rounded-xl p-4">
+          <p class="gothic-label pt-2">{label}</p>
+          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="周辺情報" lead="コンビニ、駅ロッカー、待機場所、雨の日、終演後の戻り方を当日行動に落とします。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {nearbyRows.map(([label, text]) => (
+        <article class="gothic-card rounded-xl p-4">
+          <p class="gothic-label pt-2">{label}</p>
+          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="当日判断" lead="公式情報だけでは決めにくい、参戦者目線の動き方です。" />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {dayDecisionRows.map(([label, text]) => (
+        <article class="gothic-card rounded-xl p-5">
+          <p class="gothic-label pt-2">{label}</p>
+          <p class="mt-3 text-sm font-black leading-7 text-mist">{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle title="参戦レポから見える傾向" lead="個人ブログ・note・Q&Aの本文はコピーせず、要点だけを独自表現で整理しています。" />
+    <div class="gothic-card rounded-xl p-5">
+      <div class="flex flex-wrap gap-2">
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">調査状態: {blogResearchStatusLabel[venue.blogResearch?.status ?? 'not_started']}</span>
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">確度: {venue.blogResearch?.confidence ?? 'unknown'}</span>
+        {venue.blogResearch?.checkedAt && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">確認日: {venue.blogResearch.checkedAt}</span>}
+      </div>
+      <p class="mt-4 text-sm font-bold leading-7 text-muted">{venue.blogResearch?.summary}</p>
+      {venue.blogResearch?.searchQueries?.length > 0 && (
+        <div class="mt-4">
+          <p class="gothic-label">調査キーワード</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            {venue.blogResearch.searchQueries.map((query) => <span class="rounded-md border border-amber/20 bg-black/25 px-2.5 py-1 text-xs font-bold text-muted">{query}</span>)}
+          </div>
+        </div>
+      )}
+      <div class="mt-5 grid gap-3 md:grid-cols-2">
+        {blogSignals.map((signal) => (
+          <article class="rounded-md border border-amber/20 bg-black/25 p-3">
+            <p class="text-xs font-black text-amber">{signal.topic} / {signal.sourceType} / {signal.confidence}</p>
+            <p class="mt-2 text-sm leading-7 text-muted">{signal.summary}</p>
+            <p class="mt-2 text-xs leading-6 text-muted">出典: <a class="text-amber underline-offset-4 hover:underline" href={signal.sourceUrl} target="_blank" rel="noopener noreferrer">{signal.sourceName}</a> / {signal.copyrightNote}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -187,53 +391,6 @@ const relatedLinks = [
       </div>
     </section>
   )}
-
-  <section class="container-navi py-8">
-    <SectionTitle title="荷物・ロッカー結論" lead="荷物で詰むかどうかを先に潰します。" />
-    <div class="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-      <article class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Locker</p>
-        <h2 class="font-classical mt-2 text-xl font-black text-mist">ロッカー: {lockerStatusLabel}</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">{venue.lockerProfile?.summary}</p>
-        <p class="mt-4 rounded-md border border-amber/20 bg-black/25 p-3 text-sm font-black leading-7 text-mist">{venue.lockerProfile?.bestMove}</p>
-        <dl class="mt-4 grid gap-2 text-sm">
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">危険度</dt><dd class="text-right font-black text-mist">{venue.lockerProfile?.riskLevel ?? 3}/5</dd></div>
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">タイミング</dt><dd class="text-right font-black text-mist">{venue.lockerProfile?.timing}</dd></div>
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">小銭</dt><dd class="text-right font-black text-mist">{venue.lockerProfile?.coinNote}</dd></div>
-        </dl>
-      </article>
-
-      <article class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Cloak</p>
-        <h2 class="font-classical mt-2 text-xl font-black text-mist">クローク: {cloakStatusLabel}</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">{venue.cloakProfile?.summary}</p>
-        <p class="mt-4 rounded-md border border-amber/20 bg-black/25 p-3 text-sm font-black leading-7 text-mist">{venue.cloakProfile?.bestMove}</p>
-        <dl class="mt-4 grid gap-2 text-sm">
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">料金</dt><dd class="text-right font-black text-mist">{venue.cloakProfile?.priceNote}</dd></div>
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">受付</dt><dd class="text-right font-black text-mist">{venue.cloakProfile?.timing}</dd></div>
-          <div class="grid grid-cols-[auto_1fr] gap-3"><dt class="text-muted">袋</dt><dd class="text-right font-black text-mist">{venue.cloakProfile?.bagTypeNote}</dd></div>
-        </dl>
-      </article>
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="荷物別の動き方" lead="自分の荷物量に合わせて決めます。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-      {[
-        ['小バッグ', venue.baggageDecision?.tinyBag],
-        ['リュック', venue.baggageDecision?.backpack],
-        ['キャリー', venue.baggageDecision?.suitcase],
-        ['物販後', venue.baggageDecision?.afterMerch],
-        ['良番', venue.baggageDecision?.goodTicketNumber],
-      ].map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-4">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
 
   <section class="container-navi py-8">
     <SectionTitle title="当日の動き方" lead="確認推奨で終わらせず、どう動くかを先に書きます。" />
@@ -286,33 +443,23 @@ const relatedLinks = [
   </section>
 
   <section class="container-navi py-8">
-    <SectionTitle title="情報ソース" lead="公式情報と個人ブログ・会場情報サイト由来の要確認メモを分けています。文章コピーはしていません。" />
-    <div class="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-      <div class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Source Links</p>
-        <div class="mt-4 grid gap-3">
-          {sourceLinks.length > 0 ? sourceLinks.map((source) => (
-            <a class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-7 text-muted transition hover:border-amber/55 hover:text-amber" href={source.url || '#'} target={source.url ? '_blank' : undefined} rel={source.url ? 'noopener noreferrer' : undefined}>
-              <span class="font-black text-mist">{source.label}</span><br />
-              <span>{source.type} / {source.checkedAt}</span>
-            </a>
-          )) : <p class="text-sm leading-7 text-muted">参照元は未登録です。</p>}
+    <SectionTitle title="情報ソース" lead="公式情報、個人ブログ・note、SNS/Q&A、未確認情報を分けています。本文コピーはしていません。" />
+    <div class="grid gap-4 lg:grid-cols-4">
+      {sourceGroupKeys.map((group) => (
+        <div class="gothic-card rounded-xl p-5">
+          <p class="gothic-label pt-2">{sourceGroupLabel[group]}</p>
+          <div class="mt-4 grid gap-3">
+            {groupedSources[group].length > 0 ? groupedSources[group].map((source) => (
+              <a class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-7 text-muted transition hover:border-amber/55 hover:text-amber" href={source.url || '#'} target={source.url ? '_blank' : undefined} rel={source.url ? 'noopener noreferrer' : undefined}>
+                <span class="font-black text-mist">{source.label}</span><br />
+                <span>{source.type} / {source.checkedAt}</span>
+              </a>
+            )) : <p class="text-sm leading-7 text-muted">登録なし</p>}
+          </div>
         </div>
-      </div>
-
-      <div class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Signals</p>
-        <div class="mt-4 grid gap-3">
-          {blogSignals.length > 0 ? blogSignals.map((signal) => (
-            <article class="rounded-md border border-amber/20 bg-black/25 p-3">
-              <p class="text-xs font-black text-amber">{signal.topic} / {signal.sourceType} / {signal.confidence}</p>
-              <p class="mt-2 text-sm leading-7 text-muted">{signal.summary}</p>
-              <p class="mt-2 text-xs leading-6 text-muted">出典: <a class="text-amber underline-offset-4 hover:underline" href={signal.sourceUrl} target="_blank" rel="noopener noreferrer">{signal.sourceName}</a> / {signal.copyrightNote}</p>
-            </article>
-          )) : <p class="text-sm leading-7 text-muted">個人ブログ・参戦レポ由来の要確認メモは未登録です。</p>}
-        </div>
-      </div>
+      ))}
     </div>
+    <p class="mt-4 rounded-md border border-amber/25 bg-black/25 p-4 text-sm leading-7 text-muted">個人ブログ・note由来の情報は、本文をコピーせず、要点のみ独自表現で整理しています。設備や運用は公演・時期により変わる可能性があります。</p>
     <p class="mt-4 rounded-md border border-amber/25 bg-black/25 p-4 text-sm leading-7 text-muted">{venue.infoFreshnessWarning}</p>
   </section>
 

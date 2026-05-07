@@ -160,6 +160,67 @@ export type VenueComment = {
   checkedAt: string;
 };
 
+export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'unknown';
+export type AvailabilityStatus = 'available' | 'unavailable' | 'unknown';
+
+export type LockerInfo = {
+  venueLockerStatus: 'available' | 'none' | 'limited' | 'unknown';
+  venueLockerText: string;
+  lockerCountText: string;
+  beforeEntryUse: AvailabilityStatus;
+  afterEntryUse: AvailabilityStatus;
+  coinNeeded: 'yes' | 'no' | 'unknown';
+  largeBagFit: 'yes' | 'no' | 'unknown';
+  sourceConfidence: LogisticsConfidence;
+  lastCheckedAt: string;
+};
+
+export type CloakInfo = {
+  cloakStatus: 'available' | 'none' | 'event_dependent' | 'unknown';
+  cloakText: string;
+  priceText: string;
+  timingText: string;
+  bagTypeText: string;
+  sourceConfidence: LogisticsConfidence;
+  lastCheckedAt: string;
+};
+
+export type BaggageGuide = {
+  smallBag: string;
+  backpack: string;
+  suitcase: string;
+  afterMerch: string;
+  goodTicketNumber: string;
+};
+
+export type NearbyInfo = {
+  nearestConvenienceStore: string;
+  stationLocker: string;
+  waitingSpot: string;
+  rainShelter: string;
+  restroomBeforeEntry: string;
+  cashAndCoin: string;
+  afterShowRoute: string;
+  nightSafety: string;
+};
+
+export type BlogResearch = {
+  status: 'researched' | 'partial' | 'not_found' | 'not_started';
+  checkedAt: string;
+  searchQueries: string[];
+  summary: string;
+  confidence: 'high' | 'medium' | 'low' | 'unknown';
+};
+
+export type DayDecisionGuide = {
+  baggageDay: string;
+  goodNumberDay: string;
+  merchDay: string;
+  rainyDay: string;
+  soloDay: string;
+  hurryAfterShowDay: string;
+};
+
 export type SourceLink = {
   label: string;
   url: string;
@@ -248,6 +309,12 @@ export type Venue = {
   practicalSummary?: PracticalSummary;
   blogSignals?: BlogSignal[];
   venueComments?: VenueComment[];
+  lockerInfo?: LockerInfo;
+  cloakInfo?: CloakInfo;
+  baggageGuide?: BaggageGuide;
+  nearbyInfo?: NearbyInfo;
+  blogResearch?: BlogResearch;
+  dayDecisionGuide?: DayDecisionGuide;
   sourceLinks?: SourceLink[];
   infoFreshnessWarning?: string;
   ticketSearchLinks: TicketSearchLink[];
