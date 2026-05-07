@@ -6,14 +6,16 @@ import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ会場検索｜全国ライブハウス・小箱・ホール一覧';
-const description = '会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。';
+const title = 'V系ライブ会場を探す｜小箱・ロッカー・クローク攻略';
+const description = '会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を検索できます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。';
 const allVenues = venues as Venue[];
 const activeCount = allVenues.filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
+
 const regionOrder = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
 const regionOptions = regionOrder.filter((region) => allVenues.some((venue) => venue.region === region));
 const prefectureOptions = [...new Set(allVenues.map((venue) => venue.prefecture).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
 const tipTagOptions = [...new Set(allVenues.flatMap((venue) => venue.tipTags ?? []))].filter(Boolean).sort((a, b) => a.localeCompare(b, 'ja'));
+
 const venueTypeOptions = [
   ['small_livehouse', '小箱ライブハウス'],
   ['mid_livehouse', '中箱ライブハウス'],
@@ -23,12 +25,14 @@ const venueTypeOptions = [
   ['outdoor_stage', '屋外ステージ'],
   ['event_space', 'イベントスペース'],
 ];
+
 const affinityOptions = [
   ['high', 'V系向き高'],
   ['medium', 'V系向き中'],
   ['low', 'V系向き低'],
   ['unknown', '要確認'],
 ];
+
 const quickChips = [
   { label: '東京', kind: 'region', value: '東京' },
   { label: '神奈川', kind: 'region', value: '神奈川' },
@@ -51,6 +55,7 @@ const quickChips = [
   { label: '歌舞伎町エリア注意', kind: 'tag', value: '歌舞伎町エリア注意' },
   { label: '渋谷人混み注意', kind: 'tag', value: '渋谷人混み注意' },
 ];
+
 const shortcuts = [
   { label: '東京の小箱', q: '', region: '東京', type: 'small_livehouse' },
   { label: '池袋周辺', q: '池袋' },
@@ -68,6 +73,7 @@ const shortcuts = [
 
 <Layout title={title} description={description}>
   <Breadcrumbs items={[{ label: '会場攻略' }]} />
+
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="gothic-label">Venue Search</p>
@@ -78,7 +84,7 @@ const shortcuts = [
     </div>
     <div class="mt-6">
       <NoticeBox title="公演情報は掲載しません" tone="warning">
-        <p>このページは会場名・地域・会場分類・V系利用傾向を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト・チケットサイト・会場公式スケジュールで確認してください。</p>
+        <p>このページは会場名、地域、会場分類、V系利用傾向、荷物・ロッカー攻略を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
       </NoticeBox>
     </div>
     <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="おすすめショートカット">
@@ -118,8 +124,8 @@ const shortcuts = [
             <option value="name">会場名順</option>
             <option value="region">地域順</option>
             <option value="small">小箱優先</option>
-            <option value="affinity">V系利用傾向順</option>
-            <option value="locker">ロッカー要注意順</option>
+            <option value="affinity">V系向き度順</option>
+            <option value="locker">ロッカー注意順</option>
           </select>
         </div>
       </div>
@@ -165,7 +171,7 @@ const shortcuts = [
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
-            V系利用傾向
+            V系向き度
             <select class="gothic-input min-h-11 rounded-md px-3" data-filter-affinity>
               <option value="">すべて</option>
               {affinityOptions.map(([value, label]) => <option value={value}>{label}</option>)}
@@ -208,292 +214,262 @@ const shortcuts = [
   </section>
 
   <script is:inline>
-  const root = document.querySelector('[data-venue-search]');
-  if (root) {
-    const input = root.querySelector('[data-search-input]');
-    const sortSelect = root.querySelector('[data-sort-select]');
-    const regionSelect = root.querySelector('[data-filter-region]');
-    const prefectureSelect = root.querySelector('[data-filter-prefecture]');
-    const typeSelect = root.querySelector('[data-filter-type]');
-    const affinitySelect = root.querySelector('[data-filter-affinity]');
-    const tagSelect = root.querySelector('[data-filter-tag]');
-    const archiveCheckbox = root.querySelector('[data-filter-archive]');
-    const activeBox = root.querySelector('[data-active-filters]');
-    const count = root.querySelector('[data-visible-count]');
-    const totalCount = root.querySelector('[data-total-count]');
-    const results = root.querySelector('[data-results]');
-    const empty = root.querySelector('[data-empty-state]');
-    const cards = Array.from(root.querySelectorAll('[data-venue-card]'));
-    const chips = Array.from(root.querySelectorAll('[data-chip-kind]'));
-    const resets = Array.from(root.querySelectorAll('[data-reset-filters]'));
-    const shortcutButtons = Array.from(document.querySelectorAll('[data-shortcut]'));
-    const priorityRank = { A: 0, B: 1, C: 2, D: 3 };
-    const affinityRank = { high: 0, medium: 1, low: 2, unknown: 3 };
-    const scaleRank = { small: 0, 'small-mid': 1, mid: 2, large: 3, unknown: 4 };
-    const labelMap = {
-      small_livehouse: '小箱ライブハウス',
-      mid_livehouse: '中箱ライブハウス',
-      large_livehouse: '大型ライブハウス',
-      hall: 'ホール',
-      theater: '劇場',
-      outdoor_stage: '屋外ステージ',
-      event_space: 'イベントスペース',
-      high: 'V系向き高',
-      medium: 'V系向き中',
-      low: 'V系向き低',
-      unknown: '要確認',
-      small: '小箱',
-      'small-mid': '小〜中箱',
-      mid: '中箱',
-      large: '大箱',
-    };
-    const state = {
-      q: '',
-      region: '',
-      prefecture: '',
-      types: new Set(),
-      affinity: '',
-      tags: new Set(),
-      minor: false,
-      archive: false,
-      sort: 'recommended',
-    };
-    const norm = (value) => String(value || '').normalize('NFKC').toLocaleLowerCase('ja-JP').trim();
-    const queryTerms = (value) => norm(value).split(/\s+/).filter(Boolean);
-    const splitParam = (value) => String(value || '').split(',').map((item) => item.trim()).filter(Boolean);
-    const setFromParams = () => {
-      const params = new URLSearchParams(window.location.search);
-      state.q = params.get('q') || '';
-      state.region = params.get('region') || '';
-      state.prefecture = params.get('prefecture') || '';
-      state.types = new Set(splitParam(params.get('type')));
-      state.affinity = params.get('affinity') || '';
-      state.tags = new Set(splitParam(params.get('tag')));
-      state.minor = params.get('minor') === '1';
-      state.archive = params.get('archive') === '1';
-      state.sort = params.get('sort') || 'recommended';
-    };
-    const syncControls = () => {
-      if (input) input.value = state.q;
-      if (regionSelect) regionSelect.value = state.region;
-      if (prefectureSelect) prefectureSelect.value = state.prefecture;
-      if (typeSelect) typeSelect.value = state.types.size === 1 ? [...state.types][0] : '';
-      if (affinitySelect) affinitySelect.value = state.affinity;
-      if (archiveCheckbox) archiveCheckbox.checked = state.archive;
-      if (sortSelect) sortSelect.value = state.sort;
-      chips.forEach((chip) => {
-        const kind = chip.getAttribute('data-chip-kind');
-        const value = chip.getAttribute('data-chip-value') || '';
-        const pressed =
-          (kind === 'region' && state.region === value) ||
-          (kind === 'prefecture' && state.prefecture === value) ||
-          (kind === 'query' && state.q === value) ||
-          (kind === 'type' && state.types.has(value)) ||
-          (kind === 'affinity' && state.affinity === value) ||
-          (kind === 'tag' && state.tags.has(value)) ||
-          (kind === 'minor' && state.minor);
-        chip.setAttribute('aria-pressed', String(pressed));
-        chip.classList.toggle('gothic-chip-active', pressed);
-      });
-    };
-    const writeUrl = () => {
-      const params = new URLSearchParams();
-      if (state.q) params.set('q', state.q);
-      if (state.region) params.set('region', state.region);
-      if (state.prefecture) params.set('prefecture', state.prefecture);
-      if (state.types.size) params.set('type', [...state.types].join(','));
-      if (state.affinity) params.set('affinity', state.affinity);
-      if (state.tags.size) params.set('tag', [...state.tags].join(','));
-      if (state.minor) params.set('minor', '1');
-      if (state.archive) params.set('archive', '1');
-      if (state.sort !== 'recommended') params.set('sort', state.sort);
-      const next = `${window.location.pathname}${params.toString() ? `?${params}` : ''}`;
-      window.history.replaceState({}, '', next);
-    };
-    const cardMatches = (card) => {
-      const search = norm([
-        card.getAttribute('data-search'),
-        card.dataset.type,
-        labelMap[card.dataset.type],
-        card.dataset.scale,
-        labelMap[card.dataset.scale],
-        card.dataset.affinity,
-        labelMap[card.dataset.affinity],
-      ].filter(Boolean).join(' '));
-      const cardTags = String(card.getAttribute('data-tags') || '').split('|').filter(Boolean);
-      const defaultVisible = card.getAttribute('data-default-visible') === 'true';
-      const archive = card.getAttribute('data-archive') === 'true';
-      if (!defaultVisible && !(state.archive && archive)) return false;
-      if (state.q && !queryTerms(state.q).every((term) => search.includes(term))) return false;
-      if (state.region && card.getAttribute('data-region') !== state.region) return false;
-      if (state.prefecture && card.getAttribute('data-prefecture') !== state.prefecture) return false;
-      if (state.types.size && !state.types.has(card.getAttribute('data-type') || '')) return false;
-      if (state.affinity && card.getAttribute('data-affinity') !== state.affinity) return false;
-      if (state.minor && card.getAttribute('data-minor') !== 'true') return false;
-      for (const tag of state.tags) {
-        if (!cardTags.includes(tag)) return false;
-      }
-      return true;
-    };
-    const compareCards = (a, b) => {
-      if (state.sort === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'ja');
-      if (state.sort === 'region') {
-        const left = `${a.dataset.region || ''}${a.dataset.prefecture || ''}${a.dataset.name || ''}`;
-        const right = `${b.dataset.region || ''}${b.dataset.prefecture || ''}${b.dataset.name || ''}`;
-        return left.localeCompare(right, 'ja');
-      }
-      if (state.sort === 'small') {
-        const left = scaleRank[a.dataset.scale] ?? 9;
-        const right = scaleRank[b.dataset.scale] ?? 9;
-        if (left !== right) return left - right;
-      }
-      if (state.sort === 'affinity') {
-        const left = affinityRank[a.dataset.affinity] ?? 9;
-        const right = affinityRank[b.dataset.affinity] ?? 9;
-        if (left !== right) return left - right;
-      }
-      if (state.sort === 'locker') {
-        const left = Number(a.dataset.lockerRisk || 0);
-        const right = Number(b.dataset.lockerRisk || 0);
-        if (left !== right) return right - left;
-      }
-      const priorityDiff = (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9);
-      if (priorityDiff !== 0) return priorityDiff;
-      const affinityDiff = (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9);
-      if (affinityDiff !== 0) return affinityDiff;
-      const minorDiff = (b.dataset.minor === 'true' ? 1 : 0) - (a.dataset.minor === 'true' ? 1 : 0);
-      if (minorDiff !== 0) return minorDiff;
-      return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'ja');
-    };
-    const removeFilter = (kind, value) => {
-      if (kind === 'q') state.q = '';
-      if (kind === 'region') state.region = '';
-      if (kind === 'prefecture') state.prefecture = '';
-      if (kind === 'type') state.types.delete(value);
-      if (kind === 'affinity') state.affinity = '';
-      if (kind === 'tag') state.tags.delete(value);
-      if (kind === 'minor') state.minor = false;
-      if (kind === 'archive') state.archive = false;
-      apply();
-    };
-    const renderActive = () => {
-      const items = [];
-      if (state.q) items.push(['q', state.q, `検索: ${state.q}`]);
-      if (state.region) items.push(['region', state.region, `地域: ${state.region}`]);
-      if (state.prefecture) items.push(['prefecture', state.prefecture, `都道府県: ${state.prefecture}`]);
-      for (const type of state.types) items.push(['type', type, `種別: ${labelMap[type] || type}`]);
-      if (state.affinity) items.push(['affinity', state.affinity, `V系利用傾向: ${labelMap[state.affinity] || state.affinity}`]);
-      if (state.minor) items.push(['minor', 'true', 'マイナーV系向き']);
-      for (const tag of state.tags) items.push(['tag', tag, `タグ: ${tag}`]);
-      if (state.archive) items.push(['archive', '1', '閉館済みも表示']);
-      activeBox.innerHTML = '';
-      activeBox.classList.toggle('hidden', items.length === 0);
-      activeBox.classList.toggle('flex', items.length > 0);
-      for (const [kind, value, label] of items) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'gothic-chip-active focus-ring min-h-9 rounded-md px-3 text-xs font-black';
-        button.textContent = `${label} ×`;
-        button.addEventListener('click', () => removeFilter(kind, value));
-        activeBox.append(button);
-      }
-    };
-    const apply = () => {
-      const visible = [];
-      cards.forEach((card) => {
-        const show = cardMatches(card);
-        card.classList.toggle('hidden', !show);
-        if (show) visible.push(card);
-      });
-      visible.sort(compareCards).forEach((card) => results.append(card));
-      if (count) count.textContent = String(visible.length);
-      if (totalCount) totalCount.textContent = String(cards.length);
-      if (empty) empty.classList.toggle('hidden', visible.length !== 0);
-      renderActive();
-      syncControls();
-      writeUrl();
-    };
-    const reset = () => {
-      state.q = '';
-      state.region = '';
-      state.prefecture = '';
-      state.types = new Set();
-      state.affinity = '';
-      state.tags = new Set();
-      state.minor = false;
-      state.archive = false;
-      state.sort = 'recommended';
-      apply();
-    };
-    input?.addEventListener('input', () => {
-      state.q = input.value.trim();
-      apply();
-    });
-    sortSelect?.addEventListener('change', () => {
-      state.sort = sortSelect.value || 'recommended';
-      apply();
-    });
-    regionSelect?.addEventListener('change', () => {
-      state.region = regionSelect.value;
-      apply();
-    });
-    prefectureSelect?.addEventListener('change', () => {
-      state.prefecture = prefectureSelect.value;
-      apply();
-    });
-    typeSelect?.addEventListener('change', () => {
-      state.types = new Set(typeSelect.value ? [typeSelect.value] : []);
-      apply();
-    });
-    affinitySelect?.addEventListener('change', () => {
-      state.affinity = affinitySelect.value;
-      apply();
-    });
-    tagSelect?.addEventListener('change', () => {
-      if (tagSelect.value) state.tags.add(tagSelect.value);
-      tagSelect.value = '';
-      apply();
-    });
-    archiveCheckbox?.addEventListener('change', () => {
-      state.archive = archiveCheckbox.checked;
-      apply();
-    });
-    chips.forEach((chip) => {
-      chip.addEventListener('click', () => {
-        const kind = chip.getAttribute('data-chip-kind');
-        const value = chip.getAttribute('data-chip-value') || '';
-        if (kind === 'region') state.region = state.region === value ? '' : value;
-        if (kind === 'prefecture') state.prefecture = state.prefecture === value ? '' : value;
-        if (kind === 'query') state.q = state.q === value ? '' : value;
-        if (kind === 'type') state.types.has(value) ? state.types.delete(value) : state.types.add(value);
-        if (kind === 'affinity') state.affinity = state.affinity === value ? '' : value;
-        if (kind === 'tag') state.tags.has(value) ? state.tags.delete(value) : state.tags.add(value);
-        if (kind === 'minor') state.minor = !state.minor;
-        apply();
-      });
-    });
-    shortcutButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const shortcut = JSON.parse(button.getAttribute('data-shortcut') || '{}');
-        state.q = shortcut.q ?? '';
-        state.region = shortcut.region ?? '';
-        state.prefecture = shortcut.prefecture ?? '';
-        state.types = new Set(splitParam(shortcut.type));
-        state.affinity = shortcut.affinity ?? '';
-        state.tags = new Set(shortcut.tag ? [shortcut.tag] : []);
-        state.minor = shortcut.minor === '1';
-        state.archive = shortcut.archive === '1';
+    const root = document.querySelector('[data-venue-search]');
+    if (root) {
+      const input = root.querySelector('[data-search-input]');
+      const sortSelect = root.querySelector('[data-sort-select]');
+      const regionSelect = root.querySelector('[data-filter-region]');
+      const prefectureSelect = root.querySelector('[data-filter-prefecture]');
+      const typeSelect = root.querySelector('[data-filter-type]');
+      const affinitySelect = root.querySelector('[data-filter-affinity]');
+      const tagSelect = root.querySelector('[data-filter-tag]');
+      const archiveCheckbox = root.querySelector('[data-filter-archive]');
+      const activeBox = root.querySelector('[data-active-filters]');
+      const count = root.querySelector('[data-visible-count]');
+      const totalCount = root.querySelector('[data-total-count]');
+      const results = root.querySelector('[data-results]');
+      const empty = root.querySelector('[data-empty-state]');
+      const cards = Array.from(root.querySelectorAll('[data-venue-card]'));
+      const chips = Array.from(root.querySelectorAll('[data-chip-kind]'));
+      const resets = Array.from(root.querySelectorAll('[data-reset-filters]'));
+      const shortcutButtons = Array.from(document.querySelectorAll('[data-shortcut]'));
+      const priorityRank = { A: 0, B: 1, C: 2, D: 3 };
+      const affinityRank = { high: 0, medium: 1, low: 2, unknown: 3 };
+      const scaleRank = { small: 0, 'small-mid': 1, mid: 2, large: 3, unknown: 4 };
+      const labelMap = {
+        small_livehouse: '小箱ライブハウス',
+        mid_livehouse: '中箱ライブハウス',
+        large_livehouse: '大型ライブハウス',
+        hall: 'ホール',
+        theater: '劇場',
+        outdoor_stage: '屋外ステージ',
+        event_space: 'イベントスペース',
+        high: 'V系向き高',
+        medium: 'V系向き中',
+        low: 'V系向き低',
+        unknown: '要確認',
+      };
+      const state = {
+        q: '',
+        region: '',
+        prefecture: '',
+        types: new Set(),
+        affinity: '',
+        tags: new Set(),
+        minor: false,
+        archive: false,
+        sort: 'recommended',
+      };
+
+      const normalize = (value) => String(value || '').normalize('NFKC').toLowerCase();
+      const splitCsv = (value) => String(value || '').split(',').map((item) => item.trim()).filter(Boolean);
+      const setSelectValue = (select, value) => {
+        if (!select) return;
+        select.value = value || '';
+      };
+      const syncControls = () => {
+        input.value = state.q;
+        sortSelect.value = state.sort;
+        setSelectValue(regionSelect, state.region);
+        setSelectValue(prefectureSelect, state.prefecture);
+        setSelectValue(typeSelect, state.types.size === 1 ? Array.from(state.types)[0] : '');
+        setSelectValue(affinitySelect, state.affinity);
+        setSelectValue(tagSelect, '');
+        archiveCheckbox.checked = state.archive;
+        chips.forEach((chip) => {
+          const kind = chip.dataset.chipKind;
+          const value = chip.dataset.chipValue;
+          const pressed =
+            (kind === 'region' && state.region === value) ||
+            (kind === 'prefecture' && state.prefecture === value) ||
+            (kind === 'type' && state.types.has(value)) ||
+            (kind === 'affinity' && state.affinity === value) ||
+            (kind === 'tag' && state.tags.has(value)) ||
+            (kind === 'minor' && state.minor) ||
+            (kind === 'query' && state.q.split(' ').includes(value));
+          chip.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        });
+      };
+      const readParams = () => {
+        const params = new URLSearchParams(window.location.search);
+        state.q = params.get('q') || '';
+        state.region = params.get('region') || '';
+        state.prefecture = params.get('prefecture') || '';
+        state.types = new Set(splitCsv(params.get('type')));
+        state.affinity = params.get('affinity') || '';
+        state.tags = new Set(splitCsv(params.get('tag')));
+        state.archive = params.get('archive') === '1';
+        state.sort = params.get('sort') || 'recommended';
+      };
+      const writeParams = () => {
+        const params = new URLSearchParams();
+        if (state.q) params.set('q', state.q);
+        if (state.region) params.set('region', state.region);
+        if (state.prefecture) params.set('prefecture', state.prefecture);
+        if (state.types.size) params.set('type', Array.from(state.types).join(','));
+        if (state.affinity) params.set('affinity', state.affinity);
+        if (state.tags.size) params.set('tag', Array.from(state.tags).join(','));
+        if (state.sort && state.sort !== 'recommended') params.set('sort', state.sort);
+        if (state.archive) params.set('archive', '1');
+        const next = params.toString() ? `${window.location.pathname}?${params}` : window.location.pathname;
+        window.history.replaceState({}, '', next);
+      };
+      const matchesQuery = (card) => {
+        const terms = normalize(state.q).split(/\s+/).filter(Boolean);
+        if (!terms.length) return true;
+        const text = normalize(card.dataset.search || '');
+        return terms.every((term) => text.includes(term));
+      };
+      const matchesFilters = (card) => {
+        if (!state.archive && card.dataset.defaultVisible !== 'true') return false;
+        if (state.region && card.dataset.region !== state.region) return false;
+        if (state.prefecture && card.dataset.prefecture !== state.prefecture) return false;
+        if (state.types.size && !state.types.has(card.dataset.type)) return false;
+        if (state.affinity && card.dataset.affinity !== state.affinity) return false;
+        if (state.minor && card.dataset.minor !== 'true') return false;
+        if (state.tags.size) {
+          const tags = (card.dataset.tags || '').split('|');
+          for (const tag of state.tags) {
+            if (!tags.includes(tag)) return false;
+          }
+        }
+        return matchesQuery(card);
+      };
+      const sortCards = (visibleCards) => {
+        return visibleCards.sort((a, b) => {
+          if (state.sort === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'ja');
+          if (state.sort === 'region') return `${a.dataset.region}${a.dataset.prefecture}${a.dataset.name}`.localeCompare(`${b.dataset.region}${b.dataset.prefecture}${b.dataset.name}`, 'ja');
+          if (state.sort === 'small') return (scaleRank[a.dataset.scale] ?? 9) - (scaleRank[b.dataset.scale] ?? 9) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
+          if (state.sort === 'affinity') return (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
+          if (state.sort === 'locker') return Number(b.dataset.lockerRank || 0) - Number(a.dataset.lockerRank || 0) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
+          return (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9)
+            || (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9)
+            || (a.dataset.minor === b.dataset.minor ? 0 : a.dataset.minor === 'true' ? -1 : 1)
+            || a.dataset.name.localeCompare(b.dataset.name, 'ja');
+        });
+      };
+      const renderActiveFilters = () => {
+        const items = [];
+        if (state.q) items.push(['q', `検索: ${state.q}`]);
+        if (state.region) items.push(['region', `地域: ${state.region}`]);
+        if (state.prefecture) items.push(['prefecture', `都道府県: ${state.prefecture}`]);
+        for (const type of state.types) items.push(['type', `種別: ${labelMap[type] || type}`, type]);
+        if (state.affinity) items.push(['affinity', `V系向き: ${labelMap[state.affinity] || state.affinity}`]);
+        for (const tag of state.tags) items.push(['tag', `タグ: ${tag}`, tag]);
+        if (state.archive) items.push(['archive', '閉館済みも表示']);
+        activeBox.innerHTML = '';
+        activeBox.classList.toggle('hidden', items.length === 0);
+        for (const [kind, label, value] of items) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'gothic-chip min-h-9 rounded-md px-3 py-1 text-xs font-black';
+          button.textContent = `${label} ×`;
+          button.addEventListener('click', () => {
+            if (kind === 'q') state.q = '';
+            if (kind === 'region') state.region = '';
+            if (kind === 'prefecture') state.prefecture = '';
+            if (kind === 'type') state.types.delete(value);
+            if (kind === 'affinity') state.affinity = '';
+            if (kind === 'tag') state.tags.delete(value);
+            if (kind === 'archive') state.archive = false;
+            apply();
+          });
+          activeBox.appendChild(button);
+        }
+      };
+      const apply = () => {
+        const visibleCards = cards.filter(matchesFilters);
+        cards.forEach((card) => card.classList.add('hidden'));
+        sortCards(visibleCards).forEach((card) => {
+          card.classList.remove('hidden');
+          results.appendChild(card);
+        });
+        count.textContent = String(visibleCards.length);
+        totalCount.textContent = String(cards.length);
+        empty.classList.toggle('hidden', visibleCards.length !== 0);
+        renderActiveFilters();
+        syncControls();
+        writeParams();
+      };
+      const reset = () => {
+        state.q = '';
+        state.region = '';
+        state.prefecture = '';
+        state.types.clear();
+        state.affinity = '';
+        state.tags.clear();
+        state.minor = false;
+        state.archive = false;
         state.sort = 'recommended';
         apply();
+      };
+      input.addEventListener('input', () => {
+        state.q = input.value.trim();
+        apply();
       });
-    });
-    resets.forEach((button) => button.addEventListener('click', reset));
-    window.addEventListener('popstate', () => {
-      setFromParams();
+      sortSelect.addEventListener('change', () => {
+        state.sort = sortSelect.value;
+        apply();
+      });
+      regionSelect.addEventListener('change', () => {
+        state.region = regionSelect.value;
+        apply();
+      });
+      prefectureSelect.addEventListener('change', () => {
+        state.prefecture = prefectureSelect.value;
+        apply();
+      });
+      typeSelect.addEventListener('change', () => {
+        if (typeSelect.value) state.types.add(typeSelect.value);
+        apply();
+      });
+      affinitySelect.addEventListener('change', () => {
+        state.affinity = affinitySelect.value;
+        apply();
+      });
+      tagSelect.addEventListener('change', () => {
+        if (tagSelect.value) state.tags.add(tagSelect.value);
+        apply();
+      });
+      archiveCheckbox.addEventListener('change', () => {
+        state.archive = archiveCheckbox.checked;
+        apply();
+      });
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const kind = chip.dataset.chipKind;
+          const value = chip.dataset.chipValue;
+          if (kind === 'region') state.region = state.region === value ? '' : value;
+          if (kind === 'prefecture') state.prefecture = state.prefecture === value ? '' : value;
+          if (kind === 'type') state.types.has(value) ? state.types.delete(value) : state.types.add(value);
+          if (kind === 'affinity') state.affinity = state.affinity === value ? '' : value;
+          if (kind === 'tag') state.tags.has(value) ? state.tags.delete(value) : state.tags.add(value);
+          if (kind === 'minor') state.minor = !state.minor;
+          if (kind === 'query') {
+            const terms = new Set(state.q.split(/\s+/).filter(Boolean));
+            terms.has(value) ? terms.delete(value) : terms.add(value);
+            state.q = Array.from(terms).join(' ');
+          }
+          apply();
+        });
+      });
+      resets.forEach((button) => button.addEventListener('click', reset));
+      shortcutButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const shortcut = JSON.parse(button.dataset.shortcut || '{}');
+          state.q = shortcut.q ?? '';
+          state.region = shortcut.region ?? '';
+          state.prefecture = shortcut.prefecture ?? '';
+          state.types = new Set(splitCsv(shortcut.type));
+          state.tags = new Set(shortcut.tag ? [shortcut.tag] : []);
+          state.affinity = shortcut.affinity ?? '';
+          state.archive = shortcut.archive === '1';
+          apply();
+        });
+      });
+      readParams();
+      syncControls();
       apply();
-    });
-    setFromParams();
-    apply();
-  }
+    }
   </script>
 </Layout>

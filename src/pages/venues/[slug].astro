@@ -41,33 +41,14 @@ const typeLabel = {
 }[venue.venueType ?? 'unknown'];
 
 const confidenceLabel = {
-  verified: '公式・一次情報確認済み',
+  verified: '確認済み',
   partially_verified: '一部確認済み',
   social_only: 'SNS言及ベース',
   verified_or_historical: '履歴情報として確認',
   unknown: '要確認',
 }[venue.sourceConfidence ?? 'unknown'];
 
-const factSourceTypeLabel = {
-  official: '公式',
-  ticket_site: 'チケットサイト',
-  ticket_site_or_user_list: 'チケットサイトまたは手動リスト',
-  blog: '個人ブログ/体験記事',
-  venue_database: '会場情報サイト',
-  review_site: 'レビューサイト',
-  social: 'SNS',
-  mixed: '複数ソース',
-  unknown: '要確認',
-};
-
 const lockerStatusLabel = {
-  none: 'なし',
-  limited: '少なめ',
-  available: 'あり',
-  unknown: '要確認',
-}[venue.lockerProfile?.status ?? 'unknown'];
-
-const concreteLockerStatusLabel = {
   available: 'あり',
   none: 'なし',
   limited: '少数',
@@ -75,13 +56,6 @@ const concreteLockerStatusLabel = {
 }[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
 
 const cloakStatusLabel = {
-  available: 'あり',
-  sometimes: '公演ごと',
-  none: 'なし',
-  unknown: '要確認',
-}[venue.cloakProfile?.status ?? 'unknown'];
-
-const concreteCloakStatusLabel = {
   available: 'あり',
   none: 'なし',
   event_dependent: '公演による',
@@ -97,13 +71,15 @@ const availabilityLabel = {
 const yesNoUnknownLabel = {
   yes: 'はい',
   no: 'いいえ',
+  depends: '状況次第',
   unknown: '未確認',
 };
 
 const logisticsConfidenceLabel = {
   official: '公式確認',
+  mixed: '公式・外部情報混在',
   blog_report: '参戦レポ/会場DB由来',
-  mixed: '公式+要確認情報',
+  sns_report: 'SNS由来',
   unknown: '未確認',
 };
 
@@ -116,7 +92,7 @@ const blogResearchStatusLabel = {
 
 const sourceGroupLabel = {
   official: '公式情報',
-  personal: '個人ブログ・note',
+  personal: '個人ブログ・note・会場DB',
   social: 'SNS・Q&A',
   unknown: '未確認情報',
 };
@@ -133,67 +109,43 @@ const accessText = venue.station
   : '最寄り駅は要確認';
 
 const sourceNotes = Array.isArray(venue.sourceNotes) ? venue.sourceNotes : [];
-const officialFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType === 'official');
-const communityFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType !== 'official');
 const sourceLinks = venue.sourceLinks ?? [];
 const blogSignals = venue.blogSignals ?? [];
-const venueComments = venue.venueComments ?? [];
 const summaryPoints = venue.practicalSummary?.points ?? [];
-const title = `${venue.name}｜30秒結論・荷物/ロッカー攻略`;
-const description = `${venue.name}の当日の動き方、荷物別判断、ロッカー・クローク、物販後、終演後の動きを整理。公演情報は転載せず公式へ誘導します。`;
-
-const actionBlocks = [
-  ['入場前', venue.arrivalStrategy],
-  ['整列・入場', venue.entryStrategyPlain],
-  ['物販後', venue.merchBaggageStrategy],
-  ['終演後', venue.afterShowStrategy],
-].filter(([, text]) => Boolean(text));
-
-const warningBlocks = [
-  ['良番なら', venue.goodNumberWarning],
-  ['キャリーありなら', venue.carryCaseWarning],
-  ['フロア荷物', venue.floorBaggageWarning],
-  ['雨の日', venue.badWeatherNote],
-  ['駅ロッカー', venue.stationLockerNote],
-].filter(([, text]) => Boolean(text));
-
-const fieldBlocks = [
-  ['時間調整', venue.timeKillingNote || venue.waitingNote],
-  ['コンビニ・飲み物', venue.convenienceNote],
-  ['会場前待機', venue.waitingNote],
-  ['夜の帰り道', venue.nightSafetyNote],
-  ['ロッカー代替', venue.lockerAlternativeNote || venue.stationLockerNote],
-  ['雨の日', venue.badWeatherNote || venue.rainNote],
-].filter(([, text]) => Boolean(text));
+const title = `${venue.name}｜ロッカー・クローク・荷物攻略`;
+const description = `${venue.name}の当日の動き方、会場内ロッカー、クローク、駅ロッカー、周辺コンビニ、待機場所、雨の日、終演後の帰り方を整理。公演情報は転載せず公式へ誘導します。`;
 
 const lockerRows = [
-  ['会場内ロッカー', concreteLockerStatusLabel],
+  ['会場内ロッカー', lockerStatusLabel],
   ['説明', venue.lockerInfo?.venueLockerText],
   ['個数感', venue.lockerInfo?.lockerCountText],
   ['開場前利用', availabilityLabel[venue.lockerInfo?.beforeEntryUse ?? 'unknown']],
   ['開場後利用', availabilityLabel[venue.lockerInfo?.afterEntryUse ?? 'unknown']],
   ['小銭/100円玉', yesNoUnknownLabel[venue.lockerInfo?.coinNeeded ?? 'unknown']],
   ['大型荷物', yesNoUnknownLabel[venue.lockerInfo?.largeBagFit ?? 'unknown']],
+  ['駅ロッカー推奨', yesNoUnknownLabel[venue.lockerInfo?.stationLockerRecommended ?? 'unknown']],
+  ['ベストな動き', venue.lockerInfo?.bestMove],
   ['情報確度', logisticsConfidenceLabel[venue.lockerInfo?.sourceConfidence ?? 'unknown']],
   ['確認日', venue.lockerInfo?.lastCheckedAt],
 ].filter(([, text]) => Boolean(text));
 
 const cloakRows = [
-  ['クローク', concreteCloakStatusLabel],
+  ['クローク', cloakStatusLabel],
   ['説明', venue.cloakInfo?.cloakText],
   ['料金', venue.cloakInfo?.priceText],
   ['受付タイミング', venue.cloakInfo?.timingText],
   ['預け方', venue.cloakInfo?.bagTypeText],
+  ['ベストな動き', venue.cloakInfo?.bestMove],
   ['情報確度', logisticsConfidenceLabel[venue.cloakInfo?.sourceConfidence ?? 'unknown']],
   ['確認日', venue.cloakInfo?.lastCheckedAt],
 ].filter(([, text]) => Boolean(text));
 
 const baggageRows = [
-  ['小バッグ', venue.baggageGuide?.smallBag || venue.baggageDecision?.tinyBag],
+  ['小さめバッグ', venue.baggageGuide?.smallBag || venue.baggageDecision?.tinyBag],
   ['リュック', venue.baggageGuide?.backpack || venue.baggageDecision?.backpack],
-  ['キャリー', venue.baggageGuide?.suitcase || venue.baggageDecision?.suitcase],
+  ['キャリーケース', venue.baggageGuide?.suitcase || venue.baggageDecision?.suitcase],
   ['物販後', venue.baggageGuide?.afterMerch || venue.baggageDecision?.afterMerch],
-  ['良番', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
+  ['良番の日', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
 ].filter(([, text]) => Boolean(text));
 
 const nearbyRows = [
@@ -217,7 +169,7 @@ const dayDecisionRows = [
 ].filter(([, text]) => Boolean(text));
 
 const groupedSources = sourceLinks.reduce((groups, source) => {
-  const group = sourceGroup(source.type);
+  const group = sourceGroup(source.type) as keyof typeof groups;
   groups[group].push(source);
   return groups;
 }, { official: [], personal: [], social: [], unknown: [] } as Record<'official' | 'personal' | 'social' | 'unknown', typeof sourceLinks>);
@@ -227,7 +179,7 @@ const relatedLinks = [
   { title: 'V系ライブハウス参戦前に知っておきたい豆知識', description: '荷物、ロッカー、ドリンク代、整理番号、撮影ルール、終演後の動きを確認できます。', href: '/guides/livehouse-tips', cta: '読む' },
   { title: '小さいライブハウスのV系ライブ初参戦ガイド', description: '小箱での荷物、立ち位置、整理番号、ロッカー、帰り方を確認できます。', href: '/guides/small-venue', cta: '読む' },
   { title: '持ち物チェックリスト', description: 'チケット、身分証、モバイルバッテリー、雨具、物販用バッグを確認できます。', href: '/guides/belongings', cta: '確認する' },
-  { title: '遠征費シミュレーター', description: 'チケット代、交通費、ホテル代、物販予算を入力して合計を確認できます。', href: '/tools/budget', cta: '計算する' },
+  { title: '遠征費シミュレーター', description: 'チケット代、交通費、ホテル代、物販予算を入れて合計を確認できます。', href: '/tools/budget', cta: '計算する' },
 ];
 ---
 
@@ -238,260 +190,204 @@ const relatedLinks = [
     <div class="gothic-panel rounded-xl p-5 md:p-8">
       <p class="gothic-label">{venue.area} / {typeLabel}</p>
       <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{venue.name}</h1>
-      <p class="mt-4 text-base leading-8 text-muted md:text-lg">{accessText}。公演情報ではなく、当日の荷物・入場・物販後・終演後の動き方を整理します。</p>
+      <p class="mt-4 text-base leading-8 text-muted">{accessText}</p>
       <div class="mt-5 flex flex-wrap gap-2">
         <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{scaleLabel}</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">情報確度: {confidenceLabel}</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">会場内ロッカー: {concreteLockerStatusLabel}</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">クローク: {concreteCloakStatusLabel}</span>
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">会場存在: {confidenceLabel}</span>
+        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">最終確認: {venue.lastVerifiedAt}</span>
+        {venue.minorVkeiFriendly && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">若手V系向き</span>}
       </div>
-    </div>
-
-    <div class="mt-5">
-      <NoticeBox title="公演情報は転載しません" tone="warning">
-        <p>公演日・出演者・開場/開演時間・チケット状況・物販ルールは掲載しません。最新情報は公式サイト、チケットサイト、会場公式スケジュール、主催者告知、当日案内で確認してください。</p>
-      </NoticeBox>
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle eyebrow="Quick Answer" title="30秒結論" lead="まずここだけ読めば、当日どう動くか決められます。" />
-    <div class="gothic-card rounded-xl p-5 md:p-6">
-      <p class="font-classical pt-2 text-2xl font-black leading-snug text-mist">{venue.practicalSummary?.headline}</p>
-      <ul class="mt-5 grid gap-3 md:grid-cols-2">
-        {summaryPoints.map((point) => (
-          <li class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm font-bold leading-7 text-muted">{point}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="ロッカー情報" lead="会場内ロッカーの有無・使えるタイミング・大型荷物の扱いを明記します。" />
-    <div class="gothic-card rounded-xl p-5">
-      <dl class="grid gap-3 md:grid-cols-2">
-        {lockerRows.map(([label, text]) => (
-          <div class="rounded-md border border-amber/20 bg-black/25 p-3">
-            <dt class="gothic-label">{label}</dt>
-            <dd class="mt-2 text-sm font-black leading-7 text-mist">{text}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="クローク情報" lead="常設か公演ごとか、料金・受付タイミング・袋形式を分けて見ます。" />
-    <div class="gothic-card rounded-xl p-5">
-      <dl class="grid gap-3 md:grid-cols-2">
-        {cloakRows.map(([label, text]) => (
-          <div class="rounded-md border border-amber/20 bg-black/25 p-3">
-            <dt class="gothic-label">{label}</dt>
-            <dd class="mt-2 text-sm font-black leading-7 text-mist">{text}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="荷物別の動き方" lead="小バッグ、リュック、キャリー、物販後、良番の日で判断を変えます。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-      {baggageRows.map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-4">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="周辺情報" lead="コンビニ、駅ロッカー、待機場所、雨の日、終演後の戻り方を当日行動に落とします。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {nearbyRows.map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-4">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="当日判断" lead="公式情報だけでは決めにくい、参戦者目線の動き方です。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {dayDecisionRows.map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-5">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-black leading-7 text-mist">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="container-navi py-8">
-    <SectionTitle title="参戦レポから見える傾向" lead="個人ブログ・note・Q&Aの本文はコピーせず、要点だけを独自表現で整理しています。" />
-    <div class="gothic-card rounded-xl p-5">
-      <div class="flex flex-wrap gap-2">
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">調査状態: {blogResearchStatusLabel[venue.blogResearch?.status ?? 'not_started']}</span>
-        <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">確度: {venue.blogResearch?.confidence ?? 'unknown'}</span>
-        {venue.blogResearch?.checkedAt && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">確認日: {venue.blogResearch.checkedAt}</span>}
-      </div>
-      <p class="mt-4 text-sm font-bold leading-7 text-muted">{venue.blogResearch?.summary}</p>
-      {venue.blogResearch?.searchQueries?.length > 0 && (
-        <div class="mt-4">
-          <p class="gothic-label">調査キーワード</p>
-          <div class="mt-2 flex flex-wrap gap-2">
-            {venue.blogResearch.searchQueries.map((query) => <span class="rounded-md border border-amber/20 bg-black/25 px-2.5 py-1 text-xs font-bold text-muted">{query}</span>)}
-          </div>
+      {venue.tipTags?.length > 0 && (
+        <div class="mt-5 flex flex-wrap gap-2">
+          {venue.tipTags.map((tag) => <span class="rounded-md border border-amber/20 bg-black/30 px-2.5 py-1 text-xs font-black text-muted">{tag}</span>)}
         </div>
       )}
-      <div class="mt-5 grid gap-3 md:grid-cols-2">
-        {blogSignals.map((signal) => (
-          <article class="rounded-md border border-amber/20 bg-black/25 p-3">
-            <p class="text-xs font-black text-amber">{signal.topic} / {signal.sourceType} / {signal.confidence}</p>
-            <p class="mt-2 text-sm leading-7 text-muted">{signal.summary}</p>
-            <p class="mt-2 text-xs leading-6 text-muted">出典: <a class="text-amber underline-offset-4 hover:underline" href={signal.sourceUrl} target="_blank" rel="noopener noreferrer">{signal.sourceName}</a> / {signal.copyrightNote}</p>
-          </article>
-        ))}
-      </div>
     </div>
   </section>
 
-  {venue.preCheckItems?.length > 0 && (
-    <section class="container-navi py-8">
-      <SectionTitle title="入場前チェック要件" lead="この会場で詰みやすいところを、入場前に潰します。" />
-      <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {venue.preCheckItems.map((item) => (
-          <div class="gothic-card rounded-xl p-4">
-            <p class="text-sm font-black leading-7 text-mist">{item}</p>
-          </div>
-        ))}
-      </div>
+  {(venue.sourceConfidence === 'social_only' || venue.sourceConfidence === 'unknown') && (
+    <section class="container-navi pb-6">
+      <NoticeBox title="要確認の会場情報です" tone="warning">
+        <p>この会場情報はSNS上の言及や未検証情報をもとに仮登録している可能性があります。会場公式・チケットサイトでの確認が完了するまで、掲載内容は要確認として扱います。</p>
+      </NoticeBox>
     </section>
   )}
 
-  {venueComments.length > 0 && (
-    <section class="container-navi py-8">
-      <SectionTitle title="この会場の実用コメント" lead="公式情報・会場DB・個人ブログをもとに、当日の動きへ変換したコメントです。" />
-      <div class="grid gap-4 md:grid-cols-2">
-        {venueComments.map((item) => (
-          <article class="gothic-card rounded-xl p-5">
-            <p class="gothic-label pt-2">{item.category} / {item.confidence}</p>
-            <h2 class="font-classical mt-2 text-xl font-black leading-snug text-mist">{item.title}</h2>
-            <p class="mt-3 text-sm leading-7 text-muted">{item.comment}</p>
-            <p class="mt-4 rounded-md border border-amber/20 bg-black/25 p-3 text-sm font-black leading-7 text-mist">{item.action}</p>
-            <p class="mt-3 text-xs leading-6 text-muted">
-              出典: <a class="text-amber underline-offset-4 hover:underline" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{item.sourceName}</a>
-              {' '} / {item.sourceType} / 確認日: {item.checkedAt}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-  )}
+  <section class="container-navi grid gap-6 pb-12 lg:grid-cols-[1fr_0.38fr] lg:items-start">
+    <div class="space-y-8">
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="30 seconds" title="30秒結論" lead={venue.practicalSummary?.headline || '当日の動き方を短く整理します。'} />
+        {summaryPoints.length > 0 ? (
+          <ul class="grid gap-3">
+            {summaryPoints.map((point) => (
+              <li class="rounded-md border border-amber/20 bg-black/25 px-4 py-3 text-sm font-bold leading-7 text-mist">{point}</li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-sm leading-7 text-muted">この会場の30秒結論はまだ編集中です。荷物が多い日は駅ロッカーやホテル預けを先に検討してください。</p>
+        )}
+      </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="当日の動き方" lead="確認推奨で終わらせず、どう動くかを先に書きます。" />
-    <div class="grid gap-4 md:grid-cols-2">
-      {actionBlocks.map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-5">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Locker" title="ロッカー情報" lead="抽象スコアではなく、会場内ロッカーの有無・使えるタイミング・代替案を表示します。" />
+        <dl class="grid gap-3">
+          {lockerRows.map(([label, text]) => (
+            <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+              <dt class="gothic-label">{label}</dt>
+              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{text}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="周辺・待機・帰り" lead="ロッカーだけでなく、開場前の逃げ場と終演後の戻り方まで見ます。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {fieldBlocks.map(([label, text]) => (
-        <article class="gothic-card rounded-xl p-5">
-          <p class="gothic-label pt-2">{label}</p>
-          <p class="mt-3 text-sm font-bold leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Cloak" title="クローク情報" lead="常設か、公演ごとの運用か、料金や受付タイミングが分かる範囲で整理します。" />
+        <dl class="grid gap-3">
+          {cloakRows.map(([label, text]) => (
+            <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+              <dt class="gothic-label">{label}</dt>
+              <dd class="mt-2 text-sm font-bold leading-7 text-mist">{text}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="詰みやすいポイント" lead="良番、雨、キャリー、終電など、当日に焦りやすいところ。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {warningBlocks.map(([label, text]) => (
-        <article class="rounded-xl border border-amber/25 bg-violet/20 p-4">
-          <p class="font-classical font-black text-mist">{label}</p>
-          <p class="mt-2 text-sm leading-7 text-muted">{text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Baggage" title="荷物別の動き方" lead="小さめバッグ、リュック、キャリー、物販後、良番の日で動きを分けます。" />
+        <dl class="grid gap-3">
+          {baggageRows.map(([label, text]) => (
+            <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+              <dt class="gothic-label">{label}</dt>
+              <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="ぼっち参戦・初参戦メモ" />
-    <div class="grid gap-4 md:grid-cols-2">
-      <article class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Solo</p>
-        <p class="mt-3 text-sm font-bold leading-7 text-muted">{venue.soloOneLine}</p>
-      </article>
-      <article class="gothic-card rounded-xl p-5">
-        <p class="gothic-label pt-2">Beginner</p>
-        <p class="mt-3 text-sm font-bold leading-7 text-muted">{venue.beginnerOneLine}</p>
-      </article>
-    </div>
-  </section>
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Nearby" title="周辺情報" lead="コンビニ、駅ロッカー、待機場所、雨の日、終演後の帰り方を当日目線で整理します。" />
+        <dl class="grid gap-3">
+          {nearbyRows.map(([label, text]) => (
+            <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+              <dt class="gothic-label">{label}</dt>
+              <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="情報ソース" lead="公式情報、個人ブログ・note、SNS/Q&A、未確認情報を分けています。本文コピーはしていません。" />
-    <div class="grid gap-4 lg:grid-cols-4">
-      {sourceGroupKeys.map((group) => (
-        <div class="gothic-card rounded-xl p-5">
-          <p class="gothic-label pt-2">{sourceGroupLabel[group]}</p>
+      {dayDecisionRows.length > 0 && (
+        <section class="gothic-card rounded-xl p-5 md:p-6">
+          <SectionTitle eyebrow="Decision" title="当日判断" lead="良番、物販、雨、ぼっち参戦、終演後に急ぐ日など、公式情報だけでは分かりにくい動きを整理します。" />
+          <dl class="grid gap-3">
+            {dayDecisionRows.map(([label, text]) => (
+              <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+                <dt class="gothic-label">{label}</dt>
+                <dd class="mt-2 text-sm leading-7 text-mist">{text}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Reports" title="参戦レポから見える傾向" lead={venue.blogResearch?.summary || '参戦レポ由来情報はまだ整理中です。'} />
+        <div class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">
+          <p>調査状況: <span class="font-black text-mist">{blogResearchStatusLabel[venue.blogResearch?.status ?? 'not_started']}</span></p>
+          <p>確度: <span class="font-black text-mist">{venue.blogResearch?.confidence ?? 'unknown'}</span></p>
+          {venue.blogResearch?.checkedAt && <p>確認日: <span class="font-black text-mist">{venue.blogResearch.checkedAt}</span></p>}
+        </div>
+        {blogSignals.length > 0 ? (
           <div class="mt-4 grid gap-3">
-            {groupedSources[group].length > 0 ? groupedSources[group].map((source) => (
-              <a class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-7 text-muted transition hover:border-amber/55 hover:text-amber" href={source.url || '#'} target={source.url ? '_blank' : undefined} rel={source.url ? 'noopener noreferrer' : undefined}>
-                <span class="font-black text-mist">{source.label}</span><br />
-                <span>{source.type} / {source.checkedAt}</span>
-              </a>
-            )) : <p class="text-sm leading-7 text-muted">登録なし</p>}
+            {blogSignals.map((signal) => (
+              <article class="rounded-md border border-amber/20 bg-black/25 p-4">
+                <p class="gothic-label">{signal.topic} / {signal.confidence}</p>
+                <p class="mt-2 text-sm leading-7 text-mist">{signal.summary}</p>
+                <p class="mt-2 text-xs leading-6 text-muted">{signal.copyrightNote}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="mt-4 text-sm leading-7 text-muted">参戦レポ由来の傾向はまだ登録されていません。</p>
+        )}
+      </section>
+
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Beginner / Solo" title="ぼっち参戦・初参戦メモ" />
+        <div class="grid gap-3 md:grid-cols-2">
+          <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+            <p class="gothic-label">ぼっち参戦</p>
+            <p class="mt-2 text-sm leading-7 text-mist">{venue.soloOneLine || venue.soloStrategy || venue.soloNote || '会場前で無理に交流しなくてOK。整列開始までは駅周辺で時間調整する。'}</p>
+          </div>
+          <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+            <p class="gothic-label">初参戦</p>
+            <p class="mt-2 text-sm leading-7 text-mist">{venue.beginnerOneLine || venue.beginnerStrategy || venue.beginnerNote || '入口、整理番号、ドリンク代、荷物の預け先を入場前に決める。'}</p>
           </div>
         </div>
-      ))}
-    </div>
-    <p class="mt-4 rounded-md border border-amber/25 bg-black/25 p-4 text-sm leading-7 text-muted">個人ブログ・note由来の情報は、本文をコピーせず、要点のみ独自表現で整理しています。設備や運用は公演・時期により変わる可能性があります。</p>
-    <p class="mt-4 rounded-md border border-amber/25 bg-black/25 p-4 text-sm leading-7 text-muted">{venue.infoFreshnessWarning}</p>
-  </section>
+      </section>
 
-  {(officialFacts.length > 0 || communityFacts.length > 0) && (
-    <section class="container-navi py-8">
-      <SectionTitle title="登録済みメモ一覧" lead="細かい公式事実・要確認メモです。最終判断は公式と当日案内を優先してください。" />
-      <div class="grid gap-4 md:grid-cols-2">
-        {[...officialFacts, ...communityFacts].map((fact) => (
-          <article class="gothic-card rounded-xl p-4">
-            <p class="gothic-label pt-2">{fact.sourceType === 'official' ? 'Official' : 'Check'}</p>
-            <h2 class="font-classical mt-2 text-lg font-black text-mist">{fact.label}</h2>
-            <p class="mt-2 text-sm leading-7 text-muted">{fact.body}</p>
-            {fact.note && <p class="mt-2 rounded-md border border-amber/25 bg-violet/20 p-2 text-xs leading-6 text-muted">{fact.note}</p>}
-            <p class="mt-3 text-xs leading-6 text-muted">確認日: {fact.checkedAt} / 出典: <a class="text-amber underline-offset-4 hover:underline" href={fact.sourceUrl} target="_blank" rel="noopener noreferrer">{fact.sourceLabel}</a> / {factSourceTypeLabel[fact.sourceType] ?? '要確認'}</p>
-          </article>
-        ))}
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Sources" title="情報ソース" lead="公式情報と個人ブログ・note・SNS/Q&A由来情報を分けて表示します。" />
+        <NoticeBox title="参戦レポ情報の扱い" tone="warning">
+          <p>個人ブログ・note由来の情報は、本文をコピーせず、要点のみ独自表現で整理しています。設備や運用は公演・時期により変わる可能性があります。</p>
+        </NoticeBox>
+        <div class="mt-5 grid gap-4">
+          {sourceGroupKeys.map((key) => (
+            <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+              <p class="font-classical font-black text-mist">{sourceGroupLabel[key]}</p>
+              {groupedSources[key].length > 0 ? (
+                <ul class="mt-3 space-y-2 text-sm leading-6 text-muted">
+                  {groupedSources[key].map((source) => (
+                    <li>
+                      {source.url ? (
+                        <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+                      ) : (
+                        <span>{source.label}</span>
+                      )}
+                      <span> / {source.checkedAt}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p class="mt-3 text-sm text-muted">登録なし</p>
+              )}
+            </div>
+          ))}
+        </div>
+        {sourceNotes.length > 0 && (
+          <div class="mt-5 rounded-md border border-amber/20 bg-black/25 p-4">
+            <p class="font-classical font-black text-mist">要確認メモ</p>
+            <ul class="mt-3 space-y-2 text-sm leading-6 text-muted">
+              {sourceNotes.map((note) => <li>{note}</li>)}
+            </ul>
+          </div>
+        )}
+      </section>
+    </div>
+
+    <aside class="space-y-5 lg:sticky lg:top-24">
+      <div class="gothic-card rounded-xl p-5">
+        <p class="font-classical text-lg font-black text-mist">公式・検索リンク</p>
+        <div class="mt-4 grid gap-3">
+          {venue.officialUrl ? (
+            <a class="gothic-button focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href={venue.officialUrl} target="_blank" rel="noopener noreferrer">会場公式を見る</a>
+          ) : (
+            <p class="rounded-md border border-amber/20 bg-black/25 p-3 text-sm leading-6 text-muted">公式URLは未登録です。会場名で検索して最新情報を確認してください。</p>
+          )}
+          {(venue.ticketSearchLinks ?? []).map((link) => (
+            <a class="gothic-button-secondary focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+          ))}
+        </div>
       </div>
-    </section>
-  )}
 
-  <section class="container-navi py-8">
-    <SectionTitle title="公式・検索リンク" lead="公演情報、出演者、日程、チケット状況はリンク先で確認してください。" />
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {venue.officialUrl && <LinkCard title={`${venue.name} 公式ページ`} description="会場公式ページを開きます。設備・アクセス・スケジュールは公式情報を優先してください。" href={venue.officialUrl} cta="公式を見る" />}
-      {(venue.ticketSearchLinks ?? []).map((link) => (
-        <LinkCard title={link.label} description="チケットサイト側で最新の公演情報を確認してください。当サイトでは公演情報を転載しません。" href={link.url} cta="公式で確認" />
-      ))}
-    </div>
+      <NoticeBox title="公演情報は公式で確認" tone="warning">
+        <p>このページでは公演名、出演者、日程、チケット状況を掲載しません。最新の公演情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
+      </NoticeBox>
+    </aside>
   </section>
 
-  <section class="container-navi py-8">
-    <SectionTitle title="関連記事" />
+  <section class="container-navi pb-12">
+    <SectionTitle eyebrow="Related" title="関連記事" />
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {relatedLinks.map((link) => <LinkCard {...link} />)}
     </div>

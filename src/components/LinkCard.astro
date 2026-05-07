@@ -7,7 +7,7 @@ interface Props {
   cta?: string;
 }
 
-const { title, description, href, note, cta = '公式ページを開く' } = Astro.props;
+const { title, description, href, note, cta = '開く' } = Astro.props;
 const isExternal = href.startsWith('http');
 ---
 

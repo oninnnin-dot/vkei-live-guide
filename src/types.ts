@@ -160,7 +160,7 @@ export type VenueComment = {
   checkedAt: string;
 };
 
-export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'unknown';
+export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'sns_report' | 'unknown';
 export type AvailabilityStatus = 'available' | 'unavailable' | 'unknown';
 
 export type LockerInfo = {
@@ -171,6 +171,8 @@ export type LockerInfo = {
   afterEntryUse: AvailabilityStatus;
   coinNeeded: 'yes' | 'no' | 'unknown';
   largeBagFit: 'yes' | 'no' | 'unknown';
+  stationLockerRecommended: 'yes' | 'no' | 'depends' | 'unknown';
+  bestMove: string;
   sourceConfidence: LogisticsConfidence;
   lastCheckedAt: string;
 };
@@ -181,6 +183,7 @@ export type CloakInfo = {
   priceText: string;
   timingText: string;
   bagTypeText: string;
+  bestMove: string;
   sourceConfidence: LogisticsConfidence;
   lastCheckedAt: string;
 };

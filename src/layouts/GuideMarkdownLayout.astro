@@ -10,16 +10,16 @@ const { frontmatter } = Astro.props;
   <Breadcrumbs items={[{ label: 'ガイド', href: '/guides/beginner' }, { label: frontmatter.pageTitle ?? frontmatter.title }]} />
   <section class="container-navi py-8">
     <div class="max-w-3xl">
-      <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Guide</p>
-      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">{frontmatter.pageTitle ?? frontmatter.title}</h1>
+      <p class="gothic-label">Guide</p>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">{frontmatter.pageTitle ?? frontmatter.title}</h1>
       {frontmatter.lead && <p class="mt-4 text-base leading-8 text-muted md:text-lg">{frontmatter.lead}</p>}
     </div>
     <div class="mt-8">
       <NoticeBox title="公式確認のお願い" tone="warning">
-        <p>公演情報・入場方法・ドリンク代・物販ルールは公演ごとに変わります。最終判断は必ず公式サイト、主催、会場の案内で確認してください。</p>
+        <p>公演情報、入場方法、ドリンク代、物販ルールは公演ごとに変わります。最終判断は必ず公式サイト、主催者告知、会場の当日案内で確認してください。</p>
       </NoticeBox>
     </div>
-    <article class="guide-content mt-8 max-w-3xl rounded-lg border border-line bg-panel p-5 shadow-glow md:p-8">
+    <article class="guide-content gothic-card mt-8 max-w-3xl rounded-xl p-5 md:p-8">
       <slot />
     </article>
   </section>

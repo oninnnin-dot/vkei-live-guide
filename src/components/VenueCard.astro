@@ -28,65 +28,50 @@ const typeLabel = {
   unknown: '要確認',
 }[venue.venueType ?? 'unknown'];
 
-const officialFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType === 'official');
-const communityFacts = (venue.factChecks ?? []).filter((fact) => fact.sourceType !== 'official');
-const practicalHeadline = venue.practicalSummary?.headline ?? venue.lockerProfile?.bestMove ?? venue.baggageNote;
-const lockerRisk = venue.lockerProfile?.riskLevel ?? 3;
 const lockerStatusLabel = {
   available: 'あり',
   none: 'なし',
   limited: '少数',
   unknown: '未確認',
 }[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
+
 const cloakStatusLabel = {
   available: 'あり',
   none: 'なし',
   event_dependent: '公演による',
   unknown: '未確認',
 }[venue.cloakInfo?.cloakStatus ?? 'unknown'];
-const stationLockerLabel = venue.nearbyInfo?.stationLocker?.includes('駅')
-  ? 'はい'
-  : venue.lockerInfo?.venueLockerStatus === 'available'
-    ? '状況次第'
-    : '未確認';
+
+const stationLockerLabel = {
+  yes: 'はい',
+  no: 'いいえ',
+  depends: '状況次第',
+  unknown: '未確認',
+}[venue.lockerInfo?.stationLockerRecommended ?? (
+  venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown'
+)];
+
+const blogResearchLabel = {
+  researched: '済',
+  partial: '一部',
+  not_found: '見つからず',
+  not_started: '未調査',
+}[venue.blogResearch?.status ?? 'not_started'];
+
 const baggageOneLine =
+  venue.lockerInfo?.bestMove ||
   venue.dayDecisionGuide?.baggageDay ||
   venue.baggageGuide?.backpack ||
-  practicalHeadline;
+  venue.practicalSummary?.headline ||
+  venue.baggageNote ||
+  '荷物が多い日は駅ロッカーかクロークを先に決める。';
 
 const accessLabel = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 要確認'}`
   : '最寄り駅 要確認';
 
-const displayBadges = [
-  typeLabel,
-  scaleLabel,
-  venue.archiveOnly ? '閉館アーカイブ' : '',
-].filter(Boolean);
-
 const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
-
-const tipFilterMap: Record<string, string> = {
-  ロッカー注意: 'tip-locker',
-  クローク確認: 'tip-cloak',
-  駅ロッカー推奨: 'tip-station-locker',
-  現金必要: 'tip-cash',
-  '100円玉必要': 'tip-coin',
-  再入場不可注意: 'tip-no-reentry',
-  地下会場: 'tip-basement',
-  階段混雑注意: 'tip-stairs',
-  トイレ少なめ: 'tip-restroom',
-  終演後混雑: 'tip-return-crowd',
-  近隣待機注意: 'tip-neighborhood',
-  歌舞伎町エリア注意: 'tip-kabukicho',
-  渋谷人混み注意: 'tip-shibuya-crowd',
-  遠征荷物注意: 'tip-travel-baggage',
-  物販後荷物注意: 'tip-merch-baggage',
-  ぼっち参戦向き: 'tip-solo',
-  初参戦は入口確認: 'tip-entry-check',
-};
-const tipFilterTags = (venue.tipTags ?? []).map((tag) => tipFilterMap[tag]).filter(Boolean);
 
 const searchText = [
   venue.name,
@@ -101,29 +86,35 @@ const searchText = [
   venue.vkeiUseType,
   typeLabel,
   scaleLabel,
-  practicalHeadline,
-  venue.lockerProfile?.summary,
-  venue.lockerProfile?.bestMove,
-  venue.cloakProfile?.summary,
+  baggageOneLine,
   venue.lockerInfo?.venueLockerText,
   venue.lockerInfo?.lockerCountText,
+  venue.lockerInfo?.bestMove,
   venue.cloakInfo?.cloakText,
+  venue.cloakInfo?.bestMove,
   venue.baggageGuide?.backpack,
   venue.nearbyInfo?.stationLocker,
   venue.nearbyInfo?.waitingSpot,
   venue.nearbyInfo?.afterShowRoute,
   venue.blogResearch?.summary,
-  venue.arrivalStrategy,
-  venue.afterShowStrategy,
   ...(venue.practicalSummary?.points ?? []),
   ...(venue.blogSignals ?? []).map((signal) => signal.summary),
   ...(venue.factChecks ?? []).map((fact) => `${fact.label} ${fact.body} ${fact.sourceLabel}`),
   ...(venue.tipTags ?? []),
 ].filter(Boolean).join(' ');
 
-const hasLockerFact = Boolean(venue.lockerProfile) || (venue.factChecks ?? []).some((fact) => ['locker', 'cloak', 'baggage'].includes(fact.category));
-const hasNearbyFact = (venue.factChecks ?? []).some((fact) => ['nearby', 'parking', 'entry', 'stairs'].includes(fact.category));
-const hasReturnFact = Boolean(venue.afterShowStrategy) || (venue.factChecks ?? []).some((fact) => fact.category === 'return');
+const lockerSortRank = {
+  none: 4,
+  limited: 3,
+  unknown: 2,
+  available: 1,
+}[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
+
+const displayBadges = [
+  typeLabel,
+  scaleLabel,
+  venue.archiveOnly ? '閉館アーカイブ' : '',
+].filter(Boolean);
 
 const filterTags = [
   'all',
@@ -133,13 +124,11 @@ const filterTags = [
   venue.venueType,
   venue.vkeiAffinity === 'high' ? 'vkei-high' : '',
   venue.minorVkeiFriendly ? 'minor-vkei' : '',
-  venue.vkeiUseType === 'release_event' ? 'release-event' : '',
-  venue.vkeiUseType === 'large_scale' || venue.venueType === 'hall' ? 'large-hall' : '',
   ['partially_verified', 'social_only', 'unknown'].includes(venue.sourceConfidence) ? 'needs-check' : '',
-  hasLockerFact ? 'locker-fact' : '',
-  communityFacts.length > 0 ? 'community-fact' : '',
-  hasNearbyFact ? 'nearby-fact' : '',
-  hasReturnFact ? 'return-fact' : '',
+  venue.lockerInfo ? 'locker-fact' : '',
+  (venue.blogSignals ?? []).length > 0 ? 'community-fact' : '',
+  venue.nearbyInfo ? 'nearby-fact' : '',
+  venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
   venue.region,
   venue.prefecture,
   venue.areaGroup,
@@ -147,7 +136,6 @@ const filterTags = [
   venue.area === '渋谷' || venue.areaGroup?.includes('shibuya') ? 'shibuya' : '',
   venue.area === '下北沢' || venue.areaGroup?.includes('shimokitazawa') ? 'shimokitazawa' : '',
   venue.area === '池袋' || venue.areaGroup?.includes('ikebukuro') ? 'ikebukuro' : '',
-  ...tipFilterTags,
 ].filter(Boolean).join(' ');
 ---
 
@@ -166,9 +154,7 @@ const filterTags = [
   data-affinity={venue.vkeiAffinity}
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
-  data-locker-info={hasLockerFact ? '1' : '0'}
-  data-locker-risk={lockerRisk}
-  data-community-info={communityFacts.length > 0 ? '1' : '0'}
+  data-locker-rank={lockerSortRank}
   data-tags={(venue.tipTags ?? []).join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}
@@ -186,7 +172,7 @@ const filterTags = [
   </div>
 
   <div class="mt-4 rounded-lg border border-amber/20 bg-black/25 p-3">
-    <p class="gothic-label">Baggage Move</p>
+    <p class="gothic-label">荷物の一言結論</p>
     <p class="mt-2 text-sm font-black leading-7 text-mist">{baggageOneLine}</p>
   </div>
 
@@ -203,6 +189,10 @@ const filterTags = [
       <dt class="text-muted">駅ロッカー推奨</dt>
       <dd class="min-w-0 text-right font-black text-mist">{stationLockerLabel}</dd>
     </div>
+    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
+      <dt class="text-muted">参戦レポ調査</dt>
+      <dd class="min-w-0 text-right font-black text-mist">{blogResearchLabel}</dd>
+    </div>
   </dl>
 
   {visibleTipTags.length > 0 && (
@@ -215,12 +205,6 @@ const filterTags = [
   {!compact && (
     <p class="mt-4 flex-1 text-sm leading-7 text-muted">
       {venue.beginnerOneLine || venue.currentUseNote || venue.beginnerNote}
-    </p>
-  )}
-
-  {compact && (
-    <p class="mt-4 flex-1 text-xs leading-6 text-muted">
-      公式 {officialFacts.length}件 / 要確認メモ {communityFacts.length}件
     </p>
   )}
 
