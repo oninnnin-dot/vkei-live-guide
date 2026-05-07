@@ -148,6 +148,18 @@ export type BlogSignal = {
   copyrightNote: string;
 };
 
+export type VenueComment = {
+  category: 'locker' | 'cloak' | 'baggage' | 'arrival' | 'waiting' | 'merch' | 'return' | 'nearby' | 'beginner' | 'solo' | 'weather' | 'other';
+  title: string;
+  comment: string;
+  action: string;
+  sourceType: 'official' | 'personal_blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'venue_database' | 'review_site' | 'mixed' | 'unknown';
+  confidence: 'high' | 'medium' | 'low' | 'unknown';
+  sourceName: string;
+  sourceUrl: string;
+  checkedAt: string;
+};
+
 export type SourceLink = {
   label: string;
   url: string;
@@ -235,6 +247,7 @@ export type Venue = {
   floorBaggageWarning?: string;
   practicalSummary?: PracticalSummary;
   blogSignals?: BlogSignal[];
+  venueComments?: VenueComment[];
   sourceLinks?: SourceLink[];
   infoFreshnessWarning?: string;
   ticketSearchLinks: TicketSearchLink[];
