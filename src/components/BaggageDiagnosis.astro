@@ -1,0 +1,136 @@
+---
+---
+
+<section class="diagnosis-section container-navi py-8" aria-labelledby="baggage-diagnosis-title">
+  <div class="diagnosis-panel rounded-xl p-5 md:p-7">
+    <div class="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+      <div>
+        <p class="gothic-label">Quick Check</p>
+        <h2 id="baggage-diagnosis-title" class="font-classical mt-3 text-2xl font-black leading-tight text-mist md:text-4xl">
+          荷物どうする診断
+        </h2>
+        <p class="mt-4 text-sm leading-7 text-muted md:text-base">
+          キャリーあり・物販あり・良番・雨の日など、小箱ライブで迷いやすい条件から当日の動き方をざっくり確認できます。
+        </p>
+        <p class="mt-4 rounded-md border border-amber/20 bg-black/25 p-3 text-xs leading-6 text-muted">
+          会場設備は公演ごとに変わることがあります。診断は当日の動き方の目安として使い、最終的な公演案内は公式で確認してください。
+        </p>
+      </div>
+
+      <div class="grid gap-4" data-baggage-diagnosis>
+        <div class="diagnosis-options">
+          <fieldset>
+            <legend>キャリーケース</legend>
+            <label><input type="radio" name="carry" value="none" checked />なし</label>
+            <label><input type="radio" name="carry" value="yes" />あり</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>物販で荷物が増える</legend>
+            <label><input type="radio" name="merch" value="none" checked />なし</label>
+            <label><input type="radio" name="merch" value="yes" />あり</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>整理番号</legend>
+            <label><input type="radio" name="number" value="good" />良番</label>
+            <label><input type="radio" name="number" value="normal" checked />普通</label>
+            <label><input type="radio" name="number" value="late" />後方</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>天気</legend>
+            <label><input type="radio" name="weather" value="clear" checked />晴れ/くもり</label>
+            <label><input type="radio" name="weather" value="rain" />雨</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>参戦スタイル</legend>
+            <label><input type="radio" name="style" value="solo" checked />ぼっち</label>
+            <label><input type="radio" name="style" value="friends" />友達あり</label>
+          </fieldset>
+        </div>
+
+        <div class="diagnosis-result" aria-live="polite">
+          <p class="gothic-label">Today's move</p>
+          <h3 class="font-classical mt-2 text-xl font-black text-mist" data-diagnosis-title>小さめバッグならそのまま入場しやすい日</h3>
+          <ul class="mt-4 space-y-3 text-sm leading-7 text-mist" data-diagnosis-list>
+            <li>小さめバッグならそのまま入場でも動きやすい。ただしフロアが詰まる公演では、リュックを背負ったままにせず体の前で持つ。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector('[data-baggage-diagnosis]');
+
+  if (root) {
+    const title = root.querySelector('[data-diagnosis-title]');
+    const list = root.querySelector('[data-diagnosis-list]');
+
+    const getValue = (name) => root.querySelector(`input[name="${name}"]:checked`)?.value;
+
+    const render = () => {
+      const carry = getValue('carry');
+      const merch = getValue('merch');
+      const number = getValue('number');
+      const weather = getValue('weather');
+      const style = getValue('style');
+      const moves = [];
+      let headline = '小さめバッグならそのまま入場しやすい日';
+
+      if (carry === 'yes' && number === 'good') {
+        headline = 'キャリーは先に預けて、身軽な状態で整列へ';
+        moves.push('キャリーは会場に持ち込まない前提で動くのが安全。駅ロッカー・ホテル・大型荷物預かりを先に済ませてから整列へ。');
+        moves.push('良番の日は、開場直前に荷物で迷うと番号の強みが消えます。ロッカー探し、トイレ、ドリンク代の準備は早めに終わらせる。');
+      } else if (carry === 'yes') {
+        headline = 'キャリーありの日は、会場前に行く前が勝負';
+        moves.push('キャリーは駅ロッカー、ホテル、手荷物預かりに逃がす。会場へ着いてから預け先を探すと、整列や物販の動きが重くなります。');
+      }
+
+      if (merch === 'yes') {
+        if (headline === '小さめバッグならそのまま入場しやすい日') headline = '物販後の荷物を先に決める日';
+        moves.push('物販後に袋が増える前提で、薄いサブバッグか駅ロッカーを用意。終演まで持つなら、足元に置かず体の前で管理できる量に抑える。');
+      }
+
+      if (weather === 'rain' && style === 'solo') {
+        headline = '雨の日のぼっち参戦は、屋根とトイレを先に押さえる';
+        moves.push('会場前で長く待つより、駅周辺でトイレ・飲み物・荷物整理を済ませる方が安全。整列開始までは屋根のある場所を先に決めておく。');
+      } else if (weather === 'rain') {
+        moves.push('雨の日は傘と荷物で手がふさがりやすい。整列時間までは駅や商業施設側で待ち、濡れた荷物をフロアに持ち込まない量にする。');
+      }
+
+      if (number === 'late' && carry === 'none' && merch === 'none') {
+        headline = '後方なら小さめバッグで動きやすく';
+        moves.push('小さめバッグならそのまま入場でも動きやすい。ただしフロアが詰まる公演では、リュックを背負ったままにせず体の前で持つ。');
+      }
+
+      if (number === 'good' && carry !== 'yes') {
+        moves.push('良番の日は場所取りより前に荷物処理。駅ロッカー、トイレ、現金、電子チケット表示を済ませてから整列に入る。');
+      }
+
+      if (style === 'solo' && weather !== 'rain') {
+        moves.push('ぼっち参戦は会場前に長く立たず、駅周辺で時間調整してから整列へ。帰りの駅入口も先に見ておくと焦りにくい。');
+      }
+
+      if (moves.length === 0) {
+        moves.push('小さめバッグならそのまま入場でも動きやすい。ただしフロアが詰まる公演では、リュックを背負ったままにせず体の前で持つ。');
+      }
+
+      if (title) title.textContent = headline;
+      if (list) {
+        list.innerHTML = '';
+        moves.slice(0, 4).forEach((move) => {
+          const li = document.createElement('li');
+          li.textContent = move;
+          list.append(li);
+        });
+      }
+    };
+
+    root.addEventListener('change', render);
+    render();
+  }
+</script>

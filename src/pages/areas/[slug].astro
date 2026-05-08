@@ -1,0 +1,74 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VenueCard from '@components/VenueCard.astro';
+import { areaGuides, type AreaGuide } from '@/data/areaGuides';
+import venues from '@data/venues.json';
+import type { Venue } from '@/types';
+
+export function getStaticPaths() {
+  return areaGuides.map((area) => ({
+    params: { slug: area.slug },
+    props: { area },
+  }));
+}
+
+interface Props {
+  area: AreaGuide;
+}
+
+const { area } = Astro.props;
+const allVenues = (venues as Venue[]).filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly);
+const areaVenues = allVenues.filter((venue) =>
+  area.aliases.some((name) => venue.area?.includes(name) || venue.areaGroup?.includes(area.slug) || venue.areaGroup?.includes(name.toLowerCase()))
+);
+
+const title = `${area.name}のV系ライブ遠征ガイド｜ロッカー・荷物・待機場所`;
+const description = `${area.name}のV系ライブ遠征で迷いやすいロッカー、荷物、待機場所、雨の日、終演後の帰り方をエリア単位で整理しています。`;
+
+const guideBlocks = [
+  ['荷物・ロッカーの考え方', area.baggage],
+  ['開場前の動き方', area.waiting],
+  ['雨の日の逃げ方', area.rain],
+  ['終演後の帰り方', area.returnWay],
+  ['初参戦メモ', area.beginner],
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: 'エリア攻略', href: '/areas' }, { label: area.name }]} />
+
+  <section class="container-navi py-8">
+    <div class="gothic-panel rounded-xl p-5 md:p-8">
+      <p class="gothic-label">Area Guide</p>
+      <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{area.name}のV系ライブ遠征ガイド</h1>
+      <p class="mt-4 max-w-3xl text-sm leading-8 text-muted md:text-base">{area.overview}</p>
+    </div>
+  </section>
+
+  <section class="container-navi pb-10">
+    <SectionTitle eyebrow="Venues" title="このエリアの会場" lead="公演情報ではなく、会場ごとの荷物・ロッカー・クローク導線へつなげます。" />
+    {areaVenues.length > 0 ? (
+      <div class="area-venue-list">
+        {areaVenues.map((venue) => <VenueCard venue={venue} compact />)}
+      </div>
+    ) : (
+      <div class="gothic-card rounded-xl p-5 text-sm leading-7 text-muted">
+        このエリアの会場データは調査待ちです。公演情報は公式サイト・チケットサイトで確認してください。
+      </div>
+    )}
+  </section>
+
+  <section class="container-navi pb-12">
+    <SectionTitle eyebrow="How to move" title={`${area.name}で当日迷わないために`} />
+    <div class="grid gap-4 md:grid-cols-2">
+      {guideBlocks.map(([heading, body]) => (
+        <article class="area-card rounded-xl p-5">
+          <h2 class="font-classical text-xl font-black text-mist">{heading}</h2>
+          <p class="mt-3 text-sm leading-7 text-muted">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

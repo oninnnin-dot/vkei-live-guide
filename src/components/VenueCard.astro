@@ -121,6 +121,49 @@ const displayBadges = [
   venue.archiveOnly ? '閉館アーカイブ' : '',
 ].filter(Boolean);
 
+const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
+const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
+const cloakBagText = venue.cloakInfo?.bagTypeText ?? '';
+
+let luggageDifficulty = '調査待ち';
+if (lockerState === 'none' && cloakState === 'none') {
+  luggageDifficulty = '高';
+} else if (lockerState === 'available' && cloakState === 'available') {
+  luggageDifficulty = '低';
+} else if (lockerState === 'limited' || cloakState === 'available' || cloakState === 'event_dependent') {
+  luggageDifficulty = '中';
+}
+
+let carryLabel = '調査待ち';
+if (lockerState === 'none' && cloakState === 'none') {
+  carryLabel = '駅預け推奨';
+} else if (lockerState === 'limited' || cloakState === 'event_dependent') {
+  carryLabel = '駅預け推奨';
+} else if (cloakState === 'available') {
+  carryLabel = cloakBagText.includes('キャリー') ? '会場対応可' : '非推奨';
+}
+
+const nearbyReadiness = [
+  venue.nearbyInfo?.afterShowRoute,
+  venue.nearbyInfo?.nightSafety,
+  venue.nearbyInfo?.restroomBeforeEntry,
+  venue.nearbyInfo?.waitingSpot,
+].filter(Boolean).length;
+const hasNightCaution = /注意|繁華街|歌舞伎町|夜道|大通り/.test(venue.nearbyInfo?.nightSafety ?? '');
+const soloBeginnerLabel = nearbyReadiness < 3
+  ? '調査待ち'
+  : hasNightCaution
+    ? '注意'
+    : (venue.soloFriendly ?? 0) >= 4
+      ? '向き'
+      : '普通';
+
+const practicalLabels = [
+  { label: '荷物難易度', value: luggageDifficulty },
+  { label: 'キャリー', value: carryLabel },
+  { label: 'ぼっち初参戦', value: soloBeginnerLabel },
+];
+
 const filterTags = [
   'all',
   venue.venueScale === 'small' ? 'small' : '',
@@ -173,6 +216,15 @@ const filterTags = [
   <div class="mt-4 flex flex-wrap gap-2">
     {displayBadges.map((badge) => (
       <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{badge}</span>
+    ))}
+  </div>
+
+  <div class="practical-labels mt-4" aria-label="当日の判断ラベル">
+    {practicalLabels.map((item) => (
+      <div class="practical-label">
+        <span>{item.label}</span>
+        <strong>{item.value}</strong>
+      </div>
     ))}
   </div>
 

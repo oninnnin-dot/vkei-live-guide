@@ -90,6 +90,25 @@ const blogResearchStatusLabel = {
   not_started: '未調査',
 };
 
+const blogConfidenceLabel: Record<string, string> = {
+  high: '高め',
+  medium: '中くらい',
+  low: '低め',
+  unknown: '調査待ち',
+};
+
+const signalTopicLabel: Record<string, string> = {
+  locker: 'ロッカー',
+  cloak: 'クローク',
+  baggage: '荷物',
+  waiting: '待機',
+  access: '行き方',
+  restroom: 'トイレ',
+  aftershow: '終演後',
+  rain: '雨の日',
+  convenience: '周辺',
+};
+
 const sourceGroupLabel = {
   official: '公式情報',
   personal: '個人ブログ・note・会場DB',
@@ -117,8 +136,8 @@ const sourceNotes = Array.isArray(venue.sourceNotes) ? venue.sourceNotes : [];
 const sourceLinks = venue.sourceLinks ?? [];
 const blogSignals = venue.blogSignals ?? [];
 const summaryPoints = venue.practicalSummary?.points ?? [];
-const title = `${venue.name}｜ロッカー・クローク・荷物攻略`;
-const description = `${venue.name}の当日の動き方、会場内ロッカー、クローク、駅ロッカー、周辺コンビニ、待機場所、雨の日、終演後の帰り方を整理。公演情報は転載せず公式へ誘導します。`;
+const title = `${venue.name}のロッカー・クローク・荷物ガイド｜V系ライブ遠征ナビ`;
+const description = `${venue.name}へ行く前に確認したい、会場内ロッカー、クローク、駅ロッカー、キャリーケース、物販後の荷物、開場前の待機場所、終演後の動き方をまとめています。`;
 
 const lockerRows = [
   ['会場内ロッカー', lockerStatusLabel],
@@ -152,6 +171,14 @@ const baggageRows = [
   ['物販後', venue.baggageGuide?.afterMerch || venue.baggageDecision?.afterMerch],
   ['良番の日', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
 ].filter(([, text]) => Boolean(text));
+
+const todayMoveRows = [
+  ['荷物少なめ', venue.baggageGuide?.smallBag || '小さめバッグならそのまま入場でも対応しやすい。貴重品は体の前で管理する。'],
+  ['リュックあり', venue.baggageGuide?.backpack || 'フロアが詰まる日は邪魔になりやすい。駅ロッカーかクロークを先に考える。'],
+  ['キャリーあり', venue.baggageGuide?.suitcase || '会場持ち込みは非推奨。駅ロッカー・ホテル・大型荷物預かりを優先する。'],
+  ['物販後', venue.baggageGuide?.afterMerch || '物販後に袋が増える前提で、折りたたみサブバッグか預け先を用意する。'],
+  ['良番の日', venue.baggageGuide?.goodTicketNumber || '荷物処理を先に終わらせる。入場直前に迷うと番号の良さが消える。'],
+];
 
 const nearbyRows = [
   ['近くのコンビニ', venue.nearbyInfo?.nearestConvenienceStore],
@@ -234,6 +261,18 @@ const relatedLinks = [
       </section>
 
       <section class="gothic-card rounded-xl p-5 md:p-6">
+        <SectionTitle eyebrow="Today" title="今日の動き方" lead="荷物量、物販、整理番号で迷ったときに、まずこの通りに動けるように整理しています。" />
+        <div class="today-move-grid">
+          {todayMoveRows.map(([label, text]) => (
+            <article class="today-move-card">
+              <p class="gothic-label">{label}</p>
+              <p>{displayText(text)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="gothic-card rounded-xl p-5 md:p-6">
         <SectionTitle eyebrow="Locker" title="ロッカー情報" lead="抽象スコアではなく、会場内ロッカーの有無・使えるタイミング・代替案を表示します。" />
         <dl class="grid gap-3">
           {lockerRows.map(([label, text]) => (
@@ -299,14 +338,14 @@ const relatedLinks = [
         <SectionTitle eyebrow="Reports" title="参戦レポから見える傾向" lead={venue.blogResearch?.summary || '参戦レポ由来情報はまだ整理中です。'} />
         <div class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">
           <p>調査状況: <span class="font-black text-mist">{blogResearchStatusLabel[venue.blogResearch?.status ?? 'not_started']}</span></p>
-          <p>確度: <span class="font-black text-mist">{venue.blogResearch?.confidence ?? 'unknown'}</span></p>
+          <p>確度: <span class="font-black text-mist">{blogConfidenceLabel[venue.blogResearch?.confidence ?? 'unknown']}</span></p>
           {venue.blogResearch?.checkedAt && <p>確認日: <span class="font-black text-mist">{venue.blogResearch.checkedAt}</span></p>}
         </div>
         {blogSignals.length > 0 ? (
           <div class="mt-4 grid gap-3">
             {blogSignals.map((signal) => (
               <article class="rounded-md border border-amber/20 bg-black/25 p-4">
-                <p class="gothic-label">{signal.topic} / {signal.confidence}</p>
+                <p class="gothic-label">{signalTopicLabel[signal.topic] ?? '参戦メモ'} / {blogConfidenceLabel[signal.confidence]}</p>
                 <p class="mt-2 text-sm leading-7 text-mist">{signal.summary}</p>
                 <p class="mt-2 text-xs leading-6 text-muted">{signal.copyrightNote}</p>
               </article>

@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import BaggageDiagnosis from '@components/BaggageDiagnosis.astro';
 import Hero from '@components/Hero.astro';
 import LinkCard from '@components/LinkCard.astro';
 import NoticeBox from '@components/NoticeBox.astro';
@@ -8,8 +9,8 @@ import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ遠征ナビ｜小箱・会場攻略・初参戦・持ち物ガイド';
-const description = '若手V系・マイナーV系・地下寄りライブに行く前に確認したい、小さいライブハウスの会場攻略、ロッカー、待機場所、終演後の帰り方、初参戦の流れ、持ち物、遠征費をまとめる実用ナビ。';
+const title = 'V系ライブ遠征ナビ｜小箱ライブのロッカー・荷物・待機場所ガイド';
+const description = 'V系ライブの小箱遠征で迷いやすいロッカー、クローク、荷物、待機場所、雨の日、終演後の動き方をまとめた実用ガイド。公演情報は公式で確認し、当日の不安をここで減らすサイトです。';
 
 const prioritySlugs = [
   'ikebukuro-edge',
@@ -79,6 +80,8 @@ const mainLinks = [
       { href: '/tools/budget', label: '遠征費シミュレーター' },
     ]}
   />
+
+  <BaggageDiagnosis />
 
   <section class="container-navi py-10">
     <NoticeBox title="このサイトの役割" tone="warning">

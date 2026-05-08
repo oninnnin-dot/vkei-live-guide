@@ -6,8 +6,8 @@ import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ会場を探す｜小箱・ロッカー・クローク攻略';
-const description = '会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を検索できます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。';
+const title = 'V系ライブ会場一覧｜ロッカー・クローク・荷物の動き方';
+const description = 'V系ライブで使われるライブハウスのロッカー、クローク、駅ロッカー推奨、荷物の動き方を会場別に確認できます。';
 const allVenues = venues as Venue[];
 const activeCount = allVenues.filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
@@ -30,7 +30,7 @@ const affinityOptions = [
   ['high', 'V系向き高'],
   ['medium', 'V系向き中'],
   ['low', 'V系向き低'],
-  ['unknown', '要確認'],
+  ['unknown', '調査待ち'],
 ];
 
 const quickChips = [
