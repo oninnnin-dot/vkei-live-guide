@@ -171,7 +171,7 @@ export type LockerInfo = {
   afterEntryUse: AvailabilityStatus;
   coinNeeded: 'yes' | 'no' | 'unknown';
   largeBagFit: 'yes' | 'no' | 'unknown';
-  stationLockerRecommended: 'yes' | 'no' | 'depends' | 'unknown';
+  stationLockerRecommended: 'yes' | 'no' | 'depends' | 'situation_dependent' | 'unknown';
   bestMove: string;
   sourceConfidence: LogisticsConfidence;
   lastCheckedAt: string;
@@ -245,6 +245,7 @@ export type Venue = {
   vkeiAffinity: VkeiAffinity;
   minorVkeiFriendly: boolean;
   sourceConfidence: SourceConfidence;
+  venueExistenceConfidence?: 'verified' | 'partially_verified' | 'social_only' | 'unknown';
   sourceType: SourceType;
   sourceMemo: string;
   grokSuggested: boolean;

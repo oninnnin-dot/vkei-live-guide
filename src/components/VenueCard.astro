@@ -13,7 +13,7 @@ const scaleLabel = {
   'small-mid': '小〜中箱',
   mid: '中箱',
   large: '大箱',
-  unknown: '規模調査待ち',
+  unknown: '規模確認中',
 }[venue.venueScale];
 
 const typeLabel = {
@@ -25,28 +25,29 @@ const typeLabel = {
   outdoor_stage: '屋外ステージ',
   event_space: 'イベントスペース',
   closed_archive: '閉館アーカイブ',
-  unknown: '調査待ち',
+  unknown: '確認中',
 }[venue.venueType ?? 'unknown'];
 
 const lockerStatusLabel = {
   available: 'あり',
   none: 'なし',
   limited: '少数',
-  unknown: '調査待ち',
+  unknown: '確認中',
 }[venue.lockerInfo?.venueLockerStatus ?? 'unknown'];
 
 const cloakStatusLabel = {
   available: 'あり',
   none: 'なし',
   event_dependent: '公演による',
-  unknown: '調査待ち',
+  unknown: '確認中',
 }[venue.cloakInfo?.cloakStatus ?? 'unknown'];
 
 const stationLockerLabel = {
   yes: 'はい',
   no: 'いいえ',
   depends: '状況次第',
-  unknown: '調査待ち',
+  situation_dependent: '状況次第',
+  unknown: '確認中',
 }[venue.lockerInfo?.stationLockerRecommended ?? (
   venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown'
 )];
@@ -60,8 +61,9 @@ const blogResearchLabel = {
 
 const displayText = (value: unknown) =>
   String(value ?? '')
-    .replaceAll('未確認', '調査待ち')
-    .replaceAll('要確認', '調査待ち');
+    .replaceAll('未確認', '確認中')
+    .replaceAll('要確認', '確認中')
+    .replaceAll('調査待ち', '確認中');
 
 const baggageOneLine = displayText(
   venue.practicalSummary?.headline ||
@@ -72,8 +74,8 @@ const baggageOneLine = displayText(
 );
 
 const accessLabel = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安 調査待ち'}`
-  : '最寄り駅 調査待ち';
+  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ' / 徒歩目安確認中'}`
+  : '駅情報確認中';
 
 const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
@@ -119,13 +121,17 @@ const displayBadges = [
   typeLabel,
   scaleLabel,
   venue.archiveOnly ? '閉館アーカイブ' : '',
-].filter(Boolean);
+].filter((label) => Boolean(label) && !String(label).includes('確認中') && !String(label).includes('調査待ち'));
 
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
 const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
+const stationLockerState = venue.lockerInfo?.stationLockerRecommended ?? (
+  venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown'
+);
+const blogResearchState = venue.blogResearch?.status ?? 'not_started';
 const cloakBagText = venue.cloakInfo?.bagTypeText ?? '';
 
-let luggageDifficulty = '調査待ち';
+let luggageDifficulty = '確認中';
 if (lockerState === 'none' && cloakState === 'none') {
   luggageDifficulty = '高';
 } else if (lockerState === 'available' && cloakState === 'available') {
@@ -134,7 +140,7 @@ if (lockerState === 'none' && cloakState === 'none') {
   luggageDifficulty = '中';
 }
 
-let carryLabel = '調査待ち';
+let carryLabel = '確認中';
 if (lockerState === 'none' && cloakState === 'none') {
   carryLabel = '駅預け推奨';
 } else if (lockerState === 'limited' || cloakState === 'event_dependent') {
@@ -151,7 +157,7 @@ const nearbyReadiness = [
 ].filter(Boolean).length;
 const hasNightCaution = /注意|繁華街|歌舞伎町|夜道|大通り/.test(venue.nearbyInfo?.nightSafety ?? '');
 const soloBeginnerLabel = nearbyReadiness < 3
-  ? '調査待ち'
+  ? '確認中'
   : hasNightCaution
     ? '注意'
     : (venue.soloFriendly ?? 0) >= 4
@@ -162,7 +168,17 @@ const practicalLabels = [
   { label: '荷物難易度', value: luggageDifficulty },
   { label: 'キャリー', value: carryLabel },
   { label: 'ぼっち初参戦', value: soloBeginnerLabel },
-];
+].filter((item) => !['調査待ち', '確認中'].includes(item.value));
+
+const cardFactRows = [
+  lockerState !== 'unknown' ? ['会場内ロッカー', lockerStatusLabel] : null,
+  cloakState !== 'unknown' ? ['クローク', cloakStatusLabel] : null,
+  stationLockerState !== 'unknown' ? ['駅ロッカー推奨', stationLockerLabel] : null,
+  ['researched', 'partial'].includes(blogResearchState) ? ['参戦レポ調査', blogResearchLabel] : null,
+].filter(Boolean) as Array<[string, string]>;
+
+const hasHiddenUnknowns = lockerState === 'unknown' || cloakState === 'unknown' || stationLockerState === 'unknown';
+const hiddenUnknownNote = '設備詳細は確認中。荷物が多い日は駅ロッカー先行が無難です。';
 
 const filterTags = [
   'all',
@@ -219,38 +235,38 @@ const filterTags = [
     ))}
   </div>
 
-  <div class="practical-labels mt-4" aria-label="当日の判断ラベル">
-    {practicalLabels.map((item) => (
-      <div class="practical-label">
-        <span>{item.label}</span>
-        <strong>{item.value}</strong>
-      </div>
-    ))}
-  </div>
+  {practicalLabels.length > 0 && (
+    <div class="practical-labels mt-4" aria-label="当日の判断ラベル">
+      {practicalLabels.map((item) => (
+        <div class="practical-label">
+          <span>{item.label}</span>
+          <strong>{item.value}</strong>
+        </div>
+      ))}
+    </div>
+  )}
 
   <div class="mt-4 rounded-lg border border-amber/20 bg-black/25 p-3">
     <p class="gothic-label">荷物の一言結論</p>
     <p class="mt-2 text-sm font-black leading-7 text-mist">{baggageOneLine}</p>
   </div>
 
-  <dl class="mt-4 grid gap-2 text-sm">
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-      <dt class="text-muted">会場内ロッカー</dt>
-      <dd class="min-w-0 text-right font-black text-mist">{lockerStatusLabel}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-      <dt class="text-muted">クローク</dt>
-      <dd class="min-w-0 text-right font-black text-mist">{cloakStatusLabel}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-      <dt class="text-muted">駅ロッカー推奨</dt>
-      <dd class="min-w-0 text-right font-black text-mist">{stationLockerLabel}</dd>
-    </div>
-    <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-      <dt class="text-muted">参戦レポ調査</dt>
-      <dd class="min-w-0 text-right font-black text-mist">{blogResearchLabel}</dd>
-    </div>
-  </dl>
+  {cardFactRows.length > 0 && (
+    <dl class="mt-4 grid gap-2 text-sm">
+      {cardFactRows.map(([label, value]) => (
+        <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
+          <dt class="text-muted">{label}</dt>
+          <dd class="min-w-0 text-right font-black text-mist">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  )}
+
+  {hasHiddenUnknowns && (
+    <p class="mt-3 rounded-md border border-amber/15 bg-black/20 px-3 py-2 text-xs font-bold leading-6 text-muted">
+      {hiddenUnknownNote}
+    </p>
+  )}
 
   {visibleTipTags.length > 0 && (
     <div class="mt-4 flex flex-wrap gap-2">
