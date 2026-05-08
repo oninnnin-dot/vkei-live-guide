@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
-    "preview": "astro preview --host 127.0.0.1"
+    "preview": "astro preview --host 127.0.0.1",
+    "verify:priority10": "node scripts/verify-priority-10.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.5.1",

@@ -2,7 +2,7 @@
 
 ライブ情報は公式で探す。小箱の不安はここで消す。
 
-「V系ライブ遠征ナビ」は、V系ライブ当日に困りやすい会場周辺・荷物・ロッカー・クローク・待機場所・終演後の帰り方を整理する静的Webサイトです。公演情報を網羅するサイトではありません。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。
+「V系ライブ遠征ナビ」は、公演情報を網羅するサイトではありません。V系ライブ当日に困りやすい会場周辺、荷物、ロッカー、クローク、待機場所、雨の日、終演後の帰り方を整理する静的Webサイトです。
 
 ## 技術構成
 
@@ -12,8 +12,9 @@
 - Markdown
 - JSON
 - @astrojs/sitemap
+- Cloudflare Pages または GitHub Pages
 
-外部DB、外部API、CMS、WordPress、スクレイピング、X API、Google Maps APIは使いません。Cloudflare PagesまたはGitHub Pagesで公開できる静的サイトです。
+外部DB、外部API、CMS、WordPress、スクレイピング、X API、Google Maps APIは使いません。
 
 ## ローカル起動
 
@@ -36,20 +37,7 @@ npm run dev
 npm run build
 ```
 
-静的ファイルは `dist/` に出力されます。
-
-## サイトの独自性
-
-このサイトの価値は、公式リンク集ではなく「当日どう動けばいいか」を会場ごとに整理することです。
-
-- 荷物がある日はどこへ預けるか
-- 良番の日に先に何を済ませるか
-- 物販後に荷物が増えたらどうするか
-- 雨の日はどこで待つか
-- ぼっち参戦で困りやすい点は何か
-- 終演後に急ぐ日は何を先に回収するか
-
-公式情報だけでは分かりにくい実用判断を、会場公式、会場FAQ、個人ブログ、note、参戦レポ、Q&A、SNSの要点から整理します。ただし、個人ブログや参戦レポの本文はコピーせず、要点だけを独自表現に変換します。
+ビルド成果物は `dist/` に出力されます。
 
 ## 公演情報を転載しない方針
 
@@ -63,14 +51,26 @@ npm run build
 - チケット状況
 - チケットサイト掲載文
 - 告知画像
-- アーティスト写真
+- アーティスト画像
 - 公式ロゴ
 
-これらは変更が早く、権利面でもリスクがあります。最新情報は公式サイト、チケットサイト、会場公式スケジュールへ誘導します。
+最新の公演情報は、公式サイト、チケットサイト、会場公式スケジュール、主催者告知、当日案内で確認する運用です。
+
+## サイトの独自性
+
+このサイトの価値は、公式リンク集ではなく「当日どう動けばいいか」を会場ごとに整理する点です。
+
+- 荷物がある日はどこへ預けるか
+- 良番の日に先に済ませること
+- 物販後に荷物が増える場合の動き
+- 雨の日に待ちやすい場所
+- 会場前で長く待ってよいか
+- 終演後に急ぐ日の回収順
+- ぼっち参戦で困りやすい点
 
 ## 会場データ
 
-会場データは `data/venues.json` で管理します。全国のV系ライブで使われることがある会場マスターを持ち、会場名、表記ゆれ、地域、都道府県、エリア、会場分類、V系利用傾向、情報確度を登録します。
+会場データは `data/venues.json` で管理します。
 
 主な項目:
 
@@ -84,18 +84,24 @@ npm run build
 - `venueType`: `small_livehouse`, `mid_livehouse`, `large_livehouse`, `hall`, `theater`, `outdoor_stage`, `event_space`, `closed_archive`, `unknown`
 - `venueScale`: `small`, `small-mid`, `mid`, `large`, `unknown`
 - `vkeiAffinity`: `high`, `medium`, `low`, `unknown`
-- `minorVkeiFriendly`: 若手V系・マイナーV系向きなら `true`
-- `sourceConfidence`: 情報確度
-- `sourceType`: 参照元の種類
-- `officialUrl`: 会場公式URL。未確認なら空文字
+- `sourceConfidence`: 会場存在情報の確度
 - `lastVerifiedAt`: 会場情報の最終確認日
-- `showInVenueList`: 現役一覧に出すか
-- `archiveOnly`: 閉館済み・過去会場アーカイブか
-- `tipTags`: 注意タグ
+- `showInVenueList`: 現役一覧に表示するか
+- `archiveOnly`: 閉館済み・過去会場アーカイブ扱いか
+
+閉館済み会場は以下のように管理します。
+
+```json
+{
+  "status": "closed",
+  "showInVenueList": false,
+  "archiveOnly": true
+}
+```
 
 ## ロッカー・クローク・周辺情報
 
-抽象的な「ロッカー危険度」だけでは判断できないため、以下の事実ベース項目で管理します。
+抽象的な「危険度」だけでは判断できないため、以下の事実ベース項目で管理します。
 
 ### `lockerInfo`
 
@@ -105,8 +111,10 @@ npm run build
 - `beforeEntryUse`: 開場前利用の可否
 - `afterEntryUse`: 開場後利用の可否
 - `coinNeeded`: 小銭が必要か
-- `largeBagFit`: 大荷物が入るか
-- `sourceConfidence`: `official`, `blog_report`, `mixed`, `unknown`
+- `largeBagFit`: 大型荷物が入るか
+- `stationLockerRecommended`: 駅ロッカー推奨か
+- `bestMove`: 荷物がある日の具体的な動き
+- `sourceConfidence`: `official`, `mixed`, `blog_report`, `sns_report`, `unknown`
 - `lastCheckedAt`: 確認日
 
 ### `cloakInfo`
@@ -116,22 +124,11 @@ npm run build
 - `priceText`: 料金情報。不明なら未確認
 - `timingText`: 受付タイミング
 - `bagTypeText`: 袋形式などの補足
-- `sourceConfidence`: `official`, `blog_report`, `mixed`, `unknown`
+- `bestMove`: クロークを使うべき状況
+- `sourceConfidence`: `official`, `mixed`, `blog_report`, `sns_report`, `unknown`
 - `lastCheckedAt`: 確認日
 
-### `baggageGuide`
-
-荷物別の当日判断です。
-
-- `smallBag`
-- `backpack`
-- `suitcase`
-- `afterMerch`
-- `goodTicketNumber`
-
 ### `nearbyInfo`
-
-会場周辺の実用情報です。
 
 - `nearestConvenienceStore`
 - `stationLocker`
@@ -144,101 +141,24 @@ npm run build
 
 ## 個人ブログ・参戦レポの扱い
 
-個人ブログ、note、参戦レポ、Q&A、SNS由来の情報は、本文をコピーせず、以下のように管理します。
+個人ブログ、note、参戦レポ、Q&A、SNS由来の情報は、文章コピーせず要点だけ独自表現に変換します。
 
-### `blogResearch`
-
-- `status`: `researched`, `partial`, `not_found`, `not_started`
-- `checkedAt`: 調査日
-- `searchQueries`: 検索した語句
-- `summary`: 全体傾向の独自要約
-- `confidence`: `high`, `medium`, `low`, `unknown`
-
-### `blogSignals`
-
-個別ソースから読み取れる傾向です。文章コピーはせず、要点だけを短く整理します。
-
-- `topic`: `locker`, `cloak`, `baggage`, `waiting`, `access`, `restroom`, `aftershow` など
-- `summary`: 独自表現の要約
-- `sourceType`: `personal_blog`, `note`, `sns`, `q_and_a`, `mixed`, `unknown`
-- `confidence`: `high`, `medium`, `low`, `unknown`
-- `sourceName`
-- `sourceUrl`
-- `checkedAt`
-- `copyrightNote`
-
-公式情報と個人ブログ情報が矛盾する場合は公式情報を優先します。古い記事や単発の体験談は断定せず、`confidence: "low"` または `partial` として扱います。
-
-## 当日判断データ
-
-会場詳細ページでは `dayDecisionGuide` を使い、次の状況別に表示します。
-
-- `baggageDay`: 荷物ありの日
-- `goodNumberDay`: 良番の日
-- `merchDay`: 物販ありの日
-- `rainDay`: 雨の日
-- `soloDay`: ぼっち参戦の日
-- `rushAfterShowDay`: 終演後に急ぐ日
-
-「要確認です」だけで終わらせず、「こう動けばOK」と分かる表現にします。
-
-## データ更新スクリプト
-
-全国会場マスターの追加:
-
-```bash
-node scripts/merge-national-venues.mjs
-```
-
-公式確認済みの会場設備メモを反映:
-
-```bash
-node scripts/apply-official-venue-facts.mjs
-```
-
-個人ブログ・会場情報サイト・レビュー系ページから要点メモを反映:
-
-```bash
-node scripts/apply-community-venue-notes.mjs
-```
-
-実用コメントと当日の動き方を反映:
-
-```bash
-node scripts/apply-practical-venue-guides.mjs
-```
-
-ロッカー、クローク、周辺情報、blogResearch、dayDecisionGuideを補完:
-
-```bash
-node scripts/apply-logistics-and-blog-research.mjs
-```
-
-スクリプトを実行する前に、参照元URL、確認日、情報確度を必ず確認してください。
-
-## 閉館済み会場
-
-閉館済み会場は現役一覧には表示しません。
-
-```json
-{
-  "status": "closed",
-  "showInVenueList": false,
-  "archiveOnly": true
-}
-```
-
-必要な場合だけアーカイブページとして扱います。
+- URLは `sourceLinks` に残す
+- 傾向は `blogSignals` に要約する
+- 調査状況は `blogResearch` で管理する
+- 公式情報と矛盾する場合は公式情報を優先する
+- 古い情報や単発情報は断定しない
+- 設備やクローク運用は公演・時期で変わるため、最終判断は公式・当日案内を優先する
 
 ## /venues の検索機能
 
 `/venues` はスマホ向けの会場検索ページです。
 
-- 会場名、aliases、エリア、都道府県、地域、駅名、注意タグで検索できます
-- 地域、都道府県、会場種別、V系向き度、注意タグで絞り込めます
-- 複数条件を同時に使えます
-- 検索条件はURLクエリに反映されます
-- デフォルトでは閉館済み会場を表示しません
+- 会場名、aliases、エリア、都道府県、地域、駅名、注意タグで検索
+- 地域、都道府県、会場種別、V系向き度、注意タグで絞り込み
+- 複数条件を同時に利用可能
+- URLクエリに検索条件を反映
+- デフォルトでは閉館済み会場を非表示
 
 対応クエリ:
 
@@ -253,7 +173,7 @@ node scripts/apply-logistics-and-blog-research.mjs
 
 ## /venues/regions
 
-`/venues/regions` は全国会場マスターを地域別に見るページです。地域、都道府県、会場名、会場種別、V系向き度、マイナーV系向き、詳細ページリンクを表示します。公演情報、出演者、日程、チケット状況は掲載しません。
+`/venues/regions` は全国会場マスターを地域別に見るページです。公演情報、出演者、日程、チケット状況は掲載しません。
 
 ## ガイド記事の追加
 
@@ -269,20 +189,15 @@ lead: "ページ冒頭の説明"
 ---
 
 ## 見出し
+
 本文を書きます。
 ```
 
-チェックリストや計算ツールなどブラウザ内UIが必要なページは `.astro` で作成します。
-
-## 外部リンクの追加
-
-`/weekend` の公式リンク集は `src/pages/weekend.astro` の `ticketLinks` に追加します。会場ごとの公式・チケット確認リンクは `data/venues.json` の `ticketSearchLinks` や `sourceLinks` に追加します。
-
-外部リンクは公式・準公式・会場公式スケジュールへの案内に限定し、公演名、出演者、日程、販売状況を転載しません。
+`.astro` ファイル内では Markdown の `#` / `##` / `###` を直接書かず、`<h1>` / `<h2>` / `<h3>` を使います。
 
 ## デザイン方針
 
-デザインは耽美ゴシック・クラシカルV系の方向性です。
+耽美ゴシック・クラシカルV系の方向性です。
 
 - 黒
 - ワインレッド
@@ -297,29 +212,28 @@ lead: "ページ冒頭の説明"
 
 ## Cloudflare Pages 公開
 
-1. GitHubにリポジトリをpushします。
-2. Cloudflare PagesでGitHubリポジトリを接続します。
-3. Framework presetは `Astro` を選びます。
-4. Build commandは `npm run build` にします。
-5. Build output directoryは `dist` にします。
-6. 本番URLが決まったら `astro.config.mjs` の `site` を確認します。
+1. GitHubにリポジトリをpush
+2. Cloudflare PagesでGitHubリポジトリを接続
+3. Framework presetは `Astro`
+4. Build commandは `npm run build`
+5. Build output directoryは `dist`
+6. Node.jsは `.node-version` または環境変数 `NODE_VERSION=22.16.0` で指定
 
-このMVPではCloudflare PagesでCSSアセット欠落による表示崩れが起きにくいよう、`astro.config.mjs` で `build.inlineStylesheets: "always"` を設定しています。
+Cloudflare PagesでCSS欠落による表示崩れが起きにくいよう、`astro.config.mjs` で `build.inlineStylesheets: "always"` を設定しています。
 
 ## GitHub Pages 注意
 
-GitHub Pagesでも静的サイトとして公開できます。リポジトリ名配下で公開する場合は、Astroの `base` 設定が必要になることがあります。初期運用はCloudflare Pagesの方が設定が少なく、MVP向きです。
+GitHub Pagesでも静的サイトとして公開できます。リポジトリ名配下で公開する場合は、Astroの `base` 設定が必要になる場合があります。初期運用はCloudflare Pages推奨です。
 
 ## 今後追加できる機能
 
 - 会場データの追加
 - 地域別おすすめ導線
-- 閉館済み会場のアーカイブ一覧
-- 遠征チェック用の手動メモ欄
-- 雨の日持ち物チェック
-- 遠征費テンプレート保存
+- 閉館済み会場アーカイブページ
 - Googleフォームによる掲載依頼・情報修正依頼
-- Cloudflare Pages公開後のサイト更新フロー
+- 雨の日チェック
+- 遠征費テンプレート保存
+- 会場情報の更新フロー
 
 ## 主なページ
 
