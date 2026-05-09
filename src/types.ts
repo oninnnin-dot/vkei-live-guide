@@ -3,7 +3,7 @@ export type TicketSearchLink = {
   url: string;
 };
 
-export type VenueStatus = 'active' | 'closed' | 'unknown';
+export type VenueStatus = 'active' | 'closed' | 'relocation_pending' | 'event_only' | 'unknown';
 export type VenueScale = 'small' | 'small-mid' | 'mid' | 'large' | 'unknown';
 export type VkeiAffinity = 'high' | 'medium' | 'low' | 'unknown';
 export type VenueType =
@@ -16,7 +16,14 @@ export type VenueType =
   | 'event_space'
   | 'closed_archive'
   | 'unknown';
-export type SourceConfidence = 'verified' | 'partially_verified' | 'social_only' | 'verified_or_historical' | 'unknown';
+export type SourceConfidence =
+  | 'official'
+  | 'supporting_reference'
+  | 'verified'
+  | 'partially_verified'
+  | 'social_only'
+  | 'verified_or_historical'
+  | 'unknown';
 export type SourceType =
   | 'official'
   | 'ticket_site'
@@ -273,6 +280,7 @@ export type Venue = {
   area: string;
   areaGroup: string;
   status: VenueStatus;
+  venueStatus?: VenueStatus;
   venueType: VenueType;
   venueScale: VenueScale;
   vkeiAffinity: VkeiAffinity;

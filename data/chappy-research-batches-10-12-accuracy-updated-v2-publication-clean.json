@@ -1,0 +1,4290 @@
+[
+  {
+    "slug": "live-music-club-padoma",
+    "name": "live music club PADOMA",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "live music club PADOMA公式",
+        "url": "https://padoma.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "live music club PADOMA ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使える設備確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "muse-box",
+    "name": "MUSE BOX",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式アクセス・フロア案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式アクセス・フロア案内の確認範囲では、クロークの常設有無は確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "荷物設備は確認中。大きい荷物は会場入り前に処理。",
+      "points": [
+        "会場公式は確認済み",
+        "ロッカー・クロークは確認中",
+        "大きい荷物は駅・宿泊先優先"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "公式所在は確認済み。ロッカー・クロークは確認中のため、駅側で荷物処理。",
+      "points": [
+        "公式所在確認",
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "MUSE BOX公式",
+        "url": "https://musebox.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "MUSE BOX公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "osaka-muse",
+    "name": "OSAKA MUSE",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "OSAKA MUSE公式アクセス",
+        "url": "https://osaka.muse-live.com/access/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "OSAKA MUSE ロッカー クローク 公式",
+        "result": "公式アクセスを確認。公開用に使えるロッカー・クロークの定常設備案内は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "rocktown",
+    "name": "ROCKTOWN",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "施設案内確認ではロッカーなし。公式サイトでは所在地・会場情報を確認。",
+      "lockerCountText": "なし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "クロークの常設有無は確認中。大きい荷物は駅・宿泊先で先に処理する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "会場前に荷物を減らす前提が安全。",
+      "points": [
+        "ロッカーなしの補助確認あり",
+        "クロークは確認中",
+        "天王寺駅・宿泊先で事前処理"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "ロッカーなしの補助確認あり。大きい荷物は天王寺・阿倍野エリアで事前処理。",
+      "points": [
+        "ロッカーなし補助確認",
+        "クローク確認中",
+        "駅ロッカー推奨"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "ROCKTOWN公式",
+        "url": "https://rocktown.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "ROCKTOWN施設案内確認",
+        "url": "https://eplus.jp/sf/venue/5450060",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "ROCKTOWN公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "ROCKTOWN施設案内確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "yogibo-holy-mountain",
+    "name": "Yogibo HOLY MOUNTAIN",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式FAQでロッカーなしの案内あり。",
+      "lockerCountText": "会場内ロッカーなし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "クローク料金用に現金を残す。",
+      "largeBagNote": "大きい荷物はクロークまたは駅・宿泊先預けを検討する。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式FAQでクローク受付あり。",
+      "cloakPriceText": "500円",
+      "cloakTiming": "開場後受付の案内あり",
+      "largeBagHandling": "大きい荷物はクローク利用を検討。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "会場ロッカーなし。クロークありのため、荷物はクロークか駅側で処理。",
+      "points": [
+        "ロッカーなし",
+        "クローク500円",
+        "駅ロッカー併用推奨",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "会場ロッカーなし。クロークありのため、荷物はクロークか駅側で処理。",
+      "points": [
+        "ロッカーなし",
+        "クローク500円",
+        "駅ロッカー併用推奨",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "Yogibo HOLY MOUNTAIN公式FAQ",
+        "url": "https://selebro.co.jp/holymountain/contact/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "Yogibo HOLY MOUNTAIN ロッカー クローク 公式",
+        "result": "公式FAQでロッカーなし、クロークありを確認。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "americamura-beyond",
+    "name": "アメリカ村BEYOND",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式FAQで会場内コインロッカーあり。",
+      "lockerCountText": "36個",
+      "lockerPriceText": "300円",
+      "lockerUsageTiming": "利用可否は当日案内に従う",
+      "coinNote": "100円硬貨の用意推奨。",
+      "largeBagNote": "ロッカーに入らない荷物はクローク案内を確認。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式FAQでロッカー満杯時や大きい荷物のクローク対応案内あり。",
+      "cloakPriceText": "500円",
+      "cloakTiming": "当日案内に従う",
+      "largeBagHandling": "大きい荷物はクローク利用候補。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "ロッカー36個。足りない場合や大きい荷物はクローク確認。",
+      "points": [
+        "ロッカー36個",
+        "300円",
+        "クローク500円",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "ロッカー36個。足りない場合や大きい荷物はクローク確認。",
+      "points": [
+        "ロッカー36個",
+        "300円",
+        "クローク500円",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "アメリカ村BEYOND公式FAQ",
+        "url": "https://beyond-osaka.jp/faq/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "アメリカ村BEYOND ロッカー クローク 公式",
+        "result": "公式FAQでロッカー36個、クローク対応を確認。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "americamura-drop",
+    "name": "アメリカ村DROP",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式FAQで会場内コインロッカーあり。",
+      "lockerCountText": "20個",
+      "lockerPriceText": "200円",
+      "lockerUsageTiming": "利用可否は当日案内に従う",
+      "coinNote": "100円硬貨の用意推奨。",
+      "largeBagNote": "ロッカーに入らない荷物はクローク案内を確認。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式FAQでロッカー満杯時や大きい荷物のクローク対応案内あり。",
+      "cloakPriceText": "500円",
+      "cloakTiming": "当日案内に従う",
+      "largeBagHandling": "大きい荷物はクローク利用候補。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "ロッカー20個。数は多くないため、駅処理も前提にする。",
+      "points": [
+        "ロッカー20個",
+        "200円",
+        "クローク500円",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "ロッカー20個。数は多くないため、駅処理も前提にする。",
+      "points": [
+        "ロッカー20個",
+        "200円",
+        "クローク500円",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "アメリカ村DROP公式FAQ",
+        "url": "https://clubdrop.jp/faq/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "アメリカ村DROP ロッカー クローク 公式",
+        "result": "公式FAQでロッカー20個、クローク対応を確認。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nara-100",
+    "name": "なら100年会館 大ホール",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "施設としてコインロッカーあり。ただし催事により使用できない場合があるため当日案内を確認。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "催事により変動",
+      "coinNote": "100円硬貨が必要な場合に備える。",
+      "largeBagNote": "大ホール利用時は混雑しやすいため、駅・宿泊先預けも候補。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "施設案内上はクローク設備あり。ただし運用は催事により変動するため主催者・当日案内を確認。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "催事により変動",
+      "largeBagHandling": "大きい荷物は主催者案内または駅・宿泊先預けを優先確認。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "施設としてロッカー・クロークあり。ただし催事ごとの運用確認が必要。",
+      "points": [
+        "ロッカーあり",
+        "クロークあり",
+        "催事により変動",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "施設としてロッカー・クロークあり。ただし催事ごとの運用確認が必要。",
+      "points": [
+        "ロッカーあり",
+        "クロークあり",
+        "催事により変動",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "なら100年会館公式FAQ",
+        "url": "https://www.nara100.com/qa.html",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "なら100年会館公式 大ホール案内",
+        "url": "https://www.nara100.com/introduce_1.html",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "なら100年会館 ロッカー クローク 公式",
+        "result": "公式FAQと大ホール案内で、コインロッカー・クローク設備を確認。使用可否は催事により変動。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "namba-hatch",
+    "name": "なんばHatch",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "なんばHatch公式",
+        "url": "https://www.namba-hatch.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "なんばHatch ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使える設備確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kyoto-fanj",
+    "name": "京都FANJ",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "京都FANJ公式",
+        "url": "https://kyoto-fanj.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "京都FANJ ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使える設備確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kyoto-mojo",
+    "name": "京都MOJO",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "京都MOJO公式",
+        "url": "https://kyoto-mojo.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "京都MOJO ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使える設備確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "teradacho-fireloop",
+    "name": "寺田町Fireloop",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式案内でロッカーなし。",
+      "lockerCountText": "会場内ロッカーなし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "クローク料金用に現金を残す。",
+      "largeBagNote": "大きい荷物はクロークまたは駅・宿泊先預けを検討。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式案内でクロークあり。",
+      "cloakPriceText": "70L袋 500円 / キャリーケース 700円",
+      "cloakTiming": "常時対応の案内あり",
+      "largeBagHandling": "キャリーケース料金の案内あり。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "ロッカーなし。クローク料金を前提に荷物を整理。",
+      "points": [
+        "ロッカーなし",
+        "クロークあり",
+        "キャリー対応案内あり",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "ロッカーなし。クローク料金を前提に荷物を整理。",
+      "points": [
+        "ロッカーなし",
+        "クロークあり",
+        "キャリー対応案内あり",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "寺田町Fireloop公式 お店紹介",
+        "url": "https://fireloop.net/_2aboutus/aboutus_now.shtml",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "寺田町Fireloop ロッカー クローク 公式",
+        "result": "公式のお店紹介でロッカーなし、クロークありを確認。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-bigcat",
+    "name": "心斎橋BIGCAT",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式FAQでロビーにコインロッカーあり。",
+      "lockerCountText": "約200個",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "基本的に開場後利用の案内あり",
+      "coinNote": "小銭が必要な場合に備える。",
+      "largeBagNote": "数に限りがあるため、大きい荷物は駅・宿泊先預けも候補。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "ロビーにロッカー約200個。利用開始は開場後前提で考える。",
+      "points": [
+        "ロッカー約200個",
+        "開場後利用目安",
+        "クローク確認中",
+        "公式確認済み"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "ロビーにロッカー約200個。利用開始は開場後前提で考える。",
+      "points": [
+        "ロッカー約200個",
+        "開場後利用目安",
+        "クローク確認中",
+        "公式確認済み"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "心斎橋BIGCAT公式FAQ",
+        "url": "https://bigcat-live.com/faq",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "心斎橋BIGCAT ロッカー クローク 公式",
+        "result": "公式FAQでロビーのコインロッカー約200個を確認。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-clapper",
+    "name": "心斎橋CLAPPER",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "心斎橋CLAPPER公式",
+        "url": "https://www.clapper.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "心斎橋CLAPPER ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使える設備確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-fanj",
+    "name": "心斎橋FANJ",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "心斎橋FANJ公式",
+        "url": "https://www.s-fanj.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "心斎橋FANJ公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-soma",
+    "name": "心斎橋soma",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "心斎橋soma公式",
+        "url": "https://www.will-music.net/soma/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "心斎橋soma公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kobe-varit",
+    "name": "神戸VARIT.",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "神戸VARIT.公式",
+        "url": "https://varit.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "神戸VARIT. ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kobe",
+    "name": "神戸太陽と虎",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "神戸太陽と虎公式",
+        "url": "https://taitora.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "神戸太陽と虎 ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "osaka-ruido",
+    "name": "大阪RUIDO",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "大阪RUIDO公式",
+        "url": "https://ruido.org/osaka/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "大阪RUIDO ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-bangboo",
+    "name": "梅田BANGBOO",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "梅田BANGBOO公式",
+        "url": "https://bangboo.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "梅田BANGBOO ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-club-quattro",
+    "name": "梅田CLUB QUATTRO",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "梅田CLUB QUATTRO公式",
+        "url": "https://www.club-quattro.com/umeda/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "梅田CLUB QUATTRO ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-zeela",
+    "name": "梅田Zeela",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "status": "not_used_for_publication",
+      "confidence": "unknown",
+      "summary": "公開ページでは公式・施設公式・確認済みの施設案内のみを出典として表示する。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "梅田Zeela公式",
+        "url": "https://osaka-zeela.jp/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "梅田Zeela ロッカー クローク 公式",
+        "result": "公式サイトを確認。公開用に使えるロッカー・クロークの確定記載は確認中。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "himeji-beta",
+    "name": "姫路Beta",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "姫路Beta公式",
+        "url": "https://www.beta-music.com/livehouse/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "姫路Beta公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "caravansary",
+    "name": "CARAVANSARY",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式HALL案内でロッカーなしを確認。",
+      "lockerCountText": "なし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式HALL案内で1袋500円の荷物預かりを確認。",
+      "cloakPriceText": "1袋500円",
+      "cloakTiming": "公演時の案内に従う",
+      "largeBagHandling": "大きい荷物は袋に入る範囲を目安にし、入らない荷物は駅・宿泊先へ。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式HALL案内でロッカーなし・1袋500円の荷物預かりを確認。",
+      "points": [
+        "ロッカーなし",
+        "荷物預かり500円",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式HALL案内でロッカーなし・1袋500円の荷物預かりを確認。",
+      "points": [
+        "ロッカーなし",
+        "荷物預かり500円",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "CARAVANSARY公式HALL",
+        "url": "https://www.caravansary.jp/page/hall",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "CARAVANSARY公式HALL",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-stage-ark",
+    "name": "Live stage Ark",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "Live Stage Ark公式",
+        "url": "https://livestageark.com/live/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "Live Stage Ark公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "toonice",
+    "name": "TOONICE",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "TOONICE公式",
+        "url": "https://impulse-records.main.jp/toonice/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "TOONICE公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "okayama-image",
+    "name": "岡山IMAGE",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "岡山IMAGE公式",
+        "url": "https://club.img-music.jp/about/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "岡山IMAGE公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "hiroshima-second-crutch",
+    "name": "広島SECOND CRUTCH",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式FAQでコインロッカーなしを確認。",
+      "lockerCountText": "なし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式FAQで全公演の有料クロークを確認。入場整列時に70L袋を1袋500円で販売し、入場後もバーカウンターで受付。",
+      "cloakPriceText": "1袋500円",
+      "cloakTiming": "入場整列時・入場後",
+      "largeBagHandling": "キャリーバッグは基本的に持ち込み不可。70L袋に入る量を目安にする。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式FAQでロッカーなし・全公演有料クロークありを確認。",
+      "points": [
+        "ロッカーなし",
+        "全公演クローク",
+        "70L袋500円",
+        "キャリー持込注意"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式FAQでロッカーなし・全公演有料クロークありを確認。",
+      "points": [
+        "ロッカーなし",
+        "全公演クローク",
+        "70L袋500円",
+        "キャリー持込注意"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "SECOND CRUTCH公式FAQ",
+        "url": "https://www.secondcrutch.com/faq/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "SECOND CRUTCH公式FAQ",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kochi-x-pt",
+    "name": "高知X-pt.",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式FAQで、会場が入るデンテツターミナルビル1階にコインロッカーがあることを確認。ただし数に限りあり。",
+      "lockerCountText": "数に限りあり",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "会場入り前に利用可能な場合あり",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式FAQでは手荷物預かりは公演によって実施有無が変わる案内。常設扱いにはしない。",
+      "cloakPriceText": "公演による",
+      "cloakTiming": "公演による",
+      "largeBagHandling": "大きい荷物はビル1階ロッカーまたは駅側で先に処理。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式FAQで同ビル1階ロッカーあり、手荷物預かりは公演によると確認。",
+      "points": [
+        "同ビル1階ロッカー",
+        "数に限りあり",
+        "手荷物預かりは公演による",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式FAQで同ビル1階ロッカーあり、手荷物預かりは公演によると確認。",
+      "points": [
+        "同ビル1階ロッカー",
+        "数に限りあり",
+        "手荷物預かりは公演による",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "X-pt.公式FAQ",
+        "url": "https://www.x-pt.jp/qa.html",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "X-pt.公式FAQ",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shunan-rising-hall",
+    "name": "周南RISING HALL",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "周南RISING HALL公式",
+        "url": "https://risinghallshunan.wixsite.com/rising-hall/home",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "周南RISING HALL公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "tokushima-club-grindhouse",
+    "name": "徳島club GRINDHOUSE",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式案内でコインロッカーなしを確認。",
+      "lockerCountText": "なし",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式案内では公演によって2階事務所でクロークを行う場合あり。常設扱いにはしない。",
+      "cloakPriceText": "公演による",
+      "cloakTiming": "公演による",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理し、必要時のみ会場へ確認。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式案内でロッカーなし、クロークは公演によると確認。",
+      "points": [
+        "ロッカーなし",
+        "クロークは公演による",
+        "公式確認",
+        "事前確認推奨"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式案内でロッカーなし、クロークは公演によると確認。",
+      "points": [
+        "ロッカーなし",
+        "クロークは公演による",
+        "公式確認",
+        "事前確認推奨"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "club GRINDHOUSE公式案内",
+        "url": "https://c-gh.jp/schedule/576/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "club GRINDHOUSE公式案内",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "graf",
+    "name": "graf",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "graf公式",
+        "url": "https://fukuoka-graf.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "graf公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "insa",
+    "name": "INSA",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式アクセス案内でコインロッカー30個を確認。サイズは横35cm・縦30cm・奥行45cm。",
+      "lockerCountText": "30個",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "開場後利用可",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式確認範囲ではクロークの常設有無は確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式案内で開場後利用可のコインロッカー30個を確認。",
+      "points": [
+        "ロッカー30個",
+        "開場後利用可",
+        "サイズ記載あり",
+        "クローク確認中"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式案内で開場後利用可のコインロッカー30個を確認。",
+      "points": [
+        "ロッカー30個",
+        "開場後利用可",
+        "サイズ記載あり",
+        "クローク確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "INSA公式",
+        "url": "https://insa13.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "INSA公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-house-queblick",
+    "name": "LIVE HOUSE Queblick",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式NOTICEでは会場内ロッカーの有無は確認中。混雑が予想される日は近隣駅などのコインロッカー利用を推奨。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式NOTICEでクローク利用を案内。1袋300円から、数に限りあり。",
+      "cloakPriceText": "1袋300円から",
+      "cloakTiming": "公演当日の案内に従う",
+      "largeBagHandling": "数に限りがあるため、大きい荷物は駅側も併用。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式NOTICEでクローク1袋300円からを確認。数に限りあり。",
+      "points": [
+        "クローク300円から",
+        "数に限りあり",
+        "駅ロッカー推奨",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式NOTICEでクローク1袋300円からを確認。数に限りあり。",
+      "points": [
+        "クローク300円から",
+        "数に限りあり",
+        "駅ロッカー推奨",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "Queblick公式NOTICE",
+        "url": "https://queblick.com/archiveweb/?page_id=16",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "Queblick公式NOTICE",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "livehouse",
+    "name": "LiveHouse 秘密",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式SYSTEM案内でコインロッカーありを確認。個数・料金は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式確認範囲ではクロークの常設有無は確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式SYSTEM案内でコインロッカーありを確認。個数・料金は確認中。",
+      "points": [
+        "ロッカーあり",
+        "個数確認中",
+        "料金確認中",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式SYSTEM案内でコインロッカーありを確認。個数・料金は確認中。",
+      "points": [
+        "ロッカーあり",
+        "個数確認中",
+        "料金確認中",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "LiveHouse 秘密公式SYSTEM",
+        "url": "https://live-himitsu.com/system/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "LiveHouse 秘密公式SYSTEM",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "livehouse-and-club-peace",
+    "name": "LiveHouse&Club PEACE",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "Live House & Club PEACE公式",
+        "url": "https://peace-livehouse.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "Live House & Club PEACE公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "output",
+    "name": "output",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式設備案内の確認範囲では、会場内ロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式設備案内の確認範囲では、クロークの常設有無は確認中。公演当日の案内を確認する。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "carryBagPolicy": "キャリーケースは会場内に持ち込まず、駅ロッカー・宿泊先預け・会場案内の荷物預かりを優先する。",
+      "beforeEntry": "開場前に荷物を減らし、ドリンク代と小銭を取り出しておく。",
+      "afterShow": "終演後は混雑するため、荷物回収と駅までの移動を先に決めておく。",
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式設備ページ確認範囲ではロッカー・クロークは確認中。駅側で荷物処理。",
+      "points": [
+        "ロッカー確認中",
+        "クローク確認中",
+        "駅ロッカー推奨",
+        "確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "OUTPUT公式",
+        "url": "https://outputop.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "OUTPUT公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kumamoto-b-9-v1",
+    "name": "熊本B.9 V1",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式Q&A確認でロッカー約70個を確認。",
+      "lockerCountText": "約70個",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式Q&A確認で公演によって荷物預かり所を設置する場合あり。常設扱いにはしない。",
+      "cloakPriceText": "200円の場合あり",
+      "cloakTiming": "公演による",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理し、当日案内を確認。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "ロッカーはあるが、公演規模によって足りない前提で準備。",
+      "points": [
+        "公式Q&Aでロッカー約70個",
+        "荷物預かりは公演による",
+        "大きい荷物は事前処理"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "公式Q&Aでロッカー約70個、荷物預かりは公演によると確認。",
+      "points": [
+        "ロッカー約70個",
+        "荷物預かりは公演による",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "熊本B.9公式Q&A",
+        "url": "https://www.live-drum.com/be9/q_a.shtml",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "熊本B.9公式Q&A",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kumamoto",
+    "name": "熊本城ホール メインホール",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式FAQで2階エントランスロビーと4階メインホールホワイエのコインロッカーを確認。催事により使用制限の場合あり。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "催事により使用制限の場合あり",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式FAQ確認範囲ではクロークの常設有無は確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は宿泊先・駅側で先に処理。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式FAQで館内コインロッカーありを確認。催事による使用制限に注意。",
+      "points": [
+        "館内ロッカーあり",
+        "2階・4階",
+        "催事により制限あり",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式FAQで館内コインロッカーありを確認。催事による使用制限に注意。",
+      "points": [
+        "館内ロッカーあり",
+        "2階・4階",
+        "催事により制限あり",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "熊本城ホール公式FAQ",
+        "url": "https://www.kumamoto-jo-hall.jp/faq/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "熊本城ホール公式FAQ",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ibusuki",
+    "name": "指宿市民会館",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式施設案内・施設概要の確認範囲では、来場者向けロッカーの確定情報は確認中。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式施設案内・施設概要の確認範囲では、クロークの常設有無は確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "大きい荷物は駅・宿泊先で先に処理する前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "大ホール系のため、荷物は事前処理前提が安全。",
+      "points": [
+        "公式施設確認済み",
+        "ロッカー・クロークは確認中",
+        "大きい荷物は宿泊先優先"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "公式施設案内は確認済み。荷物設備は確認中のため、駅・宿泊先で事前処理。",
+      "points": [
+        "公式施設確認",
+        "ロッカー確認中",
+        "クローク確認中"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "指宿市民会館公式施設案内",
+        "url": "https://www.city.ibusuki.lg.jp/main/kyoiku/page026022.html",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "指宿市民会館施設概要",
+        "url": "https://www.city.ibusuki.lg.jp/main/uploads/syakyo/docs/%E6%8C%87%E5%AE%BF%E5%B8%82%E6%B0%91%E4%BC%9A%E9%A4%A8%E6%96%BD%E8%A8%AD%E6%A6%82%E8%A6%81.pdf",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "指宿市民会館公式施設案内",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "指宿市民会館施設概要",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kagoshima-caparvo-hall",
+    "name": "鹿児島CAPARVO HALL",
+    "researchStatus": "complete",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式Q&Aでキャパルボビル1階にコインロッカー24台、300円を確認。",
+      "lockerCountText": "24台",
+      "lockerPriceText": "300円",
+      "lockerUsageTiming": "会場入り前に利用可能な場合あり",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式Q&Aでは各会場の有料荷物預かりは主催者判断。常設扱いにはしない。",
+      "cloakPriceText": "1袋500円の場合あり",
+      "cloakTiming": "主催者判断",
+      "largeBagHandling": "大きい荷物は持ち込まない前提が安全。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "公式Q&Aでビル1階ロッカー24台300円、荷物預かりは主催者判断と確認。",
+      "points": [
+        "ビル1階ロッカー24台",
+        "300円",
+        "荷物預かりは主催者判断",
+        "公式確認"
+      ],
+      "warnings": [
+        "未確認項目は確認中のまま維持。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "公式Q&Aでビル1階ロッカー24台300円、荷物預かりは主催者判断と確認。",
+      "points": [
+        "ビル1階ロッカー24台",
+        "300円",
+        "荷物預かりは主催者判断",
+        "公式確認"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "鹿児島SRファクトリー公式Q&A",
+        "url": "https://www.kagoshima-sr.jp/q-a/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "鹿児島SRファクトリー公式Q&A",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "fukuoka-drum-be-1",
+    "name": "福岡DRUM Be-1",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "補助確認でコインロッカー92個あり。公式側で詳細ページを安定取得できないため、表示は補助確認扱い。",
+      "lockerCountText": "92個",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "補助確認でクロークあり。料金・運用は当日確認が必要。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "当日確認",
+      "largeBagHandling": "大きい荷物は天神駅周辺・宿泊先で先に処理。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "補助確認ベースのため、当日運用の確認を残す。",
+      "points": [
+        "ロッカー92個補助確認",
+        "クローク補助確認",
+        "天神駅周辺ロッカー併用"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "補助確認でロッカー92個・クロークあり。公式詳細の再確認余地あり。",
+      "points": [
+        "ロッカー92個補助確認",
+        "クローク補助確認",
+        "当日確認推奨"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "DRUM系列公式",
+        "url": "https://www.live-drum.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "福岡DRUM Be-1施設案内確認",
+        "url": "https://super-nice.net/%E7%A6%8F%E5%B2%A1%E7%9C%8C/784/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "DRUM系列公式",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "福岡DRUM Be-1施設案内確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "takadanobaba-area",
+    "name": "高田馬場AREA",
+    "researchStatus": "archive_excluded",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "営業終了確認済みのため、現在利用前提のロッカー案内は表示しない。",
+      "lockerCountText": "対象外",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "stationLockerRecommended": false,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "営業終了確認済みのため、現在利用前提のクローク案内は表示しない。",
+      "cloakPriceText": "対象外",
+      "cloakTiming": "対象外",
+      "largeBagHandling": "対象外",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "営業終了。現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "高田馬場AREA営業終了確認",
+        "url": "https://natalie.mu/music/news/407641",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "高田馬場AREA営業終了確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "closed",
+    "venueStatusLabel": "営業終了",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinjuku-blaze",
+    "name": "新宿BLAZE",
+    "researchStatus": "archive_excluded",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "営業終了確認済みのため、現在利用前提のロッカー案内は表示しない。",
+      "lockerCountText": "対象外",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "stationLockerRecommended": false,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "営業終了確認済みのため、現在利用前提のクローク案内は表示しない。",
+      "cloakPriceText": "対象外",
+      "cloakTiming": "対象外",
+      "largeBagHandling": "対象外",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "2024年7月31日営業終了。現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "新宿BLAZE営業終了確認",
+        "url": "https://prtimes.jp/main/html/rd/p/000000061.000045787.html",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "新宿BLAZE営業終了確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "closed",
+    "venueStatusLabel": "2024年7月31日営業終了",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinjuku-ruido-k4",
+    "name": "新宿RUIDO.K4",
+    "researchStatus": "archive_excluded",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "営業終了確認済みのため、現在利用前提のロッカー案内は表示しない。",
+      "lockerCountText": "対象外",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "stationLockerRecommended": false,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "営業終了確認済みのため、現在利用前提のクローク案内は表示しない。",
+      "cloakPriceText": "対象外",
+      "cloakTiming": "対象外",
+      "largeBagHandling": "対象外",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "2020年9月30日営業終了。現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "新宿RUIDO.K4営業終了確認",
+        "url": "https://natalie.mu/music/news/393026",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "新宿RUIDO.K4営業終了確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "新宿RUIDO.K4施設履歴確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "closed",
+    "venueStatusLabel": "2020年9月30日営業終了",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ikebukuro-cyber",
+    "name": "池袋CYBER",
+    "researchStatus": "archive_excluded",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "営業終了確認済みのため、現在利用前提のロッカー案内は表示しない。",
+      "lockerCountText": "対象外",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "stationLockerRecommended": false,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "営業終了確認済みのため、現在利用前提のクローク案内は表示しない。",
+      "cloakPriceText": "対象外",
+      "cloakTiming": "対象外",
+      "largeBagHandling": "対象外",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "2020年12月営業終了。現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "池袋CYBER営業終了確認",
+        "url": "https://natalie.mu/music/news/407778",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "池袋CYBER営業終了確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "closed",
+    "venueStatusLabel": "2020年12月営業終了",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "meguro-rockmaykan",
+    "name": "目黒鹿鳴館",
+    "researchStatus": "relocation_pending",
+    "venueExistenceConfidence": "official",
+    "sourceConfidence": "official",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "現在の固定会場としてのロッカー情報は確認中。旧目黒店舗の情報は現在利用前提では表示しない。",
+      "lockerCountText": "確認中",
+      "lockerPriceText": "確認中",
+      "lockerUsageTiming": "確認中",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "旧目黒店舗では公式クローク案内があったが、目黒での営業終了後の現在利用前提情報としては確認中。",
+      "cloakPriceText": "確認中",
+      "cloakTiming": "確認中",
+      "largeBagHandling": "今後の公演は開催会場ごとの案内確認が必要。",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "旧目黒店舗の荷物情報は参考扱い。今後は開催会場ごとの案内確認が必要。",
+      "points": [
+        "固定会場情報は確認中",
+        "旧店舗クローク情報は現利用前提にしない",
+        "浅草VAMPKIN等の別会場開催は各会場案内を確認"
+      ],
+      "warnings": [
+        "旧店舗のクローク情報を現在利用できる情報としてカード表示しない。"
+      ]
+    },
+    "practicalSummary": {
+      "headline": "目黒での営業は終了。鹿鳴館ブランドは継続、新天地は未定。",
+      "points": [
+        "目黒旧店舗は営業終了",
+        "新天地未定",
+        "荷物情報は開催会場ごとに確認",
+        "旧店舗情報は補足扱い"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "目黒鹿鳴館 公式サイト",
+        "url": "https://www.rockmaykan.com/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "目黒鹿鳴館 公式クローク案内",
+        "url": "https://www.rockmaykan.com/dish",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "query": "目黒鹿鳴館 公式 新天地 営業終了 クローク",
+        "result": "公式サイトの案内と公式クローク案内を確認。旧目黒店舗のクローク情報は現在利用前提にしない。",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "relocation_pending",
+    "venueStatusLabel": "目黒での営業終了・新天地未定",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "公式確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    },
+    "historicalFacilityNote": {
+      "summary": "旧目黒店舗には公式クローク案内が残っているが、現在の固定会場情報として扱わない。",
+      "oldCloakGuide": "専用袋1枚300円、大型荷物は断られる場合あり。"
+    }
+  },
+  {
+    "slug": "club24-yokohama",
+    "name": "横浜CLUB24",
+    "researchStatus": "archive_excluded",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "営業終了確認済みのため、現在利用前提のロッカー案内は表示しない。",
+      "lockerCountText": "対象外",
+      "lockerPriceText": "対象外",
+      "lockerUsageTiming": "対象外",
+      "stationLockerRecommended": false,
+      "checkedAt": "2026-05-09"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "営業終了確認済みのため、現在利用前提のクローク案内は表示しない。",
+      "cloakPriceText": "対象外",
+      "cloakTiming": "対象外",
+      "largeBagHandling": "対象外",
+      "checkedAt": "2026-05-09"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "2007年12月11日営業終了。現在利用前提の荷物案内は対象外。",
+      "points": [
+        "営業終了確認",
+        "現在利用案内対象外"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "CLUB24 YOKOHAMA営業終了確認",
+        "url": "https://natalie.mu/music/news/3473",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "CLUB24 YOKOHAMA営業終了確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "closed",
+    "venueStatusLabel": "2007年12月11日営業終了",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "holiday-shinjuku",
+    "name": "HOLIDAY SHINJUKU",
+    "researchStatus": "partial",
+    "venueExistenceConfidence": "supporting_reference",
+    "sourceConfidence": "supporting_reference",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "補助確認でロッカーあり。ただし公式サイト本体での設備明記は安定確認できていないため、当日案内も確認する。",
+      "lockerCountText": "23個など複数の補助確認あり",
+      "lockerPriceText": "200〜300円確認",
+      "lockerUsageTiming": "入場後",
+      "coinNote": "小銭が必要な場合に備えて、現金を残しておく。",
+      "largeBagNote": "キャリーケースや大きい荷物は、駅ロッカー・宿泊先預けを優先候補にする。",
+      "stationLockerRecommended": true,
+      "checkedAt": "2026-05-09",
+      "sourceConfidence": "supporting_reference"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "補助確認でクローク500円情報あり。ただし運用は公演ごとの案内確認が必要。",
+      "cloakPriceText": "500円確認",
+      "cloakTiming": "公演当日の案内に従う",
+      "largeBagHandling": "大きい荷物は新宿駅周辺ロッカーも併用。",
+      "checkedAt": "2026-05-09",
+      "sourceConfidence": "supporting_reference"
+    },
+    "nearbyInfo": {
+      "stationLocker": "駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する。",
+      "convenienceStore": "会場周辺のコンビニ位置は来場前に地図で確認する。",
+      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺や屋根のある場所で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
+      "cashAndCoin": "ドリンク代・ロッカー・クローク用に現金と小銭を残す。",
+      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
+      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+    },
+    "baggageGuide": {
+      "headline": "閉館扱いは誤りとして修正。荷物設備は補助確認ベースで控えめに表示。",
+      "points": [
+        "ロッカーあり補助確認",
+        "クローク500円補助確認",
+        "公式本体未安定のため当日確認",
+        "新宿駅周辺ロッカー併用"
+      ],
+      "warnings": []
+    },
+    "practicalSummary": {
+      "headline": "閉館扱いを解除。補助確認でロッカー・クロークあり、ただし公式本体未安定のため詳細確認を残す。",
+      "points": [
+        "閉館扱い解除",
+        "ロッカー補助確認",
+        "クローク500円補助確認",
+        "当日確認推奨"
+      ]
+    },
+    "blogResearch": {
+      "usedForPublication": false,
+      "summary": "公開用データでは公式・施設案内を優先。未確認情報は確認中のまま維持。"
+    },
+    "blogSignals": [],
+    "sourceLinks": [
+      {
+        "label": "HOLIDAY SHINJUKU 施設予定表",
+        "url": "https://timetreeapp.com/public_calendars/holidayshinjuku?locale=ja",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "HOLIDAY SHINJUKU 施設情報",
+        "url": "https://www.livefans.jp/venues/863",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "HOLIDAY SHINJUKU 施設情報",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3326/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "searchedSources": [
+      {
+        "label": "HOLIDAY SHINJUKU公式予定表",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "HOLIDAY SHINJUKU施設案内確認",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      }
+    ],
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "statusCheckedAt": "2026-05-09",
+    "sourceConfidenceLabel": "補助確認",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  }
+]

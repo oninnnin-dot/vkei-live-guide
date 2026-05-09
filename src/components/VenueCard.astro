@@ -76,7 +76,8 @@ const normalizeStationLocker = (value: unknown) => {
   return String(value || 'unknown');
 };
 
-const isArchive = venue.archiveOnly || venue.status === 'closed';
+const effectiveVenueStatus = venue.venueStatus ?? venue.status;
+const isArchive = venue.archiveOnly || effectiveVenueStatus === 'closed';
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
 const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
 const stationLockerState = normalizeStationLocker(
@@ -199,9 +200,9 @@ const filterTags = [
 <article
   class={`gothic-card flex h-full min-w-0 flex-col rounded-xl p-5 ${isArchive || !venue.showInVenueList ? 'hidden' : ''}`}
   data-venue-card
-  data-default-visible={venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
+  data-default-visible={effectiveVenueStatus !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
   data-archive={venue.archiveOnly ? 'true' : 'false'}
-  data-status={venue.status}
+  data-status={effectiveVenueStatus}
   data-name={venue.name}
   data-region={venue.region}
   data-prefecture={venue.prefecture}

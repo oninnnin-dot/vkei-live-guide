@@ -1,0 +1,37 @@
+{
+  "sourceConfidenceAllowed": [
+    "official",
+    "supporting_reference",
+    "unknown"
+  ],
+  "sourceConfidenceDisplay": {
+    "official": "公式確認",
+    "supporting_reference": "補助確認",
+    "unknown": "確認中"
+  },
+  "venueStatusAllowed": [
+    "active",
+    "closed",
+    "relocation_pending",
+    "event_only",
+    "unknown"
+  ],
+  "lockerStatusAllowed": [
+    "available",
+    "none",
+    "unknown"
+  ],
+  "cloakStatusAllowed": [
+    "available",
+    "none",
+    "unknown",
+    "event_dependent"
+  ],
+  "publicHiddenFields": [
+    "blogSignals",
+    "blogResearch",
+    "removedExternalLinksForPublication",
+    "internalNotes",
+    "historicalSourceLinksForReview"
+  ]
+}

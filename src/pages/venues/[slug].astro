@@ -102,7 +102,8 @@ const normalizeStationLocker = (value: unknown) => {
 
 const locker = venue.lockerInfo;
 const cloak = venue.cloakInfo;
-const isArchive = venue.archiveOnly || venue.status === 'closed';
+const effectiveVenueStatus = venue.venueStatus ?? venue.status;
+const isArchive = venue.archiveOnly || effectiveVenueStatus === 'closed';
 const stationLockerRecommended = normalizeStationLocker(locker?.stationLockerRecommended ?? 'unknown');
 const venueSourceConfidence = venue.sourceConfidence ?? 'unknown';
 const archiveSummary = '閉館アーカイブのため、現在利用前提のロッカー・クローク案内は表示していません。';

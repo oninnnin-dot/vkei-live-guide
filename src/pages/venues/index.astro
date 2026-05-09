@@ -9,7 +9,7 @@ import type { Venue } from '@/types';
 const title = 'V系ライブ会場一覧｜ロッカー・クローク・荷物の動き方';
 const description = 'V系ライブで使われるライブハウスのロッカー、クローク、駅ロッカー推奨、荷物の動き方を会場別に確認できます。';
 const allVenues = venues as Venue[];
-const activeCount = allVenues.filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
+const activeCount = allVenues.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
 const preferredRegions = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
 const regionOptions = preferredRegions.filter((region) => allVenues.some((venue) => venue.region === region));

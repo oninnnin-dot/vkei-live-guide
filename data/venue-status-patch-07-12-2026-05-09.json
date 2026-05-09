@@ -1,0 +1,1367 @@
+[
+  {
+    "slug": "yamagata",
+    "name": "山形ミュージック昭和セッション",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "akita",
+    "name": "秋田クラブスウィンドル",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-bar-take",
+    "name": "仙台BAR TAKE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-darwin",
+    "name": "仙台darwin",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-macana",
+    "name": "仙台MACANA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-rensa",
+    "name": "仙台Rensa",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-rockateria",
+    "name": "仙台ROCKATERIA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "sendai-space-zero",
+    "name": "仙台space Zero",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "hachinohe",
+    "name": "八戸フォーミー",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-and-bar-radius",
+    "name": "Live&Bar Radius",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kanazawa-az",
+    "name": "金沢AZ",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kanazawa-gate-black",
+    "name": "金沢gate Black",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "niigata-club-riverst",
+    "name": "新潟CLUB RIVERST",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "niigata-golden-pigs-red-stage",
+    "name": "新潟GOLDEN PIGS RED STAGE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nagano-club-junk-box",
+    "name": "長野CLUB JUNK BOX",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "toyama-soul-power",
+    "name": "富山SOUL POWER",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "club-chaos",
+    "name": "CLUB CHAOS",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "diamond-hall",
+    "name": "DIAMOND HALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "electric-lady-land",
+    "name": "Electric Lady Land",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ell-fits-all",
+    "name": "ell.FITS ALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ell-size",
+    "name": "ell.SIZE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "holiday-next-nagoya",
+    "name": "HOLIDAY NEXT NAGOYA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nagoya-reny-limited",
+    "name": "NAGOYA ReNY limited",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "rad-hall",
+    "name": "RAD HALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "gifu-casper",
+    "name": "岐阜CASPER",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "gifu-club-roots",
+    "name": "岐阜CLUB ROOTS",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "gifu-club-g",
+    "name": "岐阜Club-G",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "imaike-club-3star",
+    "name": "今池CLUB 3STAR",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shizuoka-umber",
+    "name": "静岡UMBER",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nagaragawa-international-conference-center-main-hall",
+    "name": "長良川国際会議場 メインホール",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "hamamatsu-force",
+    "name": "浜松FORCE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "hamamatsu-madowaku",
+    "name": "浜松窓枠",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nagoya-music-farm",
+    "name": "名古屋MUSIC FARM",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nagoya-the-bottom-line",
+    "name": "名古屋THE BOTTOM LINE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "bigtwin-diner-shovel",
+    "name": "Bigtwin Diner SHOVEL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "club-mercury",
+    "name": "club MERCURY",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "evans-castle-hall",
+    "name": "EVANS CASTLE HALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "gorilla-hall-osaka",
+    "name": "GORILLA HALL OSAKA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "harbor-studio",
+    "name": "Harbor Studio",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-house-juza",
+    "name": "LIVE HOUSE JUZA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-house-pangea",
+    "name": "LIVE HOUSE Pangea",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-house-rumio",
+    "name": "LIVE HOUSE Rumio",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-music-club-padoma",
+    "name": "live music club PADOMA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "muse-box",
+    "name": "MUSE BOX",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "osaka-muse",
+    "name": "OSAKA MUSE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "rocktown",
+    "name": "ROCKTOWN",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "yogibo-holy-mountain",
+    "name": "Yogibo HOLY MOUNTAIN",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "americamura-beyond",
+    "name": "アメリカ村BEYOND",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "americamura-drop",
+    "name": "アメリカ村DROP",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "nara-100",
+    "name": "なら100年会館 大ホール",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "namba-hatch",
+    "name": "なんばHatch",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kyoto-fanj",
+    "name": "京都FANJ",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kyoto-mojo",
+    "name": "京都MOJO",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "teradacho-fireloop",
+    "name": "寺田町Fireloop",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-bigcat",
+    "name": "心斎橋BIGCAT",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-clapper",
+    "name": "心斎橋CLAPPER",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-fanj",
+    "name": "心斎橋FANJ",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinsaibashi-soma",
+    "name": "心斎橋soma",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kobe-varit",
+    "name": "神戸VARIT.",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kobe",
+    "name": "神戸太陽と虎",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "osaka-ruido",
+    "name": "大阪RUIDO",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-bangboo",
+    "name": "梅田BANGBOO",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-club-quattro",
+    "name": "梅田CLUB QUATTRO",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "umeda-zeela",
+    "name": "梅田Zeela",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "himeji-beta",
+    "name": "姫路Beta",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "caravansary",
+    "name": "CARAVANSARY",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-stage-ark",
+    "name": "Live stage Ark",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "toonice",
+    "name": "TOONICE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "okayama-image",
+    "name": "岡山IMAGE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "hiroshima-second-crutch",
+    "name": "広島SECOND CRUTCH",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kochi-x-pt",
+    "name": "高知X-pt.",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shunan-rising-hall",
+    "name": "周南RISING HALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "tokushima-club-grindhouse",
+    "name": "徳島club GRINDHOUSE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "graf",
+    "name": "graf",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "insa",
+    "name": "INSA",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "live-house-queblick",
+    "name": "LIVE HOUSE Queblick",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "livehouse",
+    "name": "LiveHouse 秘密",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "livehouse-and-club-peace",
+    "name": "LiveHouse&Club PEACE",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "output",
+    "name": "output",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kumamoto-b-9-v1",
+    "name": "熊本B.9 V1",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kumamoto",
+    "name": "熊本城ホール メインホール",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ibusuki",
+    "name": "指宿市民会館",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "kagoshima-caparvo-hall",
+    "name": "鹿児島CAPARVO HALL",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "fukuoka-drum-be-1",
+    "name": "福岡DRUM Be-1",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "takadanobaba-area",
+    "name": "高田馬場AREA",
+    "venueStatus": "closed",
+    "venueStatusLabel": "営業終了",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinjuku-blaze",
+    "name": "新宿BLAZE",
+    "venueStatus": "closed",
+    "venueStatusLabel": "2024年7月31日営業終了",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "shinjuku-ruido-k4",
+    "name": "新宿RUIDO.K4",
+    "venueStatus": "closed",
+    "venueStatusLabel": "2020年9月30日営業終了",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "ikebukuro-cyber",
+    "name": "池袋CYBER",
+    "venueStatus": "closed",
+    "venueStatusLabel": "2020年12月営業終了",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "meguro-rockmaykan",
+    "name": "目黒鹿鳴館",
+    "venueStatus": "relocation_pending",
+    "venueStatusLabel": "目黒での営業終了・新天地未定",
+    "sourceConfidence": "official",
+    "sourceConfidenceLabel": "公式確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "club24-yokohama",
+    "name": "横浜CLUB24",
+    "venueStatus": "closed",
+    "venueStatusLabel": "2007年12月11日営業終了",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": false,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  },
+  {
+    "slug": "holiday-shinjuku",
+    "name": "HOLIDAY SHINJUKU",
+    "venueStatus": "active",
+    "venueStatusLabel": "営業中確認",
+    "sourceConfidence": "supporting_reference",
+    "sourceConfidenceLabel": "補助確認",
+    "checkedAt": "2026-05-09",
+    "publicDisplayPolicy": {
+      "showOnListCard": true,
+      "showUnknownOnListCard": false,
+      "showInternalResearchFields": false,
+      "showOnlyConfirmedLockerCloakOnList": true
+    }
+  }
+]
