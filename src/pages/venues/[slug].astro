@@ -60,6 +60,53 @@ const sourceTypeLabels: Record<string, string> = {
   unknown: '確認中',
 };
 
+const normalizeSourceUrl = (url: unknown) => {
+  const value = String(url ?? '').trim();
+  if (!value) return '';
+  try {
+    const normalized = new URL(value);
+    normalized.searchParams.delete('utm_source');
+    normalized.searchParams.delete('utm_medium');
+    normalized.searchParams.delete('utm_campaign');
+    return `${normalized.origin}${normalized.pathname}${normalized.search || ''}`;
+  } catch {
+    return value;
+  }
+};
+
+const dedupeSourceLinks = (links: SourceLink[]) => {
+  const exact = new Map<string, SourceLink>();
+
+  for (const link of links) {
+    const source = {
+      ...link,
+      label: String(link.label ?? '').trim(),
+      url: normalizeSourceUrl(link.url),
+      type: link.type ?? 'unknown',
+    };
+    if (!source.label && !source.url) continue;
+
+    const key = [source.url, source.label, source.type].join('|');
+    const existing = exact.get(key);
+    exact.set(key, {
+      ...existing,
+      ...source,
+      checkedAt: source.checkedAt || existing?.checkedAt,
+    } as SourceLink);
+  }
+
+  const byNameAndType = new Map<string, SourceLink>();
+  for (const source of exact.values()) {
+    const key = [source.label, source.type].join('|');
+    const existing = byNameAndType.get(key);
+    if (!existing || (!existing.url && source.url)) {
+      byNameAndType.set(key, source);
+    }
+  }
+
+  return [...byNameAndType.values()];
+};
+
 const cleanText = (value: unknown) =>
   String(value ?? '')
     .replace(/\bunknown\b/g, '確認中')
@@ -177,9 +224,9 @@ const summaryHeadline = isArchive
   ? archiveSummary
   : venue.practicalSummary?.headline || '荷物が多い日は駅ロッカーや宿泊先預けを先に考える。';
 const summaryPoints = isArchive ? [] : venue.practicalSummary?.points ?? [];
-const sourceLinks = (venue.sourceLinks ?? []).filter((source) =>
+const sourceLinks = dedupeSourceLinks((venue.sourceLinks ?? []).filter((source) =>
   ['official', 'supporting_reference'].includes(source.type)
-);
+));
 
 const title = isArchive
   ? `${venue.name}の閉館アーカイブ｜V系ライブ遠征ナビ`
@@ -248,13 +295,6 @@ const unknownRows = isArchive ? [] : [
   stationLockerRecommended === 'unknown' ? '駅ロッカー判断' : '',
 ].filter(Boolean);
 
-const groupedSources = sourceLinks.reduce((groups, source) => {
-  const key = source.type === 'official' ? 'official' : 'supporting_reference';
-  groups[key].push(source);
-  return groups;
-}, { official: [], supporting_reference: [] } as Record<'official' | 'supporting_reference', SourceLink[]>);
-
-const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supporting_reference'>).filter((key) => groupedSources[key].length > 0);
 ---
 
 <Layout title={title} description={description}>
@@ -363,35 +403,29 @@ const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supp
 
       <section class="gothic-card rounded-xl p-5 md:p-6">
         <div class="section-title">
-          <p>Sources</p>
           <h2>出典</h2>
           <p>公開ページでは、公式確認と補助確認だけを表示します。</p>
         </div>
         {sourceLinks.length > 0 ? (
-          <div class="grid gap-4">
-            {sourceGroupKeys.map((key) => (
-              <div class="rounded-md border border-amber/20 bg-black/25 p-4">
-                <p class="font-classical font-black text-mist">{key === 'official' ? '公式確認' : '補助確認'}</p>
-                <ul class="mt-3 space-y-3 text-sm leading-6 text-muted">
-                  {groupedSources[key].map((source) => (
-                    <li class="rounded-md border border-amber/10 bg-black/20 p-3">
-                      <div class="flex flex-wrap items-center gap-2">
-                        <span class="gothic-chip rounded-md px-2 py-0.5 text-[11px] font-black">{sourceTypeLabels[source.type] ?? '確認中'}</span>
-                        {source.checkedAt && <span class="text-xs text-muted">確認日: {source.checkedAt}</span>}
-                      </div>
-                      <div class="mt-2">
-                        {source.url ? (
-                          <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
-                        ) : (
-                          <span>{source.label}</span>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <ul class="space-y-3 text-sm leading-6 text-muted">
+            {sourceLinks.map((source) => (
+              <li class="rounded-md border border-amber/10 bg-black/20 p-3">
+                {source.url ? (
+                  <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+                ) : (
+                  <span class="text-mist">{source.label}</span>
+                )}
+                <span class="mx-2 text-muted">｜</span>
+                <span>{sourceTypeLabels[source.type] ?? '確認中'}</span>
+                {source.checkedAt && (
+                  <>
+                    <span class="mx-2 text-muted">｜</span>
+                    <span>確認日：{source.checkedAt}</span>
+                  </>
+                )}
+              </li>
             ))}
-          </div>
+          </ul>
         ) : (
           <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">公式確認・補助確認の表示情報は確認中です。</p>
         )}

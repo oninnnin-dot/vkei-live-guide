@@ -63,6 +63,23 @@ function walk(dir) {
           errors.push(`${full}: ${item.label}`);
         }
       }
+      if (/>\s*Sources\s*</.test(body)) {
+        errors.push(`${full}: Sources見出しが公開HTMLに残っています`);
+      }
+      const sourceSections = body.match(/<h2>\s*出典\s*<\/h2>[\s\S]*?<\/section>/g) || [];
+      for (const section of sourceSections) {
+        const labels = [
+          ...section.matchAll(/<a\b[^>]*>([^<]+)<\/a>/g),
+          ...section.matchAll(/<span class="text-mist">([^<]+)<\/span>/g)
+        ].map((match) => match[1].trim()).filter(Boolean);
+        const seenLabels = new Set();
+        for (const label of labels) {
+          if (seenLabels.has(label)) {
+            errors.push(`${full}: 出典名が重複しています: ${label}`);
+          }
+          seenLabels.add(label);
+        }
+      }
     }
   }
 }

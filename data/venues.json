@@ -136,18 +136,6 @@
         "url": "https://blaze2010.com/gotanda/spec",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "BLAZE GOTANDA 公式FLOOR",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "BLAZE GOTANDA 公式SPEC",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -361,24 +349,6 @@
       {
         "label": "LiveWalker 渋谷Club Malcolm",
         "url": "https://www.livewalker.com/web/detail/26589",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Club Malcolm 公式INFORMATION",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Club Malcolm 公式ACCESS",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 渋谷Club Malcolm",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -597,24 +567,6 @@
         "url": "https://www.livefans.jp/venues/10830",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "GT LIVE TOKYO 公式URL",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "チケットぴあ GT LIVE TOKYO 会場情報",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveFans GT LIVE TOKYO",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -823,18 +775,6 @@
       {
         "label": "LiveWalker 高円寺HIGH",
         "url": "https://www.livewalker.com/web/detail/9090",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "KOENJI HIGH 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 高円寺HIGH",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -1095,26 +1035,8 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "LINE CUBE SHIBUYA公式サイト",
-        "url": "https://linecubeshibuya.com/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
         "label": "Tokyo Art Beat LINE CUBE SHIBUYA",
         "url": "https://www.tokyoartbeat.com/en/venues/-/line-cube-shibuya",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LINE CUBE SHIBUYA公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Tokyo Art Beat LINE CUBE SHIBUYA",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -1318,12 +1240,6 @@
       {
         "label": "LIQUIDROOM 公式ACCESS",
         "url": "https://www.liquidroom.net/access",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LIQUIDROOM 公式ACCESS",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -1602,24 +1518,6 @@
         "url": "https://shibuya109square.com/service/magnet-eventspace/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "MAGNET by SHIBUYA109 公式",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "MAG’s PARK 公式",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SHIBUYA109 MAG’s PARK媒体情報",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -1882,12 +1780,6 @@
       {
         "label": "S.U.B TOKYO 公式FAQ",
         "url": "https://subtokyo.jp/faq/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "S.U.B TOKYO 公式FAQ",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -2409,26 +2301,8 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "SHIBUYA THE GAME 公式サイト",
-        "url": "https://shibuyathegame.com/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
         "label": "SHIBUYA THE GAME 公式SHOP INFO",
         "url": "https://shibuyathegame.com/shopinfo/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SHIBUYA THE GAME 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SHIBUYA THE GAME 公式SHOP INFO",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -2689,18 +2563,6 @@
         "url": "https://vident.jp/",
         "type": "official",
         "checkedAt": "2026-05-07"
-      },
-      {
-        "label": "SHIBUYA VIDENT 公式サイト",
-        "url": "https://vident.jp/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SHIBUYA VIDENT 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -2904,12 +2766,6 @@
       {
         "label": "ShowBoat 公式ACCESS",
         "url": "https://www.showboat1993.com/access",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "ShowBoat 公式ACCESS",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -3123,18 +2979,6 @@
         "url": "https://eplus.jp/sf/venue/1503450",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SPACE ODD 公式ACCESS",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "SPACE ODD イープラス会場情報",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -3345,18 +3189,6 @@
         "url": "https://lp.p.pia.jp/venue/music/13/153/500/101237/index.html",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Spotify O-EAST・O-WEST 公式FAQ",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Spotify O-EAST ぴあ会場情報",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -3565,18 +3397,6 @@
       {
         "label": "Spotify O-WEST ぴあ会場情報",
         "url": "https://lp.p.pia.jp/venue/music/13/153/500/101185/index.html",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Spotify O-EAST・O-WEST 公式FAQ",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Spotify O-WEST ぴあ会場情報",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -4252,12 +4072,6 @@
         "url": "https://www-shibuya.jp/about/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "WWW / WWW X 公式ABOUT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -4461,12 +4275,6 @@
       {
         "label": "WWW / WWW X 公式ABOUT",
         "url": "https://www-shibuya.jp/about/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "WWW / WWW X 公式ABOUT",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -4724,18 +4532,6 @@
         "url": "https://www.zepp.co.jp/hall/divercity/",
         "type": "official",
         "checkedAt": "2026-05-07"
-      },
-      {
-        "label": "Zepp DiverCity Tokyo 公式フロアガイド",
-        "url": "https://www.zepp.co.jp/hall/divercity/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Zepp DiverCity Tokyo 公式フロアガイド",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -4939,12 +4735,6 @@
         "url": "https://www.zepp.co.jp/hall/haneda/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Zepp Haneda 公式フロアガイド",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -5146,12 +4936,6 @@
       {
         "label": "Zepp Shinjuku 公式フロアガイド",
         "url": "https://www.zepp.co.jp/hall/shinjuku/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Zepp Shinjuku 公式フロアガイド",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -5408,18 +5192,6 @@
         "url": "https://t.pia.jp/pia/venue/venue.do?cityCd=110&prefectureCd=13&venueCd=TNMG",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LaSens小劇場データベース ウッディーシアター中目黒",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "チケットぴあ ウッディシアター中目黒",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -5630,18 +5402,6 @@
         "url": "https://liveholic.jp/access/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "下北沢LIVEHOLIC 公式ABOUT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "下北沢LIVEHOLIC 公式ACCESS",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -5849,18 +5609,6 @@
       {
         "label": "LiveWalker 下北沢ReG",
         "url": "https://www.livewalker.com/web/detail/7218",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "下北沢ReG 公式INFORMATION",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 下北沢ReG",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -6151,18 +5899,6 @@
       {
         "label": "イープラス 下北沢シャングリラ会場情報",
         "url": "https://eplus.jp/sf/venue/1550870",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "下北沢シャングリラ公式SYSTEM",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "イープラス 下北沢シャングリラ会場情報",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -6467,12 +6203,6 @@
       {
         "label": "恵比寿ガーデンプレイス 公式ホールページ",
         "url": "https://gardenplace.jp/hall/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "恵比寿ガーデンプレイス 公式ホールページ",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -6823,12 +6553,6 @@
       {
         "label": "原宿RUIDO LiveFans会場情報",
         "url": "https://www.livefans.jp/venues/6500",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "原宿RUIDO LiveFans会場情報",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -7539,12 +7263,6 @@
       {
         "label": "渋谷GUILTY mahocast公式アカウント情報",
         "url": "https://www.mahocast.com/at/about/478",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "渋谷GUILTY mahocast公式アカウント情報",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -8265,18 +7983,6 @@
         "url": "https://lp.p.pia.jp/venue/music/13/153/500/101177/index.html",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "渋谷Star lounge公式SYSTEM",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "ぴあ 渋谷Star lounge会場情報",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -8575,26 +8281,8 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "渋谷ストリームホール公式",
-        "url": "https://stream-hall.jp/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
         "label": "渋谷ストリーム施設案内",
         "url": "https://shibuyastream.jp/facilities/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "渋谷ストリームホール公式",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "渋谷ストリーム施設案内",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -8801,12 +8489,6 @@
         "url": "https://www.tokyu.co.jp/area/shibuya/station/coin-locker/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "東急 渋谷駅コインロッカー案内",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -9008,12 +8690,6 @@
       {
         "label": "渋谷近未来会館公式サイト",
         "url": "https://kinmirai-kaikan.com/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "渋谷近未来会館公式サイト",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -9218,12 +8894,6 @@
       {
         "label": "LiveWalker 初台DOORS",
         "url": "https://www.livewalker.com/web/detail/2298",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 初台DOORS",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -9579,12 +9249,6 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "上野音横丁 公式INFORMATION",
-        "url": "https://athers-music.com/livehouse/otoyoko-information/",
-        "type": "official",
-        "checkedAt": "2026-05-07"
-      },
-      {
         "label": "LiveFans 上野音横丁",
         "url": "https://www.livefans.jp/venues/1201",
         "type": "supporting_reference",
@@ -9593,24 +9257,6 @@
       {
         "label": "JREメディア 上野駅コインロッカー",
         "url": "https://media.jreast.co.jp/articles/1010",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "上野音横丁 公式INFORMATION",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveFans 上野音横丁",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "JREメディア 上野駅コインロッカー",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -9978,24 +9624,6 @@
         "url": "https://www.livewalker.com/web/detail/24600",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "新宿club SCIENCE 公式ACCESS",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "新宿club SCIENCE 公式EQUIPMENT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 新宿club SCIENCE",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -10256,26 +9884,8 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "Shinjuku HEIST 公式サイト",
-        "url": "https://heist.tokyo/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
         "label": "JVMap Shinjuku HEIST",
         "url": "https://jvmap.live/venue/shinjuku-heist/",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "Shinjuku HEIST 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "JVMap Shinjuku HEIST",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -10487,18 +10097,6 @@
         "url": "https://www.livewalker.com/web/detail/24144",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "新宿LOFT 公式ABOUT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 新宿ロフト",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -10708,18 +10306,6 @@
         "url": "https://lp.p.pia.jp/venue/music/13/154/506/101332/index.html",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "新宿アイランド 新宿ReNY ショップ情報",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "ぴあ 新宿ReNY 会場情報",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -10922,12 +10508,6 @@
       {
         "label": "バス比較なび 西荻BETTYROOM会場情報",
         "url": "https://www.bushikaku.net/expedition/concert/show/detail/449976-0001/449976-0001/",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "バス比較なび 西荻BETTYROOM会場情報",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -11140,18 +10720,6 @@
         "url": "https://wikiwiki.jp/livehouse/%E9%9D%92%E5%B1%B1%E6%9C%88%E8%A6%8B%E3%83%AB%E5%90%9B%E6%83%B3%E3%83%95",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "月見ル君想フ 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LIVEHOUSE Wiki 青山月見ル君想フ",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -11362,18 +10930,6 @@
         "url": "https://jvmap.live/venue/aoyama-rizm/",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 青山RizM",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "JVMap 青山RizM",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -11581,18 +11137,6 @@
       {
         "label": "LiveFans 赤羽ReNY alpha",
         "url": "https://www.livefans.jp/venues/10562",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 赤羽ReNY alpha",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveFans 赤羽ReNY alpha",
-        "url": "",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
       }
@@ -12295,18 +11839,6 @@
         "url": "https://www.livefans.jp/venues/5103",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "大久保HOTSHOT 公式ABOUT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveFans 大久保HOTSHOT",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -12519,18 +12051,6 @@
         "url": "https://hearts-web.net/next/information/system/",
         "type": "official",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "大塚Hearts Next 公式FAQ",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "大塚Hearts Next 公式System",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -12740,18 +12260,6 @@
       {
         "label": "大塚Hearts+ 公式System",
         "url": "https://hearts-web.net/plus/information/system/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "大塚Hearts+ 公式FAQ",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "大塚Hearts+ 公式System",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -14222,24 +13730,6 @@
         "url": "https://wikiwiki.jp/livehouse/%E6%B1%A0%E8%A2%8BAdm",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "池袋LiveGarage Adm 公式ACCESS",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "池袋LiveGarage Adm 公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LIVEHOUSE Wiki 池袋Adm",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -14942,18 +14432,6 @@
         "url": "https://www.livewalker.com/web/detail/9400",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "町田The Play House公式ABOUT",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "LiveWalker 町田The Play House",
-        "url": "",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -15596,18 +15074,6 @@
       {
         "label": "日本橋三井ホール公式ABOUT",
         "url": "https://nihonbashi-hall.jp/about/index.html",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "日本橋三井ホール公式サイト",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "日本橋三井ホール公式ABOUT",
-        "url": "",
         "type": "official",
         "checkedAt": "2026-05-09"
       }
@@ -16695,18 +16161,6 @@
         "url": "https://www.zepp.co.jp/hall/yokohama/",
         "type": "official",
         "checkedAt": "2026-05-07"
-      },
-      {
-        "label": "KT Zepp Yokohama 公式フロアガイド",
-        "url": "https://www.zepp.co.jp/hall/yokohama/",
-        "type": "official",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "KT Zepp Yokohama 公式フロアガイド",
-        "url": "",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -25240,12 +24694,6 @@
         "url": "[URL非表示]",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "金沢駅ロッカー公式案内",
-        "url": "[URL非表示]",
-        "type": "official",
-        "checkedAt": "2026-05-09"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -26322,12 +25770,6 @@
     "sourceLinks": [
       {
         "label": "富山SOUL POWER会場情報",
-        "url": "[URL非表示]",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "イープラス 富山SOUL POWER会場情報",
         "url": "[URL非表示]",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
@@ -27603,12 +27045,6 @@
     "sourceLinks": [
       {
         "label": "イープラス HOLIDAY NEXT NAGOYA会場情報",
-        "url": "[URL非表示]",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "HOLIDAY NEXT NAGOYA施設案内",
         "url": "[URL非表示]",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
@@ -30654,12 +30090,6 @@
       },
       {
         "label": "club MERCURY施設案内",
-        "url": "[URL非表示]",
-        "type": "supporting_reference",
-        "checkedAt": "2026-05-09"
-      },
-      {
-        "label": "イープラス club MERCURY会場情報",
         "url": "[URL非表示]",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"

@@ -15,6 +15,19 @@ let errors = [];
 let warnings = [];
 const slugs = new Map();
 
+function normalizeUrl(url) {
+  if (!url) return "";
+  try {
+    const normalized = new URL(url);
+    normalized.searchParams.delete("utm_source");
+    normalized.searchParams.delete("utm_medium");
+    normalized.searchParams.delete("utm_campaign");
+    return `${normalized.origin}${normalized.pathname}${normalized.search || ""}`;
+  } catch {
+    return String(url).trim();
+  }
+}
+
 function hasBannedWord(value) {
   const text = typeof value === "string" ? value : JSON.stringify(value ?? "");
   return BANNED_PUBLIC_WORDS.filter((word) => text.includes(word));
@@ -48,6 +61,9 @@ for (const [index, venue] of venues.entries()) {
   }
 
   const sourceLinks = venue.sourceLinks || [];
+  const sourceLinkKeys = new Set();
+  const sourceLinkUrls = new Set();
+  const sourceLinkNameTypeWithUrl = new Set();
   for (const [linkIndex, link] of sourceLinks.entries()) {
     const bad = hasBannedWord(link);
     if (bad.length) {
@@ -56,6 +72,23 @@ for (const [index, venue] of venues.entries()) {
     const type = link.type || "unknown";
     if (!SOURCE_CONFIDENCE.has(type)) {
       errors.push(`${where}: sourceLinks[${linkIndex}].type が不正です: ${type}`);
+    }
+    const label = String(link.label || "").trim();
+    const normalizedUrl = normalizeUrl(link.url || "");
+    const exactKey = [normalizedUrl, label, type].join("|");
+    const nameTypeKey = [label, type].join("|");
+    if (sourceLinkKeys.has(exactKey)) {
+      errors.push(`${where}: sourceLinks が重複しています: ${label}`);
+    }
+    sourceLinkKeys.add(exactKey);
+    if (normalizedUrl) {
+      if (sourceLinkUrls.has(normalizedUrl)) {
+        errors.push(`${where}: sourceLinks のURLが重複しています: ${normalizedUrl}`);
+      }
+      sourceLinkUrls.add(normalizedUrl);
+      sourceLinkNameTypeWithUrl.add(nameTypeKey);
+    } else if (sourceLinkNameTypeWithUrl.has(nameTypeKey)) {
+      errors.push(`${where}: URLなしの重複sourceLinksがあります: ${label}`);
     }
   }
 
