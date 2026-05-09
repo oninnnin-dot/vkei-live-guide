@@ -1,0 +1,45 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+
+const title = '広告・アフィリエイト表記｜V系ライブ遠征ナビ';
+const description = 'V系ライブ遠征ナビの広告・アフィリエイト表記。今後、遠征準備や宿泊、持ち物に関する広告リンクを設置する可能性について説明します。';
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '広告・アフィリエイト表記' }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="gothic-label">Advertising</p>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">広告・アフィリエイト表記</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        当サイトでは今後、遠征準備、持ち物、宿泊、移動、雨の日対策に関する広告リンクを設置する可能性があります。
+      </p>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <article class="gothic-card rounded-xl p-5 md:p-8">
+      <div class="grid gap-7 text-sm leading-7 text-muted md:text-base">
+        <section>
+          <h2 class="font-classical text-2xl font-black text-mist">広告リンクの方針</h2>
+          <p class="mt-3">広告リンクを設置する場合でも、会場情報や当日の動き方の説明は、利用者が判断しやすいことを優先します。</p>
+        </section>
+        <section>
+          <h2 class="font-classical text-2xl font-black text-mist">紹介対象の例</h2>
+          <p class="mt-3">モバイルバッテリー、雨具、圧縮袋、サブバッグ、宿泊エリア案内、交通やホテル予約サービスなどを想定しています。</p>
+        </section>
+        <section>
+          <h2 class="font-classical text-2xl font-black text-mist">公演情報との分離</h2>
+          <p class="mt-3">当サイトは公演名、出演者、日程、チケット状況を集めるサイトではありません。最新の公演情報は公式サイトやチケットサイトで確認してください。</p>
+        </section>
+      </div>
+    </article>
+    <div class="mt-6">
+      <NoticeBox title="現在の状態" tone="success">
+        <p>現時点では、収益化を見据えた案内枠を作成しています。商品リンクは無理に設置せず、実用性を優先します。</p>
+      </NoticeBox>
+    </div>
+  </section>
+</Layout>

@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import BaggageDiagnosis from '@components/BaggageDiagnosis.astro';
 import Hero from '@components/Hero.astro';
 import LinkCard from '@components/LinkCard.astro';
+import MonetizationBox from '@components/MonetizationBox.astro';
 import NoticeBox from '@components/NoticeBox.astro';
 import SectionTitle from '@components/SectionTitle.astro';
 import VenueCard from '@components/VenueCard.astro';
@@ -50,7 +51,7 @@ const mainLinks = [
   {
     title: '持ち物チェックリスト',
     description: 'チケット、身分証、モバイルバッテリー、雨具、物販用バッグなどをブラウザ上でチェックできます。',
-    href: '/guides/belongings',
+    href: '/v-kei-live-belongings/',
     cta: 'チェックする',
   },
   {
@@ -64,6 +65,51 @@ const mainLinks = [
     description: 'ロッカーとクロークの違い、駅ロッカーを使う判断、地下会場や終演後の注意をまとめています。',
     href: '/guides/livehouse-tips',
     cta: '豆知識を見る',
+  },
+];
+
+const seoLinks = [
+  {
+    title: 'V系ライブの持ち物チェックリスト',
+    description: '会場に持ち込むもの、駅やホテルに預けるもの、物販後に増える荷物を分けて確認できます。',
+    href: '/v-kei-live-belongings/',
+    cta: '持ち物を確認',
+  },
+  {
+    title: '小箱ライブハウスのロッカー・クローク完全ガイド',
+    description: 'ロッカー、クローク、駅ロッカー、キャリーケースの判断を小箱ライブ向けに整理しています。',
+    href: '/small-livehouse-locker-cloak/',
+    cta: '荷物対策を見る',
+  },
+  {
+    title: 'ライブ前に駅ロッカーを使うべき場面',
+    description: 'キャリーあり、良番、物販、雨の日など、駅ロッカー先行が強い条件を確認できます。',
+    href: '/livehouse-station-locker/',
+    cta: '駅ロッカー判断へ',
+  },
+  {
+    title: 'V系ライブ初参戦ガイド',
+    description: '整理番号、入場、立ち位置、終演後の流れを初めての人向けにまとめています。',
+    href: '/vkei-first-live-guide/',
+    cta: '初参戦の流れへ',
+  },
+  {
+    title: 'V系ライブ遠征費の目安',
+    description: '交通費、ホテル代、物販、ロッカー代、終演後の移動費まで含めて考えます。',
+    href: '/vkei-live-trip-cost/',
+    cta: '費用の目安へ',
+  },
+  {
+    title: '雨の日の小箱ライブ対策',
+    description: '傘、濡れた荷物、待機場所、終演後の移動を雨の日向けに整理します。',
+    href: '/vkei-live-rainy-day/',
+    cta: '雨の日対策へ',
+  },
+  {
+    title: '終演後の帰り方・終電・宿泊判断',
+    description: 'クローク返却、物販、駅までの移動、終電、宿泊判断を先に決めるためのガイドです。',
+    href: '/vkei-live-after-show/',
+    cta: '帰り方を見る',
   },
 ];
 ---
@@ -83,12 +129,27 @@ const mainLinks = [
 
   <BaggageDiagnosis />
 
+  <section class="container-navi py-8">
+    <MonetizationBox />
+  </section>
+
   <section class="container-navi py-10">
     <NoticeBox title="このサイトの役割" tone="warning">
       <p>
         公演情報・チケット情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。当サイトは、小箱を含む会場周辺情報、荷物対策、ロッカー・クローク、終演後の帰り方を補助するサイトです。
       </p>
     </NoticeBox>
+  </section>
+
+  <section class="container-navi py-8">
+    <SectionTitle
+      eyebrow="Practical guides"
+      title="検索前にも、会場へ向かう前にも読める実用記事"
+      lead="会場名がまだ決まっていない段階でも、荷物、ロッカー、雨、遠征費、終演後の動き方を先に確認できます。"
+    />
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {seoLinks.map((link) => <LinkCard {...link} />)}
+    </div>
   </section>
 
   <section class="container-navi py-8">

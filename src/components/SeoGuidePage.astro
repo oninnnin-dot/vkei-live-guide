@@ -1,0 +1,69 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import MonetizationBox from '@components/MonetizationBox.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import RelatedGuideLinks from '@components/RelatedGuideLinks.astro';
+
+interface Section {
+  title: string;
+  lead?: string;
+  points?: string[];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  pageTitle: string;
+  eyebrow: string;
+  lead: string;
+  sections: Section[];
+  notice?: string;
+}
+
+const { title, description, pageTitle, eyebrow, lead, sections, notice } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '実用ガイド', href: '/v-kei-live-belongings/' }, { label: pageTitle }]} />
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="gothic-label">{eyebrow}</p>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">{pageTitle}</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">{lead}</p>
+    </div>
+    <div class="mt-8">
+      <NoticeBox title="公演情報は公式で確認" tone="warning">
+        <p>{notice ?? 'このページでは公演名、出演者、日程、チケット状況を掲載しません。会場設備や運用は公演ごとに変わるため、最終判断は公式サイト、主催者告知、当日案内を優先してください。'}</p>
+      </NoticeBox>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <article class="gothic-card rounded-xl p-5 md:p-8">
+      <div class="grid gap-8">
+        {sections.map((section) => (
+          <section>
+            <p class="gothic-label">Guide</p>
+            <h2 class="font-classical mt-2 text-2xl font-black leading-tight text-mist md:text-3xl">{section.title}</h2>
+            <div class="ornament-line mt-3 max-w-xs"></div>
+            {section.lead && <p class="mt-4 text-sm leading-7 text-muted md:text-base">{section.lead}</p>}
+            {section.points && section.points.length > 0 && (
+              <ul class="mt-4 grid gap-3">
+                {section.points.map((point) => (
+                  <li class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-mist">{point}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
+    </article>
+  </section>
+
+  <section class="container-navi py-8">
+    <MonetizationBox />
+  </section>
+
+  <RelatedGuideLinks />
+</Layout>

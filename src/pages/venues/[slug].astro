@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import MonetizationBox from '@components/MonetizationBox.astro';
+import RelatedGuideLinks from '@components/RelatedGuideLinks.astro';
 import venues from '@data/venues.json';
 import type { SourceLink, Venue } from '@/types';
 
@@ -474,6 +476,12 @@ const unknownRows = isArchive ? [] : [
           このページでは公演名、出演者、日程、チケット状況を掲載しません。最新の公演情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。
         </p>
       </div>
+
+      <MonetizationBox
+        title="この会場へ行く前に用意しておくと安心なもの"
+        lead="物販・雨・終演後移動がある日は、荷物を減らしつつ必要なものだけ持つのがおすすめです。"
+      />
     </aside>
   </section>
+  <RelatedGuideLinks title="この会場へ行く前にあわせて確認" />
 </Layout>
