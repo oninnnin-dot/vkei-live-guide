@@ -96,19 +96,28 @@ const isUsefulText = (value: unknown) => {
 
 const locker = venue.lockerInfo;
 const cloak = venue.cloakInfo;
+const isArchive = venue.archiveOnly || venue.status === 'closed';
 const stationLockerRecommended = locker?.stationLockerRecommended ?? 'unknown';
-const summaryPoints = venue.practicalSummary?.points ?? [];
+const archiveSummary = '閉館アーカイブのため、現在利用前提のロッカー・クローク案内は表示していません。';
+const summaryHeadline = isArchive
+  ? archiveSummary
+  : venue.practicalSummary?.headline || '荷物が多い日は駅ロッカーや宿泊先預けを先に考える。';
+const summaryPoints = isArchive ? [] : venue.practicalSummary?.points ?? [];
 const sourceLinks = (venue.sourceLinks ?? []).filter((source) =>
   ['official', 'supporting_reference'].includes(source.type)
 );
 
-const title = `${venue.name}のロッカー・クローク・荷物ガイド｜V系ライブ遠征ナビ`;
-const description = `${venue.name}へ行く前に確認したい、会場内ロッカー、クローク、駅ロッカー、キャリーケース、物販後の荷物、開場前の待機場所、終演後の動き方をまとめています。`;
+const title = isArchive
+  ? `${venue.name}の閉館アーカイブ｜V系ライブ遠征ナビ`
+  : `${venue.name}のロッカー・クローク・荷物ガイド｜V系ライブ遠征ナビ`;
+const description = isArchive
+  ? `${venue.name}は閉館アーカイブとして掲載しています。現在利用前提の設備案内ではなく、過去会場情報として整理しています。`
+  : `${venue.name}へ行く前に確認したい、会場内ロッカー、クローク、駅ロッカー、キャリーケース、物販後の荷物、開場前の待機場所、終演後の動き方をまとめています。`;
 const accessText = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : ''}`
   : '最寄り駅は確認中';
 
-const baggageRows = [
+const baggageRows = isArchive ? [] : [
   ['荷物少なめ', venue.baggageGuide?.smallBag || venue.baggageDecision?.tinyBag || '小さめバッグならそのまま入場でも対応しやすい。貴重品は体の前で管理する。'],
   ['リュックあり', venue.baggageGuide?.backpack || venue.baggageDecision?.backpack || 'フロアが詰まる日は邪魔になりやすい。駅ロッカーかクロークを先に考える。'],
   ['キャリーあり', venue.baggageGuide?.suitcase || venue.baggageDecision?.suitcase || '会場持ち込みは非推奨。駅ロッカー・ホテル・大型荷物預かりを優先する。'],
@@ -116,7 +125,7 @@ const baggageRows = [
   ['良番の日', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber || '荷物処理を先に終わらせる。入場直前に迷うと番号の良さが消える。'],
 ].filter(([, text]) => isUsefulText(text));
 
-const lockerRows = [
+const lockerRows = isArchive ? [] : [
   locker ? ['会場内ロッカー', lockerStatusLabels[locker.venueLockerStatus ?? 'unknown']] : null,
   locker && isUsefulText(locker.lockerCountText) ? ['ロッカー個数', cleanText(locker.lockerCountText)] : null,
   locker && isUsefulText(locker.priceText) ? ['ロッカー料金', cleanText(locker.priceText)] : null,
@@ -130,7 +139,7 @@ const lockerRows = [
   locker?.lastCheckedAt || locker?.checkedAt ? ['確認日', locker.lastCheckedAt || locker.checkedAt] : null,
 ].filter(Boolean) as Array<[string, string]>;
 
-const cloakRows = [
+const cloakRows = isArchive ? [] : [
   cloak ? ['クローク', cloakStatusLabels[cloak.cloakStatus ?? 'unknown']] : null,
   cloak && isUsefulText(cloak.priceText) ? ['料金', cleanText(cloak.priceText)] : null,
   cloak && isUsefulText(cloak.timingText) ? ['受付タイミング', cleanText(cloak.timingText)] : null,
@@ -140,7 +149,7 @@ const cloakRows = [
   cloak?.lastCheckedAt || cloak?.checkedAt ? ['確認日', cloak.lastCheckedAt || cloak.checkedAt] : null,
 ].filter(Boolean) as Array<[string, string]>;
 
-const nearbyRows = [
+const nearbyRows = isArchive ? [] : [
   ['コンビニ', venue.nearbyInfo?.nearestConvenienceStore],
   ['駅ロッカー', venue.nearbyInfo?.stationLocker],
   ['待機場所', venue.nearbyInfo?.waitingSpot],
@@ -151,7 +160,7 @@ const nearbyRows = [
   ['夜道・繁華街', venue.nearbyInfo?.nightSafety],
 ].filter(([, text]) => isUsefulText(text));
 
-const unknownRows = [
+const unknownRows = isArchive ? [] : [
   locker?.venueLockerStatus === 'unknown' ? '会場内ロッカー' : '',
   isUnknownValue(locker?.lockerCountText) ? 'ロッカー個数' : '',
   locker?.beforeEntryUse === 'unknown' ? '開場前ロッカー利用' : '',
@@ -194,7 +203,7 @@ const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supp
         <div class="section-title">
           <p>30 seconds</p>
           <h2>30秒結論</h2>
-          <p>{venue.practicalSummary?.headline || '荷物が多い日は駅ロッカーや宿泊先預けを先に考える。'}</p>
+          <p>{summaryHeadline}</p>
         </div>
         {summaryPoints.length > 0 && (
           <ul class="grid gap-3">
@@ -205,6 +214,8 @@ const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supp
         )}
       </section>
 
+      {!isArchive && (
+        <>
       <section class="gothic-card rounded-xl p-5 md:p-6">
         <div class="section-title">
           <p>Today</p>
@@ -272,6 +283,8 @@ const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supp
           <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">周辺情報は確認中です。荷物が多い日は、駅到着時点でロッカーや預け先を決めてから会場へ向かうと動きやすくなります。</p>
         )}
       </section>
+        </>
+      )}
 
       <section class="gothic-card rounded-xl p-5 md:p-6">
         <div class="section-title">
@@ -315,7 +328,9 @@ const sourceGroupKeys = (Object.keys(groupedSources) as Array<'official' | 'supp
           <h2>情報確認状況</h2>
           <p>未確定の設備情報はここにまとめます。確認中でも、本文では当日の動き方を先に示します。</p>
         </div>
-        {unknownRows.length > 0 ? (
+        {isArchive ? (
+          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">閉館アーカイブのため、現在利用前提の設備確認状況は表示していません。</p>
+        ) : unknownRows.length > 0 ? (
           <ul class="grid gap-2 text-sm leading-7 text-muted md:grid-cols-2">
             {unknownRows.map((item) => (
               <li class="rounded-md border border-amber/20 bg-black/25 px-4 py-3">

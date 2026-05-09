@@ -62,6 +62,7 @@ const isUseful = (value: unknown) => {
   return Boolean(text) && text !== '確認中' && text !== 'なし';
 };
 
+const isArchive = venue.archiveOnly || venue.status === 'closed';
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
 const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
 const stationLockerState =
@@ -75,15 +76,17 @@ const accessLabel = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ''}`
   : '最寄り駅確認中';
 
-const baggageOneLine = cleanText(
-  venue.practicalSummary?.headline ||
-    venue.lockerInfo?.bestMove ||
-    venue.baggageGuide?.backpack ||
-    venue.baggageNote ||
-    '荷物が多い日は、駅ロッカーや宿泊先預けを先に考える。'
-);
+const baggageOneLine = isArchive
+  ? '閉館アーカイブのため、現在利用前提の荷物案内は表示していません。'
+  : cleanText(
+      venue.practicalSummary?.headline ||
+        venue.lockerInfo?.bestMove ||
+        venue.baggageGuide?.backpack ||
+        venue.baggageNote ||
+        '荷物が多い日は、駅ロッカーや宿泊先預けを先に考える。'
+    );
 
-const factRows = [
+const factRows = isArchive ? [] : [
   lockerState !== 'unknown'
     ? ['会場内ロッカー', lockerStatusLabels[lockerState]]
     : null,
@@ -102,10 +105,24 @@ const factRows = [
 ].filter(Boolean) as Array<[string, string]>;
 
 const hasHiddenUnknowns =
-  lockerState === 'unknown' || cloakState === 'unknown' || stationLockerState === 'unknown';
+  !isArchive && (lockerState === 'unknown' || cloakState === 'unknown' || stationLockerState === 'unknown');
 
 const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
+
+const logisticsSearchText = isArchive ? [] : [
+  venue.lockerInfo?.venueLockerText,
+  venue.lockerInfo?.lockerCountText,
+  venue.lockerInfo?.bestMove,
+  venue.cloakInfo?.cloakText,
+  venue.cloakInfo?.priceText,
+  venue.cloakInfo?.bestMove,
+  venue.baggageGuide?.backpack,
+  venue.nearbyInfo?.stationLocker,
+  venue.nearbyInfo?.waitingSpot,
+  venue.nearbyInfo?.afterShowRoute,
+  ...(venue.practicalSummary?.points ?? []),
+];
 
 const searchText = [
   venue.name,
@@ -121,17 +138,7 @@ const searchText = [
   typeLabel,
   scaleLabel,
   baggageOneLine,
-  venue.lockerInfo?.venueLockerText,
-  venue.lockerInfo?.lockerCountText,
-  venue.lockerInfo?.bestMove,
-  venue.cloakInfo?.cloakText,
-  venue.cloakInfo?.priceText,
-  venue.cloakInfo?.bestMove,
-  venue.baggageGuide?.backpack,
-  venue.nearbyInfo?.stationLocker,
-  venue.nearbyInfo?.waitingSpot,
-  venue.nearbyInfo?.afterShowRoute,
-  ...(venue.practicalSummary?.points ?? []),
+  ...logisticsSearchText,
   ...(venue.tipTags ?? []),
 ]
   .filter(Boolean)
@@ -163,11 +170,11 @@ const filterTags = [
   venue.prefecture,
   venue.areaGroup,
   venue.area,
-  venue.lockerInfo ? 'locker-fact' : '',
-  venue.nearbyInfo ? 'nearby-fact' : '',
-  venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
-  venue.lockerInfo?.venueLockerStatus === 'none' || venue.lockerInfo?.venueLockerStatus === 'limited' ? 'locker-attention' : '',
-  venue.cloakInfo?.cloakStatus === 'available' || venue.cloakInfo?.cloakStatus === 'event_dependent' ? 'cloak-available' : '',
+  !isArchive && venue.lockerInfo ? 'locker-fact' : '',
+  !isArchive && venue.nearbyInfo ? 'nearby-fact' : '',
+  !isArchive && venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
+  !isArchive && (venue.lockerInfo?.venueLockerStatus === 'none' || venue.lockerInfo?.venueLockerStatus === 'limited') ? 'locker-attention' : '',
+  !isArchive && (venue.cloakInfo?.cloakStatus === 'available' || venue.cloakInfo?.cloakStatus === 'event_dependent') ? 'cloak-available' : '',
   venue.area === '横浜' || venue.areaGroup?.includes('yokohama') ? 'yokohama' : '',
   venue.area === '渋谷' || venue.areaGroup?.includes('shibuya') ? 'shibuya' : '',
   venue.area === '下北沢' || venue.areaGroup?.includes('shimokitazawa') ? 'shimokitazawa' : '',
@@ -176,7 +183,7 @@ const filterTags = [
 ---
 
 <article
-  class={`gothic-card flex h-full min-w-0 flex-col rounded-xl p-5 ${venue.archiveOnly || venue.status === 'closed' || !venue.showInVenueList ? 'hidden' : ''}`}
+  class={`gothic-card flex h-full min-w-0 flex-col rounded-xl p-5 ${isArchive || !venue.showInVenueList ? 'hidden' : ''}`}
   data-venue-card
   data-default-visible={venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly ? 'true' : 'false'}
   data-archive={venue.archiveOnly ? 'true' : 'false'}
