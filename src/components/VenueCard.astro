@@ -50,25 +50,16 @@ const stationLockerLabels: Record<string, string> = {
   unknown: '確認中',
 };
 
-const blogResearchLabels: Record<string, string> = {
-  researched: '済',
-  partial: '一部',
-  not_found: '見つからず',
-  not_started: '未着手',
-};
-
 const cleanText = (value: unknown) =>
   String(value ?? '')
+    .replace(/\bunknown\b/g, '確認中')
     .replaceAll('未確認', '確認中')
     .replaceAll('未調査', '確認中')
-    .replaceAll('未登録', '確認中')
-    .replaceAll('要確認', '確認中')
-    .replaceAll('調査待ち', '確認中')
-    .replace(/\bunknown\b/g, '確認中');
+    .trim();
 
 const isUseful = (value: unknown) => {
-  const text = cleanText(value).trim();
-  return Boolean(text) && text !== '確認中' && text !== 'なし扱い。';
+  const text = cleanText(value);
+  return Boolean(text) && text !== '確認中' && text !== 'なし';
 };
 
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
@@ -76,7 +67,6 @@ const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
 const stationLockerState =
   venue.lockerInfo?.stationLockerRecommended ??
   (venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown');
-const blogResearchState = venue.blogResearch?.status ?? 'not_started';
 
 const typeLabel = typeLabels[venue.venueType ?? 'unknown'];
 const scaleLabel = scaleLabels[venue.venueScale ?? 'unknown'];
@@ -108,9 +98,6 @@ const factRows = [
     : null,
   stationLockerState !== 'unknown'
     ? ['駅ロッカー推奨', stationLockerLabels[stationLockerState]]
-    : null,
-  ['researched', 'partial'].includes(blogResearchState)
-    ? ['参戦レポ調査', blogResearchLabels[blogResearchState]]
     : null,
 ].filter(Boolean) as Array<[string, string]>;
 
@@ -144,9 +131,7 @@ const searchText = [
   venue.nearbyInfo?.stationLocker,
   venue.nearbyInfo?.waitingSpot,
   venue.nearbyInfo?.afterShowRoute,
-  venue.blogResearch?.summary,
   ...(venue.practicalSummary?.points ?? []),
-  ...(venue.blogSignals ?? []).map((signal) => signal.summary),
   ...(venue.tipTags ?? []),
 ]
   .filter(Boolean)
@@ -179,7 +164,6 @@ const filterTags = [
   venue.areaGroup,
   venue.area,
   venue.lockerInfo ? 'locker-fact' : '',
-  (venue.blogSignals ?? []).length > 0 ? 'community-fact' : '',
   venue.nearbyInfo ? 'nearby-fact' : '',
   venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
   venue.lockerInfo?.venueLockerStatus === 'none' || venue.lockerInfo?.venueLockerStatus === 'limited' ? 'locker-attention' : '',

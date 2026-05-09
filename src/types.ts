@@ -160,7 +160,7 @@ export type VenueComment = {
   checkedAt: string;
 };
 
-export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'sns_report' | 'unknown';
+export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'sns_report' | 'supporting_reference' | 'unknown';
 export type ExtendedLogisticsConfidence = LogisticsConfidence | 'venue_database' | 'review_site';
 export type AvailabilityStatus = 'available' | 'unavailable' | 'unknown';
 
@@ -168,6 +168,7 @@ export type LockerInfo = {
   venueLockerStatus: 'available' | 'none' | 'limited' | 'unknown';
   venueLockerText: string;
   lockerCountText: string;
+  priceText?: string;
   beforeEntryUse: AvailabilityStatus;
   afterEntryUse: AvailabilityStatus;
   coinNeeded: 'yes' | 'no' | 'unknown';
@@ -175,6 +176,7 @@ export type LockerInfo = {
   stationLockerRecommended: 'yes' | 'no' | 'depends' | 'situation_dependent' | 'unknown';
   bestMove: string;
   sourceConfidence: ExtendedLogisticsConfidence;
+  checkedAt?: string;
   lastCheckedAt: string;
 };
 
@@ -186,6 +188,7 @@ export type CloakInfo = {
   bagTypeText: string;
   bestMove: string;
   sourceConfidence: ExtendedLogisticsConfidence;
+  checkedAt?: string;
   lastCheckedAt: string;
 };
 
@@ -228,7 +231,20 @@ export type DayDecisionGuide = {
 export type SourceLink = {
   label: string;
   url: string;
-  type: 'official' | 'official_blog' | 'personal_blog' | 'blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'mixed' | 'unknown' | 'venue_database' | 'review_site';
+  type:
+    | 'official'
+    | 'supporting_reference'
+    | 'official_blog'
+    | 'personal_blog'
+    | 'blog'
+    | 'note'
+    | 'sns'
+    | 'q_and_a'
+    | 'ticket_site'
+    | 'mixed'
+    | 'unknown'
+    | 'venue_database'
+    | 'review_site';
   checkedAt: string;
 };
 
@@ -321,6 +337,12 @@ export type Venue = {
   blogResearch?: BlogResearch;
   dayDecisionGuide?: DayDecisionGuide;
   sourceLinks?: SourceLink[];
+  researchStatus?: string;
+  searchedSources?: Array<{
+    query: string;
+    result: string;
+    checkedAt: string;
+  }>;
   infoFreshnessWarning?: string;
   ticketSearchLinks: TicketSearchLink[];
   sourceNotes: string[];
