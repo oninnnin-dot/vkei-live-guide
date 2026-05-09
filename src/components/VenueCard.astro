@@ -43,11 +43,12 @@ const cloakStatusLabels: Record<string, string> = {
 };
 
 const stationLockerLabels: Record<string, string> = {
-  yes: 'はい',
-  depends: '状況次第',
-  situation_dependent: '状況次第',
-  no: 'いいえ',
-  unknown: '確認中',
+  yes: '駅ロッカー先行がおすすめ',
+  depends: '荷物量・整理番号次第',
+  situation_dependent: '荷物量・整理番号次第',
+  conditional: '荷物量・整理番号次第',
+  no: '会場設備で足りる可能性あり',
+  unknown: '状況次第',
 };
 
 const cleanText = (value: unknown) =>
@@ -116,7 +117,7 @@ const factRows = isArchive ? [] : [
     ? ['クローク料金', cleanText(venue.cloakInfo?.priceText)]
     : null,
   stationLockerState !== 'unknown'
-    ? ['駅ロッカー推奨', stationLockerLabels[stationLockerState] ?? '確認中']
+    ? ['駅ロッカー', stationLockerLabels[stationLockerState] ?? '状況次第']
     : null,
 ].filter(Boolean) as Array<[string, string]>;
 

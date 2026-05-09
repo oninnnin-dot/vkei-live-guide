@@ -43,21 +43,6 @@ const cloakStatusLabels: Record<string, string> = {
   unknown: '確認中',
 };
 
-const availabilityLabels: Record<string, string> = {
-  available: '可',
-  unavailable: '不可',
-  unknown: '確認中',
-};
-
-const yesNoLabels: Record<string, string> = {
-  yes: 'はい',
-  no: 'いいえ',
-  limited: 'サイズ次第',
-  depends: '状況次第',
-  situation_dependent: '状況次第',
-  unknown: '確認中',
-};
-
 const confidenceLabels: Record<string, string> = {
   official: '公式確認',
   supporting_reference: '補助確認',
@@ -100,11 +85,92 @@ const normalizeStationLocker = (value: unknown) => {
   return String(value || 'unknown');
 };
 
+const normalizeToken = (value: unknown) => {
+  if (value === true) return 'true';
+  if (value === false) return 'false';
+  if (value === null || value === undefined || value === '') return '';
+  return String(value);
+};
+
+const formatUseTiming = (value: unknown, phase: 'before' | 'after') => {
+  const token = normalizeToken(value);
+  if (!token) return '';
+  const label = phase === 'before' ? '開場前' : '開場後';
+  const useLabel = phase === 'before' ? '開場前に使える' : '開場後に使える';
+  const notFoundLabel = phase === 'before' ? '開場前利用は確認できず' : '開場後利用は確認できず';
+  const labels: Record<string, string> = {
+    true: useLabel,
+    available: useLabel,
+    false: notFoundLabel,
+    unavailable: notFoundLabel,
+    no: notFoundLabel,
+    unknown: '確認中',
+    event_dependent: '公演により変動',
+    organizer_dependent: '主催者判断',
+  };
+  return labels[token] ?? `${label}の運用は確認中`;
+};
+
+const formatCoinRequirement = (value: unknown) => {
+  const token = normalizeToken(value);
+  if (!token) return '';
+  const labels: Record<string, string> = {
+    true: '100円玉を用意',
+    yes: '100円玉を用意',
+    required: '100円玉を用意',
+    false: '100円玉指定なし',
+    no: '100円玉指定なし',
+    not_required: '100円玉指定なし',
+    unknown: '確認中',
+  };
+  return labels[token] ?? '確認中';
+};
+
+const formatLargeBaggage = (value: unknown) => {
+  const token = normalizeToken(value);
+  if (!token) return '';
+  const labels: Record<string, string> = {
+    true: '大型荷物も対応可',
+    yes: '大型荷物も対応可',
+    accepted: '大型荷物も対応可',
+    limited: 'サイズ次第',
+    false: '大型荷物は避ける',
+    no: '大型荷物は避ける',
+    not_recommended: '大型荷物は避ける',
+    station_recommended: '駅ロッカー・ホテル預け推奨',
+    unknown: '要確認',
+  };
+  return labels[token] ?? '要確認';
+};
+
+const formatStationLockerRecommendation = (value: unknown) => {
+  const token = normalizeToken(value);
+  if (!token) return '';
+  const labels: Record<string, string> = {
+    true: '駅ロッカー先行がおすすめ',
+    yes: '駅ロッカー先行がおすすめ',
+    false: '会場設備で足りる可能性あり',
+    no: '会場設備で足りる可能性あり',
+    depends: '荷物量・整理番号次第',
+    situation_dependent: '荷物量・整理番号次第',
+    conditional: '荷物量・整理番号次第',
+    unknown: '状況次第',
+  };
+  return labels[token] ?? '状況次第';
+};
+
 const locker = venue.lockerInfo;
 const cloak = venue.cloakInfo;
 const effectiveVenueStatus = venue.venueStatus ?? venue.status;
 const isArchive = venue.archiveOnly || effectiveVenueStatus === 'closed';
 const stationLockerRecommended = normalizeStationLocker(locker?.stationLockerRecommended ?? 'unknown');
+const coinRequirementText = locker && isUsefulText(locker.coinText)
+  ? cleanText(locker.coinText)
+  : formatCoinRequirement(locker?.coinNeeded);
+const largeBaggageText = locker && isUsefulText(locker.largeBagText)
+  ? cleanText(locker.largeBagText)
+  : formatLargeBaggage(locker?.largeBagFit);
+const stationLockerText = formatStationLockerRecommendation(stationLockerRecommended);
 const venueSourceConfidence = venue.sourceConfidence ?? 'unknown';
 const archiveSummary = '閉館アーカイブのため、現在利用前提のロッカー・クローク案内は表示していません。';
 const summaryHeadline = isArchive
@@ -138,13 +204,11 @@ const lockerRows = isArchive ? [] : [
   locker && isUsefulText(locker.lockerCountText) ? ['ロッカー個数', cleanText(locker.lockerCountText)] : null,
   locker && isUsefulText(locker.priceText) ? ['ロッカー料金', cleanText(locker.priceText)] : null,
   locker && isUsefulText(locker.timingText) ? ['利用タイミング', cleanText(locker.timingText)] : null,
-  locker && locker.beforeEntryUse ? ['開場前利用', availabilityLabels[locker.beforeEntryUse ?? 'unknown']] : null,
-  locker && locker.afterEntryUse ? ['開場後利用', availabilityLabels[locker.afterEntryUse ?? 'unknown']] : null,
-  locker && locker.coinNeeded ? ['小銭・100円玉', yesNoLabels[locker.coinNeeded ?? 'unknown']] : null,
-  locker && isUsefulText(locker.coinText) ? ['小銭・100円玉', cleanText(locker.coinText)] : null,
-  locker && locker.largeBagFit ? ['大型荷物', yesNoLabels[locker.largeBagFit ?? 'unknown']] : null,
-  locker && isUsefulText(locker.largeBagText) ? ['大型荷物', cleanText(locker.largeBagText)] : null,
-  locker ? ['駅ロッカー推奨', yesNoLabels[stationLockerRecommended] ?? '確認中'] : null,
+  locker && locker.beforeEntryUse ? ['開場前利用', formatUseTiming(locker.beforeEntryUse, 'before')] : null,
+  locker && locker.afterEntryUse ? ['開場後利用', formatUseTiming(locker.afterEntryUse, 'after')] : null,
+  locker && coinRequirementText ? ['小銭・100円玉', coinRequirementText] : null,
+  locker && largeBaggageText ? ['大型荷物', largeBaggageText] : null,
+  locker && stationLockerText ? ['駅ロッカー', stationLockerText] : null,
   locker && isUsefulText(locker.bestMove) ? ['最善の動き方', cleanText(locker.bestMove)] : null,
   locker ? ['出典区分', confidenceLabels[locker.sourceConfidence ?? venueSourceConfidence]] : null,
   locker?.lastCheckedAt || locker?.checkedAt ? ['確認日', locker.lastCheckedAt || locker.checkedAt] : null,
@@ -181,7 +245,7 @@ const unknownRows = isArchive ? [] : [
   cloak?.cloakStatus === 'unknown' ? 'クローク有無' : '',
   isUnknownValue(cloak?.timingText) ? 'クローク受付タイミング' : '',
   isUnknownValue(cloak?.bagTypeText) ? 'クローク預け方' : '',
-  stationLockerRecommended === 'unknown' ? '駅ロッカー推奨度' : '',
+  stationLockerRecommended === 'unknown' ? '駅ロッカー判断' : '',
 ].filter(Boolean);
 
 const groupedSources = sourceLinks.reduce((groups, source) => {
