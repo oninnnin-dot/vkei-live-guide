@@ -168,40 +168,56 @@ export type LockerInfo = {
   venueLockerStatus: 'available' | 'none' | 'limited' | 'unknown';
   venueLockerText: string;
   lockerCountText: string;
+  lockerPriceText?: string;
+  lockerUsageTiming?: string;
   priceText?: string;
-  beforeEntryUse: AvailabilityStatus;
-  afterEntryUse: AvailabilityStatus;
-  coinNeeded: 'yes' | 'no' | 'unknown';
-  largeBagFit: 'yes' | 'no' | 'limited' | 'unknown';
-  stationLockerRecommended: 'yes' | 'no' | 'depends' | 'situation_dependent' | 'unknown';
-  bestMove: string;
-  sourceConfidence: ExtendedLogisticsConfidence;
+  timingText?: string;
+  beforeEntryUse?: AvailabilityStatus;
+  afterEntryUse?: AvailabilityStatus;
+  coinNeeded?: 'yes' | 'no' | 'unknown';
+  coinNote?: string;
+  coinText?: string;
+  largeBagFit?: 'yes' | 'no' | 'limited' | 'unknown';
+  largeBagNote?: string;
+  largeBagText?: string;
+  stationLockerRecommended: 'yes' | 'no' | 'depends' | 'situation_dependent' | 'unknown' | boolean;
+  bestMove?: string;
+  sourceConfidence?: ExtendedLogisticsConfidence;
   checkedAt?: string;
-  lastCheckedAt: string;
+  lastCheckedAt?: string;
 };
 
 export type CloakInfo = {
   cloakStatus: 'available' | 'none' | 'event_dependent' | 'unknown';
   cloakText: string;
-  priceText: string;
-  timingText: string;
-  bagTypeText: string;
-  bestMove: string;
-  sourceConfidence: ExtendedLogisticsConfidence;
+  cloakPriceText?: string;
+  cloakTiming?: string;
+  largeBagHandling?: string;
+  priceText?: string;
+  timingText?: string;
+  bagTypeText?: string;
+  bestMove?: string;
+  sourceConfidence?: ExtendedLogisticsConfidence;
   checkedAt?: string;
-  lastCheckedAt: string;
+  lastCheckedAt?: string;
 };
 
 export type BaggageGuide = {
-  smallBag: string;
-  backpack: string;
-  suitcase: string;
-  afterMerch: string;
-  goodTicketNumber: string;
+  smallBag?: string;
+  backpack?: string;
+  suitcase?: string;
+  afterMerch?: string;
+  goodTicketNumber?: string;
+  carryBagPolicy?: string;
+  beforeEntry?: string;
+  afterShow?: string;
+  headline?: string;
+  points?: string[];
 };
 
 export type NearbyInfo = {
-  nearestConvenienceStore: string;
+  nearestConvenienceStore?: string;
+  convenienceStore?: string;
   stationLocker: string;
   waitingSpot: string;
   rainShelter: string;

@@ -62,12 +62,19 @@ const isUseful = (value: unknown) => {
   return Boolean(text) && text !== '確認中' && text !== 'なし';
 };
 
+const normalizeStationLocker = (value: unknown) => {
+  if (value === true) return 'yes';
+  if (value === false) return 'no';
+  return String(value || 'unknown');
+};
+
 const isArchive = venue.archiveOnly || venue.status === 'closed';
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
 const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
-const stationLockerState =
+const stationLockerState = normalizeStationLocker(
   venue.lockerInfo?.stationLockerRecommended ??
-  (venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown');
+  (venue.nearbyInfo?.stationLocker ? 'yes' : 'unknown')
+);
 
 const typeLabel = typeLabels[venue.venueType ?? 'unknown'];
 const scaleLabel = scaleLabels[venue.venueScale ?? 'unknown'];
@@ -100,7 +107,7 @@ const factRows = isArchive ? [] : [
     ? ['クローク料金', cleanText(venue.cloakInfo?.priceText)]
     : null,
   stationLockerState !== 'unknown'
-    ? ['駅ロッカー推奨', stationLockerLabels[stationLockerState]]
+    ? ['駅ロッカー推奨', stationLockerLabels[stationLockerState] ?? '確認中']
     : null,
 ].filter(Boolean) as Array<[string, string]>;
 
