@@ -1,0 +1,654 @@
+[
+  {
+    "slug": "line-cube-shibuya",
+    "label": "会場公式",
+    "url": "https://linecubeshibuya.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://linecubeshibuya.com/"
+  },
+  {
+    "slug": "magnet-by-shibuya109-rooftop",
+    "label": "会場公式",
+    "url": "https://www.shibuya109.jp/MAGNET/mags_park",
+    "ok": false,
+    "status": 404,
+    "finalUrl": "https://shibuya109.jp/MAGNET/mags_park"
+  },
+  {
+    "slug": "sub-tokyo",
+    "label": "会場公式",
+    "url": "https://subtokyo.jp/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://subtokyo.jp/"
+  },
+  {
+    "slug": "shibuya-the-game",
+    "label": "会場公式",
+    "url": "https://shibuyathegame.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://shibuyathegame.com/"
+  },
+  {
+    "slug": "shibuya-the-game",
+    "label": "Top-Rated.Online shibuya THE GAME reviews",
+    "url": "https://www.top-rated.online/cities/Shibuya/place/p/15715671/shibuya%2BTHE%2BGAME",
+    "ok": false,
+    "status": 403,
+    "finalUrl": "https://www.top-rated.online/cities/Shibuya/place/p/15715671/shibuya%2BTHE%2BGAME"
+  },
+  {
+    "slug": "shibuya-the-game",
+    "label": "TwStalker SHIBUYA THE GAME転載表示",
+    "url": "https://ww.twstalker.com/SHIBUYATHEGAME",
+    "ok": false,
+    "status": 403,
+    "finalUrl": "https://ww.twstalker.com/SHIBUYATHEGAME"
+  },
+  {
+    "slug": "shibuya-vident",
+    "label": "会場公式",
+    "url": "https://vident.jp/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://vident.jp/"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "WildSide Tokyo公式",
+    "url": "https://ws-tokyo.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ws-tokyo.com/"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "LiveFans Wild Side Tokyo",
+    "url": "https://www.livefans.jp/venues/5040",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.livefans.jp/venues/5040"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "ライブハウスナビ WildSide Tokyo",
+    "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://live-house.info/sinjuku/wildside-tokyo.html"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "フジコインロッカー WildSide設置記事",
+    "url": "https://fuji-ya.co.jp/coinlocker/coinlockerblog/2017/06/05/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E3%81%AB%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F-15/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://fuji-ya.co.jp/coinlocker/coinlockerblog/2017/06/05/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E3%81%AB%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F-15/"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "NE BA H NO WildSide行き方",
+    "url": "https://ameblo.jp/rkgkblog/entry-11055132853.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/rkgkblog/entry-11055132853.html"
+  },
+  {
+    "slug": "wildside-tokyo",
+    "label": "ユーシス WildSide行き方",
+    "url": "https://ameblo.jp/yushis1126/entry-12222759171.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/yushis1126/entry-12222759171.html"
+  },
+  {
+    "slug": "zepp-divercity-tokyo",
+    "label": "会場公式",
+    "url": "https://www.zepp.co.jp/hall/divercity/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.zepp.co.jp/hall/divercity/"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "下北沢シャングリラ公式",
+    "url": "https://www.shan-gri-la.jp/tokyo/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.shan-gri-la.jp/tokyo/"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "やどこい 下北沢シャングリラ",
+    "url": "https://yadokoi.com/shimokitazawa-shangrila/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://yadokoi.com/shimokitazawa-shangrila/"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "colorful情報局 下北沢シャングリラ",
+    "url": "https://colourfuls.hatenablog.com/entry/2025/11/27/063000",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://colourfuls.hatenablog.com/entry/2025/11/27/063000"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "ライブガイドドッグ 下北沢シャングリラ",
+    "url": "https://trend-dogman.com/shimokitazawa-shangrila/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://trend-dogman.com/shimokitazawa-shangrila/"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "しもブロ 下北沢コインロッカー",
+    "url": "https://www.shimokitazawa.info/coinlocker/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.shimokitazawa.info/coinlocker/"
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "label": "ミュージックプレイス 下北沢Shangri-La口コミ",
+    "url": "https://www.music-place.jp/detail/450/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.music-place.jp/detail/450/"
+  },
+  {
+    "slug": "harajuku-ruido",
+    "label": "会場公式",
+    "url": "https://ruido.org/harajuku/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ruido.org/harajuku/"
+  },
+  {
+    "slug": "harajuku-ruido",
+    "label": "原宿RUIDO 公式アクセス",
+    "url": "https://ruido.org/rg/access.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ruido.org/rg/access.html"
+  },
+  {
+    "slug": "harajuku-ruido",
+    "label": "ライブガイドドッグ 原宿RUIDO",
+    "url": "https://trend-dogman.com/harajuku-ruido/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://trend-dogman.com/harajuku-ruido/"
+  },
+  {
+    "slug": "harajuku-ruido",
+    "label": "JREメディア 原宿駅周辺コインロッカー",
+    "url": "https://media.jreast.co.jp/articles/707",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://media.jreast.co.jp/articles/707"
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "label": "会場公式",
+    "url": "https://www.club-phase.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.club-phase.com/"
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "label": "高田馬場CLUB PHASE公式INFORMATION",
+    "url": "https://www.club-phase.com/information.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.club-phase.com/information.html"
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "label": "SOLITUDE-klang 高田馬場CLUB PHASE参戦レポ",
+    "url": "https://solitude-klang.hatenablog.com/entry/2024/01/13/215300",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://solitude-klang.hatenablog.com/entry/2024/01/13/215300"
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "label": "レポとも 高田馬場CLUB PHASE行き方",
+    "url": "https://ameblo.jp/stafftomo/entry-10196088246.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/stafftomo/entry-10196088246.html"
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "label": "Supernice! 高田馬場CLUB PHASE",
+    "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/"
+  },
+  {
+    "slug": "shibuya-rex",
+    "label": "渋谷REX公式",
+    "url": "https://ruido.org/rex/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ruido.org/rex/"
+  },
+  {
+    "slug": "shibuya-rex",
+    "label": "ライブガイドドッグ 渋谷REX",
+    "url": "https://trend-dogman.com/shibuya-rex/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://trend-dogman.com/shibuya-rex/"
+  },
+  {
+    "slug": "shibuya-rex",
+    "label": "東急 渋谷駅コインロッカー",
+    "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.tokyu.co.jp/area/shibuya/station/coin-locker/"
+  },
+  {
+    "slug": "shibuya-rex",
+    "label": "渋谷REX 公式SNSミラー",
+    "url": "https://www6.twstalker.com/SHIBUYA_REX",
+    "ok": false,
+    "status": 403,
+    "finalUrl": "https://www6.twstalker.com/SHIBUYA_REX"
+  },
+  {
+    "slug": "shibuya-stream-hall",
+    "label": "会場公式",
+    "url": "https://stream-hall.jp/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://stream-hall.jp/"
+  },
+  {
+    "slug": "shibuya-stream-hall",
+    "label": "渋谷ストリームホール 公式レイアウトPDF",
+    "url": "https://stream-hall.jp/hubfs/data/layout/setsubi_layout/RailLight_4-6F.pdf?hsLang=ja-jp",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://stream-hall.jp/hubfs/data/layout/setsubi_layout/RailLight_4-6F.pdf?hsLang=ja-jp"
+  },
+  {
+    "slug": "ueno-otokoyokocho",
+    "label": "上野音横丁 公式INFORMATION",
+    "url": "https://athers-music.com/livehouse/otoyoko-information/",
+    "ok": false,
+    "error": "fetch failed"
+  },
+  {
+    "slug": "shinjuku-club-science",
+    "label": "会場公式",
+    "url": "https://club-science.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://club-science.com/"
+  },
+  {
+    "slug": "shinjuku-club-science",
+    "label": "新宿club SCIENCE 公式アクセス",
+    "url": "https://club-science.com/access/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://club-science.com/access/"
+  },
+  {
+    "slug": "shinjuku-club-science",
+    "label": "新宿club SCIENCE 公式FLOOR MAP",
+    "url": "https://club-science.com/floormap/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://club-science.com/floormap/"
+  },
+  {
+    "slug": "shinjuku-club-science",
+    "label": "地下アイドルを推す会ブログ部 新宿club SCIENCE記事",
+    "url": "https://ameblo.jp/idolopenchat/entry-12700780804.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/idolopenchat/entry-12700780804.html"
+  },
+  {
+    "slug": "shinjuku-heist",
+    "label": "会場公式",
+    "url": "https://heist.tokyo/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://heist.tokyo/"
+  },
+  {
+    "slug": "sugamo-shishio",
+    "label": "巣鴨獅子王公式",
+    "url": "https://sugamo-cco.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://sugamo-cco.com/"
+  },
+  {
+    "slug": "sugamo-shishio",
+    "label": "巣鴨獅子王公式ABOUT",
+    "url": "https://www.sugamo-cco.com/about.php",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.sugamo-cco.com/about.php"
+  },
+  {
+    "slug": "sugamo-shishio",
+    "label": "巣鴨獅子王公式ACCESS",
+    "url": "https://sugamo-cco.com/access.php",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://sugamo-cco.com/access.php"
+  },
+  {
+    "slug": "sugamo-shishio",
+    "label": "takepunks 巣鴨獅子王参戦レポ",
+    "url": "https://blog.takepunks.com/32829/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://blog.takepunks.com/32829/"
+  },
+  {
+    "slug": "sugamo-shishio",
+    "label": "iFLYER 巣鴨獅子王",
+    "url": "https://iflyer.tv/en/venue/8867/about/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://iflyer.tv/en/venue/8867/about/"
+  },
+  {
+    "slug": "ota-bunkanomori-hall",
+    "label": "会場公式",
+    "url": "https://www.ota-bunka.or.jp/facilities/bunka/halls/main_hall",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.ota-bunka.or.jp/facilities/bunka/halls/main_hall"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "officialUrl",
+    "url": "https://www.black-hole.jp/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.black-hole.jp/"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "会場公式アクセス",
+    "url": "https://www.black-hole.jp/contents/access.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.black-hole.jp/contents/access.html"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "池袋BlackHole 公式PDF",
+    "url": "https://www.black-hole.jp/images/2018finaltime.pdf",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.black-hole.jp/images/2018finaltime.pdf"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "イベここ 池袋BlackHole",
+    "url": "https://evecoco.net/livehouse/2541/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://evecoco.net/livehouse/2541/"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "LiveFans 池袋Black Hole",
+    "url": "https://www.livefans.jp/venues/5107",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.livefans.jp/venues/5107"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "Supernice! 池袋BlackHole",
+    "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/"
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "label": "毎日ビール.jp 池袋BLACK HOLEレポ",
+    "url": "https://mainichibeer.jp/archives/668/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://mainichibeer.jp/archives/668/"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "会場公式",
+    "url": "https://xxxrecords.jp/edge/index.html",
+    "ok": false,
+    "error": "fetch failed"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "ライブハウスナビ 池袋EDGE",
+    "url": "https://live-house.info/toshimaku/edge.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://live-house.info/toshimaku/edge.html"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "ライブ研究室 池袋EDGE",
+    "url": "https://live-kenkyushitsu.com/569.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://live-kenkyushitsu.com/569.html"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "note 池袋EDGE体験メモ",
+    "url": "https://note.com/ebitama/n/nb37867990132",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://note.com/ebitama/n/nb37867990132"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "V系ゼンサイ 池袋EDGE",
+    "url": "https://ameblo.jp/vzensai/entry-11994852767.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/vzensai/entry-11994852767.html"
+  },
+  {
+    "slug": "ikebukuro-edge",
+    "label": "SOLITUDE-klang 池袋EDGE参戦レポ",
+    "url": "https://solitude-klang.hatenablog.com/entry/2023/03/11/210904",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://solitude-klang.hatenablog.com/entry/2023/03/11/210904"
+  },
+  {
+    "slug": "ikebukuro-livegarage-adm",
+    "label": "ライブハウス雑記 池袋Adm",
+    "url": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/ksk-1994/entry-12860305944.html"
+  },
+  {
+    "slug": "ikebukuro-global-ring-theatre",
+    "label": "会場公式",
+    "url": "https://globalring-theatre.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://globalring-theatre.com/"
+  },
+  {
+    "slug": "machida-the-play-house",
+    "label": "会場公式",
+    "url": "https://theplayhouse.jp/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://theplayhouse.jp/"
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "label": "officialUrl",
+    "url": "https://den-atsu.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://den-atsu.com/"
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "label": "東高円寺二万電圧公式ACCESS",
+    "url": "https://den-atsu.com/access/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://den-atsu.com/access/"
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "label": "Supernice! 東高円寺二万電圧",
+    "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/"
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "label": "東高円寺二万電圧参戦レポ Ameba",
+    "url": "https://ameblo.jp/yosu-ko1taisei2charmy3/entry-11987234488.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/yosu-ko1taisei2charmy3/entry-11987234488.html"
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "label": "LAZY SMOKEY DAMN! 東高円寺二万電圧レポ",
+    "url": "https://lsdblog.seesaa.net/article/497563386.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://lsdblog.seesaa.net/article/497563386.html"
+  },
+  {
+    "slug": "kt-zepp-yokohama",
+    "label": "会場公式",
+    "url": "https://www.zepp.co.jp/hall/yokohama/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.zepp.co.jp/hall/yokohama/"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "officialUrl",
+    "url": "https://www.hamashobo.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.hamashobo.com/"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "Music Lab.濱書房公式",
+    "url": "https://www.hamashobo.com/post-9900/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.hamashobo.com/post-9900/"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "イベここ Music Lab.濱書房",
+    "url": "https://evecoco.net/livehouse/kanagawa/yokohama/hamashobo/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://evecoco.net/livehouse/kanagawa/yokohama/hamashobo/"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "LiveFans Music Lab.濱書房",
+    "url": "https://www.livefans.jp/venues/9354",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.livefans.jp/venues/9354"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "校長さんのブログ Music Lab.濱書房",
+    "url": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/artpop-k/entry-12306468241.html"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "ひかる47 note Music Lab.濱書房",
+    "url": "https://note.com/h47have/n/nc2b8797c63b4",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://note.com/h47have/n/nc2b8797c63b4"
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "label": "NAVITIME 濱書房周辺ロッカー",
+    "url": "https://www.navitime.co.jp/around/category/poi?category=0506027&spt=02022.1233924",
+    "ok": false,
+    "status": 404,
+    "finalUrl": "https://www.navitime.co.jp/around/category/poi?category=0506027&spt=02022.1233924"
+  },
+  {
+    "slug": "yokohama-baysis",
+    "label": "officialUrl",
+    "url": "https://www.yokohamabaysis.com/",
+    "ok": false,
+    "error": "fetch failed"
+  },
+  {
+    "slug": "yokohama-baysis",
+    "label": "横浜BAYSIS公式INFO",
+    "url": "https://www.yokohamabaysis.com/info.php",
+    "ok": false,
+    "error": "fetch failed"
+  },
+  {
+    "slug": "yokohama-baysis",
+    "label": "LiveWalker 横浜BAYSIS",
+    "url": "https://www.livewalker.com/web/detail/2034",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://www.livewalker.com/web/detail/2034"
+  },
+  {
+    "slug": "yokohama-baysis",
+    "label": "横浜BAYSIS個人レポ",
+    "url": "https://ameblo.jp/jiu3jing3/entry-12076556646.html",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://ameblo.jp/jiu3jing3/entry-12076556646.html"
+  },
+  {
+    "slug": "yokohama-baysis",
+    "label": "Yahoo!知恵袋 横浜BAYSIS",
+    "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12144433702",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12144433702"
+  },
+  {
+    "slug": "yokohama-club-sensation",
+    "label": "会場公式",
+    "url": "https://sensation-jp.com/",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "https://sensation-jp.com/"
+  }
+]

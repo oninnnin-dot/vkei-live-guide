@@ -1,0 +1,1314 @@
+[
+  {
+    "slug": "ikebukuro-edge",
+    "name": "池袋EDGE",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "固定ロッカーの明記は確認中。クローク案内はあるため、ロッカー前提で動かない。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "固定ロッカー前提は危険。キャリーや大きい荷物は池袋駅周辺で先に処理し、会場クロークは保険として考える。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式設備ページでクローク案内あり。運用は公演ごとに変わる可能性がある。",
+      "priceText": "500円",
+      "timingText": "受付タイミングは公演ごとの案内を確認。良番の日は入場前に荷物を減らす。",
+      "bagTypeText": "袋や大きさの扱いは当日案内に従う。",
+      "bestMove": "物販で荷物が増える日は、先に駅ロッカーを確保してからクローク可否を見る。良番なら荷物処理を済ませて整列へ。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "スマホ・財布・チケット程度ならそのまま入場しやすい。貴重品は体の前で管理する。",
+      "backpack": "リュックはフロアで邪魔になりやすい。クロークか駅ロッカーへ預ける前提で動く。",
+      "suitcase": "キャリーは会場に持ち込まない。池袋駅ロッカー、ホテル、荷物預かりを先に済ませる。",
+      "afterMerch": "物販後に袋が増えるなら、終演まで持つ量に抑えるか、駅ロッカーへ戻す動線を決めておく。",
+      "goodTicketNumber": "良番ならロッカー探しで出遅れないよう、駅到着時点で荷物を処理する。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "池袋駅から会場へ向かう前にコンビニで飲み物と現金を整えると動きやすい。店舗位置は地図アプリで直前確認。",
+      "stationLocker": "池袋駅はロッカー候補が多いが、休日や大型公演日は埋まりやすい。駅到着直後に確保する。",
+      "waitingSpot": "会場前に長くたまらず、整列開始までは池袋駅周辺の商業施設やカフェで時間調整する。",
+      "rainShelter": "雨の日は会場前待機を長くしない。駅周辺の屋内で身支度してから移動する。",
+      "restroomBeforeEntry": "入場前に駅や商業施設でトイレを済ませる。入場直前に荷物とトイレで迷わない。",
+      "cashAndCoin": "ドリンク代とクローク用に千円札と小銭を残す。キャッシュレス前提にしない。",
+      "afterShowRoute": "終演後は池袋駅方面へ人が流れやすい。クローク回収がある日は終電まで余裕を見る。",
+      "nightSafety": "池袋は夜も人通りが多いが、初めてなら駅までのルートを事前に保存しておく。"
+    },
+    "practicalSummary": {
+      "headline": "クローク500円案内あり。固定ロッカーは断定せず、荷物が多い日は池袋駅で先に処理する。",
+      "points": [
+        "固定ロッカー前提で行かない",
+        "クロークは使える可能性があるが保険扱い",
+        "キャリーは池袋駅や宿泊先へ先に預ける",
+        "良番の日は荷物処理を終えてから整列する"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "池袋EDGE ロッカー",
+        "池袋EDGE クローク",
+        "池袋EDGE 荷物",
+        "池袋EDGE 参戦レポ"
+      ],
+      "summary": "公式のクローク案内を軸に、参戦メモではロッカーよりクロークや駅ロッカーを使う前提で動く方が安心という傾向がある。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "参戦メモでは固定ロッカーを当てにせず、池袋駅ロッカーやクロークを組み合わせる動き方が現実的という傾向がある。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "良番や物販ありの日は、会場到着後に荷物で迷うより駅到着時点で身軽にする方が動きやすい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "waiting",
+        "summary": "池袋は周辺で時間を潰す選択肢が多いため、整列開始までは会場前に長居しない動き方が向いている。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "会場公式",
+        "url": "https://xxxrecords.jp/edge/index.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブハウスナビ 池袋EDGE",
+        "url": "https://live-house.info/toshimaku/edge.html",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブ研究室 池袋EDGE",
+        "url": "https://live-kenkyushitsu.com/569.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "note 池袋EDGE体験メモ",
+        "url": "https://note.com/ebitama/n/nb37867990132",
+        "type": "note",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "V系ゼンサイ 池袋EDGE",
+        "url": "https://ameblo.jp/vzensai/entry-11994852767.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "SOLITUDE-klang 池袋EDGE参戦レポ",
+        "url": "https://solitude-klang.hatenablog.com/entry/2023/03/11/210904",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "ikebukuro-blackhole",
+    "name": "池袋BlackHole",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "公式アクセスでコインロッカー・クロークなしの案内あり。",
+      "lockerCountText": "会場内ロッカーなし",
+      "beforeEntryUse": "unavailable",
+      "afterEntryUse": "unavailable",
+      "coinNeeded": "no",
+      "largeBagFit": "no",
+      "stationLockerRecommended": "yes",
+      "bestMove": "公式でロッカーなし・クロークなし。池袋駅で荷物を処理してから向かう。",
+      "sourceConfidence": "official",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "none",
+      "cloakText": "公式アクセス上はクロークなし。受付預かりの体験談があっても公式情報を優先する。",
+      "priceText": "なし",
+      "timingText": "利用不可",
+      "bagTypeText": "会場預け前提にしない",
+      "bestMove": "キャリーや大きい荷物は池袋駅ロッカー、ホテル、荷物預かりへ。物販後に増える荷物も会場へ持ち込まない前提で準備する。",
+      "sourceConfidence": "official",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品だけ体の前で管理する。",
+      "backpack": "リュックは池袋駅ロッカーへ。背負ったままフロアに入らない。",
+      "suitcase": "キャリーは会場持ち込み非推奨。池袋駅の大型ロッカーや宿泊先へ先に預ける。",
+      "afterMerch": "物販後に袋が増えるなら、終演まで持てる量に絞るか、先に駅ロッカーを確保する。",
+      "goodTicketNumber": "良番の日は荷物処理を終えてから会場へ。入場直前に預け先を探さない。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "池袋駅周辺で飲み物や現金を整えてから向かう。近隣店舗は混雑前に地図で確認する。",
+      "stationLocker": "池袋駅ロッカー利用が基本。大きい荷物は駅到着時点で処理する。",
+      "waitingSpot": "会場前で長く待つより、駅周辺の商業施設やカフェで時間調整する。",
+      "rainShelter": "雨の日は駅周辺の屋内で整列直前まで待つ。傘を差したまま会場前に溜まらない。",
+      "restroomBeforeEntry": "入場前に駅や商業施設で済ませる。会場で荷物とトイレを同時に抱えない。",
+      "cashAndCoin": "ドリンク代用に現金を残す。駅ロッカー用の小銭やIC決済残高も確認する。",
+      "afterShowRoute": "終演後は池袋駅へ戻る。ロッカー回収がある人は終電までの余裕を見て動く。",
+      "nightSafety": "池袋西口方面は夜も人通りがあるが、初めてなら駅までのルートを事前保存する。"
+    },
+    "practicalSummary": {
+      "headline": "公式でロッカーなし・クロークなし。池袋駅で荷物を処理してから向かう。",
+      "points": [
+        "会場預けは期待しない",
+        "池袋駅ロッカーを先に確保する",
+        "キャリーは会場へ持ち込まない",
+        "良番の日は身軽になってから整列する"
+      ]
+    },
+    "blogResearch": {
+      "status": "researched",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "池袋BlackHole ロッカー",
+        "池袋BlackHole クローク",
+        "池袋BlackHole 荷物",
+        "池袋BlackHole 参戦レポ"
+      ],
+      "summary": "公式ではロッカー・クロークなし。個人メモに受付預かりらしき話があっても、通常運用としては駅ロッカー前提にするのが安全。",
+      "confidence": "high"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "公式情報を優先すると会場預けは期待しない方がよい。駅ロッカー先行が基本になる。",
+        "sourceType": "mixed",
+        "confidence": "high",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "小箱で荷物を抱えると動きづらいため、リュック以上は会場前に処理しておく判断が向いている。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "aftershow",
+        "summary": "終演後に駅ロッカーを回収する時間を見込むと、終電や夜行バス前でも焦りにくい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "会場公式アクセス",
+        "url": "https://www.black-hole.jp/contents/access.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "池袋BlackHole 公式PDF",
+        "url": "https://www.black-hole.jp/images/2018finaltime.pdf",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "イベここ 池袋BlackHole",
+        "url": "https://evecoco.net/livehouse/2541/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveFans 池袋Black Hole",
+        "url": "https://www.livefans.jp/venues/5107",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 池袋BlackHole",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "毎日ビール.jp 池袋BLACK HOLEレポ",
+        "url": "https://mainichibeer.jp/archives/668/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "shibuya-rex",
+    "name": "渋谷REX",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "外部情報ではロッカー有無の記録が割れるため断定しない。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "ロッカー・クローク情報は割れるため、渋谷駅ロッカー先行が安全。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "クローク案内の記録はあるが、通常運用として固定できないため確認中扱い。",
+      "priceText": "確認中",
+      "timingText": "公演ごとの案内を見る。良番の日は先に荷物を減らす。",
+      "bagTypeText": "確認中",
+      "bestMove": "渋谷駅側で荷物を減らし、会場クロークが出ていれば補助的に使う。キャリーは駅・ホテル預けが安全。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのままでも動ける。渋谷の人混みでは体の前で持つ。",
+      "backpack": "リュックは渋谷駅ロッカーへ。道玄坂側へ向かう前に処理すると戻りが少ない。",
+      "suitcase": "キャリーは坂道と人混みで負担が大きい。駅・ホテル預けを優先する。",
+      "afterMerch": "物販後に袋が増えるなら、終演まで持つ量か駅ロッカーに戻す動線を先に決める。",
+      "goodTicketNumber": "良番なら渋谷駅到着時点で荷物を減らし、会場前では整列だけに集中する。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "渋谷駅から会場へ向かう前に飲み物を確保。周辺コンビニは混雑しやすい。",
+      "stationLocker": "渋谷駅ロッカーを先に使う。休日や夜は埋まりやすいので早めに確認する。",
+      "waitingSpot": "道玄坂周辺は人通りが多い。整列開始までは駅周辺やカフェで時間調整する。",
+      "rainShelter": "雨の日は坂道移動が重くなる。駅周辺の屋内で身支度してから移動する。",
+      "restroomBeforeEntry": "駅や商業施設で済ませる。会場前でトイレ探しをしない。",
+      "cashAndCoin": "ドリンク代・ロッカー代に現金と小銭を残す。",
+      "afterShowRoute": "終演後は渋谷駅へ戻る人流と夜の繁華街が重なる。駅までのルートを先に保存する。",
+      "nightSafety": "道玄坂・センター街方面は夜も混む。ぼっちは大通り経由で駅へ戻ると安心。"
+    },
+    "practicalSummary": {
+      "headline": "ロッカー・クローク情報は割れるため、渋谷駅ロッカー先行が安全。",
+      "points": [
+        "会場設備を断定せず駅ロッカーを先に見る",
+        "キャリーは渋谷駅か宿泊先へ",
+        "雨の日は坂道と人混みを避けて早め移動",
+        "終演後は駅までの大通りルートを優先する"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "渋谷REX ロッカー",
+        "渋谷REX クローク",
+        "渋谷REX 荷物",
+        "渋谷REX 参戦レポ"
+      ],
+      "summary": "ロッカーやクロークの記録は見つかるが情報が割れるため、現地設備に依存せず渋谷駅側で荷物を処理する方が安定する。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "外部レポではロッカー・クロークの記録が一定せず、駅ロッカーを先に使う判断が安全寄り。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "access",
+        "summary": "渋谷駅から人混みと坂道を通るため、キャリーや大荷物は移動前に減らす方が動きやすい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "aftershow",
+        "summary": "終演後は繁華街の人流が重なるため、駅までの戻り方を先に決めておくと迷いにくい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "渋谷REX公式",
+        "url": "https://ruido.org/rex/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブガイドドッグ 渋谷REX",
+        "url": "https://trend-dogman.com/shibuya-rex/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "東急 渋谷駅コインロッカー",
+        "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "渋谷REX 公式SNSミラー",
+        "url": "https://www6.twstalker.com/SHIBUYA_REX",
+        "type": "sns",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "takadanobaba-club-phase",
+    "name": "高田馬場CLUB PHASE",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "none",
+      "venueLockerText": "現行公式Informationでコインロッカーなしの案内あり。",
+      "lockerCountText": "会場内ロッカーなし",
+      "beforeEntryUse": "unavailable",
+      "afterEntryUse": "unavailable",
+      "coinNeeded": "no",
+      "largeBagFit": "no",
+      "stationLockerRecommended": "yes",
+      "bestMove": "現行公式ではロッカーなし。B1Fクロークまたは駅ロッカーで対応。",
+      "sourceConfidence": "official",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式InformationでB1Fロビーのクローク案内あり。",
+      "priceText": "1袋500円、キャリーバッグ1つ500円。",
+      "timingText": "B1Fロビーで受付。受付タイミングは公演・当日案内に従う。",
+      "bagTypeText": "荷物は袋単位、キャリーは1つ単位で預ける案内。",
+      "bestMove": "ロッカーはない前提。リュックやキャリーはB1Fクロークへ預け、再入場不可に備えてトイレ・飲み物・現金を入場前に済ませる。",
+      "sourceConfidence": "official",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品だけ前で管理する。",
+      "backpack": "リュックはB1Fクロークへ。フロアに持ち込むなら体の前で管理できる量に減らす。",
+      "suitcase": "キャリーは公式クローク対象。混雑や終演後回収を考えて、急ぐ日は駅ロッカーも候補にする。",
+      "afterMerch": "物販後に袋が増える日はクロークへまとめるか、終演後にすぐ回収できるよう預け場所を覚える。",
+      "goodTicketNumber": "良番ならクローク受付を先に済ませ、入場直前に荷物で迷わない。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "高田馬場駅周辺で飲み物と現金を整えてから向かうと、再入場不可でも慌てにくい。",
+      "stationLocker": "駅ロッカーも候補。クローク行列や終演後回収を避けたい日は駅で先に預ける。",
+      "waitingSpot": "公式注意に従い、階段や会場周辺にたまらない。整列開始までは駅周辺で待つ。",
+      "rainShelter": "雨の日は駅周辺の屋内で身支度し、整列開始に合わせて移動する。",
+      "restroomBeforeEntry": "再入場不可を前提に、入場前にトイレを済ませる。",
+      "cashAndCoin": "ドリンク代とクローク代を現金で残す。千円札を崩しておくと受付が早い。",
+      "afterShowRoute": "終演後はクローク返却と駅方向の人流が重なる。急ぐ日は預ける荷物を少なくする。",
+      "nightSafety": "高田馬場駅までは比較的戻りやすいが、夜は大通り中心で移動する。"
+    },
+    "practicalSummary": {
+      "headline": "現行公式ではロッカーなし。B1Fクロークまたは駅ロッカーで対応。",
+      "points": [
+        "ロッカーなしを前提にする",
+        "B1Fクロークは1袋500円、キャリー1つ500円",
+        "再入場不可なので入場前に用事を済ませる",
+        "階段周辺や会場前に長くたまらない"
+      ]
+    },
+    "blogResearch": {
+      "status": "researched",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "高田馬場CLUB PHASE ロッカー",
+        "高田馬場CLUB PHASE クローク",
+        "高田馬場CLUB PHASE 再入場",
+        "高田馬場CLUB PHASE 参戦レポ"
+      ],
+      "summary": "現行公式のロッカーなし・クロークありを優先。参戦レポでも、入場前に荷物とトイレを済ませる動き方が実用的。",
+      "confidence": "high"
+    },
+    "blogSignals": [
+      {
+        "topic": "cloak",
+        "summary": "公式クロークがあるため、リュックやキャリーは預ける前提で組み立てやすい。",
+        "sourceType": "mixed",
+        "confidence": "high",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "entry",
+        "summary": "再入場不可のため、入場前にトイレ・飲み物・荷物整理を終える必要がある。",
+        "sourceType": "mixed",
+        "confidence": "high",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "waiting",
+        "summary": "階段付近や会場周辺に長くたまらず、整列開始までは駅周辺で調整する動きが安全。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "会場公式",
+        "url": "https://www.club-phase.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "高田馬場CLUB PHASE公式INFORMATION",
+        "url": "https://www.club-phase.com/information.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "SOLITUDE-klang 高田馬場CLUB PHASE参戦レポ",
+        "url": "https://solitude-klang.hatenablog.com/entry/2024/01/13/215300",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "レポとも 高田馬場CLUB PHASE行き方",
+        "url": "https://ameblo.jp/stafftomo/entry-10196088246.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 高田馬場CLUB PHASE",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "sugamo-shishio",
+    "name": "巣鴨獅子王",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "会場内ロッカーの明記は確認中。地下会場のため荷物は少なめが安全。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "クローク500円案内あり。ロッカーは断定せず、荷物が多い日は巣鴨駅ロッカーも候補。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "available",
+      "cloakText": "公式SNSや公演案内でクローク500円の案内例あり。容量には限りがある。",
+      "priceText": "500円",
+      "timingText": "受付タイミングは公演ごとの案内を見る。混雑日は早めに動く。",
+      "bagTypeText": "保管場所に限りがあるため、大きい荷物は駅ロッカーも検討。",
+      "bestMove": "クロークが出る公演でも容量に限りがある。大きい荷物は巣鴨駅周辺で処理し、小さめバッグで入る。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場しやすい。地下会場なので身軽に動く。",
+      "backpack": "リュックはクロークか駅ロッカーへ。フロアに持ち込む量を減らす。",
+      "suitcase": "キャリーは会場持ち込みを避ける。巣鴨駅ロッカーや宿泊先預けを優先する。",
+      "afterMerch": "物販後に袋が増えるなら、終演後の回収動線も見てクロークか駅ロッカーを選ぶ。",
+      "goodTicketNumber": "良番ならクローク列で遅れないよう、入場前に預け先を決めておく。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "巣鴨駅周辺で飲み物や軽食を済ませる。会場周辺で直前に探し回らない。",
+      "stationLocker": "巣鴨駅周辺ロッカーを候補にする。クローク容量が不安な日は先に駅で預ける。",
+      "waitingSpot": "会場前に長くたまらず、整列開始までは駅周辺で待つ。",
+      "rainShelter": "雨の日は駅近くの屋根がある場所で整列直前まで待つ方が負担が少ない。",
+      "restroomBeforeEntry": "駅で先にトイレを済ませる。地下会場では開演前に混みやすい。",
+      "cashAndCoin": "ドリンク代とクローク500円を現金で残す。",
+      "afterShowRoute": "終演後は巣鴨駅へ戻る。クローク回収がある日は出口付近で詰まりやすい。",
+      "nightSafety": "巣鴨周辺は比較的落ち着くが、夜は駅までのルートを先に確認する。"
+    },
+    "practicalSummary": {
+      "headline": "クローク500円案内あり。ロッカーは断定せず、荷物が多い日は巣鴨駅ロッカーも候補。",
+      "points": [
+        "会場ロッカーは確認中",
+        "クローク500円案内例あり",
+        "容量に限りがあるため駅ロッカーも見る",
+        "地下会場なので身軽に入る"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "巣鴨獅子王 ロッカー",
+        "巣鴨獅子王 クローク",
+        "巣鴨獅子王 荷物",
+        "巣鴨獅子王 参戦レポ"
+      ],
+      "summary": "クローク500円の案内例があり、ロッカーは断定しない。容量を考えると、荷物が多い日は駅ロッカー併用が現実的。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "cloak",
+        "summary": "クローク案内が出る公演があり、荷物をまとめて預ける選択肢はある。ただし容量は過信しない。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "地下会場では大きい荷物が動きづらいため、駅で減らしてから入る方が安心。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "waiting",
+        "summary": "駅から近い分、会場前で長く待たず整列開始に合わせて移動する方が近隣にも優しい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "巣鴨獅子王公式",
+        "url": "https://sugamo-cco.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "巣鴨獅子王公式ABOUT",
+        "url": "https://www.sugamo-cco.com/about.php",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "巣鴨獅子王公式ACCESS",
+        "url": "https://sugamo-cco.com/access.php",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "takepunks 巣鴨獅子王参戦レポ",
+        "url": "https://blog.takepunks.com/32829/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "iFLYER 巣鴨獅子王",
+        "url": "https://iflyer.tv/en/venue/8867/about/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "higashi-koenji-20000v",
+    "name": "東高円寺二万電圧",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "ロッカーの公式明記は確認中。地下小箱のため荷物は少なめが安全。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "地下小箱。ロッカーは断定せず、クロークも確認中。荷物は先に減らす。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式SNSでクローク受付案内例はあるが、常設運用としては断定しない。",
+      "priceText": "確認中",
+      "timingText": "公演ごとの案内を見る。案内が出た日は早めに預ける。",
+      "bagTypeText": "確認中",
+      "bestMove": "クローク案内がある公演は早めに使う。案内がない日は駅や宿泊先で荷物を減らしてから向かう。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場しやすい。地下会場では身軽さを優先する。",
+      "backpack": "リュックは駅ロッカーやクローク案内を確認。フロアに持ち込むなら体の前で管理できる量にする。",
+      "suitcase": "キャリーは会場周辺へ持ち込まない。東高円寺駅周辺や宿泊先で先に処理する。",
+      "afterMerch": "物販後に袋が増えるなら、終演まで抱えられる量に抑えるか預け先を先に決める。",
+      "goodTicketNumber": "良番なら駅到着時点で荷物を減らし、会場前では整列だけにする。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "東高円寺駅周辺で飲み物と現金を準備してから向かう。",
+      "stationLocker": "駅周辺ロッカーの有無を先に確認。大荷物は新宿方面や宿泊先で処理する方が安定する。",
+      "waitingSpot": "公式アクセス上、周辺は住宅地。会場前でたまらず、整列開始までは駅周辺で待つ。",
+      "rainShelter": "駅出口から近いが、雨の日は整列まで駅周辺で待つ。傘を広げたまま周辺に滞留しない。",
+      "restroomBeforeEntry": "駅や周辺施設で先に済ませる。地下小箱では開演前に混みやすい。",
+      "cashAndCoin": "ドリンク代とクロークが出た場合の現金を残す。",
+      "afterShowRoute": "終演後は駅が近い。荷物回収がある人は出口混雑を見て早めに動く。",
+      "nightSafety": "住宅地寄りなので、終演後は寄り道せず駅へ戻る。"
+    },
+    "practicalSummary": {
+      "headline": "地下小箱。ロッカーは断定せず、クロークも確認中。荷物は先に減らす。",
+      "points": [
+        "ロッカー常設は断定しない",
+        "クローク案内が出た公演は早めに使う",
+        "住宅地なので会場前に長居しない",
+        "キャリーは駅・宿泊先預けを優先"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "東高円寺二万電圧 ロッカー",
+        "東高円寺二万電圧 クローク",
+        "東高円寺二万電圧 荷物",
+        "東高円寺二万電圧 参戦レポ"
+      ],
+      "summary": "クローク案内例はあるが、常時設備としては断定しない。住宅地の地下小箱なので、荷物を減らし会場前待機を短くする動きが重要。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "cloak",
+        "summary": "クローク受付が出る公演がある一方、常設前提にはしない方が安全。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "waiting",
+        "summary": "周辺が住宅地のため、整列開始前に会場前で長く待たない動き方が向いている。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "地下小箱では荷物が動線を塞ぎやすく、キャリーや大きいリュックは先に処理する方が安心。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "東高円寺二万電圧公式ACCESS",
+        "url": "https://den-atsu.com/access/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 東高円寺二万電圧",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "東高円寺二万電圧参戦レポ Ameba",
+        "url": "https://ameblo.jp/yosu-ko1taisei2charmy3/entry-11987234488.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LAZY SMOKEY DAMN! 東高円寺二万電圧レポ",
+        "url": "https://lsdblog.seesaa.net/article/497563386.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "wildside-tokyo",
+    "name": "WildSide Tokyo",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "公式本文でロッカーの明記は確認中。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "設備詳細は確認中。新宿御苑前・新宿三丁目周辺または宿泊先で荷物を処理する。",
+      "sourceConfidence": "unknown",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式本文でクロークの明記は確認中。公演ごとの案内を待つ。",
+      "priceText": "確認中",
+      "timingText": "確認中",
+      "bagTypeText": "確認中",
+      "bestMove": "クロークを当てにせず、駅や宿泊先で荷物を減らす。案内が出た場合だけ補助的に使う。",
+      "sourceConfidence": "unknown",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのままでも対応しやすい。貴重品は体の前で管理する。",
+      "backpack": "リュックは駅ロッカー候補。フロアが詰まる公演では背負ったままにしない。",
+      "suitcase": "キャリーは新宿方面のロッカー、ホテル、荷物預かりを先に使う。",
+      "afterMerch": "物販後に増える荷物は、終演まで持てる量に抑えるか、駅ロッカーへ戻す動線を決める。",
+      "goodTicketNumber": "良番なら設備確認で迷わないよう、会場に着く前に荷物を減らす。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "新宿御苑前・新宿三丁目周辺で飲み物や現金を準備してから向かう。",
+      "stationLocker": "駅ロッカー先行が安全。大荷物は新宿方面で処理すると選択肢が多い。",
+      "waitingSpot": "会場前で長く待たず、駅周辺や新宿側の屋内で時間調整する。",
+      "rainShelter": "雨の日は新宿三丁目方面の屋内や駅周辺で整列直前まで待つ。",
+      "restroomBeforeEntry": "駅や商業施設で先に済ませる。入場前に荷物とトイレで迷わない。",
+      "cashAndCoin": "ドリンク代用の現金を残す。ロッカー利用に備え小銭やIC残高も確認。",
+      "afterShowRoute": "終演後は新宿方面へ戻る人も多い。夜道は大通り経由で移動する。",
+      "nightSafety": "新宿エリアは夜も人通りが多いが、ぼっちは大通りと駅ルートを優先する。"
+    },
+    "practicalSummary": {
+      "headline": "設備詳細は確認中。新宿御苑前・新宿三丁目周辺または宿泊先で荷物を処理する。",
+      "points": [
+        "ロッカー・クロークは断定しない",
+        "駅ロッカー先行で動く",
+        "キャリーは新宿側で処理する",
+        "夜は大通り経由で駅へ戻る"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "WildSide Tokyo ロッカー",
+        "WildSide Tokyo クローク",
+        "WildSide Tokyo 荷物",
+        "WildSide Tokyo 参戦レポ"
+      ],
+      "summary": "設備の確定情報は薄い。新宿エリアの利便性を使って、会場設備に頼らず荷物を先に減らす動き方が安全。",
+      "confidence": "low"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "ロッカー・クロークの確定情報が少ないため、駅ロッカー先行が現実的。",
+        "sourceType": "mixed",
+        "confidence": "low",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "access",
+        "summary": "新宿側から動けるため、荷物預けや雨避けは駅周辺で済ませやすい。",
+        "sourceType": "mixed",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "aftershow",
+        "summary": "夜の新宿周辺は人が多いので、大通り経由で駅へ戻るルートを決めておくと安心。",
+        "sourceType": "mixed",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "WildSide Tokyo公式",
+        "url": "https://ws-tokyo.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveFans Wild Side Tokyo",
+        "url": "https://www.livefans.jp/venues/5040",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブハウスナビ WildSide Tokyo",
+        "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "フジコインロッカー WildSide設置記事",
+        "url": "https://fuji-ya.co.jp/coinlocker/coinlockerblog/2017/06/05/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E3%81%AB%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%E3%82%92%E8%A8%AD%E7%BD%AE%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F-15/",
+        "type": "mixed",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "NE BA H NO WildSide行き方",
+        "url": "https://ameblo.jp/rkgkblog/entry-11055132853.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ユーシス WildSide行き方",
+        "url": "https://ameblo.jp/yushis1126/entry-12222759171.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "shimokitazawa-shangrila",
+    "name": "下北沢シャングリラ",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "ロッカー情報は外部記録があるが、公式本文からは断定しない。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "yes",
+      "bestMove": "下北沢は駅周辺も混みやすい。ロッカーを断定せず、荷物は到着時点で処理する。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "イベントごとのクローク案内例はあるが、常設運用としては断定しない。",
+      "priceText": "確認中",
+      "timingText": "公演ごとの案内を見る。",
+      "bagTypeText": "確認中",
+      "bestMove": "クローク案内がある公演は利用候補。キャリーは駅到着時点か宿泊先で預ける。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場でも動きやすい。下北沢の道は混むので身軽にする。",
+      "backpack": "リュックは駅ロッカーか公演別クロークへ。背負ったままフロアに入らない。",
+      "suitcase": "キャリーは下北沢駅到着時点でロッカーや宿泊先へ。会場前まで持ち込まない。",
+      "afterMerch": "物販後の袋は終演まで持つ量に抑えるか、駅ロッカーへ戻せる時間を見ておく。",
+      "goodTicketNumber": "良番なら駅到着後すぐ荷物を処理し、会場前では整列に集中する。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "下北沢駅周辺で飲み物や現金を整える。休日は周辺店舗も混みやすい。",
+      "stationLocker": "下北沢駅周辺ロッカーは土日祝に埋まりやすい。キャリーは早めに預ける。",
+      "waitingSpot": "会場前に長く待たず、駅周辺のカフェや商業施設で時間調整する。",
+      "rainShelter": "雨の日は駅周辺の屋根がある場所で整列直前まで待つ。細い道で傘が邪魔になりやすい。",
+      "restroomBeforeEntry": "駅や商業施設で先に済ませる。開場直前の移動を軽くする。",
+      "cashAndCoin": "ドリンク代とロッカー利用に備えて現金・小銭を残す。",
+      "afterShowRoute": "終演後は駅方向の人流が重なりやすい。荷物回収がある日は早めに動く。",
+      "nightSafety": "下北沢は夜も人通りがあるが、細い道で迷わないよう駅ルートを保存する。"
+    },
+    "practicalSummary": {
+      "headline": "下北沢は駅周辺も混みやすい。ロッカーを断定せず、荷物は到着時点で処理する。",
+      "points": [
+        "会場ロッカーは断定しない",
+        "公演別クロークは案内が出たら使う",
+        "キャリーは駅到着時点で処理する",
+        "雨の日は駅周辺で待ってから移動する"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "下北沢シャングリラ ロッカー",
+        "下北沢シャングリラ クローク",
+        "下北沢シャングリラ 荷物",
+        "下北沢シャングリラ 参戦レポ"
+      ],
+      "summary": "外部情報ではロッカーやイベント時クロークに触れる記録があるが、公式常設情報としては断定しない。下北沢駅周辺の混雑も考えて早めに荷物処理。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "会場ロッカーに触れる外部情報はあるが、公式常設としては断定せず駅ロッカーも見る。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "cloak",
+        "summary": "イベントによってクローク案内が出る場合があり、物販後の荷物対策として候補になる。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "rain",
+        "summary": "下北沢は細い道と人通りで雨の日の移動が重くなりやすく、駅周辺で待つ方が動きやすい。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "下北沢シャングリラ公式",
+        "url": "https://www.shan-gri-la.jp/tokyo/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "やどこい 下北沢シャングリラ",
+        "url": "https://yadokoi.com/shimokitazawa-shangrila/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "colorful情報局 下北沢シャングリラ",
+        "url": "https://colourfuls.hatenablog.com/entry/2025/11/27/063000",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブガイドドッグ 下北沢シャングリラ",
+        "url": "https://trend-dogman.com/shimokitazawa-shangrila/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "しもブロ 下北沢コインロッカー",
+        "url": "https://www.shimokitazawa.info/coinlocker/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ミュージックプレイス 下北沢Shangri-La口コミ",
+        "url": "https://www.music-place.jp/detail/450/",
+        "type": "review_site",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "music-lab-hamashobo",
+    "name": "Music Lab.濱書房",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "unknown",
+      "venueLockerText": "ロッカーの明記は確認中。小規模会場として荷物は少なめが安全。",
+      "lockerCountText": "確認中",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "unknown",
+      "coinNeeded": "unknown",
+      "largeBagFit": "unknown",
+      "stationLockerRecommended": "depends",
+      "bestMove": "クローク案内が出る公演あり。ロッカーは断定せず、関内駅側で荷物を減らす。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "公式SNSで事前クローク案内例あり。ただし公演ごとの運用として扱う。",
+      "priceText": "確認中",
+      "timingText": "事前クローク時間が出る公演はその時間を確認する。",
+      "bagTypeText": "大きな荷物は持ち込みを避ける案内が出る場合あり。",
+      "bestMove": "クローク案内が出た日は時間を確認して先に預ける。案内がない日は関内駅や宿泊先で荷物を減らす。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのまま入場しやすい。小箱なので身軽さを優先する。",
+      "backpack": "リュックはクローク案内か駅ロッカーへ。フロアに持ち込む量を減らす。",
+      "suitcase": "キャリーは会場持ち込みを避ける。関内駅周辺や宿泊先預けを優先する。",
+      "afterMerch": "物販後に袋が増えるなら、事前クローク案内か駅ロッカーを使えるか先に決める。",
+      "goodTicketNumber": "良番なら荷物を減らしてから会場へ。事前クロークがある日は受付時間に合わせる。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "関内駅周辺で飲み物や現金を準備してから向かう。近隣店舗は直前に地図で確認する。",
+      "stationLocker": "関内駅・馬車道方面のロッカーを候補にする。キャリーは宿泊先預けも検討。",
+      "waitingSpot": "会場前に長く待たず、関内駅周辺やカフェで時間調整する。",
+      "rainShelter": "雨の日は駅周辺の屋内で整列直前まで待ち、荷物を濡らさない。",
+      "restroomBeforeEntry": "駅や商業施設で先に済ませる。小箱では入場直前に混みやすい。",
+      "cashAndCoin": "ドリンク代とクロークが出た場合の現金を残す。",
+      "afterShowRoute": "終演後は関内駅・馬車道方面へ戻る。荷物回収がある日は余裕を持つ。",
+      "nightSafety": "関内周辺は夜の飲食街もある。ぼっちは大通り中心で駅へ戻る。"
+    },
+    "practicalSummary": {
+      "headline": "クローク案内が出る公演あり。ロッカーは断定せず、関内駅側で荷物を減らす。",
+      "points": [
+        "ロッカーは確認中",
+        "事前クローク案内が出る公演は時間を確認",
+        "キャリーは関内駅や宿泊先へ",
+        "夜は大通り経由で駅へ戻る"
+      ]
+    },
+    "blogResearch": {
+      "status": "partial",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "Music Lab.濱書房 ロッカー",
+        "Music Lab.濱書房 クローク",
+        "Music Lab.濱書房 荷物",
+        "Music Lab.濱書房 参戦レポ"
+      ],
+      "summary": "事前クローク案内例はあるが、常時設備としては断定しない。小規模会場なので大荷物を避け、関内駅周辺で先に処理する動き方が安全。",
+      "confidence": "medium"
+    },
+    "blogSignals": [
+      {
+        "topic": "cloak",
+        "summary": "事前クローク案内が出る公演では、時間を見て先に預けると身軽に入れる。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "小規模会場のため、キャリーや大きい荷物は会場に持ち込まない判断が向いている。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "aftershow",
+        "summary": "関内エリアは終演後に飲食街の人流もあるため、駅までの戻り方を先に決めると安心。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "Music Lab.濱書房公式",
+        "url": "https://www.hamashobo.com/post-9900/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "イベここ Music Lab.濱書房",
+        "url": "https://evecoco.net/livehouse/kanagawa/yokohama/hamashobo/",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveFans Music Lab.濱書房",
+        "url": "https://www.livefans.jp/venues/9354",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "校長さんのブログ Music Lab.濱書房",
+        "url": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ひかる47 note Music Lab.濱書房",
+        "url": "https://note.com/h47have/n/nc2b8797c63b4",
+        "type": "note",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "NAVITIME 濱書房周辺ロッカー",
+        "url": "https://www.navitime.co.jp/around/category/poi?category=0506027&spt=02022.1233924",
+        "type": "mixed",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "slug": "yokohama-baysis",
+    "name": "横浜BAYSIS",
+    "venueExistenceConfidence": "verified",
+    "lockerInfo": {
+      "venueLockerStatus": "available",
+      "venueLockerText": "公式infoでコインロッカー18個、200円の案内あり。数は少ない。",
+      "lockerCountText": "18個。200円。",
+      "beforeEntryUse": "unknown",
+      "afterEntryUse": "available",
+      "coinNeeded": "yes",
+      "largeBagFit": "no",
+      "stationLockerRecommended": "depends",
+      "bestMove": "会場ロッカーは18個・200円。早くないなら駅ロッカーも併用。",
+      "sourceConfidence": "official",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "cloakInfo": {
+      "cloakStatus": "unknown",
+      "cloakText": "クロークは現行公式本文からは断定しない。会場ロッカー数が少ないため別案を持つ。",
+      "priceText": "確認中",
+      "timingText": "確認中",
+      "bagTypeText": "確認中",
+      "bestMove": "クロークを期待せず、会場ロッカーが埋まる前提で関内駅・馬車道駅周辺のロッカーも候補にする。",
+      "sourceConfidence": "mixed",
+      "lastCheckedAt": "2026-05-07"
+    },
+    "baggageGuide": {
+      "smallBag": "小さめバッグならそのままでも動きやすい。貴重品は体の前で管理する。",
+      "backpack": "リュックは会場ロッカー18個に入らない前提で、駅ロッカーも候補にする。",
+      "suitcase": "キャリーは会場ロッカーに頼らない。関内駅・馬車道駅周辺や宿泊先へ預ける。",
+      "afterMerch": "物販後に袋が増えるなら、会場ロッカーが埋まっている可能性を見て駅ロッカーへ逃がす。",
+      "goodTicketNumber": "良番ならロッカー確保で遅れないよう、駅か会場到着直後に荷物判断を終える。"
+    },
+    "nearbyInfo": {
+      "nearestConvenienceStore": "関内駅周辺で飲み物や現金を整える。会場近くで直前に探し回らない。",
+      "stationLocker": "関内駅・馬車道駅周辺ロッカーを併用候補にする。会場ロッカー18個だけに頼らない。",
+      "waitingSpot": "会場前に長くたまらず、駅周辺やカフェで時間調整する。",
+      "rainShelter": "雨の日は駅周辺の屋内で待ち、整列開始に合わせて移動する。",
+      "restroomBeforeEntry": "駅や商業施設で先に済ませる。ロッカー数が少ないため入場直前の迷いを減らす。",
+      "cashAndCoin": "ロッカー200円とドリンク代用に小銭・現金を残す。",
+      "afterShowRoute": "終演後は関内駅方面へ戻る。ロッカー回収がある人は終電まで余裕を見る。",
+      "nightSafety": "関内周辺は夜の飲食街もある。ぼっちは大通り中心で駅へ戻る。"
+    },
+    "practicalSummary": {
+      "headline": "会場ロッカーは18個・200円。早くないなら駅ロッカーも併用。",
+      "points": [
+        "公式でロッカー18個・200円案内あり",
+        "数が少ないため埋まる前提で考える",
+        "クロークは断定しない",
+        "キャリーは駅か宿泊先へ"
+      ]
+    },
+    "blogResearch": {
+      "status": "researched",
+      "checkedAt": "2026-05-07",
+      "searchQueries": [
+        "横浜BAYSIS ロッカー",
+        "横浜BAYSIS クローク",
+        "横浜BAYSIS 荷物",
+        "横浜BAYSIS 参戦レポ"
+      ],
+      "summary": "公式でロッカー18個・200円を確認。数が少ないため、荷物が多い日は関内駅・馬車道駅周辺ロッカーを併用する方が安全。",
+      "confidence": "high"
+    },
+    "blogSignals": [
+      {
+        "topic": "locker",
+        "summary": "公式ロッカーは18個と少ないため、遅い到着なら駅ロッカーも見る方が安心。",
+        "sourceType": "mixed",
+        "confidence": "high",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "baggage",
+        "summary": "キャリーや大きいリュックは会場ロッカーに収まらない前提で、駅や宿泊先に預ける判断が向く。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      },
+      {
+        "topic": "aftershow",
+        "summary": "終演後はロッカー回収と駅方向の移動が重なるため、急ぐ日は預け先を先に決める。",
+        "sourceType": "personal_blog",
+        "confidence": "medium",
+        "sourceName": "参戦レポ・会場情報まとめ",
+        "sourceUrl": "",
+        "checkedAt": "2026-05-07",
+        "copyrightNote": "文章コピーなし。要点のみ独自表現に変換。"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "横浜BAYSIS公式INFO",
+        "url": "https://www.yokohamabaysis.com/info.php",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveWalker 横浜BAYSIS",
+        "url": "https://www.livewalker.com/web/detail/2034",
+        "type": "venue_database",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "横浜BAYSIS個人レポ",
+        "url": "https://ameblo.jp/jiu3jing3/entry-12076556646.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Yahoo!知恵袋 横浜BAYSIS",
+        "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12144433702",
+        "type": "q_and_a",
+        "checkedAt": "2026-05-07"
+      }
+    ]
+  }
+]

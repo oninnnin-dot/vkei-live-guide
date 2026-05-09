@@ -161,6 +161,7 @@ export type VenueComment = {
 };
 
 export type LogisticsConfidence = 'official' | 'blog_report' | 'mixed' | 'sns_report' | 'unknown';
+export type ExtendedLogisticsConfidence = LogisticsConfidence | 'venue_database' | 'review_site';
 export type AvailabilityStatus = 'available' | 'unavailable' | 'unknown';
 
 export type LockerInfo = {
@@ -170,10 +171,10 @@ export type LockerInfo = {
   beforeEntryUse: AvailabilityStatus;
   afterEntryUse: AvailabilityStatus;
   coinNeeded: 'yes' | 'no' | 'unknown';
-  largeBagFit: 'yes' | 'no' | 'unknown';
+  largeBagFit: 'yes' | 'no' | 'limited' | 'unknown';
   stationLockerRecommended: 'yes' | 'no' | 'depends' | 'situation_dependent' | 'unknown';
   bestMove: string;
-  sourceConfidence: LogisticsConfidence;
+  sourceConfidence: ExtendedLogisticsConfidence;
   lastCheckedAt: string;
 };
 
@@ -184,7 +185,7 @@ export type CloakInfo = {
   timingText: string;
   bagTypeText: string;
   bestMove: string;
-  sourceConfidence: LogisticsConfidence;
+  sourceConfidence: ExtendedLogisticsConfidence;
   lastCheckedAt: string;
 };
 
@@ -227,7 +228,7 @@ export type DayDecisionGuide = {
 export type SourceLink = {
   label: string;
   url: string;
-  type: 'official' | 'personal_blog' | 'blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'mixed' | 'unknown' | 'venue_database' | 'review_site';
+  type: 'official' | 'official_blog' | 'personal_blog' | 'blog' | 'note' | 'sns' | 'q_and_a' | 'ticket_site' | 'mixed' | 'unknown' | 'venue_database' | 'review_site';
   checkedAt: string;
 };
 
