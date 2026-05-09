@@ -59,7 +59,15 @@ const cleanText = (value: unknown) =>
 
 const isUseful = (value: unknown) => {
   const text = cleanText(value);
-  return Boolean(text) && text !== '確認中' && text !== 'なし';
+  return (
+    Boolean(text) &&
+    text !== '確認中' &&
+    text !== 'なし' &&
+    !text.includes('確認中') &&
+    !text.includes('未確認') &&
+    !text.includes('未調査') &&
+    !text.includes('対象外')
+  );
 };
 
 const normalizeStationLocker = (value: unknown) => {
@@ -81,7 +89,7 @@ const scaleLabel = scaleLabels[venue.venueScale ?? 'unknown'];
 
 const accessLabel = venue.station
   ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ''}`
-  : '最寄り駅確認中';
+  : '公式アクセス参照';
 
 const baggageOneLine = isArchive
   ? '閉館アーカイブのため、現在利用前提の荷物案内は表示していません。'
@@ -111,8 +119,7 @@ const factRows = isArchive ? [] : [
     : null,
 ].filter(Boolean) as Array<[string, string]>;
 
-const hasHiddenUnknowns =
-  !isArchive && (lockerState === 'unknown' || cloakState === 'unknown' || stationLockerState === 'unknown');
+const hasHiddenUnknowns = false;
 
 const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
 const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
