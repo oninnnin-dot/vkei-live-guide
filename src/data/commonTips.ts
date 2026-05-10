@@ -59,7 +59,7 @@ export const commonTips: VenueTip[] = [
   },
   {
     category: 'restroom',
-    title: '小箱はトイレが少ない場合がある',
+    title: '小規模会場はトイレが少ない場合がある',
     body: '小さいライブハウスはトイレが混みやすく、開演直前や終演後は待ち時間が出ることがあります。駅や商業施設で先に済ませる選択肢も持っておきます。',
     confidence: 'general',
     sourceType: 'summary',

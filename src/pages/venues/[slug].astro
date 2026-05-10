@@ -20,8 +20,8 @@ interface Props {
 const { venue } = Astro.props;
 
 const typeLabels: Record<string, string> = {
-  small_livehouse: '小箱ライブハウス',
-  mid_livehouse: '中箱ライブハウス',
+  small_livehouse: '小規模ライブハウス',
+  mid_livehouse: '中規模ライブハウス',
   large_livehouse: '大型ライブハウス',
   hall: 'ホール',
   theater: '劇場',
@@ -114,6 +114,11 @@ const cleanText = (value: unknown) =>
     .replace(/\bunknown\b/g, '確認中')
     .replaceAll('未確認', '確認中')
     .replaceAll('未調査', '確認中')
+    .replaceAll('ヴィジュアル系', '推し活')
+    .replaceAll('ビジュアル系', '推し活')
+    .replaceAll('V系', '推し活')
+    .replaceAll('小箱ライブ', '小規模会場')
+    .replaceAll('小箱', '小規模')
     .trim();
 
 const isUnknownValue = (value: unknown) => {
@@ -222,17 +227,19 @@ const largeBaggageText = locker && isUsefulText(locker.largeBagText)
 const stationLockerText = formatStationLockerRecommendation(stationLockerRecommended);
 const venueSourceConfidence = venue.sourceConfidence ?? 'unknown';
 const archiveSummary = '閉館アーカイブのため、現在利用前提のロッカー・クローク案内は表示していません。';
-const summaryHeadline = isArchive
-  ? archiveSummary
-  : venue.practicalSummary?.headline || '荷物が多い日は駅ロッカーや宿泊先預けを先に考える。';
+const summaryHeadline = cleanText(
+  isArchive
+    ? archiveSummary
+    : venue.practicalSummary?.headline || '荷物が多い日は駅ロッカーや宿泊先預けを先に考える。'
+);
 const summaryPoints = isArchive ? [] : venue.practicalSummary?.points ?? [];
 const sourceLinks = dedupeSourceLinks((venue.sourceLinks ?? []).filter((source) =>
   ['official', 'supporting_reference'].includes(source.type)
 ));
 
 const title = isArchive
-  ? `${venue.name}の閉館アーカイブ｜V系ライブ遠征ナビ`
-  : `${venue.name}のロッカー・クローク・荷物ガイド｜V系ライブ遠征ナビ`;
+  ? `${venue.name}の閉館アーカイブ｜推し活遠征ナビ`
+  : `${venue.name}のロッカー・クローク・荷物ガイド｜推し活遠征ナビ`;
 const description = isArchive
   ? `${venue.name}は閉館アーカイブとして掲載しています。現在利用前提の設備案内ではなく、過去会場情報として整理しています。`
   : `${venue.name}へ行く前に確認したい、会場内ロッカー、クローク、駅ロッカー、キャリーケース、物販後の荷物、開場前の待機場所、終演後の動き方をまとめています。`;
@@ -308,8 +315,8 @@ const unknownRows = isArchive ? [] : [
       <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{venue.name}</h1>
       <p class="mt-4 text-base leading-8 text-muted">{accessText}</p>
       <div class="mt-5 flex flex-wrap gap-2">
-        {venue.minorVkeiFriendly && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">若手V系向き</span>}
-        {venue.tipTags?.slice(0, 5).map((tag) => <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{tag}</span>)}
+        {venue.minorVkeiFriendly && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">小規模現場向き</span>}
+        {venue.tipTags?.slice(0, 5).map((tag) => <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{cleanText(tag)}</span>)}
       </div>
     </div>
   </section>

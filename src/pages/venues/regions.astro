@@ -6,8 +6,8 @@ import SectionTitle from '@components/SectionTitle.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = '全国V系ライブ会場マップ｜地域別の主要ライブハウス一覧';
-const description = '全国のV系ライブで使われることがある会場を、地域・都道府県・会場種別・V系向き度で整理した一覧です。公演情報やチケット状況は掲載しません。';
+const title = '全国推し活会場マップ｜地域別の主要ライブハウス一覧';
+const description = '全国のライブや推し活イベントで使われることがある会場を、地域・都道府県・会場種別・推し活向き度で整理した一覧です。公演情報やチケット状況は掲載しません。';
 const regionOrder = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
 const activeVenues = (venues as Venue[])
   .filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly)
@@ -25,8 +25,8 @@ const grouped = regionOrder
   }))
   .filter((group) => group.venues.length > 0);
 const typeLabel = {
-  small_livehouse: '小箱ライブハウス',
-  mid_livehouse: '中箱ライブハウス',
+  small_livehouse: '小規模ライブハウス',
+  mid_livehouse: '中規模ライブハウス',
   large_livehouse: '大型ライブハウス',
   hall: 'ホール',
   theater: '劇場',
@@ -36,9 +36,9 @@ const typeLabel = {
   unknown: '要確認',
 };
 const affinityLabel = {
-  high: 'V系向き高',
-  medium: 'V系向き中',
-  low: 'V系向き低',
+  high: '推し活向き高',
+  medium: '推し活向き中',
+  low: '推し活向き低',
   unknown: '要確認',
 };
 ---
@@ -47,13 +47,13 @@ const affinityLabel = {
   <Breadcrumbs items={[{ label: '会場攻略', href: '/venues' }, { label: '地域別一覧' }]} />
   <section class="container-navi py-8">
     <p class="gothic-label">Regions</p>
-    <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">全国V系ライブ会場マップ</h1>
+    <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">全国推し活会場マップ</h1>
     <p class="mt-4 max-w-3xl text-base leading-8 text-muted md:text-lg">
-      地域ごとに、V系ライブで使われることがある会場を一覧表示します。会場名・地域・会場分類だけを扱い、公演詳細は公式へ誘導します。
+      地域ごとに、ライブや推し活イベントで使われることがある会場を一覧表示します。会場名・地域・会場分類だけを扱い、公演詳細は公式へ誘導します。
     </p>
     <div class="mt-6">
       <NoticeBox title="公演情報は公式確認" tone="warning">
-        <p>この会場一覧は、V系ライブで使われることがある会場を整理したものです。公演情報、出演者、日程、チケット状況は掲載していません。最新の公演情報は必ず公式サイト・チケットサイト・会場公式スケジュールで確認してください。</p>
+        <p>この会場一覧は、ライブや推し活イベントで使われることがある会場を整理したものです。公演情報、出演者、日程、チケット状況は掲載していません。最新の公演情報は必ず公式サイト・チケットサイト・会場公式スケジュールで確認してください。</p>
       </NoticeBox>
     </div>
   </section>
@@ -79,11 +79,11 @@ const affinityLabel = {
                   <dd class="mt-1 font-black text-mist">{typeLabel[venue.venueType] ?? '要確認'}</dd>
                 </div>
                 <div class="rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-                  <dt class="text-muted">V系向き度</dt>
+                  <dt class="text-muted">推し活向き度</dt>
                   <dd class="mt-1 font-black text-mist">{affinityLabel[venue.vkeiAffinity] ?? '要確認'}</dd>
                 </div>
                 <div class="rounded-md border border-amber/20 bg-black/25 px-3 py-2">
-                  <dt class="text-muted">マイナーV系向き</dt>
+                  <dt class="text-muted">小規模現場向き</dt>
                   <dd class="mt-1 font-black text-mist">{venue.minorVkeiFriendly ? '向き' : '要確認'}</dd>
                 </div>
               </dl>

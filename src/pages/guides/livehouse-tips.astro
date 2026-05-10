@@ -6,13 +6,13 @@ import NoticeBox from '@components/NoticeBox.astro';
 import SectionTitle from '@components/SectionTitle.astro';
 import { commonTips } from '../../data/commonTips';
 
-const title = 'V系ライブハウス参戦前に知っておきたい豆知識';
-const description = 'V系ライブハウス初参戦前に知っておきたい、荷物、ロッカー、クローク、ドリンク代、整理番号、物販後の荷物、撮影ルール、再入場、トイレ、電波、終演後の帰り方をまとめます。';
+const title = 'ライブハウス参戦前に知っておきたい豆知識';
+const description = 'ライブハウスや小規模会場の初参戦前に知っておきたい、荷物、ロッカー、クローク、ドリンク代、整理番号、物販後の荷物、撮影ルール、再入場、トイレ、電波、終演後の帰り方をまとめます。';
 
 const guideBlocks = [
   {
     title: '荷物は最小限',
-    body: '小箱ではフロアの余裕が少ないことがあります。キャリーや大きいリュックは持ち込まず、ロッカー・クローク・駅ロッカーへ預ける前提で準備してください。',
+    body: '小規模会場ではフロアの余裕が少ないことがあります。キャリーや大きいリュックは持ち込まず、ロッカー・クローク・駅ロッカーへ預ける前提で準備してください。',
   },
   {
     title: 'ロッカーとクロークの違い',
@@ -43,7 +43,7 @@ const guideBlocks = [
     body: '再入場不可の公演では、入場後に外へ出られない前提で動きます。トイレ、飲み物、荷物整理、現金確認を入場前に済ませてください。',
   },
   {
-    title: '小箱のトイレ問題',
+    title: '小規模会場のトイレ問題',
     body: '小さいライブハウスではトイレが少ない場合があります。開演直前と終演後は混みやすいので、駅や商業施設で先に済ませる選択肢もあります。',
   },
   {
@@ -70,9 +70,9 @@ const guideBlocks = [
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="text-sm font-black uppercase tracking-[0.2em] text-cyan">Livehouse Tips</p>
-      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">V系ライブハウス参戦前に知っておきたい豆知識</h1>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-white md:text-5xl">ライブハウス参戦前に知っておきたい豆知識</h1>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
-        小箱・中箱ライブハウスで困りやすい荷物、ロッカー、ドリンク代、整理番号、撮影可否、再入場、終演後の帰り方を、初参戦でも確認しやすい形でまとめます。
+        小規模・中規模ライブハウスで困りやすい荷物、ロッカー、ドリンク代、整理番号、撮影可否、再入場、終演後の帰り方を、初参戦でも確認しやすい形でまとめます。
       </p>
     </div>
     <div class="mt-8">
@@ -115,7 +115,7 @@ const guideBlocks = [
     <SectionTitle title="会場別に確認する" />
     <div class="grid gap-4 md:grid-cols-3">
       <LinkCard title="会場攻略一覧" description="ロッカー注意、クローク確認、地下会場、終演後混雑などのタグで絞り込めます。" href="/venues" cta="会場を見る" />
-      <LinkCard title="小さいライブハウス初参戦" description="小箱での立ち位置、荷物、整理番号、ぼっち参戦の動きを確認します。" href="/guides/small-venue" cta="読む" />
+      <LinkCard title="小さいライブハウス初参戦" description="小規模会場での立ち位置、荷物、整理番号、一人参戦の動きを確認します。" href="/guides/small-venue" cta="読む" />
       <LinkCard title="持ち物チェックリスト" description="当日忘れやすいチケット、現金、モバイルバッテリー、雨具をチェックできます。" href="/guides/belongings" cta="確認する" />
     </div>
   </section>

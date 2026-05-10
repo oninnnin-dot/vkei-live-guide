@@ -6,19 +6,30 @@ import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ会場一覧｜ロッカー・クローク・荷物の動き方';
-const description = 'V系ライブで使われるライブハウスのロッカー、クローク、駅ロッカー推奨、荷物の動き方を会場別に確認できます。';
+const title = '推し活会場一覧｜ロッカー・クローク・荷物の動き方';
+const description = 'ライブや推し活イベントで使われる会場のロッカー、クローク、駅ロッカー推奨、荷物の動き方を会場別に確認できます。';
 const allVenues = venues as Venue[];
 const activeCount = allVenues.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
 const preferredRegions = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
 const regionOptions = preferredRegions.filter((region) => allVenues.some((venue) => venue.region === region));
 const prefectureOptions = [...new Set(allVenues.map((venue) => venue.prefecture).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
-const tipTagOptions = [...new Set(allVenues.flatMap((venue) => venue.tipTags ?? []))].filter(Boolean).sort((a, b) => a.localeCompare(b, 'ja'));
+const sanitizePublicLabel = (value: unknown) =>
+  String(value ?? '')
+    .replaceAll('ヴィジュアル系', '推し活')
+    .replaceAll('ビジュアル系', '推し活')
+    .replaceAll('V系', '推し活')
+    .replaceAll('小箱ライブ', '小規模会場')
+    .replaceAll('小箱', '小規模')
+    .trim();
+
+const tipTagOptions = [...new Set(allVenues.flatMap((venue) => venue.tipTags ?? []).map(sanitizePublicLabel))]
+  .filter(Boolean)
+  .sort((a, b) => a.localeCompare(b, 'ja'));
 
 const venueTypeOptions = [
-  ['small_livehouse', '小箱ライブハウス'],
-  ['mid_livehouse', '中箱ライブハウス'],
+  ['small_livehouse', '小規模ライブハウス'],
+  ['mid_livehouse', '中規模ライブハウス'],
   ['large_livehouse', '大型ライブハウス'],
   ['hall', 'ホール'],
   ['theater', '劇場'],
@@ -27,9 +38,9 @@ const venueTypeOptions = [
 ];
 
 const affinityOptions = [
-  ['high', 'V系向き高'],
-  ['medium', 'V系向き中'],
-  ['low', 'V系向き低'],
+  ['high', '推し活向き高'],
+  ['medium', '推し活向き中'],
+  ['low', '推し活向き低'],
   ['unknown', '確認中'],
 ];
 
@@ -42,11 +53,11 @@ const quickChips = [
   { label: '渋谷', kind: 'query', value: '渋谷' },
   { label: '新宿', kind: 'query', value: '新宿' },
   { label: '横浜', kind: 'query', value: '横浜' },
-  { label: '小箱', kind: 'type', value: 'small_livehouse' },
-  { label: '中箱', kind: 'type', value: 'mid_livehouse' },
-  { label: '大箱', kind: 'type', value: 'large_livehouse' },
-  { label: 'V系向き高', kind: 'affinity', value: 'high' },
-  { label: 'マイナーV系向き', kind: 'minor', value: 'true' },
+  { label: '小規模', kind: 'type', value: 'small_livehouse' },
+  { label: '中規模', kind: 'type', value: 'mid_livehouse' },
+  { label: '大型', kind: 'type', value: 'large_livehouse' },
+  { label: '推し活向き高', kind: 'affinity', value: 'high' },
+  { label: '小規模現場向き', kind: 'minor', value: 'true' },
   { label: 'ロッカー注意', kind: 'tag', value: 'ロッカー注意' },
   { label: '駅ロッカー推奨', kind: 'tag', value: '駅ロッカー推奨' },
   { label: 'クローク確認', kind: 'tag', value: 'クローク確認' },
@@ -57,7 +68,7 @@ const quickChips = [
 ];
 
 const shortcuts = [
-  { label: '東京の小箱', q: '', region: '東京', type: 'small_livehouse' },
+  { label: '東京の小規模会場', q: '', region: '東京', type: 'small_livehouse' },
   { label: '池袋周辺', q: '池袋' },
   { label: '渋谷周辺', q: '渋谷' },
   { label: '新宿周辺', q: '新宿' },
@@ -77,14 +88,14 @@ const shortcuts = [
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="gothic-label">Venue Search</p>
-      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">V系ライブ会場を探す</h1>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">推し活会場を探す</h1>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
-        会場名、エリア、駅名、地域、注意タグから、V系ライブで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。
+        会場名、エリア、駅名、地域、注意タグから、ライブや推し活イベントで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。
       </p>
     </div>
     <div class="mt-6">
       <NoticeBox title="公演情報は掲載しません" tone="warning">
-        <p>このページは会場名、地域、会場分類、V系利用傾向、荷物・ロッカー攻略を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
+        <p>このページは会場名、地域、会場分類、推し活での使いやすさ、荷物・ロッカー攻略を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
       </NoticeBox>
     </div>
     <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="おすすめショートカット">
@@ -123,8 +134,8 @@ const shortcuts = [
             <option value="recommended">おすすめ順</option>
             <option value="name">会場名順</option>
             <option value="region">地域順</option>
-            <option value="small">小箱優先</option>
-            <option value="affinity">V系向き度順</option>
+            <option value="small">小規模優先</option>
+            <option value="affinity">推し活向き度順</option>
             <option value="locker">ロッカー注意順</option>
           </select>
         </div>
@@ -171,7 +182,7 @@ const shortcuts = [
             </select>
           </label>
           <label class="grid gap-2 text-sm font-bold text-mist">
-            V系向き度
+            推し活向き度
             <select class="gothic-input min-h-11 rounded-md px-3" data-filter-affinity>
               <option value="">すべて</option>
               {affinityOptions.map(([value, label]) => <option value={value}>{label}</option>)}
@@ -237,16 +248,16 @@ const shortcuts = [
       const affinityRank = { high: 0, medium: 1, low: 2, unknown: 3 };
       const scaleRank = { small: 0, 'small-mid': 1, mid: 2, large: 3, unknown: 4 };
       const labelMap = {
-        small_livehouse: '小箱ライブハウス',
-        mid_livehouse: '中箱ライブハウス',
+        small_livehouse: '小規模ライブハウス',
+        mid_livehouse: '中規模ライブハウス',
         large_livehouse: '大型ライブハウス',
         hall: 'ホール',
         theater: '劇場',
         outdoor_stage: '屋外ステージ',
         event_space: 'イベントスペース',
-        high: 'V系向き高',
-        medium: 'V系向き中',
-        low: 'V系向き低',
+        high: '推し活向き高',
+        medium: '推し活向き中',
+        low: '推し活向き低',
         unknown: '確認中',
       };
       const state = {
@@ -354,7 +365,7 @@ const shortcuts = [
         if (state.region) items.push(['region', `地域: ${state.region}`]);
         if (state.prefecture) items.push(['prefecture', `都道府県: ${state.prefecture}`]);
         for (const type of state.types) items.push(['type', `種別: ${labelMap[type] || type}`, type]);
-        if (state.affinity) items.push(['affinity', `V系向き: ${labelMap[state.affinity] || state.affinity}`]);
+        if (state.affinity) items.push(['affinity', `推し活向き: ${labelMap[state.affinity] || state.affinity}`]);
         for (const tag of state.tags) items.push(['tag', `タグ: ${tag}`, tag]);
         if (state.archive) items.push(['archive', '閉館済みも表示']);
         activeBox.innerHTML = '';

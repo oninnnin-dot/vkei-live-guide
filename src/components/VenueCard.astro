@@ -9,16 +9,16 @@ interface Props {
 const { venue, compact = false } = Astro.props;
 
 const scaleLabels: Record<string, string> = {
-  small: '小箱',
-  'small-mid': '小〜中箱',
-  mid: '中箱',
-  large: '大箱',
+  small: '小規模',
+  'small-mid': '小〜中規模',
+  mid: '中規模',
+  large: '大型',
   unknown: '規模確認中',
 };
 
 const typeLabels: Record<string, string> = {
-  small_livehouse: '小箱ライブハウス',
-  mid_livehouse: '中箱ライブハウス',
+  small_livehouse: '小規模ライブハウス',
+  mid_livehouse: '中規模ライブハウス',
   large_livehouse: '大型ライブハウス',
   hall: 'ホール',
   theater: '劇場',
@@ -56,6 +56,11 @@ const cleanText = (value: unknown) =>
     .replace(/\bunknown\b/g, '確認中')
     .replaceAll('未確認', '確認中')
     .replaceAll('未調査', '確認中')
+    .replaceAll('ヴィジュアル系', '推し活')
+    .replaceAll('ビジュアル系', '推し活')
+    .replaceAll('V系', '推し活')
+    .replaceAll('小箱ライブ', '小規模会場')
+    .replaceAll('小箱', '小規模')
     .trim();
 
 const isUseful = (value: unknown) => {
@@ -123,8 +128,9 @@ const factRows = isArchive ? [] : [
 
 const hasHiddenUnknowns = false;
 
-const visibleTipTags = (venue.tipTags ?? []).slice(0, 3);
-const hiddenTipCount = Math.max((venue.tipTags ?? []).length - visibleTipTags.length, 0);
+const publicTipTags = (venue.tipTags ?? []).map(cleanText).filter(Boolean);
+const visibleTipTags = publicTipTags.slice(0, 3);
+const hiddenTipCount = Math.max(publicTipTags.length - visibleTipTags.length, 0);
 
 const logisticsSearchText = isArchive ? [] : [
   venue.lockerInfo?.venueLockerText,
@@ -150,12 +156,11 @@ const searchText = [
   venue.venueType,
   venue.venueScale,
   venue.vkeiAffinity,
-  venue.vkeiUseType,
   typeLabel,
   scaleLabel,
   baggageOneLine,
   ...logisticsSearchText,
-  ...(venue.tipTags ?? []),
+  ...publicTipTags,
 ]
   .filter(Boolean)
   .map(cleanText)
@@ -180,8 +185,8 @@ const filterTags = [
   venue.venueScale === 'small-mid' || venue.venueScale === 'mid' ? 'mid' : '',
   venue.venueScale === 'large' ? 'large' : '',
   venue.venueType,
-  venue.vkeiAffinity === 'high' ? 'vkei-high' : '',
-  venue.minorVkeiFriendly ? 'minor-vkei' : '',
+  venue.vkeiAffinity === 'high' ? 'affinity-high' : '',
+  venue.minorVkeiFriendly ? 'small-scene' : '',
   venue.region,
   venue.prefecture,
   venue.areaGroup,
@@ -214,7 +219,7 @@ const filterTags = [
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
   data-locker-rank={lockerSortRank[lockerState] ?? 0}
-  data-tags={(venue.tipTags ?? []).join('|')}
+  data-tags={publicTipTags.join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}
 >

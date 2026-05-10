@@ -6,8 +6,8 @@ import { areaGuides } from '@/data/areaGuides';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = 'V系ライブ遠征エリア攻略一覧｜ロッカー・荷物・待機場所';
-const description = '池袋、渋谷、高田馬場、新宿、下北沢、横浜、高円寺、巣鴨など、V系ライブ遠征で迷いやすい荷物、ロッカー、待機場所、終演後の動き方をエリア別に整理します。';
+const title = '推し活遠征エリア攻略一覧｜ロッカー・荷物・待機場所';
+const description = '池袋、渋谷、高田馬場、新宿、下北沢、横浜、高円寺、巣鴨など、推し活遠征で迷いやすい荷物、ロッカー、待機場所、終演後の動き方をエリア別に整理します。';
 
 const allVenues = (venues as Venue[]).filter((venue) => venue.status !== 'closed' && venue.showInVenueList && !venue.archiveOnly);
 const countVenues = (aliases: string[]) =>
@@ -20,7 +20,7 @@ const countVenues = (aliases: string[]) =>
   <section class="container-navi py-8">
     <div class="gothic-panel rounded-xl p-5 md:p-8">
       <p class="gothic-label">Area Guide</p>
-      <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">V系ライブ遠征エリア攻略</h1>
+      <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">推し活遠征エリア攻略</h1>
       <p class="mt-4 max-w-3xl text-sm leading-8 text-muted md:text-base">
         公演情報ではなく、エリアごとの荷物・ロッカー・待機場所・雨の日・終演後の帰り方を整理する入口です。
       </p>

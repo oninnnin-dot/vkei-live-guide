@@ -24,8 +24,8 @@ const areaVenues = allVenues.filter((venue) =>
   area.aliases.some((name) => venue.area?.includes(name) || venue.areaGroup?.includes(area.slug) || venue.areaGroup?.includes(name.toLowerCase()))
 );
 
-const title = `${area.name}のV系ライブ遠征ガイド｜ロッカー・荷物・待機場所`;
-const description = `${area.name}のV系ライブ遠征で迷いやすいロッカー、荷物、待機場所、雨の日、終演後の帰り方をエリア単位で整理しています。`;
+const title = `${area.name}の推し活遠征ガイド｜ロッカー・荷物・待機場所`;
+const description = `${area.name}の推し活遠征で迷いやすいロッカー、荷物、待機場所、雨の日、終演後の帰り方をエリア単位で整理しています。`;
 
 const guideBlocks = [
   ['荷物・ロッカーの考え方', area.baggage],
@@ -42,7 +42,7 @@ const guideBlocks = [
   <section class="container-navi py-8">
     <div class="gothic-panel rounded-xl p-5 md:p-8">
       <p class="gothic-label">Area Guide</p>
-      <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{area.name}のV系ライブ遠征ガイド</h1>
+      <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{area.name}の推し活遠征ガイド</h1>
       <p class="mt-4 max-w-3xl text-sm leading-8 text-muted md:text-base">{area.overview}</p>
     </div>
   </section>
