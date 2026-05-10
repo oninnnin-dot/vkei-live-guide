@@ -2055,6 +2055,8 @@
   {
     "slug": "shibuya-the-game",
     "name": "SHIBUYA THE GAME",
+    "locker": "あり（約50個、300円）",
+    "cloak": "なし",
     "area": "渋谷",
     "areaGroup": "tokyo_shibuya",
     "status": "active",
@@ -2381,6 +2383,8 @@
   {
     "slug": "shibuya-vident",
     "name": "SHIBUYA VIDENT",
+    "locker": "なし",
+    "cloak": "不明",
     "area": "渋谷",
     "areaGroup": "tokyo_shibuya",
     "status": "active",
@@ -3475,6 +3479,8 @@
   {
     "slug": "wildside-tokyo",
     "name": "WildSide Tokyo",
+    "locker": "わずか（数不明）",
+    "cloak": "なし",
     "area": "新宿",
     "areaGroup": "tokyo_shinjuku",
     "status": "active",
@@ -6280,6 +6286,8 @@
   {
     "slug": "harajuku-ruido",
     "name": "原宿RUIDO",
+    "locker": "あり（54個、300円）",
+    "cloak": "あり",
     "area": "原宿",
     "areaGroup": "tokyo_shibuya_harajuku",
     "status": "active",
@@ -7340,6 +7348,8 @@
   {
     "slug": "shibuya-rex",
     "name": "渋谷REX",
+    "locker": "あり（300円）",
+    "cloak": "あり（500円/袋）",
     "area": "渋谷",
     "areaGroup": "tokyo_shibuya",
     "status": "active",
@@ -9334,6 +9344,8 @@
   {
     "slug": "shinjuku-club-science",
     "name": "新宿club SCIENCE",
+    "locker": "あり（45個、300円）",
+    "cloak": "あり（500円）",
     "area": "新宿",
     "areaGroup": "tokyo_shinjuku",
     "status": "active",
@@ -14507,6 +14519,8 @@
   {
     "slug": "higashi-koenji-20000v",
     "name": "東高円寺二万電圧",
+    "locker": "なし",
+    "cloak": "あり",
     "area": "東高円寺",
     "areaGroup": "tokyo_koenji",
     "status": "active",
@@ -16452,6 +16466,8 @@
   {
     "slug": "music-lab-hamashobo",
     "name": "Music Lab.濱書房",
+    "locker": "なし",
+    "cloak": "あり",
     "area": "横浜",
     "areaGroup": "kanagawa_yokohama",
     "status": "active",
@@ -16935,6 +16951,8 @@
   {
     "slug": "yokohama-baysis",
     "name": "横浜BAYSIS",
+    "locker": "あり（数不明）",
+    "cloak": "あり（事前荷物預かりあり）",
     "area": "横浜",
     "areaGroup": "kanagawa_yokohama",
     "status": "active",
@@ -17385,6 +17403,8 @@
   {
     "slug": "yokohama-club-sensation",
     "name": "横浜CLUB SENSATION",
+    "locker": "なし",
+    "cloak": "不明",
     "area": "横浜",
     "areaGroup": "kanagawa_yokohama",
     "status": "active",
