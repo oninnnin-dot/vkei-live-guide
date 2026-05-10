@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://vkei-live-guide.pages.dev',
+  site: 'https://oshikatsu-ensei-navi.pages.dev',
   output: 'static',
   build: {
     assets: 'assets',
