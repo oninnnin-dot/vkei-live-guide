@@ -17,54 +17,51 @@ interface Props {
 const amazonAffiliateTag = 'AFFILIATE_ID';
 const amazonSearchUrl = (keyword: string) =>
   `https://www.amazon.co.jp/s?k=${encodeURIComponent(keyword)}&tag=${amazonAffiliateTag}`;
+const rakutenAffiliateId = 'AFFILIATE_ID';
+const rakutenSearchUrl = (keyword: string) =>
+  `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/?scid=af_pc_etc&rafct=i_${rakutenAffiliateId}`;
+const yahooAffiliateId = 'AFFILIATE_ID';
+const yahooSearchUrl = (keyword: string) =>
+  `https://shopping.yahoo.co.jp/search?p=${encodeURIComponent(keyword)}&fr=affi&aff_id=${yahooAffiliateId}`;
 
 const {
   title = '遠征前に用意しておくと安心なもの',
   lead = '物販・雨・終演後移動がある日は、荷物を減らしつつ必要なものだけ持つのがおすすめです。',
   items = [
     {
-      title: '持ち物おすすめ枠',
-      text: 'チケット、身分証、現金、IC、モバイルバッテリー、雨具を小さくまとめる前提で準備します。',
+      title: '電池切れ対策',
+      text: '電子チケット、地図、終電確認を使う日は、軽いモバイルバッテリーと短いケーブルを先に入れておくと安心です。',
       links: [
-        { label: 'ミニ財布', url: amazonSearchUrl('ミニ財布') },
-        { label: 'スマホショルダーストラップ', url: amazonSearchUrl('スマホショルダーストラップ') },
-        { label: '小型コインケース', url: amazonSearchUrl('小型コインケース') },
+        { label: 'Amazonでモバイルバッテリーを探す', url: amazonSearchUrl('モバイルバッテリー 軽量') },
+        { label: '楽天でモバイルバッテリーを探す', url: rakutenSearchUrl('モバイルバッテリー 軽量') },
+        { label: 'YahooでUSB-Cケーブルを探す', url: yahooSearchUrl('USB-Cケーブル 短い') },
       ],
     },
     {
-      title: '遠征便利グッズ枠',
-      text: '圧縮袋、折りたためるサブバッグ、薄手の上着があると、物販後や夜行移動で動きやすくなります。',
-      links: [
-        { label: '衣類圧縮袋', url: amazonSearchUrl('衣類圧縮袋') },
-        { label: '折りたたみサブバッグ', url: amazonSearchUrl('折りたたみサブバッグ') },
-        { label: '薄手パーカー', url: amazonSearchUrl('薄手パーカー') },
-      ],
-    },
-    {
-      title: 'ホテル・宿泊エリア案内枠',
-      text: '終演後に焦らないよう、駅までの距離とチェックイン時間を先に見ておくと安心です。',
-      links: [
-        { label: '吊り下げトラベルポーチ', url: amazonSearchUrl('吊り下げトラベルポーチ') },
-        { label: 'USB-C急速充電器', url: amazonSearchUrl('USB-C急速充電器') },
-        { label: '耳栓 アイマスク セット', url: amazonSearchUrl('耳栓 アイマスク セット') },
-      ],
-    },
-    {
-      title: '雨の日対策グッズ枠',
-      text: '折りたたみ傘、防水袋、替えの靴下、タオルを増やしすぎない範囲で用意します。',
+      title: '雨と荷物増え対策',
+      text: '雨の日や物販後は、折りたたみ傘、圧縮袋、小さめショルダーを先に用意しておくと移動が楽です。',
       links: [
         { label: '軽量折りたたみ傘', url: amazonSearchUrl('軽量折りたたみ傘') },
-        { label: 'スマホ防水ケース', url: amazonSearchUrl('スマホ防水ケース') },
-        { label: '速乾タオル', url: amazonSearchUrl('速乾タオル') },
+        { label: '衣類圧縮袋', url: rakutenSearchUrl('衣類圧縮袋') },
+        { label: '小さめショルダーバッグ', url: yahooSearchUrl('小さめ ショルダーバッグ') },
       ],
     },
     {
-      title: 'モバイルバッテリー枠',
-      text: '電子チケット、地図、終電確認を使う日は、軽量タイプを1つ入れておくと余裕が残ります。',
+      title: 'チケットと視界対策',
+      text: '紙チケットや身分証をまとめるケース、ホールや後方席用の双眼鏡があると当日の探し物を減らせます。',
       links: [
-        { label: 'Anker Nano Power Bank 5000mAh', url: amazonSearchUrl('Anker Nano Power Bank 5000mAh') },
-        { label: 'Anker PowerCore 10000', url: amazonSearchUrl('Anker PowerCore 10000') },
-        { label: 'USB-Cケーブル 1m', url: amazonSearchUrl('USB-Cケーブル 1m') },
+        { label: 'チケットホルダー', url: amazonSearchUrl('チケットホルダー') },
+        { label: '双眼鏡 ライブ用', url: rakutenSearchUrl('双眼鏡 ライブ用') },
+        { label: '身分証ケース', url: yahooSearchUrl('身分証ケース') },
+      ],
+    },
+    {
+      title: '音と移動疲れ対策',
+      text: '小規模ライブハウスや長距離移動の日は、耳栓や薄手ポーチで体力を残しやすくします。',
+      links: [
+        { label: 'ライブ用耳栓', url: amazonSearchUrl('ライブ用 耳栓') },
+        { label: '薄型トラベルポーチ', url: rakutenSearchUrl('薄型 トラベルポーチ') },
+        { label: '折りたたみサブバッグ', url: yahooSearchUrl('折りたたみ サブバッグ') },
       ],
     },
   ],

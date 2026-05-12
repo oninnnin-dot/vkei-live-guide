@@ -223,15 +223,23 @@ export type BaggageGuide = {
 };
 
 export type NearbyInfo = {
+  nearestExit?: string;
+  convenienceStores?: string[];
+  cafes?: string[];
+  stationLockers?: string[];
+  restrooms?: string[];
+  waitingRule?: string;
+  rainPlan?: string;
+  soloBeginnerNote?: string;
   nearestConvenienceStore?: string;
   convenienceStore?: string;
-  stationLocker: string;
-  waitingSpot: string;
-  rainShelter: string;
-  restroomBeforeEntry: string;
-  cashAndCoin: string;
-  afterShowRoute: string;
-  nightSafety: string;
+  stationLocker?: string;
+  waitingSpot?: string;
+  rainShelter?: string;
+  restroomBeforeEntry?: string;
+  cashAndCoin?: string;
+  afterShowRoute?: string;
+  nightSafety?: string;
 };
 
 export type BlogResearch = {

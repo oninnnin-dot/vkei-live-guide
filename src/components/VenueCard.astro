@@ -63,6 +63,32 @@ const cleanText = (value: unknown) =>
     .replaceAll('小箱', '小規模')
     .trim();
 
+const genericPublicPhrases = [
+  '荷物が多い日は駅ロッカーかホテル預けを先に決める',
+  '駅周辺で時間調整する',
+  '周辺情報は確認中です',
+  '大荷物は駅側で荷物処理',
+  '公式アクセス参照',
+  '地図アプリで直前確認',
+  '荷物が多い日は最寄り駅や主要駅ロッカーも候補',
+  '整列開始までは会場前に長くたまらず、駅周辺で時間調整する',
+  '雨の日は駅周辺や商業施設など屋根のある場所で整える',
+  '入場前に駅や周辺施設で済ませる',
+  '終演後は駅までの導線と荷物回収時間を先に決める',
+  '初めての会場は帰りの駅ルートを事前保存する',
+  '周辺コンビニは事前に地図アプリで確認推奨',
+  '開場前の待機は近隣迷惑にならないよう',
+  '夜の帰り道は駅までのルートを事前確認推奨',
+  '終演後はまず荷物回収と駅までのルート',
+  '背中のリュックはフロアで邪魔になりやすい',
+  '最寄り駅周辺ロッカーは埋まることがある',
+];
+
+const isGenericPublicText = (value: unknown) => {
+  const text = cleanText(value);
+  return genericPublicPhrases.some((phrase) => text.includes(phrase));
+};
+
 const isUseful = (value: unknown) => {
   const text = cleanText(value);
   return (
@@ -72,8 +98,22 @@ const isUseful = (value: unknown) => {
     !text.includes('確認中') &&
     !text.includes('未確認') &&
     !text.includes('未調査') &&
-    !text.includes('対象外')
+    !text.includes('対象外') &&
+    !isGenericPublicText(text)
   );
+};
+
+const toUsefulList = (value: unknown) => {
+  const values = Array.isArray(value) ? value : [value];
+  return values.map(cleanText).filter((item) => isUseful(item));
+};
+
+const firstUsefulText = (...values: unknown[]) => {
+  for (const value of values) {
+    const list = toUsefulList(value);
+    if (list.length > 0) return list.slice(0, 2).join(' / ');
+  }
+  return '';
 };
 
 const normalizeStationLocker = (value: unknown) => {
@@ -94,37 +134,28 @@ const stationLockerState = normalizeStationLocker(
 const typeLabel = typeLabels[venue.venueType ?? 'unknown'];
 const scaleLabel = scaleLabels[venue.venueScale ?? 'unknown'];
 
-const accessLabel = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ''}`
-  : '公式アクセス参照';
+const accessLabel = firstUsefulText(
+  venue.nearbyInfo?.nearestExit ? `${venue.station || '最寄駅'} / ${venue.nearbyInfo.nearestExit}` : '',
+  venue.station ? `${venue.station}${typeof venue.walkMinutes === 'number' ? ` / 徒歩目安 ${venue.walkMinutes}分` : ''}` : ''
+) || '最寄り確認中';
 
 const baggageOneLine = isArchive
   ? '閉館アーカイブのため、現在利用前提の荷物案内は表示していません。'
-  : cleanText(
-      venue.practicalSummary?.headline ||
-        venue.lockerInfo?.bestMove ||
-        venue.baggageGuide?.backpack ||
-        venue.baggageNote ||
-        '荷物が多い日は、駅ロッカーや宿泊先預けを先に考える。'
-    );
+  : firstUsefulText(
+      venue.practicalSummary?.headline,
+      venue.lockerInfo?.bestMove,
+      venue.baggageGuide?.backpack,
+      venue.baggageNote
+    ) || '30秒結論は確認中です。';
 
-const factRows = isArchive ? [] : [
-  lockerState !== 'unknown'
-    ? ['会場内ロッカー', lockerStatusLabels[lockerState]]
-    : null,
-  lockerState !== 'unknown' && isUseful(venue.lockerInfo?.lockerCountText)
-    ? ['ロッカー個数', cleanText(venue.lockerInfo?.lockerCountText)]
-    : null,
-  cloakState !== 'unknown'
-    ? ['クローク', cloakStatusLabels[cloakState]]
-    : null,
-  cloakState !== 'unknown' && isUseful(venue.cloakInfo?.priceText)
-    ? ['クローク料金', cleanText(venue.cloakInfo?.priceText)]
-    : null,
-  stationLockerState !== 'unknown'
-    ? ['駅ロッカー', stationLockerLabels[stationLockerState] ?? '状況次第']
-    : null,
-].filter(Boolean) as Array<[string, string]>;
+const quickRows = isArchive ? [] : [
+  ['最寄出口', venue.nearbyInfo?.nearestExit],
+  ['コンビニ', firstUsefulText(venue.nearbyInfo?.convenienceStores, venue.nearbyInfo?.nearestConvenienceStore, venue.nearbyInfo?.convenienceStore)],
+  ['待機', venue.nearbyInfo?.waitingRule || venue.nearbyInfo?.waitingSpot],
+  ['終演後', venue.nearbyInfo?.afterShowRoute],
+  ['夜道', venue.nearbyInfo?.nightSafety],
+  ['荷物', firstUsefulText(venue.lockerInfo?.bestMove, venue.baggageGuide?.backpack, stationLockerState !== 'unknown' ? stationLockerLabels[stationLockerState] : '')],
+].filter(([, value]) => isUseful(value)) as Array<[string, string]>;
 
 const hasHiddenUnknowns = false;
 
@@ -140,11 +171,18 @@ const logisticsSearchText = isArchive ? [] : [
   venue.cloakInfo?.priceText,
   venue.cloakInfo?.bestMove,
   venue.baggageGuide?.backpack,
+  venue.nearbyInfo?.nearestExit,
+  ...(venue.nearbyInfo?.convenienceStores ?? []),
+  ...(venue.nearbyInfo?.stationLockers ?? []),
+  ...(venue.nearbyInfo?.restrooms ?? []),
+  venue.nearbyInfo?.waitingRule,
+  venue.nearbyInfo?.rainPlan,
+  venue.nearbyInfo?.soloBeginnerNote,
   venue.nearbyInfo?.stationLocker,
   venue.nearbyInfo?.waitingSpot,
   venue.nearbyInfo?.afterShowRoute,
   ...(venue.practicalSummary?.points ?? []),
-];
+].filter(isUseful);
 
 const searchText = [
   venue.name,
@@ -236,16 +274,16 @@ const filterTags = [
   </div>
 
   <div class="mt-4 rounded-lg border border-amber/20 bg-black/25 p-3">
-    <p class="gothic-label">荷物の一言結論</p>
+    <p class="gothic-label">30秒結論</p>
     <p class="mt-2 text-sm font-black leading-7 text-mist">{baggageOneLine}</p>
   </div>
 
-  {factRows.length > 0 && (
+  {quickRows.length > 0 && (
     <dl class="mt-4 grid gap-2 text-sm">
-      {factRows.map(([label, value]) => (
+      {quickRows.map(([label, value]) => (
         <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
           <dt class="text-muted">{label}</dt>
-          <dd class="min-w-0 text-right font-black text-mist">{value}</dd>
+          <dd class="min-w-0 text-right font-black leading-6 text-mist">{cleanText(value)}</dd>
         </div>
       ))}
     </dl>

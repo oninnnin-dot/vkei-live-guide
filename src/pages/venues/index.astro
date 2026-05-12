@@ -6,8 +6,8 @@ import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = '推し活会場一覧｜ロッカー・クローク・荷物の動き方';
-const description = 'ライブや推し活イベントで使われる会場のロッカー、クローク、駅ロッカー推奨、荷物の動き方を会場別に確認できます。';
+const title = '推し活会場一覧｜行き方・コンビニ・待機場所・終演後の帰り方';
+const description = 'ライブや推し活イベントで使われる会場の最寄出口、コンビニ、駅ロッカー、待機場所、雨の日、終演後の帰り方を会場別に確認できます。';
 const allVenues = venues as Venue[];
 const activeCount = allVenues.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
@@ -95,7 +95,7 @@ const shortcuts = [
     </div>
     <div class="mt-6">
       <NoticeBox title="公演情報は掲載しません" tone="warning">
-        <p>このページは会場名、地域、会場分類、推し活での使いやすさ、荷物・ロッカー攻略を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
+        <p>このページは会場名、地域、会場分類、推し活での使いやすさ、最寄出口、コンビニ、待機場所、終演後の帰り方を探すための会場マスターです。公演日、出演者、開場/開演時間、チケット状況は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。</p>
       </NoticeBox>
     </div>
     <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="おすすめショートカット">
