@@ -7,7 +7,7 @@ const venues = JSON.parse(raw);
 
 const SOURCE_CONFIDENCE = new Set(["official", "supporting_reference", "unknown"]);
 const VENUE_STATUS = new Set(["active", "closed", "relocation_pending", "event_only", "unknown"]);
-const LOCKER_STATUS = new Set(["available", "none", "unknown"]);
+const LOCKER_STATUS = new Set(["available", "none", "limited", "unknown"]);
 const CLOAK_STATUS = new Set(["available", "none", "unknown", "event_dependent"]);
 const BANNED_PUBLIC_WORDS = ["個人ブログ", "note", "SNS", "参戦レポ", "外部会場情報", "ブログ由来", "個人解説", "転載", "引用"];
 

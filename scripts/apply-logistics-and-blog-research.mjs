@@ -97,16 +97,19 @@ const defaultBaggageGuide = (venue) => ({
   goodTicketNumber: venue.baggageDecision?.goodTicketNumber || '良番なら荷物処理を先に終わらせ、呼び出し前に身軽にしておく。',
 });
 
-const defaultNearbyInfo = (venue) => ({
-  nearestConvenienceStore: venue.convenienceNote || '周辺コンビニは未確認。駅周辺で先に飲み物を用意する。',
-  stationLocker: venue.stationLockerNote || venue.lockerAlternativeNote || '駅ロッカー情報は未確認。荷物が多い日は最寄り駅で先に探す。',
-  waitingSpot: venue.timeKillingNote || venue.waitingNote || '会場前に長くたまらず、整列開始まで駅周辺で時間調整する。',
-  rainShelter: venue.badWeatherNote || venue.rainNote || '雨の日の逃げ場は未確認。駅や商業施設側で待てる場所を先に決める。',
-  restroomBeforeEntry: venue.restroomNote || '入場前トイレは未確認。駅や商業施設で先に済ませる。',
-  cashAndCoin: venue.cashNote || venue.coinNote || 'ドリンク代用の現金と小銭を残す。',
-  afterShowRoute: venue.afterShowStrategy || venue.returnNote || '終演後は最寄り駅までの導線を事前に確認する。',
-  nightSafety: venue.nightSafetyNote || '夜道の雰囲気は未確認。大通りと駅出口を先に決める。',
-});
+const compactInfo = (entries) =>
+  Object.fromEntries(entries.filter(([, value]) => typeof value === 'string' && value.trim()));
+
+const defaultNearbyInfo = (venue) => compactInfo([
+  ['nearestConvenienceStore', venue.convenienceNote],
+  ['stationLocker', venue.stationLockerNote || venue.lockerAlternativeNote],
+  ['waitingSpot', venue.timeKillingNote || venue.waitingNote],
+  ['rainShelter', venue.badWeatherNote || venue.rainNote],
+  ['restroomBeforeEntry', venue.restroomNote],
+  ['cashAndCoin', venue.cashNote || venue.coinNote],
+  ['afterShowRoute', venue.afterShowStrategy || venue.returnNote],
+  ['nightSafety', venue.nightSafetyNote],
+]);
 
 const defaultBlogResearch = (venue) => ({
   status: 'not_started',
@@ -120,15 +123,18 @@ for (const venue of venues) {
   venue.lockerInfo = venue.lockerInfo ?? defaultLockerInfo(venue);
   venue.cloakInfo = venue.cloakInfo ?? defaultCloakInfo(venue);
   venue.baggageGuide = venue.baggageGuide ?? defaultBaggageGuide(venue);
-  venue.nearbyInfo = venue.nearbyInfo ?? defaultNearbyInfo(venue);
+  const nearbyInfo = defaultNearbyInfo(venue);
+  if (!venue.nearbyInfo && Object.keys(nearbyInfo).length > 0) {
+    venue.nearbyInfo = nearbyInfo;
+  }
   venue.blogResearch = venue.blogResearch ?? defaultBlogResearch(venue);
   venue.dayDecisionGuide = venue.dayDecisionGuide ?? {
     baggageDay: venue.baggageGuide.backpack,
     goodNumberDay: venue.baggageGuide.goodTicketNumber,
     merchDay: venue.baggageGuide.afterMerch,
-    rainyDay: venue.nearbyInfo.rainShelter,
+    rainyDay: venue.nearbyInfo?.rainShelter || '',
     soloDay: venue.soloOneLine || venue.soloStrategy || '一人参戦は、待機場所と帰り道を先に決めておくと動きやすい。',
-    hurryAfterShowDay: venue.nearbyInfo.afterShowRoute,
+    hurryAfterShowDay: venue.nearbyInfo?.afterShowRoute || '',
   };
 }
 

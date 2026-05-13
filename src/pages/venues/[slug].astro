@@ -526,26 +526,17 @@ const unknownRows = isArchive ? [] : [
         )}
       </section>
 
-      <section class="gothic-card rounded-xl p-5 md:p-6">
-        <div class="section-title">
-          <p>Check status</p>
-          <h2>情報確認状況</h2>
-          <p>未確定の設備情報はここにまとめます。確認中でも、本文では当日の動き方を先に示します。</p>
-        </div>
-        {isArchive ? (
-          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">閉館アーカイブのため、現在利用前提の設備確認状況は表示していません。</p>
-        ) : unknownRows.length > 0 ? (
-          <ul class="grid gap-2 text-sm leading-7 text-muted md:grid-cols-2">
-            {unknownRows.map((item) => (
-              <li class="rounded-md border border-amber/20 bg-black/25 px-4 py-3">
-                {item}: <span class="font-black text-mist">確認中</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">主なロッカー・クローク項目は登録済みです。最終判断は公式確認と当日案内を優先してください。</p>
-        )}
-      </section>
+      {!isArchive && unknownRows.length > 0 && (
+        <section class="rounded-lg border border-amber/15 bg-black/20 p-4">
+          <p class="font-classical text-base font-black text-mist">未確定メモ</p>
+          <p class="mt-2 text-sm leading-7 text-muted">
+            設備の細部は公演や当日案内で変わる場合があります。ここでは未確定項目を小さく残し、当日の動き方を優先して案内します。
+          </p>
+          <p class="mt-2 text-xs font-bold leading-6 text-muted">
+            確認中: {unknownRows.slice(0, 4).join('、')}{unknownRows.length > 4 ? ` ほか${unknownRows.length - 4}件` : ''}
+          </p>
+        </section>
+      )}
     </div>
 
     <aside class="space-y-5 lg:sticky lg:top-24">
