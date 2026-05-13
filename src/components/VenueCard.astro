@@ -82,6 +82,8 @@ const genericPublicPhrases = [
   '終演後はまず荷物回収と駅までのルート',
   '背中のリュックはフロアで邪魔になりやすい',
   '最寄り駅周辺ロッカーは埋まることがある',
+  'コンビニは周辺にあり',
+  '荷物が多い日は駅で確認',
 ];
 
 const isGenericPublicText = (value: unknown) => {
@@ -114,6 +116,21 @@ const firstUsefulText = (...values: unknown[]) => {
     if (list.length > 0) return list.slice(0, 2).join(' / ');
   }
   return '';
+};
+
+const placeNames = (type: string) =>
+  (venue.nearbyInfo?.places ?? [])
+    .filter((place) => place.type === type)
+    .map((place) => {
+      const detail = [place.directionNote, typeof place.walkMinutes === 'number' ? `徒歩目安${place.walkMinutes}分` : '']
+        .filter(Boolean)
+        .join('・');
+      return detail ? `${place.name}（${detail}）` : place.name;
+    });
+
+const shortenText = (value: unknown, maxLength = 58) => {
+  const text = cleanText(value);
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text;
 };
 
 const normalizeStationLocker = (value: unknown) => {
@@ -150,16 +167,29 @@ const baggageOneLine = isArchive
 
 const quickRows = isArchive ? [] : [
   ['最寄出口', venue.nearbyInfo?.nearestExit],
-  ['コンビニ', firstUsefulText(venue.nearbyInfo?.convenienceStores, venue.nearbyInfo?.nearestConvenienceStore, venue.nearbyInfo?.convenienceStore)],
+  ['コンビニ', firstUsefulText(placeNames('convenience_store'), venue.nearbyInfo?.convenienceStores, venue.nearbyInfo?.nearestConvenienceStore, venue.nearbyInfo?.convenienceStore)],
   ['待機', venue.nearbyInfo?.waitingRule || venue.nearbyInfo?.waitingSpot],
   ['終演後', venue.nearbyInfo?.afterShowRoute],
   ['夜道', venue.nearbyInfo?.nightSafety],
-  ['荷物', firstUsefulText(venue.lockerInfo?.bestMove, venue.baggageGuide?.backpack, stationLockerState !== 'unknown' ? stationLockerLabels[stationLockerState] : '')],
+  ['荷物', firstUsefulText(venue.nearbyInfo?.baggageFlow, venue.lockerInfo?.bestMove, venue.baggageGuide?.backpack, stationLockerState !== 'unknown' ? stationLockerLabels[stationLockerState] : '')],
 ].filter(([, value]) => isUseful(value)) as Array<[string, string]>;
 
 const hasHiddenUnknowns = false;
 
 const publicTipTags = (venue.tipTags ?? []).map(cleanText).filter(Boolean);
+const derivedTipTags = [
+  lockerState === 'available' ? 'ロッカーあり' : '',
+  cloakState === 'available' || cloakState === 'event_dependent' ? 'クロークあり' : '',
+  stationLockerState === 'yes' ? '駅ロッカー推奨' : '',
+  venue.nearbyInfo?.convenienceStores?.length ? 'コンビニ近い' : '',
+  venue.nearbyInfo?.waitingRule ? '待機注意' : '',
+  venue.nearbyInfo?.rainPlan ? '雨の日注意' : '',
+  venue.nearbyInfo?.afterShowRoute ? '終演後注意' : '',
+  venue.nearbyInfo?.nightSafety ? '女性ソロ注意' : '',
+  venue.nearbyInfo?.soloBeginnerNote ? '初参戦向き' : '',
+  venue.baggageGuide?.suitcase || venue.nearbyInfo?.tripNote?.includes('キャリー') ? 'キャリー非推奨' : '',
+].filter(Boolean);
+const cardFilterTags = [...new Set([...publicTipTags, ...derivedTipTags])];
 const visibleTipTags = publicTipTags.slice(0, 3);
 const hiddenTipCount = Math.max(publicTipTags.length - visibleTipTags.length, 0);
 
@@ -175,12 +205,20 @@ const logisticsSearchText = isArchive ? [] : [
   ...(venue.nearbyInfo?.convenienceStores ?? []),
   ...(venue.nearbyInfo?.stationLockers ?? []),
   ...(venue.nearbyInfo?.restrooms ?? []),
+  ...(venue.nearbyInfo?.places ?? []).map((place) => `${place.name} ${place.directionNote ?? ''}`),
   venue.nearbyInfo?.waitingRule,
   venue.nearbyInfo?.rainPlan,
   venue.nearbyInfo?.soloBeginnerNote,
+  venue.nearbyInfo?.tripNote,
+  venue.nearbyInfo?.baggageFlow,
   venue.nearbyInfo?.stationLocker,
   venue.nearbyInfo?.waitingSpot,
   venue.nearbyInfo?.afterShowRoute,
+  venue.nearbyInfo?.dayFlow?.stationArrival,
+  venue.nearbyInfo?.dayFlow?.baggageDrop,
+  venue.nearbyInfo?.dayFlow?.beforeEntry,
+  venue.nearbyInfo?.dayFlow?.entry,
+  venue.nearbyInfo?.dayFlow?.afterShow,
   ...(venue.practicalSummary?.points ?? []),
 ].filter(isUseful);
 
@@ -199,6 +237,7 @@ const searchText = [
   baggageOneLine,
   ...logisticsSearchText,
   ...publicTipTags,
+  ...derivedTipTags,
 ]
   .filter(Boolean)
   .map(cleanText)
@@ -232,6 +271,10 @@ const filterTags = [
   !isArchive && venue.lockerInfo ? 'locker-fact' : '',
   !isArchive && venue.nearbyInfo ? 'nearby-fact' : '',
   !isArchive && venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
+  !isArchive && venue.nearbyInfo?.convenienceStores?.length ? 'コンビニ近い' : '',
+  !isArchive && venue.nearbyInfo?.waitingRule ? '待機注意' : '',
+  !isArchive && venue.nearbyInfo?.rainPlan ? '雨の日注意' : '',
+  !isArchive && venue.nearbyInfo?.nightSafety ? '女性ソロ注意' : '',
   !isArchive && (venue.lockerInfo?.venueLockerStatus === 'none' || venue.lockerInfo?.venueLockerStatus === 'limited') ? 'locker-attention' : '',
   !isArchive && (venue.cloakInfo?.cloakStatus === 'available' || venue.cloakInfo?.cloakStatus === 'event_dependent') ? 'cloak-available' : '',
   venue.area === '横浜' || venue.areaGroup?.includes('yokohama') ? 'yokohama' : '',
@@ -257,7 +300,7 @@ const filterTags = [
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
   data-locker-rank={lockerSortRank[lockerState] ?? 0}
-  data-tags={publicTipTags.join('|')}
+  data-tags={cardFilterTags.join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}
 >
@@ -275,7 +318,7 @@ const filterTags = [
 
   <div class="mt-4 rounded-lg border border-amber/20 bg-black/25 p-3">
     <p class="gothic-label">30秒結論</p>
-    <p class="mt-2 text-sm font-black leading-7 text-mist">{baggageOneLine}</p>
+    <p class="mt-2 text-sm font-black leading-7 text-mist">{shortenText(baggageOneLine, compact ? 64 : 88)}</p>
   </div>
 
   {quickRows.length > 0 && (
@@ -283,7 +326,7 @@ const filterTags = [
       {quickRows.map(([label, value]) => (
         <div class="grid grid-cols-[auto_1fr] gap-3 rounded-md border border-amber/20 bg-black/25 px-3 py-2">
           <dt class="text-muted">{label}</dt>
-          <dd class="min-w-0 text-right font-black leading-6 text-mist">{cleanText(value)}</dd>
+          <dd class="min-w-0 text-right font-black leading-6 text-mist">{shortenText(value, 62)}</dd>
         </div>
       ))}
     </dl>

@@ -190,6 +190,19 @@ const firstUsefulList = (...values: unknown[]) => {
   return [];
 };
 
+const placeValues = (type: string) =>
+  (venue.nearbyInfo?.places ?? [])
+    .filter((place) => place.type === type)
+    .map((place) => {
+      const notes = [
+        place.directionNote,
+        typeof place.walkMinutes === 'number' ? `徒歩目安${place.walkMinutes}分` : '',
+        typeof place.distanceMeters === 'number' ? `約${place.distanceMeters}m` : '',
+      ].filter(Boolean);
+      return notes.length > 0 ? `${place.name}（${notes.join('・')}）` : place.name;
+    })
+    .filter(isUsefulText);
+
 const isPublicSource = (source: SourceLink) => {
   const type = source.type ?? 'unknown';
   const url = normalizeSourceUrl(source.url).toLowerCase();
@@ -299,7 +312,7 @@ const archiveSummary = '閉館アーカイブのため、現在利用前提の�
 const rawSummaryHeadline = isArchive ? archiveSummary : venue.practicalSummary?.headline || '';
 const summaryHeadline = isArchive || isUsefulText(rawSummaryHeadline) ? cleanText(rawSummaryHeadline) : '';
 const summaryPoints = isArchive ? [] : (venue.practicalSummary?.points ?? []).map(cleanText).filter(isUsefulText);
-const sourceLinks = dedupeSourceLinks((venue.sourceLinks ?? []).filter(isPublicSource));
+const sourceLinks = dedupeSourceLinks(((venue.publicSources ?? venue.sourceLinks) ?? []).filter(isPublicSource));
 
 const title = isArchive
   ? `${venue.name}の閉館アーカイブ｜推し活遠征ナビ`
@@ -317,6 +330,18 @@ const baggageRows = isArchive ? [] : [
   ['キャリーありの日', venue.baggageGuide?.suitcase || venue.baggageDecision?.suitcase],
   ['物販後に荷物が増える日', venue.baggageGuide?.afterMerch || venue.baggageDecision?.afterMerch],
   ['良番の日', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
+  ['雨の日', venue.dayDecisionGuide?.rainyDay || venue.nearbyInfo?.rainPlan || venue.nearbyInfo?.rainShelter],
+  ['終演後に急ぐ日', venue.dayDecisionGuide?.hurryAfterShowDay || venue.nearbyInfo?.afterShowRoute],
+].filter(([, text]) => isUsefulText(text));
+
+const dayFlowRows = isArchive ? [] : [
+  ['駅到着', venue.nearbyInfo?.dayFlow?.stationArrival || venue.nearbyInfo?.arrivalRoute],
+  ['荷物を減らす', venue.nearbyInfo?.dayFlow?.baggageDrop || venue.nearbyInfo?.baggageFlow],
+  ['開場前', venue.nearbyInfo?.dayFlow?.beforeEntry || venue.nearbyInfo?.waitingRule || venue.nearbyInfo?.waitingSpot],
+  ['入場直前', venue.nearbyInfo?.dayFlow?.entry || firstUsefulList(venue.nearbyInfo?.restrooms, venue.nearbyInfo?.restroomBeforeEntry)[0]],
+  ['公演中', venue.nearbyInfo?.dayFlow?.duringShow],
+  ['終演後', venue.nearbyInfo?.dayFlow?.afterShow || venue.nearbyInfo?.afterShowRoute],
+  ['終電・夜行前', venue.nearbyInfo?.dayFlow?.lastTrainNote || venue.nearbyInfo?.tripNote],
 ].filter(([, text]) => isUsefulText(text));
 
 const lockerRows = isArchive ? [] : [
@@ -346,15 +371,27 @@ const cloakRows = isArchive ? [] : [
 
 const nearbyRows = isArchive ? [] : [
   { label: '最寄出口', values: firstUsefulList(venue.nearbyInfo?.nearestExit) },
-  { label: '最寄コンビニ', values: firstUsefulList(venue.nearbyInfo?.convenienceStores, venue.nearbyInfo?.nearestConvenienceStore, venue.nearbyInfo?.convenienceStore) },
-  { label: '駅ロッカー候補', values: firstUsefulList(venue.nearbyInfo?.stationLockers, venue.nearbyInfo?.stationLocker) },
+  { label: '近いコンビニ', values: firstUsefulList(placeValues('convenience_store'), venue.nearbyInfo?.convenienceStores, venue.nearbyInfo?.nearestConvenienceStore, venue.nearbyInfo?.convenienceStore) },
+  { label: '駅ロッカー候補', values: firstUsefulList(placeValues('station_locker'), venue.nearbyInfo?.stationLockers, venue.nearbyInfo?.stationLocker) },
   { label: '開場前の待機場所', values: firstUsefulList(venue.nearbyInfo?.waitingRule, venue.nearbyInfo?.waitingSpot) },
-  { label: 'トイレ', values: firstUsefulList(venue.nearbyInfo?.restrooms, venue.nearbyInfo?.restroomBeforeEntry) },
+  { label: 'トイレ候補', values: firstUsefulList(placeValues('restroom'), venue.nearbyInfo?.restrooms, venue.nearbyInfo?.restroomBeforeEntry) },
   { label: '雨の日', values: firstUsefulList(venue.nearbyInfo?.rainPlan, venue.nearbyInfo?.rainShelter) },
   { label: '終演後の帰り方', values: firstUsefulList(venue.nearbyInfo?.afterShowRoute) },
   { label: '夜道・女性ソロ注意', values: firstUsefulList(venue.nearbyInfo?.nightSafety) },
-  { label: '初参戦者向け注意', values: firstUsefulList(venue.nearbyInfo?.soloBeginnerNote, venue.beginnerOneLine) },
 ].filter((row) => row.values.length > 0);
+
+const beginnerRows = isArchive ? [] : [
+  ['初参戦メモ', venue.nearbyInfo?.soloBeginnerNote || venue.beginnerOneLine],
+  ['一人参戦', venue.nearbyInfo?.nightSafety || venue.soloOneLine || venue.soloStrategy],
+].filter(([, text]) => isUsefulText(text));
+
+const tripRows = isArchive ? [] : [
+  ['遠征者メモ', venue.nearbyInfo?.tripNote],
+  ['キャリーケース', venue.baggageGuide?.suitcase || venue.carryCaseWarning],
+  ['物販で荷物が増える日', venue.baggageGuide?.afterMerch || venue.nearbyInfo?.baggageFlow],
+  ['終電・夜行バス前', venue.nearbyInfo?.dayFlow?.lastTrainNote || venue.afterShowStrategy],
+  ['雨の日の荷物', venue.nearbyInfo?.rainPlan || venue.badWeatherNote],
+].filter(([, text]) => isUsefulText(text));
 
 const unknownRows = isArchive ? [] : [
   locker?.venueLockerStatus === 'unknown' ? '会場内ロッカー' : '',
@@ -407,21 +444,24 @@ const unknownRows = isArchive ? [] : [
         <>
       <section class="gothic-card rounded-xl p-5 md:p-6">
         <div class="section-title">
-          <p>Today</p>
-          <h2>今日の動き方</h2>
-          <p>荷物量、物販予定、整理番号で先に動きを決めておくと、開場前に迷いにくくなります。</p>
+          <p>Flow</p>
+          <h2>当日の流れ</h2>
+          <p>駅に着いてから終演後に戻るまで、初めてでも迷いにくい順番で確認します。</p>
         </div>
-        {baggageRows.length > 0 ? (
-          <div class="today-move-grid">
-            {baggageRows.map(([label, text]) => (
-              <article class="today-move-card">
-                <p class="gothic-label">{label}</p>
-                <p>{cleanText(text)}</p>
-              </article>
+        {dayFlowRows.length > 0 ? (
+          <ol class="grid gap-3">
+            {dayFlowRows.map(([label, text], index) => (
+              <li class="grid gap-3 rounded-md border border-amber/20 bg-black/25 p-4 sm:grid-cols-[auto_1fr]">
+                <span class="gothic-chip inline-flex size-9 items-center justify-center rounded-md text-sm font-black">{index + 1}</span>
+                <div>
+                  <p class="font-classical text-base font-black text-mist">{label}</p>
+                  <p class="mt-1 text-sm leading-7 text-muted">{cleanText(text)}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         ) : (
-          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">今日の動き方は確認中です。</p>
+          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">当日の流れは確認中です。</p>
         )}
       </section>
 
@@ -450,6 +490,26 @@ const unknownRows = isArchive ? [] : [
           </dl>
         ) : (
           <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">会場周辺クイック情報は確認中です。</p>
+        )}
+      </section>
+
+      <section class="gothic-card rounded-xl p-5 md:p-6">
+        <div class="section-title">
+          <p>Today</p>
+          <h2>今日の動き方</h2>
+          <p>荷物量、物販予定、整理番号、雨、終演後の予定で先に動きを決めておきます。</p>
+        </div>
+        {baggageRows.length > 0 ? (
+          <div class="today-move-grid">
+            {baggageRows.map(([label, text]) => (
+              <article class="today-move-card">
+                <p class="gothic-label">{label}</p>
+                <p>{cleanText(text)}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">今日の動き方は確認中です。</p>
         )}
       </section>
 
@@ -492,6 +552,49 @@ const unknownRows = isArchive ? [] : [
           <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">ロッカー・クロークの具体情報は確認中です。</p>
         )}
       </section>
+
+      <MonetizationBox
+        title="この会場へ行く前に用意すると安心なもの"
+        lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
+      />
+
+      {(beginnerRows.length > 0 || tripRows.length > 0) && (
+        <section class="gothic-card rounded-xl p-5 md:p-6">
+          <div class="section-title">
+            <p>Memo</p>
+            <h2>初参戦・遠征者メモ</h2>
+            <p>初めて行く人や、キャリー・宿泊・終電が絡む人向けの注意点です。</p>
+          </div>
+          <div class="grid gap-4 lg:grid-cols-2">
+            {beginnerRows.length > 0 && (
+              <div>
+                <h3 class="font-classical text-xl font-black text-mist">初参戦メモ</h3>
+                <dl class="mt-4 grid gap-3">
+                  {beginnerRows.map(([label, text]) => (
+                    <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+                      <dt class="gothic-label">{label}</dt>
+                      <dd class="mt-2 text-sm leading-7 text-mist">{cleanText(text)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+            {tripRows.length > 0 && (
+              <div>
+                <h3 class="font-classical text-xl font-black text-mist">遠征者メモ</h3>
+                <dl class="mt-4 grid gap-3">
+                  {tripRows.map(([label, text]) => (
+                    <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+                      <dt class="gothic-label">{label}</dt>
+                      <dd class="mt-2 text-sm leading-7 text-mist">{cleanText(text)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
         </>
       )}
@@ -560,11 +663,6 @@ const unknownRows = isArchive ? [] : [
           このページでは公演名、出演者、日程、チケット状況を掲載しません。最新の公演情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。
         </p>
       </div>
-
-      <MonetizationBox
-        title="この会場へ行く前に用意しておくと安心なもの"
-        lead="物販・雨・終演後移動がある日は、荷物を減らしつつ必要なものだけ持つのがおすすめです。"
-      />
     </aside>
   </section>
   <RelatedGuideLinks title="この会場へ行く前にあわせて確認" />

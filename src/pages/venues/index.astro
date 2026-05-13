@@ -46,39 +46,33 @@ const affinityOptions = [
 
 const quickChips = [
   { label: '東京', kind: 'region', value: '東京' },
-  { label: '神奈川', kind: 'region', value: '神奈川' },
-  { label: '大阪', kind: 'prefecture', value: '大阪府' },
-  { label: '名古屋', kind: 'query', value: '名古屋' },
   { label: '池袋', kind: 'query', value: '池袋' },
   { label: '渋谷', kind: 'query', value: '渋谷' },
   { label: '新宿', kind: 'query', value: '新宿' },
-  { label: '横浜', kind: 'query', value: '横浜' },
   { label: '小規模', kind: 'type', value: 'small_livehouse' },
-  { label: '中規模', kind: 'type', value: 'mid_livehouse' },
-  { label: '大型', kind: 'type', value: 'large_livehouse' },
-  { label: '推し活向き高', kind: 'affinity', value: 'high' },
-  { label: '小規模現場向き', kind: 'minor', value: 'true' },
-  { label: 'ロッカー注意', kind: 'tag', value: 'ロッカー注意' },
+  { label: 'ロッカーあり', kind: 'tag', value: 'ロッカーあり' },
+  { label: 'クロークあり', kind: 'tag', value: 'クロークあり' },
   { label: '駅ロッカー推奨', kind: 'tag', value: '駅ロッカー推奨' },
-  { label: 'クローク確認', kind: 'tag', value: 'クローク確認' },
-  { label: 'ぼっち参戦向き', kind: 'tag', value: 'ぼっち参戦向き' },
+  { label: 'コンビニ近い', kind: 'tag', value: 'コンビニ近い' },
+  { label: '待機注意', kind: 'tag', value: '待機注意' },
+  { label: '雨の日注意', kind: 'tag', value: '雨の日注意' },
   { label: '終演後注意', kind: 'tag', value: '終演後注意' },
-  { label: '歌舞伎町エリア注意', kind: 'tag', value: '歌舞伎町エリア注意' },
-  { label: '渋谷人混み注意', kind: 'tag', value: '渋谷人混み注意' },
+  { label: '女性ソロ注意', kind: 'tag', value: '女性ソロ注意' },
+  { label: '初参戦向き', kind: 'tag', value: '初参戦向き' },
+  { label: 'キャリー非推奨', kind: 'tag', value: 'キャリー非推奨' },
 ];
 
 const shortcuts = [
-  { label: '東京の小規模会場', q: '', region: '東京', type: 'small_livehouse' },
+  { label: '東京10会場から探す', q: '', region: '東京', type: 'small_livehouse' },
   { label: '池袋周辺', q: '池袋' },
   { label: '渋谷周辺', q: '渋谷' },
   { label: '新宿周辺', q: '新宿' },
-  { label: '横浜・神奈川', q: '', region: '神奈川' },
-  { label: '大阪・心斎橋', q: '大阪 心斎橋' },
-  { label: '名古屋', q: '名古屋' },
-  { label: 'ロッカー注意の会場', tag: 'ロッカー注意' },
-  { label: 'ぼっち参戦向き', tag: 'ぼっち参戦向き' },
-  { label: '大箱・ホール', type: 'large_livehouse,hall' },
-  { label: 'アーカイブ除外', archive: '0' },
+  { label: '駅ロッカー推奨', tag: '駅ロッカー推奨' },
+  { label: 'コンビニ近い', tag: 'コンビニ近い' },
+  { label: '待機注意', tag: '待機注意' },
+  { label: '終演後注意', tag: '終演後注意' },
+  { label: '女性ソロ注意', tag: '女性ソロ注意' },
+  { label: 'キャリー非推奨', tag: 'キャリー非推奨' },
 ];
 ---
 
@@ -88,9 +82,9 @@ const shortcuts = [
   <section class="container-navi py-8">
     <div class="max-w-3xl">
       <p class="gothic-label">Venue Search</p>
-      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">推し活会場を探す</h1>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">当日の動き方から会場を探す</h1>
       <p class="mt-4 text-base leading-8 text-muted md:text-lg">
-        会場名、エリア、駅名、地域、注意タグから、ライブや推し活イベントで使われる会場を探せます。公演情報は掲載せず、会場周辺情報と参戦準備に特化しています。
+        会場名、駅名、エリア、困りごとから、最寄出口、コンビニ、待機場所、雨の日、終演後の帰り方が分かる会場を探せます。
       </p>
     </div>
     <div class="mt-6">
@@ -123,7 +117,7 @@ const shortcuts = [
             id="venue-search-input"
             name="q"
             type="search"
-            placeholder="会場名・エリア・駅名で検索"
+            placeholder="会場名・駅名・エリア・困りごとで検索（池袋、渋谷、ロッカー、コンビニ、雨、終演後、一人参戦）"
             autocomplete="off"
             data-search-input
           />

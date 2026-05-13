@@ -97,19 +97,7 @@ const defaultBaggageGuide = (venue) => ({
   goodTicketNumber: venue.baggageDecision?.goodTicketNumber || '良番なら荷物処理を先に終わらせ、呼び出し前に身軽にしておく。',
 });
 
-const compactInfo = (entries) =>
-  Object.fromEntries(entries.filter(([, value]) => typeof value === 'string' && value.trim()));
-
-const defaultNearbyInfo = (venue) => compactInfo([
-  ['nearestConvenienceStore', venue.convenienceNote],
-  ['stationLocker', venue.stationLockerNote || venue.lockerAlternativeNote],
-  ['waitingSpot', venue.timeKillingNote || venue.waitingNote],
-  ['rainShelter', venue.badWeatherNote || venue.rainNote],
-  ['restroomBeforeEntry', venue.restroomNote],
-  ['cashAndCoin', venue.cashNote || venue.coinNote],
-  ['afterShowRoute', venue.afterShowStrategy || venue.returnNote],
-  ['nightSafety', venue.nightSafetyNote],
-]);
+const defaultNearbyInfo = () => ({});
 
 const defaultBlogResearch = (venue) => ({
   status: 'not_started',

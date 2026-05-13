@@ -4,25 +4,25 @@ import BaggageDiagnosis from '@components/BaggageDiagnosis.astro';
 import Hero from '@components/Hero.astro';
 import LinkCard from '@components/LinkCard.astro';
 import MonetizationBox from '@components/MonetizationBox.astro';
-import NoticeBox from '@components/NoticeBox.astro';
 import SectionTitle from '@components/SectionTitle.astro';
 import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 
-const title = '推し活遠征ナビ｜小規模会場のロッカー・荷物・待機場所ガイド';
-const description = '元バンドマンの管理人が、各地のライブハウスや小規模現場の情報を随時追加する推し活遠征ガイド。ロッカー、荷物、待機場所、雨の日、終演後の動き方をまとめます。';
+const title = '推し活遠征ナビ｜小規模ライブハウスの行き方・ロッカー・コンビニ・帰り方ガイド';
+const description = '小規模ライブハウスや推し活現場へ行く前に確認したい、最寄出口、ロッカー、クローク、近くのコンビニ、待機場所、雨の日、終演後の帰り方、一人参戦の不安をまとめる実用ナビです。';
 
 const prioritySlugs = [
-  'ikebukuro-edge',
   'ikebukuro-blackhole',
-  'sugamo-shishio',
+  'ikebukuro-edge',
   'shibuya-rex',
   'takadanobaba-club-phase',
-  'wildside-tokyo',
   'higashi-koenji-20000v',
-  'music-lab-hamashobo',
-  'yokohama-baysis',
+  'shimokitazawa-shangrila',
+  'sugamo-shishio',
+  'wildside-tokyo',
+  'shinjuku-club-science',
+  'ueno-otokoyokocho',
 ];
 
 const priorityVenues = (venues as Venue[])
@@ -31,16 +31,22 @@ const priorityVenues = (venues as Venue[])
 
 const mainLinks = [
   {
+    title: '会場名で探す',
+    description: '会場名、駅名、エリア、困りごとから、当日の動き方が分かる会場ページを探せます。',
+    href: '/venues',
+    cta: '会場一覧へ',
+  },
+  {
+    title: 'エリアで探す',
+    description: '池袋、渋谷、新宿、下北沢など、現場が多いエリアから会場を確認できます。',
+    href: '/areas',
+    cta: 'エリア一覧へ',
+  },
+  {
     title: '今週末のライブ・イベントを探す',
     description: 'チケットサイト、公式スケジュール、会場公式への入口をまとめています。',
     href: '/weekend',
     cta: '公式リンクを見る',
-  },
-  {
-    title: '会場攻略を見る',
-    description: 'ロッカー、クローク、待機場所、雨の日、終演後の帰り方を会場ごとに確認できます。',
-    href: '/venues',
-    cta: '会場一覧へ',
   },
   {
     title: '初参戦ガイドを見る',
@@ -66,6 +72,18 @@ const mainLinks = [
     href: '/guides/livehouse-tips',
     cta: '豆知識を見る',
   },
+];
+
+const worryTags = [
+  { label: 'ロッカー', href: '/venues?q=ロッカー' },
+  { label: 'コンビニ', href: '/venues?q=コンビニ' },
+  { label: '待機場所', href: '/venues?q=待機' },
+  { label: '雨の日', href: '/venues?q=雨' },
+  { label: '終演後', href: '/venues?q=終演後' },
+  { label: '一人参戦', href: '/venues?q=一人参戦' },
+  { label: 'キャリーケース', href: '/venues?q=キャリー' },
+  { label: '良番', href: '/venues?q=良番' },
+  { label: '物販', href: '/venues?q=物販' },
 ];
 
 const seoLinks = [
@@ -117,29 +135,39 @@ const seoLinks = [
 <Layout title={title} description={description}>
   <Hero
     title="推し活遠征ナビ"
-    catchcopy="現場情報は公式で探す。遠征と会場準備の不安はここで減らす。"
-    description="ライブ、アイドル現場、アニメ・漫画系イベント、舞台、リリースイベントへ行く前に確認したい、会場周辺情報、ロッカー、クローク、待機場所、コンビニ、終演後の帰り方、初参戦の不安、遠征費をまとめる実用ナビです。元バンドマンの管理人が、独断と偏見も交えながら各地のライブハウスや小規模現場の情報を随時追加し、推し活遠征をサポートします。"
+    catchcopy="小規模ライブハウスや推し活現場へ行く前に、当日の動き方を確認する。"
+    description="荷物・ロッカー・コンビニ・待機場所・終演後の帰り方を、初めて行く人向けに整理しています。公演情報は公式で確認し、このサイトでは会場まわりの不安を減らします。"
     actions={[
-      { href: '/weekend', label: '今週末のライブ・イベントを探す', primary: true },
-      { href: '/venues', label: '会場攻略を見る' },
-      { href: '/guides/small-venue', label: '初参戦ガイド' },
-      { href: '/tools/budget', label: '遠征費シミュレーター' },
+      { href: '/venues', label: '会場名で探す', primary: true },
+      { href: '/areas', label: 'エリアで探す' },
+      { href: '/guides/small-venue', label: '初参戦ガイドを見る' },
+      { href: '/tools/budget', label: '遠征費を計算する' },
     ]}
   />
 
+  <section class="container-navi py-6">
+    <div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="rounded-lg border border-amber/20 bg-black/25 p-4">
+        <p class="gothic-label">Search</p>
+        <h2 class="font-classical mt-2 text-xl font-black text-mist">会場名・エリア・困りごとで探す</h2>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <a class="gothic-button focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href="/venues">会場名で探す</a>
+          <a class="gothic-button-secondary focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black" href="/areas">エリアで探す</a>
+        </div>
+      </div>
+      <div class="rounded-lg border border-amber/20 bg-black/25 p-4">
+        <p class="gothic-label">Trouble</p>
+        <h2 class="font-classical mt-2 text-xl font-black text-mist">困りごとで探す</h2>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {worryTags.map((tag) => (
+            <a class="gothic-chip rounded-md px-3 py-1.5 text-xs font-black hover:border-amber/70" href={tag.href}>{tag.label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <BaggageDiagnosis />
-
-  <section class="container-navi py-8">
-    <MonetizationBox />
-  </section>
-
-  <section class="container-navi py-10">
-    <NoticeBox title="このサイトの役割" tone="warning">
-      <p>
-        公演・イベント情報、チケット情報は必ず公式サイト、チケットサイト、会場公式スケジュールで確認してください。当サイトは、元バンドマンの管理人が独断と偏見も交えながら、会場周辺情報、荷物対策、ロッカー・クローク、終演後の帰り方を補助するサイトです。
-      </p>
-    </NoticeBox>
-  </section>
 
   <section class="container-navi py-8">
     <SectionTitle
@@ -166,12 +194,16 @@ const seoLinks = [
   <section class="container-navi py-8">
     <SectionTitle
       eyebrow="Venues"
-      title="小規模現場で確認候補になりやすい会場"
-      lead="ライブハウスやイベントスペースなど、荷物・待機場所・帰り方の確認が必要になりやすい現役会場を中心に表示しています。閉館済み会場はおすすめ枠に出しません。"
+      title="まず高密度にした東京10会場"
+      lead="会場数よりも、最寄出口、コンビニ、待機場所、雨の日、終演後導線まで具体的に確認できる東京の主要小規模会場を優先表示しています。"
     />
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {priorityVenues.map((venue) => <VenueCard venue={venue} compact />)}
     </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <MonetizationBox />
   </section>
 
   <section class="container-navi py-4">

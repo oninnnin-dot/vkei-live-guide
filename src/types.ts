@@ -222,15 +222,63 @@ export type BaggageGuide = {
   points?: string[];
 };
 
+export type NearbyPlaceType =
+  | 'convenience_store'
+  | 'cafe'
+  | 'station_locker'
+  | 'restroom'
+  | 'station_exit'
+  | 'landmark'
+  | 'hotel'
+  | 'other';
+
+export type NearbyPlaceSourceType =
+  | 'official'
+  | 'station_official'
+  | 'rail_official'
+  | 'map'
+  | 'venue_database'
+  | 'ticket_site'
+  | 'supporting_reference'
+  | 'internal_note'
+  | 'unknown';
+
+export type NearbyPlace = {
+  name: string;
+  type: NearbyPlaceType;
+  walkMinutes?: number;
+  distanceMeters?: number;
+  directionNote?: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+  sourceType?: NearbyPlaceSourceType;
+  lastCheckedAt?: string;
+};
+
+export type VenueDayFlow = {
+  stationArrival?: string;
+  baggageDrop?: string;
+  beforeEntry?: string;
+  entry?: string;
+  duringShow?: string;
+  afterShow?: string;
+  lastTrainNote?: string;
+};
+
 export type NearbyInfo = {
   nearestExit?: string;
+  arrivalRoute?: string;
   convenienceStores?: string[];
   cafes?: string[];
   stationLockers?: string[];
   restrooms?: string[];
+  places?: NearbyPlace[];
   waitingRule?: string;
   rainPlan?: string;
   soloBeginnerNote?: string;
+  tripNote?: string;
+  baggageFlow?: string;
+  dayFlow?: VenueDayFlow;
   nearestConvenienceStore?: string;
   convenienceStore?: string;
   stationLocker?: string;
@@ -277,6 +325,14 @@ export type SourceLink = {
     | 'venue_database'
     | 'review_site';
   checkedAt: string;
+};
+
+export type InternalResearchSource = {
+  label: string;
+  url?: string;
+  type: 'personal_blog' | 'blog' | 'note' | 'sns' | 'q_and_a' | 'review_site' | 'mixed' | 'unknown';
+  checkedAt?: string;
+  note?: string;
 };
 
 export type Venue = {
@@ -369,6 +425,8 @@ export type Venue = {
   blogResearch?: BlogResearch;
   dayDecisionGuide?: DayDecisionGuide;
   sourceLinks?: SourceLink[];
+  publicSources?: SourceLink[];
+  internalResearchSources?: InternalResearchSource[];
   researchStatus?: string;
   searchedSources?: Array<{
     query: string;
