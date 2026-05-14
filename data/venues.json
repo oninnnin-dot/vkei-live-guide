@@ -3508,10 +3508,9 @@
     "nightSafetyNote": "夜は駅までの道を事前に確認しておくと安心。",
     "lockerNote": "小箱公演では駅ロッカーや手荷物預けの候補を持つ。",
     "baggageNote": "小さめバッグで動くのがおすすめ。",
-    "convenienceNote": "周辺コンビニは地図アプリで事前確認推奨。",
-    "waitingNote": "住宅・オフィスが混じるエリアのため会場前の長時間待機は避ける。",
-    "rainNote": "駅近でも折りたたみ傘が扱いやすい。",
-    "returnNote": "丸ノ内線利用なら比較的戻りやすい。",
+    "waitingNote": "近隣カフェや駅側で調整し、会場前で長く固まらない。新宿三丁目C7と新宿御苑前3番のどちらで戻るか先に決める。",
+    "rainNote": "地上歩行あり。雨の日は新宿三丁目駅または新宿御苑前駅側で身支度してから、整列直前に移動する。",
+    "returnNote": "終演後は新宿三丁目駅へ戻るのが分かりやすい。",
     "beginnerNote": "駅から近く初参戦でも動きやすい。",
     "ticketSearchLinks": [
       {
@@ -3606,7 +3605,7 @@
     "beginnerStrategy": "駅から近く初参戦でも動きやすい。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "小箱はトイレが少ない場合があります。開演直前や終演後の混雑を見込んで早めに済ませてください。",
+    "restroomNote": "新宿三丁目駅、新宿御苑前駅、近隣カフェ利用時の店内トイレ",
     "signalNote": "地下やビル内の会場では電波が弱い場合があります。電子チケットは入場前に表示確認してください。",
     "stairsNote": "地下への階段や通路は混みやすいため、入退場時は立ち止まらずスタッフ案内に従ってください。",
     "neighborhoodNote": "夜は駅までの道を事前に確認しておくと安心。",
@@ -3627,7 +3626,15 @@
       "新宿御苑前",
       "新宿三丁目",
       "耳栓候補",
-      "クローク確認"
+      "クローク確認",
+      "コンビニ近い",
+      "待機注意",
+      "終演後は大通り推奨",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "雨の日注意",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [
       "WildSideTokyo"
@@ -3695,24 +3702,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "新宿御苑前・新宿三丁目側のカフェや飲食店で時間調整。会場入口前に長く固まらない。",
+    "arrivalStrategy": "近隣カフェや駅側で調整し、会場前で長く固まらない。新宿三丁目C7と新宿御苑前3番のどちらで戻るか先に決める。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "新宿御苑前か新宿三丁目へ戻る。新宿駅まで歩く場合は夜道と疲労を見込む。",
-    "beginnerOneLine": "初めてなら、入口、整列場所、ドリンク代、荷物の逃がし先だけ押さえればかなり楽になる。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は駅出口近くや新宿三丁目側で待機してから移動する。",
-    "stationLockerNote": "新宿三丁目・新宿御苑前周辺ロッカーも候補。遠征荷物は駅側で処理。",
+    "afterShowStrategy": "終演後は新宿三丁目駅へ戻るのが分かりやすい。",
+    "beginnerOneLine": "電子チケットは入場前に表示しておく。",
+    "soloOneLine": "大通り優先で戻る。",
+    "badWeatherNote": "地上歩行あり。駅側で傘や荷物を整えてから移動する。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "設備詳細は確認中。新宿御苑前・新宿三丁目周辺または宿泊先で荷物を処理する。",
+      "headline": "新宿三丁目C7または新宿御苑前3番で着いて、駅側で荷物とトイレを済ませる。",
       "points": [
-        "ロッカー・クロークは断定しない",
-        "駅ロッカー先行で動く",
-        "キャリーは新宿側で処理する",
-        "夜は大通り経由で駅へ戻る"
+        "新宿三丁目C7、新宿御苑前3番を使う",
+        "新宿三丁目駅、新宿駅、新宿御苑前周辺のロッカーを候補にする",
+        "待機は会場前ではなく、駅周辺やカフェで調整",
+        "終演後は新宿三丁目駅へ戻るのが分かりやすい"
       ]
     },
     "blogSignals": [
@@ -3765,6 +3771,12 @@
         "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ WildSide Tokyo周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=WildSide+Tokyo+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -3880,46 +3892,200 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "新宿御苑前・新宿三丁目側のカフェや飲食店で時間調整。会場入口前に長く固まらない。",
+    "timeKillingNote": "会場前ではなく、駅周辺やカフェで調整する。",
     "lockerInfo": {
-      "venueLockerStatus": "unknown",
-      "venueLockerText": "公式本文でロッカーの明記は確認中。",
-      "lockerCountText": "確認中",
+      "venueLockerStatus": "limited",
+      "venueLockerText": "会場ロッカーは少数情報あり。大荷物は駅ロッカー先行。",
+      "lockerCountText": "少数。最新運用は当日確認。",
       "beforeEntryUse": "unknown",
       "afterEntryUse": "unknown",
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "設備詳細は確認中。新宿御苑前・新宿三丁目周辺または宿泊先で荷物を処理する。",
-      "sourceConfidence": "unknown",
-      "lastCheckedAt": "2026-05-07"
+      "bestMove": "新宿三丁目駅または新宿駅側で荷物を処理する。",
+      "sourceConfidence": "supporting_reference",
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
-      "cloakStatus": "unknown",
-      "cloakText": "公式本文でクロークの明記は確認中。公演ごとの案内を待つ。",
-      "priceText": "確認中",
-      "timingText": "確認中",
+      "cloakStatus": "none",
+      "cloakText": "常設クロークなし扱い。公演ごとの案内が出た場合のみ確認する。",
+      "priceText": "なし",
+      "timingText": "利用不可",
       "bagTypeText": "確認中",
-      "bestMove": "クロークを当てにせず、駅や宿泊先で荷物を減らす。案内が出た場合だけ補助的に使う。",
-      "sourceConfidence": "unknown",
-      "lastCheckedAt": "2026-05-07"
+      "bestMove": "クロークを当てにせず駅側で荷物を減らす。",
+      "sourceConfidence": "supporting_reference",
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのままでも対応しやすい。貴重品は体の前で管理する。",
-      "backpack": "リュックは駅ロッカー候補。フロアが詰まる公演では背負ったままにしない。",
-      "suitcase": "キャリーは新宿方面のロッカー、ホテル、荷物預かりを先に使う。",
-      "afterMerch": "物販後に増える荷物は、終演まで持てる量に抑えるか、駅ロッカーへ戻す動線を決める。",
-      "goodTicketNumber": "良番なら設備確認で迷わないよう、会場に着く前に荷物を減らす。"
+      "smallBag": "小さい荷物なら近隣カフェで整えてから会場へ向かう。",
+      "backpack": "リュックは新宿三丁目駅または新宿駅ロッカーへ。フロアでは身軽にする。",
+      "suitcase": "キャリーありの日は新宿駅側か宿泊先で先に処理する。",
+      "afterMerch": "物販後に荷物が増える日は駅ロッカーへ戻すか、終演まで持てる量にする。",
+      "goodTicketNumber": "良番の日は駅で荷物を処理し、整列直前までカフェ側で待つ。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "新宿御苑前・新宿三丁目周辺で飲み物や現金を準備してから向かう。",
-      "stationLocker": "駅ロッカー先行が安全。大荷物は新宿方面で処理すると選択肢が多い。",
-      "waitingSpot": "会場前で長く待たず、駅周辺や新宿側の屋内で時間調整する。",
-      "rainShelter": "雨の日は新宿三丁目方面の屋内や駅周辺で整列直前まで待つ。",
-      "restroomBeforeEntry": "駅や商業施設で先に済ませる。入場前に荷物とトイレで迷わない。",
-      "cashAndCoin": "ドリンク代用の現金を残す。ロッカー利用に備え小銭やIC残高も確認。",
-      "afterShowRoute": "終演後は新宿方面へ戻る人も多い。夜道は大通り経由で移動する。",
-      "nightSafety": "新宿エリアは夜も人通りが多いが、ぼっちは大通りと駅ルートを優先する。"
+      "nearestConvenienceStore": "ローソンストア100新宿一丁目店、セブンイレブン新宿1丁目北店、ファミリーマート靖国通り新宿五丁目店",
+      "stationLocker": "新宿三丁目駅",
+      "waitingSpot": "会場前ではなく、駅周辺やカフェで調整する。",
+      "rainShelter": "地上歩行あり。駅側で傘や荷物を整えてから移動する。",
+      "restroomBeforeEntry": "新宿三丁目駅",
+      "cashAndCoin": "ドリンク代と駅ロッカー用の現金・IC残高を残す。",
+      "afterShowRoute": "終演後は新宿三丁目駅へ戻るのが分かりやすい。",
+      "nightSafety": "大通り優先で戻る。",
+      "nearestExit": "新宿三丁目C7、新宿御苑前3番",
+      "convenienceStores": [
+        "ローソンストア100新宿一丁目店",
+        "セブンイレブン新宿1丁目北店",
+        "ファミリーマート靖国通り新宿五丁目店"
+      ],
+      "stationLockers": [
+        "新宿三丁目駅",
+        "新宿駅",
+        "新宿御苑前周辺"
+      ],
+      "waitingRule": "会場前ではなく、駅周辺やカフェで調整する。",
+      "restrooms": [
+        "新宿三丁目駅",
+        "新宿御苑前駅",
+        "近隣カフェ利用時の店内トイレ"
+      ],
+      "rainPlan": "地上歩行あり。駅側で傘や荷物を整えてから移動する。",
+      "soloBeginnerNote": "電子チケットは入場前に表示しておく。",
+      "cafes": [
+        "新宿三丁目駅周辺",
+        "新宿御苑前駅周辺",
+        "新宿一丁目周辺カフェ"
+      ],
+      "arrivalRoute": "新宿三丁目C7または新宿御苑前3番のどちらから向かうか決める。",
+      "tripNote": "キャリーは新宿駅大型ロッカー、宿泊先、荷物預かりへ。帰りは新宿三丁目方面を先に決める。",
+      "baggageFlow": "新宿三丁目駅、新宿駅、新宿御苑前周辺のロッカーを候補にし、会場前で荷物整理しない。",
+      "dayFlow": {
+        "stationArrival": "新宿三丁目C7または新宿御苑前3番のどちらから向かうか決める。",
+        "baggageDrop": "駅側で荷物を預け、トイレも済ませる。",
+        "beforeEntry": "会場前ではなく、駅周辺やカフェで調整する。",
+        "entry": "電子チケットは入場前に表示しておく。",
+        "afterShow": "終演後は新宿三丁目駅へ大通りで戻る。",
+        "lastTrainNote": "夜は大通り優先。新宿方面へ流れる場合も帰り道を先に決める。"
+      },
+      "places": [
+        {
+          "name": "新宿三丁目C7、新宿御苑前3番",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AEC7%E3%80%81%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91%E5%89%8D3%E7%95%AA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ローソンストア100新宿一丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%E3%82%B9%E3%83%88%E3%82%A2100%E6%96%B0%E5%AE%BF%E4%B8%80%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン新宿1丁目北店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%96%B0%E5%AE%BF1%E4%B8%81%E7%9B%AE%E5%8C%97%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート靖国通り新宿五丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E9%9D%96%E5%9B%BD%E9%80%9A%E3%82%8A%E6%96%B0%E5%AE%BF%E4%BA%94%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿三丁目駅",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿駅",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿御苑前周辺",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91%E5%89%8D%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿三丁目駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿御苑前駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91%E5%89%8D%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "近隣カフェ利用時の店内トイレ",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%BF%91%E9%9A%A3%E3%82%AB%E3%83%95%E3%82%A7%E5%88%A9%E7%94%A8%E6%99%82%E3%81%AE%E5%BA%97%E5%86%85%E3%83%88%E3%82%A4%E3%83%AC",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿三丁目駅周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE%E9%A7%85%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿御苑前駅周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91%E5%89%8D%E9%A7%85%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿一丁目周辺カフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%80%E4%B8%81%E7%9B%AE%E5%91%A8%E8%BE%BA%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -3934,15 +4100,43 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "会場ロッカー情報が割れるので、荷物ありなら駅ロッカー先行。",
-      "goodNumberDay": "良番はロッカー確認に時間を使わない。身軽で地下入口へ。",
-      "merchDay": "物販後に荷物が増えるなら、終演まで持てる量にするか駅ロッカーへ戻す。",
-      "rainyDay": "雨の日は新宿三丁目・御苑前側で待機。入口前待機を短く。",
-      "soloDay": "ぼっち参戦は新宿御苑前か新宿三丁目のどちらで帰るか先に決める。",
-      "hurryAfterShowDay": "急ぐ日は新宿駅徒歩ではなく、近い地下鉄駅を使う前提で帰る。"
+      "baggageDay": "リュックは新宿三丁目駅または新宿駅ロッカーへ。フロアでは身軽にする。",
+      "goodNumberDay": "良番の日は駅で荷物を処理し、整列直前までカフェ側で待つ。",
+      "merchDay": "物販後に荷物が増える日は駅ロッカーへ戻すか、終演まで持てる量にする。",
+      "rainyDay": "地上歩行あり。雨の日は新宿三丁目駅または新宿御苑前駅側で身支度してから、整列直前に移動する。",
+      "soloDay": "大通り優先。女性ソロは新宿三丁目駅方面へ直帰し、夜の新宿側へ無理に流れない。",
+      "hurryAfterShowDay": "終演後は新宿三丁目駅へ戻るのが短い。大通りを優先し、細い道で迷わない。"
     },
     "lockerAlternativeNote": "新宿三丁目・新宿御苑前周辺ロッカーも候補。遠征荷物は駅側で処理。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "新宿三丁目駅、新宿駅、新宿御苑前周辺",
+    "convenienceNote": "ローソンストア100新宿一丁目店、セブンイレブン新宿1丁目北店、ファミリーマート靖国通り新宿五丁目店",
+    "publicSources": [
+      {
+        "label": "WildSide Tokyo公式",
+        "url": "https://ws-tokyo.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveFans Wild Side Tokyo",
+        "url": "https://www.livefans.jp/venues/5040",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "ライブハウスナビ WildSide Tokyo",
+        "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ WildSide Tokyo周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=WildSide+Tokyo+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "www",
@@ -5719,10 +5913,9 @@
     "nightSafetyNote": "下北沢駅周辺は道が細い場所もあるため夜の導線確認推奨。",
     "lockerNote": "ロッカー・クロークは公演ごとの公式確認推奨。",
     "baggageNote": "駅周辺で預け先を考えておくと安心。",
-    "convenienceNote": "周辺コンビニは事前確認推奨。",
-    "waitingNote": "周辺店舗前での待機に注意。",
-    "rainNote": "雨の日は駅からの短い移動でも傘が混みやすい。",
-    "returnNote": "小田急線・井の頭線の終電と乗り換えを確認。",
+    "waitingNote": "南口商店街や駅前で調整し、整列時だけ会場前へ。細い道で荷物を広げない。",
+    "rainNote": "商店街に完全な屋根はない。雨の日は下北沢駅やミカン下北周辺で身支度して、濡れる時間を短くする。",
+    "returnNote": "終演後は来た道を戻って中央口・東口方面へ向かう。",
     "beginnerNote": "駅から近く動きやすいが会場入口確認推奨。",
     "ticketSearchLinks": [
       {
@@ -5816,7 +6009,7 @@
     "beginnerStrategy": "駅から近く動きやすいが会場入口確認推奨。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "下北沢駅、駅周辺商業施設、南口商店街周辺施設",
     "signalNote": "通信状況は会場や混雑で変わります。電子チケットと充電残量を事前確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "下北沢駅周辺は道が細い場所もあるため夜の導線確認推奨。",
@@ -5837,7 +6030,14 @@
       "ドリンク代700円",
       "クローク確認",
       "駅ロッカー推奨",
-      "物販後荷物注意"
+      "物販後荷物注意",
+      "コンビニ近い",
+      "待機注意",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "雨の日注意",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [],
     "prefecture": "東京都",
@@ -5868,24 +6068,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "下北沢はカフェ・飲食店が多い。会場前ではなく駅周辺で時間を潰す。",
+    "arrivalStrategy": "南口商店街や駅前で調整し、整列時だけ会場前へ。細い道で荷物を広げない。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後は下北沢駅方面へ人が流れる。駅ロッカーを使った場合は回収場所をメモ。",
-    "beginnerOneLine": "初めてなら、入口、整列場所、ドリンク代、荷物の逃がし先だけ押さえればかなり楽になる。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は駅周辺・商業施設・カフェで待つ。ビル奥階段への移動は整列時間に合わせる。",
-    "stationLockerNote": "下北沢駅周辺やドンキ前ロッカーの記事あり。大荷物は会場内ロッカーより外部ロッカーも候補。",
+    "afterShowStrategy": "終演後は来た道を戻って中央口・東口方面へ向かう。",
+    "beginnerOneLine": "駅や商業施設でトイレを済ませ、細い道では荷物を広げない。",
+    "soloOneLine": "飲み客が増えるため、迷わず駅直帰する。",
+    "badWeatherNote": "細い道で傘が邪魔になりやすい。駅側で整えてから移動する。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "ロッカー情報が割れているため、下北沢駅ロッカー先行が安全。クロークは確認中。",
+      "headline": "下北沢駅で荷物を処理し、南口商店街・駅前で待機。整列時だけ会場前へ。",
       "points": [
-        "イープラスではロッカーなし",
-        "補助確認メモでは135個情報",
-        "公式SYSTEM確認済み",
-        "クロークは確認中"
+        "小田急東口、井の頭線中央口を使う",
+        "下北沢駅側ロッカーを先に確認",
+        "待機は南口商店街、駅前、カフェで調整",
+        "終演後は来た道を戻って中央口・東口方面へ"
       ]
     },
     "blogSignals": [],
@@ -5907,6 +6106,12 @@
         "url": "https://eplus.jp/sf/venue/1550870",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 下北沢シャングリラ周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%A9+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -6011,7 +6216,7 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "下北沢はカフェ・飲食店が多い。会場前ではなく駅周辺で時間を潰す。",
+    "timeKillingNote": "南口商店街、駅前、カフェで調整し、整列時だけ会場前へ向かう。",
     "lockerInfo": {
       "venueLockerStatus": "none",
       "venueLockerText": "公式SYSTEMとイープラス会場情報を確認。イープラス会場情報ではロッカーなし。補助確認メモには135個情報もあるが、公式/準公式優先で断定は控える。",
@@ -6022,10 +6227,10 @@
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "情報が割れているため、良番や大荷物の日は下北沢駅ロッカー先行が安全。",
+      "bestMove": "中央口ロッカー先行。整列時だけ会場前へ。",
       "sourceConfidence": "supporting_reference",
       "checkedAt": "2026-05-09",
-      "lastCheckedAt": "2026-05-09"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "unknown",
@@ -6039,21 +6244,165 @@
       "lastCheckedAt": "2026-05-09"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品は体の前で管理する。",
-      "backpack": "情報が割れているため、良番や大荷物の日は下北沢駅ロッカー先行が安全。",
-      "suitcase": "キャリーケースは会場持ち込み前提にしない。駅ロッカー、宿泊先、荷物預かりを先に検討する。",
-      "afterMerch": "物販後に荷物が増える日は、終演まで持てる量に抑えるか、預け先を先に決める。",
-      "goodTicketNumber": "良番の日は入場直前にロッカーやクロークで迷わないよう、駅到着時点で荷物を処理する。"
+      "smallBag": "小さい荷物なら南口商店街で時間調整し、整列時だけ会場前へ。",
+      "backpack": "リュックは下北沢駅ロッカーへ。商店街移動で邪魔にならない量にする。",
+      "suitcase": "キャリーありの日は下北沢駅側か宿泊先で先に預ける。商店街で引きずらない。",
+      "afterMerch": "物販後に増える荷物は駅ロッカーへ戻すか、終演まで持てる量にする。",
+      "goodTicketNumber": "良番の日は中央口ロッカーを先に使い、整列時だけ会場前へ向かう。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "地図アプリで直前確認。",
-      "stationLocker": "荷物が多い日は最寄り駅や主要駅ロッカーも候補。",
-      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺で時間調整する。",
-      "rainShelter": "雨の日は駅周辺や商業施設など屋根のある場所で整える。",
-      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
-      "cashAndCoin": "ドリンク代・ロッカー用に現金と小銭を残す。",
-      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
-      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+      "nearestConvenienceStore": "ファミリーマート下北沢駅南店、セブンイレブン下北沢駅南口店、ローソン下北沢店",
+      "stationLocker": "下北沢駅側",
+      "waitingSpot": "南口商店街、駅前、カフェで調整し、整列時だけ会場前へ向かう。",
+      "rainShelter": "細い道で傘が邪魔になりやすい。駅側で整えてから移動する。",
+      "restroomBeforeEntry": "下北沢駅",
+      "cashAndCoin": "ドリンク代とロッカー用の現金・IC残高を残す。",
+      "afterShowRoute": "終演後は来た道を戻って中央口・東口方面へ向かう。",
+      "nightSafety": "飲み客が増えるため、迷わず駅直帰する。",
+      "nearestExit": "小田急東口、井の頭線中央口",
+      "convenienceStores": [
+        "ファミリーマート下北沢駅南店",
+        "セブンイレブン下北沢駅南口店",
+        "ローソン下北沢店"
+      ],
+      "stationLockers": [
+        "下北沢駅側",
+        "中央口・東口側ロッカー"
+      ],
+      "waitingRule": "南口商店街、駅前、カフェで調整し、整列時だけ会場前へ向かう。",
+      "restrooms": [
+        "下北沢駅",
+        "駅周辺商業施設",
+        "南口商店街周辺施設"
+      ],
+      "rainPlan": "細い道で傘が邪魔になりやすい。駅側で整えてから移動する。",
+      "soloBeginnerNote": "駅や商業施設でトイレを済ませ、細い道では荷物を広げない。",
+      "cafes": [
+        "南口商店街",
+        "下北沢駅前",
+        "駅周辺カフェ"
+      ],
+      "arrivalRoute": "下北沢駅に着いたら小田急東口・井の頭線中央口を確認する。",
+      "tripNote": "キャリーは宿泊先預けも検討。物販後に袋が増える日は駅ロッカー回収時間を見ておく。",
+      "baggageFlow": "下北沢駅側で荷物を処理する。土日祝はロッカーが埋まりやすい前提で動く。",
+      "dayFlow": {
+        "stationArrival": "下北沢駅に着いたら小田急東口・井の頭線中央口を確認する。",
+        "baggageDrop": "下北沢駅側ロッカーを先に見る。キャリーは宿泊先預けも検討する。",
+        "beforeEntry": "南口商店街、駅前、カフェで調整し、整列時だけ会場前へ向かう。",
+        "entry": "駅や商業施設でトイレを済ませ、細い道では荷物を広げない。",
+        "afterShow": "来た道を戻って中央口・東口方面へ向かう。",
+        "lastTrainNote": "夜は飲み客が増えるため駅直帰。終電前は寄り道しない。"
+      },
+      "places": [
+        {
+          "name": "小田急東口、井の頭線中央口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%94%B0%E6%80%A5%E6%9D%B1%E5%8F%A3%E3%80%81%E4%BA%95%E3%81%AE%E9%A0%AD%E7%B7%9A%E4%B8%AD%E5%A4%AE%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート下北沢駅南店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E4%B8%8B%E5%8C%97%E6%B2%A2%E9%A7%85%E5%8D%97%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン下北沢駅南口店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E4%B8%8B%E5%8C%97%E6%B2%A2%E9%A7%85%E5%8D%97%E5%8F%A3%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ローソン下北沢店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%E4%B8%8B%E5%8C%97%E6%B2%A2%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "下北沢駅側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E9%A7%85%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "中央口・東口側ロッカー",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%A4%AE%E5%8F%A3%E3%83%BB%E6%9D%B1%E5%8F%A3%E5%81%B4%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "下北沢駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "駅周辺商業施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A7%85%E5%91%A8%E8%BE%BA%E5%95%86%E6%A5%AD%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "南口商店街周辺施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%8F%A3%E5%95%86%E5%BA%97%E8%A1%97%E5%91%A8%E8%BE%BA%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "南口商店街",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%8F%A3%E5%95%86%E5%BA%97%E8%A1%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "下北沢駅前",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E9%A7%85%E5%89%8D",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "駅周辺カフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A7%85%E5%91%A8%E8%BE%BA%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -6062,12 +6411,12 @@
       "publicUrlPolicy": "確認メモ・note・参加記録のURLは公開しない。要点のみ独自表現で内部メモ扱い。"
     },
     "dayDecisionGuide": {
-      "baggageDay": "ロッカーあり情報はあるが、動員が多い日は駅周辺ロッカーも保険にする。",
-      "goodNumberDay": "良番は会場ロッカー探しに寄らず、外部ロッカーか小バッグで入場。",
-      "merchDay": "物販で大きくなるなら、駅ロッカーへ戻すか終演まで持てる量に絞る。",
-      "rainyDay": "雨の日はカフェ・駅周辺で待って、整列時間だけ会場へ。",
-      "soloDay": "ぼっち参戦は入口のビル奥階段を先に確認。駅近なので待機はしやすい。",
-      "hurryAfterShowDay": "急ぐ日はロッカー回収を少なく。下北沢駅の改札位置を先に決める。"
+      "baggageDay": "リュックは下北沢駅ロッカーへ。商店街移動で邪魔にならない量にする。",
+      "goodNumberDay": "良番の日は中央口ロッカーを先に使い、整列時だけ会場前へ向かう。",
+      "merchDay": "物販後に増える荷物は駅ロッカーへ戻すか、終演まで持てる量にする。",
+      "rainyDay": "商店街に完全な屋根はない。雨の日は下北沢駅やミカン下北周辺で身支度して、濡れる時間を短くする。",
+      "soloDay": "夜は飲み客が増えるため駅直帰。女性ソロは南口商店街から駅へ戻り、細い路地で迷わない。",
+      "hurryAfterShowDay": "終演後は来た道を戻って中央口・東口方面へ。ロッカー回収がある人は駅側へ直行する。"
     },
     "lockerAlternativeNote": "下北沢駅周辺やドンキ前ロッカーの記事あり。大荷物は会場内ロッカーより外部ロッカーも候補。",
     "venueExistenceConfidence": "official",
@@ -6078,7 +6427,35 @@
         "checkedAt": "2026-05-09"
       }
     ],
-    "researchStatus": "partial"
+    "researchStatus": "partial",
+    "stationLockerNote": "下北沢駅側、中央口・東口側ロッカー",
+    "convenienceNote": "ファミリーマート下北沢駅南店、セブンイレブン下北沢駅南口店、ローソン下北沢店",
+    "publicSources": [
+      {
+        "label": "下北沢シャングリラ公式",
+        "url": "https://www.shan-gri-la.jp/tokyo/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "下北沢シャングリラ公式SYSTEM",
+        "url": "https://www.shan-gri-la.jp/tokyo/system/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "イープラス 下北沢シャングリラ会場情報",
+        "url": "https://eplus.jp/sf/venue/1550870",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 下北沢シャングリラ周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%A9+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "ebisu",
@@ -6665,10 +7042,9 @@
     "nightSafetyNote": "高田馬場駅方面へ戻る導線を事前確認。夜も人通りはあるが、初参戦は駅までのルート確認推奨。",
     "lockerNote": "コインロッカーではなくクローク運用前提で考え、最新案内を確認。",
     "baggageNote": "大きい荷物はクロークまたは駅ロッカーへ。フロア持ち込みは最小限推奨。",
-    "convenienceNote": "駅周辺で飲み物や現金準備を済ませると安心。",
-    "waitingNote": "階段やビル周辺での待機は迷惑になりやすいため、公式整列案内に従う。",
-    "rainNote": "雨の日は整列・待機の負担が増えるため、折りたたみ傘と防水バッグ推奨。",
-    "returnNote": "終演後は高田馬場駅方面の導線と終電を事前確認。",
+    "waitingNote": "ビル周辺・階段付近にはたまらない。駅側やBIGBOX高田馬場周辺で整えて、橋を渡るのは整列直前にする。",
+    "rainNote": "駅から橋と地上移動がある。雨の日は高田馬場駅側で傘、靴、荷物を整えてから短時間で会場へ向かう。",
+    "returnNote": "終演後は高塚橋から高田馬場駅へ戻る。",
     "beginnerNote": "再入場・クローク・飲食物持込など公演ごとの注意を入場前に確認。",
     "ticketSearchLinks": [
       {
@@ -6779,7 +7155,7 @@
     "beginnerStrategy": "再入場・クローク・飲食物持込など公演ごとの注意を入場前に確認。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "高田馬場駅、BIGBOX高田馬場、早稲田口周辺施設",
     "signalNote": "通信状況は会場や混雑で変わります。電子チケットと充電残量を事前確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "高田馬場駅方面へ戻る導線を事前確認。夜も人通りはあるが、初参戦は駅までのルート確認推奨。",
@@ -6800,7 +7176,15 @@
       "再入場不可",
       "階段待機禁止",
       "駅ロッカー推奨",
-      "物販後荷物注意"
+      "物販後荷物注意",
+      "待機注意",
+      "終演後は大通り推奨",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "コンビニ近い",
+      "雨の日注意",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [],
     "prefecture": "東京都",
@@ -6914,24 +7298,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "公式でビル周辺・階段付近にたまらない注意あり。整列開始まで駅周辺のカフェ等で待つ。",
+    "arrivalStrategy": "ビル周辺・階段付近にはたまらない。駅側やBIGBOX高田馬場周辺で整えて、橋を渡るのは整列直前にする。",
     "entryStrategyPlain": "クロークを使うなら受付の流れを先に確認。階段付近に滞留しない。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後はクローク返却が重なる。急ぐ日は預ける荷物を減らすか、返却時間を見込む。",
-    "beginnerOneLine": "PHASEは公式注意事項がはっきりしている。再入場不可、クローク、飲食物持込不可だけ先に覚える。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日も階段周辺にたまらない。駅側で待って、整列案内に合わせる。",
-    "stationLockerNote": "会場ロッカーなし。高田馬場駅周辺ロッカーかクロークを使う。",
+    "afterShowStrategy": "終演後は高塚橋から高田馬場駅へ戻る。",
+    "beginnerOneLine": "トイレ、ドリンク代、チケット表示を済ませてから橋を渡る。",
+    "soloOneLine": "橋区間は人流に乗り、駅直帰する。",
+    "badWeatherNote": "橋と地上移動あり。駅側で傘、靴、荷物を整えてから向かう。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "現行公式ではロッカーなし。B1Fクロークまたは駅ロッカーで対応。",
+      "headline": "駅で待機し、荷物も先に処理。橋を渡るのは整列直前でよい。",
       "points": [
-        "ロッカーなしを前提にする",
-        "B1Fクロークは1袋500円、キャリー1つ500円",
-        "再入場不可なので入場前に用事を済ませる",
-        "階段周辺や会場前に長くたまらない"
+        "JR・西武は早稲田口、東西線は4番出口を使う",
+        "現行公式では会場内ロッカーなし扱い",
+        "B1Fクローク500円情報あり。当日案内を確認",
+        "終演後は高塚橋から高田馬場駅へ戻る"
       ]
     },
     "blogSignals": [
@@ -6984,6 +7367,12 @@
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 高田馬場CLUB PHASE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4CLUB+PHASE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -7077,46 +7466,180 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "公式でビル周辺・階段付近にたまらない注意あり。整列開始まで駅周辺のカフェ等で待つ。",
+    "timeKillingNote": "ビル周辺・階段付近に長くたまらない。駅側で整えて、橋を渡るのは整列直前にする。",
     "lockerInfo": {
       "venueLockerStatus": "none",
-      "venueLockerText": "現行公式Informationでコインロッカーなしの案内あり。",
-      "lockerCountText": "会場内ロッカーなし",
+      "venueLockerText": "現行公式では会場内ロッカーなし扱い。",
+      "lockerCountText": "なし",
       "beforeEntryUse": "unavailable",
       "afterEntryUse": "unavailable",
       "coinNeeded": "no",
       "largeBagFit": "no",
       "stationLockerRecommended": "yes",
-      "bestMove": "現行公式ではロッカーなし。B1Fクロークまたは駅ロッカーで対応。",
+      "bestMove": "駅で待機、駅で預ける。橋を渡るのは整列直前でよい。",
       "sourceConfidence": "official",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "available",
-      "cloakText": "公式InformationでB1Fロビーのクローク案内あり。",
-      "priceText": "1袋500円、キャリーバッグ1つ500円。",
-      "timingText": "B1Fロビーで受付。受付タイミングは公演・当日案内に従う。",
+      "cloakText": "B1Fクローク500円情報あり。当日案内を確認する。",
+      "priceText": "500円",
+      "timingText": "B1F受付。詳細は当日確認。",
       "bagTypeText": "荷物は袋単位、キャリーは1つ単位で預ける案内。",
-      "bestMove": "ロッカーはない前提。リュックやキャリーはB1Fクロークへ預け、再入場不可に備えてトイレ・飲み物・現金を入場前に済ませる。",
+      "bestMove": "リュックやキャリーはクロークか駅ロッカーへ。再入場不可に注意。",
       "sourceConfidence": "official",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品だけ前で管理する。",
-      "backpack": "リュックはB1Fクロークへ。フロアに持ち込むなら体の前で管理できる量に減らす。",
-      "suitcase": "キャリーは公式クローク対象。混雑や終演後回収を考えて、急ぐ日は駅ロッカーも候補にする。",
-      "afterMerch": "物販後に袋が増える日はクロークへまとめるか、終演後にすぐ回収できるよう預け場所を覚える。",
-      "goodTicketNumber": "良番ならクローク受付を先に済ませ、入場直前に荷物で迷わない。"
+      "smallBag": "小さい荷物なら駅でトイレを済ませ、整列直前に橋を渡る。",
+      "backpack": "リュックはB1Fクロークか駅ロッカーへ。階段付近で荷物整理しない。",
+      "suitcase": "キャリーありの日はB1Fクロークまたは駅ロッカーへ。橋を渡る前に方針を決める。",
+      "afterMerch": "物販後に増える荷物はクロークへ。終演後回収の時間も見込む。",
+      "goodTicketNumber": "良番の日はクローク受付を済ませてから整列へ。橋を渡る前に荷物処理を終える。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "高田馬場駅周辺で飲み物と現金を整えてから向かうと、再入場不可でも慌てにくい。",
-      "stationLocker": "駅ロッカーも候補。クローク行列や終演後回収を避けたい日は駅で先に預ける。",
-      "waitingSpot": "公式注意に従い、階段や会場周辺にたまらない。整列開始までは駅周辺で待つ。",
-      "rainShelter": "雨の日は駅周辺の屋内で身支度し、整列開始に合わせて移動する。",
-      "restroomBeforeEntry": "再入場不可を前提に、入場前にトイレを済ませる。",
-      "cashAndCoin": "ドリンク代とクローク代を現金で残す。千円札を崩しておくと受付が早い。",
-      "afterShowRoute": "終演後はクローク返却と駅方向の人流が重なる。急ぐ日は預ける荷物を少なくする。",
-      "nightSafety": "高田馬場駅までは比較的戻りやすいが、夜は大通り中心で移動する。"
+      "nearestConvenienceStore": "ファミリーマートいずみや高田店、ファミリーマートアイズ高田馬場店、ファミリーマート高田馬場二丁目店",
+      "stationLocker": "高田馬場駅構内",
+      "waitingSpot": "ビル周辺・階段付近に長くたまらない。駅側で整えて、橋を渡るのは整列直前にする。",
+      "rainShelter": "橋と地上移動あり。駅側で傘、靴、荷物を整えてから向かう。",
+      "restroomBeforeEntry": "高田馬場駅",
+      "cashAndCoin": "ドリンク代とクローク代500円を現金で残す。",
+      "afterShowRoute": "終演後は高塚橋から高田馬場駅へ戻る。",
+      "nightSafety": "橋区間は人流に乗り、駅直帰する。",
+      "nearestExit": "JR・西武は早稲田口、東西線は4番出口",
+      "convenienceStores": [
+        "ファミリーマートいずみや高田店",
+        "ファミリーマートアイズ高田馬場店",
+        "ファミリーマート高田馬場二丁目店"
+      ],
+      "stationLockers": [
+        "高田馬場駅構内",
+        "早稲田口側ロッカー"
+      ],
+      "waitingRule": "ビル周辺・階段付近に長くたまらない。駅側で整えて、橋を渡るのは整列直前にする。",
+      "restrooms": [
+        "高田馬場駅",
+        "BIGBOX高田馬場",
+        "早稲田口周辺施設"
+      ],
+      "rainPlan": "橋と地上移動あり。駅側で傘、靴、荷物を整えてから向かう。",
+      "soloBeginnerNote": "トイレ、ドリンク代、チケット表示を済ませてから橋を渡る。",
+      "cafes": [
+        "高田馬場駅早稲田口周辺",
+        "BIGBOX高田馬場周辺"
+      ],
+      "arrivalRoute": "JR・西武は早稲田口、東西線は4番出口から出る。",
+      "tripNote": "キャリーは高田馬場駅か宿泊先へ。クローク回収がある日は終電まで余裕を持つ。",
+      "baggageFlow": "会場内ロッカーはなし扱い。クロークは500円情報があるが、大荷物は駅で先に処理する。",
+      "dayFlow": {
+        "stationArrival": "JR・西武は早稲田口、東西線は4番出口から出る。",
+        "baggageDrop": "会場内ロッカーなし扱いなので、高田馬場駅側で荷物を処理する。",
+        "beforeEntry": "ビル周辺・階段付近に長くたまらず、駅側で待つ。",
+        "entry": "トイレ、ドリンク代、チケット表示を済ませてから橋を渡る。",
+        "afterShow": "高塚橋から高田馬場駅へ戻る。",
+        "lastTrainNote": "クローク回収がある日は終電までの時間を先に確認する。"
+      },
+      "places": [
+        {
+          "name": "JR・西武は早稲田口、東西線は4番出口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=JR%E3%83%BB%E8%A5%BF%E6%AD%A6%E3%81%AF%E6%97%A9%E7%A8%B2%E7%94%B0%E5%8F%A3%E3%80%81%E6%9D%B1%E8%A5%BF%E7%B7%9A%E3%81%AF4%E7%95%AA%E5%87%BA%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマートいずみや高田店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E3%81%84%E3%81%9A%E3%81%BF%E3%82%84%E9%AB%98%E7%94%B0%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマートアイズ高田馬場店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E3%82%A2%E3%82%A4%E3%82%BA%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート高田馬場二丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E4%BA%8C%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "高田馬場駅構内",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E9%A7%85%E6%A7%8B%E5%86%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "早稲田口側ロッカー",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%97%A9%E7%A8%B2%E7%94%B0%E5%8F%A3%E5%81%B4%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "高田馬場駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "BIGBOX高田馬場",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=BIGBOX%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "早稲田口周辺施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%97%A9%E7%A8%B2%E7%94%B0%E5%8F%A3%E5%91%A8%E8%BE%BA%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "高田馬場駅早稲田口周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E9%A7%85%E6%97%A9%E7%A8%B2%E7%94%B0%E5%8F%A3%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "BIGBOX高田馬場周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=BIGBOX%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "researched",
@@ -7131,15 +7654,43 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "荷物ありならクローク前提。駅ロッカーを使う場合は入場前に済ませる。",
-      "goodNumberDay": "良番ならクローク列で焦らないよう、早めに到着して入場前チェックを終える。",
-      "merchDay": "物販で増える荷物はクロークへ。財布・スマホ・チケットは手元に残す。",
-      "rainyDay": "雨の日でも階段付近で待たない。駅側で待って整列時間に動く。",
-      "soloDay": "一人参戦は公式注意を守れば動きやすい。再入場不可だけ先に覚える。",
-      "hurryAfterShowDay": "終演後に急ぐ日はクローク返却待ちを計算。荷物が少なければ持ち込み小バッグにする。"
+      "baggageDay": "リュックはB1Fクロークか駅ロッカーへ。階段付近で荷物整理しない。",
+      "goodNumberDay": "良番の日はクローク受付を済ませてから整列へ。橋を渡る前に荷物処理を終える。",
+      "merchDay": "物販後に増える荷物はクロークへ。終演後回収の時間も見込む。",
+      "rainyDay": "駅から橋と地上移動がある。雨の日は高田馬場駅側で傘、靴、荷物を整えてから短時間で会場へ向かう。",
+      "soloDay": "橋区間は人流に乗り、川沿いや細い道へ流れない。女性ソロは早稲田口方面へまっすぐ戻る。",
+      "hurryAfterShowDay": "終演後は高塚橋から高田馬場駅へ戻る。クローク回収がある日は終電まで余裕を見て動く。"
     },
     "lockerAlternativeNote": "会場ロッカーなし。高田馬場駅周辺ロッカーかクロークを使う。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "高田馬場駅構内、早稲田口側ロッカー",
+    "convenienceNote": "ファミリーマートいずみや高田店、ファミリーマートアイズ高田馬場店、ファミリーマート高田馬場二丁目店",
+    "publicSources": [
+      {
+        "label": "会場公式",
+        "url": "https://www.club-phase.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "高田馬場CLUB PHASE公式INFORMATION",
+        "url": "https://www.club-phase.com/information.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 高田馬場CLUB PHASE",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 高田馬場CLUB PHASE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4CLUB+PHASE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "shibuya-guilty",
@@ -7377,10 +7928,9 @@
     "nightSafetyNote": "渋谷の夜は人通りが多く、道玄坂方面は混雑しやすい。",
     "lockerNote": "ロッカー・クロークは公演ごとの確認が必要。",
     "baggageNote": "坂道や人混みを移動するため、荷物は小さめにまとめる。",
-    "convenienceNote": "周辺コンビニは多いが週末夜は混雑しやすい。",
-    "waitingNote": "渋谷の歩道は混みやすいため会場前での滞留を避ける。",
-    "rainNote": "坂道と人混みで足元が濡れやすい。",
-    "returnNote": "渋谷駅の使う改札を事前確認。",
+    "waitingNote": "待機は渋谷マークシティ館内や駅側に寄せる。道玄坂を荷物ありで往復しない。",
+    "rainNote": "マークシティ経由で地上移動と坂道移動を減らす。傘を畳んでから道玄坂上方面へ出ると動きやすい。",
+    "returnNote": "終演後はマークシティ側へ戻り、渋谷駅へ向かう。",
     "beginnerNote": "渋谷は会場が多く迷いやすいので入口位置を確認。",
     "ticketSearchLinks": [
       {
@@ -7483,7 +8033,7 @@
     "beginnerStrategy": "渋谷は会場が多く迷いやすいので入口位置を確認。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "渋谷駅、渋谷マークシティ、周辺商業施設",
     "signalNote": "通信状況は会場や混雑で変わります。電子チケットと充電残量を事前確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "渋谷の夜は人通りが多く、道玄坂方面は混雑しやすい。",
@@ -7502,7 +8052,16 @@
       "クロークあり情報",
       "渋谷駅ロッカー",
       "後方段差",
-      "物販後荷物注意"
+      "物販後荷物注意",
+      "渋谷坂道注意",
+      "待機注意",
+      "終演後は大通り推奨",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "コンビニ近い",
+      "雨の日注意",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [
       "SHIBUYA REX"
@@ -7612,24 +8171,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "開場前は会場前に長くたまらず、渋谷マークシティ・駅周辺・カフェで時間調整する。",
+    "arrivalStrategy": "待機は渋谷マークシティ館内や駅側に寄せる。道玄坂を荷物ありで往復しない。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後は道玄坂から渋谷駅へ下る。人混みが強いので、使う路線の改札を先に決める。",
-    "beginnerOneLine": "渋谷REXは荷物とトイレを早めに処理すると動きやすい。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は坂道移動がしんどい。マークシティ側で待って、整列時間に合わせて移動する。",
-    "stationLockerNote": "渋谷駅はロッカーが多いが混む。東急公式の駅ロッカー情報も見て、空きと決済手段を確認する。",
+    "afterShowStrategy": "終演後はマークシティ側へ戻り、渋谷駅へ向かう。",
+    "beginnerOneLine": "渋谷駅、マークシティ、商業施設でトイレを済ませてから道玄坂へ出る。",
+    "soloOneLine": "道玄坂は大通り優先。裏道・客引きの多い方向へ流れない。",
+    "badWeatherNote": "マークシティ経由で雨を軽減する。坂上へ出る前に傘と荷物を整える。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "ロッカー・クローク情報は割れるため、渋谷駅ロッカー先行が安全。",
+      "headline": "渋谷駅で荷物を預け、マークシティ経由で向かう。道玄坂を無駄に往復しない。",
       "points": [
-        "会場設備を断定せず駅ロッカーを先に見る",
-        "キャリーは渋谷駅か宿泊先へ",
-        "雨の日は坂道と人混みを避けて早め移動",
-        "終演後は駅までの大通りルートを優先する"
+        "渋谷マークシティ4F道玄坂上方面から向かう",
+        "渋谷駅側、マークシティ周辺のロッカーを候補にする",
+        "待機はマークシティ館内や駅側で調整",
+        "終演後はマークシティ側へ戻り、渋谷駅へ向かう"
       ]
     },
     "blogSignals": [
@@ -7676,6 +8234,12 @@
         "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
         "type": "official",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 渋谷REX周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7REX+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -7791,46 +8355,180 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "開場前は会場前に長くたまらず、渋谷マークシティ・駅周辺・カフェで時間調整する。",
+    "timeKillingNote": "マークシティ館内や駅側で調整する。道玄坂を荷物ありで無駄に往復しない。",
     "lockerInfo": {
-      "venueLockerStatus": "unknown",
-      "venueLockerText": "外部情報ではロッカー有無の記録が割れるため断定しない。",
-      "lockerCountText": "確認中",
+      "venueLockerStatus": "limited",
+      "venueLockerText": "会場内ロッカーは少数情報あり。キャパに対して多くないため駅ロッカー先行。",
+      "lockerCountText": "少数情報あり。最新運用は当日確認。",
       "beforeEntryUse": "unknown",
       "afterEntryUse": "unknown",
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "ロッカー・クローク情報は割れるため、渋谷駅ロッカー先行が安全。",
+      "bestMove": "渋谷駅で預けて、マークシティ経由で向かう。",
       "sourceConfidence": "supporting_reference",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
-      "cloakStatus": "unknown",
-      "cloakText": "クローク案内の記録はあるが、通常運用として固定できないため確認中扱い。",
-      "priceText": "確認中",
-      "timingText": "公演ごとの案内を見る。良番の日は先に荷物を減らす。",
+      "cloakStatus": "event_dependent",
+      "cloakText": "クローク案内が出る公演あり。固定設備ではなく当日案内を確認する。",
+      "priceText": "500円情報あり。最新案内優先。",
+      "timingText": "受付タイミングは当日案内を確認。",
       "bagTypeText": "確認中",
-      "bestMove": "渋谷駅側で荷物を減らし、会場クロークが出ていれば補助的に使う。キャリーは駅・ホテル預けが安全。",
+      "bestMove": "駅ロッカー先行。クロークが出ていれば補助的に使う。",
       "sourceConfidence": "supporting_reference",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのままでも動ける。渋谷の人混みでは体の前で持つ。",
-      "backpack": "リュックは渋谷駅ロッカーへ。道玄坂側へ向かう前に処理すると戻りが少ない。",
-      "suitcase": "キャリーは坂道と人混みで負担が大きい。駅・ホテル預けを優先する。",
-      "afterMerch": "物販後に袋が増えるなら、終演まで持つ量か駅ロッカーに戻す動線を先に決める。",
-      "goodTicketNumber": "良番なら渋谷駅到着時点で荷物を減らし、会場前では整列だけに集中する。"
+      "smallBag": "小さい荷物ならマークシティ側でトイレと飲み物を済ませてから向かう。",
+      "backpack": "リュックは渋谷駅ロッカーへ。道玄坂を往復しないよう先に処理する。",
+      "suitcase": "キャリーありの日は渋谷駅か宿泊先へ。坂道と人混みで会場持ち込みは重い。",
+      "afterMerch": "物販後に増える荷物はクロークか駅ロッカーへ。終演後の回収時間も見込む。",
+      "goodTicketNumber": "良番の日は渋谷駅で荷物を減らし、整列直前に道玄坂へ向かう。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "渋谷駅から会場へ向かう前に飲み物を確保。周辺コンビニは混雑しやすい。",
-      "stationLocker": "渋谷駅ロッカーを先に使う。休日や夜は埋まりやすいので早めに確認する。",
-      "waitingSpot": "道玄坂周辺は人通りが多い。整列開始までは駅周辺やカフェで時間調整する。",
-      "rainShelter": "雨の日は坂道移動が重くなる。駅周辺の屋内で身支度してから移動する。",
-      "restroomBeforeEntry": "駅や商業施設で済ませる。会場前でトイレ探しをしない。",
-      "cashAndCoin": "ドリンク代・ロッカー代に現金と小銭を残す。",
-      "afterShowRoute": "終演後は渋谷駅へ戻る人流と夜の繁華街が重なる。駅までのルートを先に保存する。",
-      "nightSafety": "道玄坂・センター街方面は夜も混む。ぼっちは大通り経由で駅へ戻ると安心。"
+      "nearestConvenienceStore": "ナチュラルローソン渋谷道玄坂一丁目店、ファミリーマート道玄坂中央店、セブンイレブン渋谷中央街店",
+      "stationLocker": "渋谷駅側",
+      "waitingSpot": "マークシティ館内や駅側で調整する。道玄坂を荷物ありで無駄に往復しない。",
+      "rainShelter": "マークシティ経由で雨を軽減する。坂上へ出る前に傘と荷物を整える。",
+      "restroomBeforeEntry": "渋谷駅",
+      "cashAndCoin": "ドリンク代・ロッカー代・クローク代に現金を残す。",
+      "afterShowRoute": "終演後はマークシティ側へ戻り、渋谷駅へ向かう。",
+      "nightSafety": "道玄坂は大通り優先。裏道・客引きの多い方向へ流れない。",
+      "nearestExit": "渋谷マークシティ4F道玄坂上方面",
+      "convenienceStores": [
+        "ナチュラルローソン渋谷道玄坂一丁目店",
+        "ファミリーマート道玄坂中央店",
+        "セブンイレブン渋谷中央街店"
+      ],
+      "stationLockers": [
+        "渋谷駅側",
+        "マークシティ周辺"
+      ],
+      "waitingRule": "マークシティ館内や駅側で調整する。道玄坂を荷物ありで無駄に往復しない。",
+      "restrooms": [
+        "渋谷駅",
+        "渋谷マークシティ",
+        "周辺商業施設"
+      ],
+      "rainPlan": "マークシティ経由で雨を軽減する。坂上へ出る前に傘と荷物を整える。",
+      "soloBeginnerNote": "渋谷駅、マークシティ、商業施設でトイレを済ませてから道玄坂へ出る。",
+      "cafes": [
+        "渋谷マークシティ館内",
+        "渋谷駅側カフェ"
+      ],
+      "arrivalRoute": "渋谷駅に着いたらマークシティ方面へ。荷物は駅側かマークシティ周辺で先に処理する。",
+      "tripNote": "渋谷は人混みと坂道で回収に時間がかかるため、終電・夜行前はロッカー位置を先に決める。",
+      "baggageFlow": "渋谷駅側で荷物を預けてから坂上へ向かう。キャリーは道玄坂に持ち込まない。",
+      "dayFlow": {
+        "stationArrival": "渋谷駅に着いたらマークシティ方面へ。荷物は駅側かマークシティ周辺で先に処理する。",
+        "baggageDrop": "キャリーや大きいリュックは坂上へ向かう前に預ける。",
+        "beforeEntry": "開場前はマークシティ館内や駅側で待つ。",
+        "entry": "渋谷駅、マークシティ、商業施設でトイレを済ませてから道玄坂へ出る。",
+        "afterShow": "終演後はマークシティ側へ戻り、渋谷駅へ向かう。",
+        "lastTrainNote": "終電前は坂下へ流れすぎず、ロッカー回収の改札へ戻る。"
+      },
+      "places": [
+        {
+          "name": "渋谷マークシティ4F道玄坂上方面",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%86%E3%82%A34F%E9%81%93%E7%8E%84%E5%9D%82%E4%B8%8A%E6%96%B9%E9%9D%A2",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ナチュラルローソン渋谷道玄坂一丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E4%B8%80%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート道玄坂中央店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E9%81%93%E7%8E%84%E5%9D%82%E4%B8%AD%E5%A4%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン渋谷中央街店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%B8%8B%E8%B0%B7%E4%B8%AD%E5%A4%AE%E8%A1%97%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "渋谷駅側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E9%A7%85%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "マークシティ周辺",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%86%E3%82%A3%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "渋谷駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "渋谷マークシティ",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%86%E3%82%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "周辺商業施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%A8%E8%BE%BA%E5%95%86%E6%A5%AD%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "渋谷マークシティ館内",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%86%E3%82%A3%E9%A4%A8%E5%86%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "渋谷駅側カフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E9%A7%85%E5%81%B4%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -7845,15 +8543,37 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "小ロッカー24個情報ありだが少ない。荷物ありなら渋谷駅ロッカーかクローク前提。",
-      "goodNumberDay": "良番ならロッカー争奪をしない。駅ロッカーかクローク利用方針を開場前に決める。",
-      "merchDay": "物販で荷物が増えるならクローク候補。ロッカーは小型なので服や大袋は入らない前提。",
-      "rainyDay": "雨の日は坂道で傘と荷物が邪魔。駅・マークシティ側で時間を潰してから向かう。",
-      "soloDay": "一人なら入口・階段・帰りの駅方向を先に確認。後方段差を狙うなら早めに入る。",
-      "hurryAfterShowDay": "急ぐ日はクローク返却と駅混雑を見込む。終演後の回収物を減らす。"
+      "baggageDay": "リュックは渋谷駅ロッカーへ。道玄坂を往復しないよう先に処理する。",
+      "goodNumberDay": "良番の日は渋谷駅で荷物を減らし、整列直前に道玄坂へ向かう。",
+      "merchDay": "物販後に増える荷物はクロークか駅ロッカーへ。終演後の回収時間も見込む。",
+      "rainyDay": "マークシティ経由で地上移動と坂道移動を減らす。傘を畳んでから道玄坂上方面へ出ると動きやすい。",
+      "soloDay": "道玄坂は大通り優先。センター街側や細い横道に流れず、女性ソロはマークシティ経由で駅へ戻る。",
+      "hurryAfterShowDay": "終演後はマークシティ側へ戻って渋谷駅へ。坂下へ流れすぎず、ロッカー回収の改札を先に決めておく。"
     },
     "lockerAlternativeNote": "渋谷駅はロッカーが多いが混む。東急公式の駅ロッカー情報も見て、空きと決済手段を確認する。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "渋谷駅側、マークシティ周辺",
+    "convenienceNote": "ナチュラルローソン渋谷道玄坂一丁目店、ファミリーマート道玄坂中央店、セブンイレブン渋谷中央街店",
+    "publicSources": [
+      {
+        "label": "渋谷REX公式",
+        "url": "https://ruido.org/rex/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "東急 渋谷駅コインロッカー",
+        "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 渋谷REX周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7REX+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "shibuya-star-lounge",
@@ -9008,10 +9728,9 @@
     "nightSafetyNote": "上野駅周辺は人通りがあるが、終演後は駅入口と乗換を事前確認推奨。",
     "lockerNote": "会場内ロッカーなし前提。クロークや上野駅周辺ロッカーを確認。",
     "baggageNote": "遠征荷物や物販後の荷物は預け先を先に決める。",
-    "convenienceNote": "駅周辺で飲み物、現金、小銭を準備してから向かうと安心。",
-    "waitingNote": "ビル周辺や道路で溜まらず、整列開始までは駅周辺で時間調整。",
-    "rainNote": "駅から近いが、雨天時は待機場所と荷物の防水を確認。",
-    "returnNote": "終演後は上野駅までの導線と終電・乗換を事前確認。",
+    "waitingNote": "大通り側や上野駅構内で時間調整する。会場前で長く固まらず、整列や入場案内に合わせて移動する。",
+    "rainNote": "駅近で低リスク。雨の日は上野駅構内やアトレ上野周辺で身支度して、3番出口側から短時間で移動する。",
+    "returnNote": "終演後は3番出口またはJR中央改札へ戻る。",
     "beginnerNote": "初参戦は会場入口とクローク運用、再入場可否を事前確認。",
     "ticketSearchLinks": [
       {
@@ -9111,7 +9830,7 @@
     "beginnerStrategy": "初参戦は会場入口とクローク運用、再入場可否を事前確認。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "上野駅、東京メトロ上野駅、アトレ上野周辺",
     "signalNote": "地下やビル内の会場では電波が弱い場合があります。電子チケットは入場前に表示確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "上野駅周辺は人通りがあるが、終演後は駅入口と乗換を事前確認推奨。",
@@ -9127,7 +9846,14 @@
       "クローク利用",
       "上野駅ロッカー",
       "荷物注意",
-      "駅ロッカー推奨"
+      "駅ロッカー推奨",
+      "コンビニ近い",
+      "待機注意",
+      "雨でも行きやすい",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [],
     "region": "東京",
@@ -9230,34 +9956,27 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "ビル周辺や道路で溜まらず、整列開始までは駅周辺で時間調整。",
+    "arrivalStrategy": "大通り側や上野駅構内で時間調整する。会場前で長く固まらず、整列や入場案内に合わせて移動する。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後はまず荷物回収と駅までのルート。余韻で長く残る日は、終電と夜行バス時刻だけ先に固定する。",
-    "beginnerOneLine": "初めてなら、入口、整列場所、ドリンク代、荷物の逃がし先だけ押さえればかなり楽になる。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は会場前待機がつらい。傘より先に、濡らしたくない荷物を小さくまとめる。",
-    "stationLockerNote": "上野駅周辺ロッカーは埋まることがある。乗換駅や宿泊先預けも候補に入れる。",
+    "afterShowStrategy": "終演後は3番出口またはJR中央改札へ戻る。",
+    "beginnerOneLine": "クロークを使う日は向かいビル3F事務所の当日案内を確認する。",
+    "soloOneLine": "アメ横方面へ流れすぎず駅直帰する。",
+    "badWeatherNote": "駅近で低リスク。上野駅構内やアトレ上野周辺で身支度してから移動する。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "公式で店内ロッカーなし、向かいビル3Fクロークあり。上野駅ロッカーも利用。",
+      "headline": "上野駅で荷物とトイレを済ませてから入る。クローク案内が強み。",
       "points": [
-        "ロッカーなし",
-        "クロークあり",
-        "上野駅ロッカー案内あり",
-        "公式確認済み"
+        "JR上野駅中央改札、東京メトロ上野駅3番出口から向かう",
+        "会場内ロッカーなし。上野駅側ロッカーを利用",
+        "クロークは向かいビル3F事務所で対応情報あり",
+        "終演後は3番出口またはJR中央改札へ戻る"
       ]
     },
     "blogSignals": [],
     "sourceLinks": [
-      {
-        "label": "会場公式",
-        "url": "https://athers-music.com/livehouse/otoyoko-information/",
-        "type": "official",
-        "checkedAt": "2026-05-07"
-      },
       {
         "label": "LiveFans 上野音横丁",
         "url": "https://www.livefans.jp/venues/1201",
@@ -9269,12 +9988,30 @@
         "url": "https://media.jreast.co.jp/articles/1010",
         "type": "official",
         "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 上野音横丁周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%9F%B3%E6%A8%AA%E4%B8%81+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "LIVE HOUSE NAVI Ueno Otoyokocho",
+        "url": "https://live-house.info/taitouku/otoyoko.html",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "eplus Ueno Otoyokocho venue",
+        "url": "https://eplus.jp/sf/venue/1100330",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
     "lockerInfo": {
       "venueLockerStatus": "none",
-      "venueLockerText": "公式INFORMATIONで店内にコインロッカーなし、上野駅コインロッカー利用案内を確認。",
+      "venueLockerText": "会場内ロッカーなし。上野駅側を利用する。",
       "lockerCountText": "なし",
       "priceText": "なし",
       "beforeEntryUse": "unavailable",
@@ -9282,38 +10019,182 @@
       "coinNeeded": "no",
       "largeBagFit": "no",
       "stationLockerRecommended": "yes",
-      "bestMove": "会場内ロッカーなし。上野駅ロッカーを先に使い、必要なら向かいビル3Fのクロークを利用する。",
+      "bestMove": "上野駅で整理し、必要なら向かいビル3F事務所クロークを使う。",
       "sourceConfidence": "official",
       "checkedAt": "2026-05-09",
-      "lastCheckedAt": "2026-05-09"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "available",
-      "cloakText": "公式INFORMATIONで上野音横丁向かいビル3Fの事務所にてクロークを行っていると確認。",
-      "priceText": "確認中",
-      "timingText": "公式案内を確認。詳細は当日案内確認",
+      "cloakText": "向かいビル3F事務所でクローク対応。",
+      "priceText": "料金は当日案内を確認。",
+      "timingText": "受付タイミングは当日案内を確認。",
       "bagTypeText": "確認中",
-      "bestMove": "大きい荷物は上野駅ロッカーか公式案内のクロークを利用する。",
+      "bestMove": "会場内ロッカーなし。上野駅ロッカーか公式案内のクロークを利用する。",
       "sourceConfidence": "official",
       "checkedAt": "2026-05-09",
-      "lastCheckedAt": "2026-05-09"
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品は体の前で管理する。",
-      "backpack": "会場内ロッカーなし。上野駅ロッカーを先に使い、必要なら向かいビル3Fのクロークを利用する。",
-      "suitcase": "キャリーケースは会場持ち込み前提にしない。駅ロッカー、宿泊先、荷物預かりを先に検討する。",
-      "afterMerch": "物販後に荷物が増える日は、終演まで持てる量に抑えるか、預け先を先に決める。",
-      "goodTicketNumber": "良番の日は入場直前にロッカーやクロークで迷わないよう、駅到着時点で荷物を処理する。"
+      "smallBag": "小さい荷物なら上野駅でトイレと飲み物を済ませてから入る。",
+      "backpack": "リュックは上野駅ロッカーか向かいビル3Fクロークへ。",
+      "suitcase": "キャリーありの日は上野駅ロッカーや宿泊先で先に処理する。",
+      "afterMerch": "物販後に荷物が増える日はクロークか駅ロッカーへ。終演後の回収時間も見込む。",
+      "goodTicketNumber": "良番の日は上野駅で荷物を整理してから会場へ。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "地図アプリで直前確認。",
-      "stationLocker": "荷物が多い日は最寄り駅や主要駅ロッカーも候補。",
-      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺で時間調整する。",
-      "rainShelter": "雨の日は駅周辺や商業施設など屋根のある場所で整える。",
-      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
-      "cashAndCoin": "ドリンク代・ロッカー用に現金と小銭を残す。",
-      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
-      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+      "nearestConvenienceStore": "ローソン東上野三丁目店、セブンイレブン東上野2丁目車坂通り店、セブンイレブン上野6丁目昭和通り店",
+      "stationLocker": "上野駅側",
+      "waitingSpot": "大通り側、上野駅側で時間調整する。会場前で長く固まらない。",
+      "rainShelter": "駅近で低リスク。上野駅構内やアトレ上野周辺で身支度してから移動する。",
+      "restroomBeforeEntry": "上野駅",
+      "cashAndCoin": "ドリンク代、クローク利用時の現金、駅ロッカー用IC残高を残す。",
+      "afterShowRoute": "終演後は3番出口またはJR中央改札へ戻る。",
+      "nightSafety": "アメ横方面へ流れすぎず駅直帰する。",
+      "nearestExit": "JR上野駅中央改札、東京メトロ上野駅3番出口",
+      "convenienceStores": [
+        "ローソン東上野三丁目店",
+        "セブンイレブン東上野2丁目車坂通り店",
+        "セブンイレブン上野6丁目昭和通り店"
+      ],
+      "stationLockers": [
+        "上野駅側",
+        "上野駅構内・中央改札側"
+      ],
+      "waitingRule": "大通り側、上野駅側で時間調整する。会場前で長く固まらない。",
+      "restrooms": [
+        "上野駅",
+        "東京メトロ上野駅",
+        "アトレ上野周辺"
+      ],
+      "rainPlan": "駅近で低リスク。上野駅構内やアトレ上野周辺で身支度してから移動する。",
+      "soloBeginnerNote": "クロークを使う日は向かいビル3F事務所の当日案内を確認する。",
+      "cafes": [
+        "上野駅構内",
+        "アトレ上野周辺",
+        "昭和通り側カフェ"
+      ],
+      "arrivalRoute": "JR上野駅中央改札か東京メトロ上野駅3番出口から向かう。",
+      "tripNote": "キャリーは上野駅大型ロッカー、宿泊先、荷物預かりへ。クローク利用時は回収時間も見る。",
+      "baggageFlow": "会場内ロッカーなし。上野駅ロッカーかクローク案内を利用する。",
+      "dayFlow": {
+        "stationArrival": "JR上野駅中央改札か東京メトロ上野駅3番出口から向かう。",
+        "baggageDrop": "上野駅で荷物とトイレを済ませる。会場内ロッカーはなし。",
+        "beforeEntry": "大通り側、上野駅側で時間調整する。",
+        "entry": "クロークを使う日は向かいビル3F事務所の当日案内を確認する。",
+        "afterShow": "3番出口またはJR中央改札へ戻る。",
+        "lastTrainNote": "アメ横方面へ流れすぎず、駅ロッカー回収を先に済ませる。"
+      },
+      "places": [
+        {
+          "name": "JR上野駅中央改札、東京メトロ上野駅3番出口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=JR%E4%B8%8A%E9%87%8E%E9%A7%85%E4%B8%AD%E5%A4%AE%E6%94%B9%E6%9C%AD%E3%80%81%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD%E4%B8%8A%E9%87%8E%E9%A7%853%E7%95%AA%E5%87%BA%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ローソン東上野三丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%E6%9D%B1%E4%B8%8A%E9%87%8E%E4%B8%89%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン東上野2丁目車坂通り店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%9D%B1%E4%B8%8A%E9%87%8E2%E4%B8%81%E7%9B%AE%E8%BB%8A%E5%9D%82%E9%80%9A%E3%82%8A%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン上野6丁目昭和通り店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E4%B8%8A%E9%87%8E6%E4%B8%81%E7%9B%AE%E6%98%AD%E5%92%8C%E9%80%9A%E3%82%8A%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "上野駅側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%A7%85%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "上野駅構内・中央改札側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%A7%85%E6%A7%8B%E5%86%85%E3%83%BB%E4%B8%AD%E5%A4%AE%E6%94%B9%E6%9C%AD%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "上野駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "東京メトロ上野駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD%E4%B8%8A%E9%87%8E%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "アトレ上野周辺",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%88%E3%83%AC%E4%B8%8A%E9%87%8E%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "上野駅構内",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%A7%85%E6%A7%8B%E5%86%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "アトレ上野周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%88%E3%83%AC%E4%B8%8A%E9%87%8E%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "昭和通り側カフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%98%AD%E5%92%8C%E9%80%9A%E3%82%8A%E5%81%B4%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -9322,14 +10203,14 @@
       "publicUrlPolicy": "確認メモ・note・参加記録のURLは公開しない。要点のみ独自表現で内部メモ扱い。"
     },
     "dayDecisionGuide": {
-      "baggageDay": "背中のリュックはフロアで邪魔になりやすい。足元に置かず、駅ロッカーかクロークへ回す。",
-      "goodNumberDay": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。",
-      "merchDay": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-      "rainyDay": "雨の日は会場前待機がつらい。傘より先に、濡らしたくない荷物を小さくまとめる。",
-      "soloDay": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-      "hurryAfterShowDay": "終演後はまず荷物回収と駅までのルート。余韻で長く残る日は、終電と夜行バス時刻だけ先に固定する。"
+      "baggageDay": "リュックは上野駅ロッカーか向かいビル3Fクロークへ。",
+      "goodNumberDay": "良番の日は上野駅で荷物を整理してから会場へ。",
+      "merchDay": "物販後に荷物が増える日はクロークか駅ロッカーへ。終演後の回収時間も見込む。",
+      "rainyDay": "駅近で低リスク。雨の日は上野駅構内やアトレ上野周辺で身支度して、3番出口側から短時間で移動する。",
+      "soloDay": "アメ横方面へ流れすぎず駅直帰。女性ソロは昭和通り側や駅前の人通りを優先する。",
+      "hurryAfterShowDay": "終演後は東京メトロ3番出口またはJR中央改札へ戻る。ロッカー回収がある人は上野駅側へ直行する。"
     },
-    "timeKillingNote": "ビル周辺や道路で溜まらず、整列開始までは駅周辺で時間調整。",
+    "timeKillingNote": "大通り側、上野駅側で時間調整する。会場前で長く固まらない。",
     "lockerAlternativeNote": "上野駅周辺ロッカーは埋まることがある。乗換駅や宿泊先預けも候補に入れる。",
     "venueExistenceConfidence": "official",
     "searchedSources": [
@@ -9339,7 +10220,41 @@
         "checkedAt": "2026-05-09"
       }
     ],
-    "researchStatus": "researched"
+    "researchStatus": "researched",
+    "stationLockerNote": "上野駅側、上野駅構内・中央改札側",
+    "convenienceNote": "ローソン東上野三丁目店、セブンイレブン東上野2丁目車坂通り店、セブンイレブン上野6丁目昭和通り店",
+    "publicSources": [
+      {
+        "label": "LiveFans 上野音横丁",
+        "url": "https://www.livefans.jp/venues/1201",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "JREメディア 上野駅コインロッカー",
+        "url": "https://media.jreast.co.jp/articles/1010",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 上野音横丁周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%9F%B3%E6%A8%AA%E4%B8%81+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "LIVE HOUSE NAVI Ueno Otoyokocho",
+        "url": "https://live-house.info/taitouku/otoyoko.html",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "eplus Ueno Otoyokocho venue",
+        "url": "https://eplus.jp/sf/venue/1100330",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "shinjuku-club-science",
@@ -9373,10 +10288,9 @@
     "nightSafetyNote": "歌舞伎町エリアを通るため、夜は大通りや人通りのある道を選ぶ。",
     "lockerNote": "ロッカーやクロークの運用は公演ごとの確認が必要。",
     "baggageNote": "キャリーケースは駅・ホテルに預ける前提がおすすめ。",
-    "convenienceNote": "周辺コンビニは地図アプリで事前確認推奨。",
-    "waitingNote": "会場前・ビル周辺の滞留は避け、整列開始時間までは明るい場所で待つ。",
-    "rainNote": "新宿駅から歩くため、雨の日は靴と裾の濡れ対策を。",
-    "returnNote": "新宿駅は構内で迷いやすいため、帰りに使う改札を先に決める。",
+    "waitingNote": "歌舞伎町の路上では待たず、新宿駅東口地下街、新宿サブナード、西武新宿駅側で調整する。",
+    "rainNote": "地上歩行が長め。雨の日は新宿駅地下街や新宿サブナードで身支度し、傘と荷物を減らしてから歌舞伎町へ入る。",
+    "returnNote": "終演後は西武新宿南口、新宿三丁目E1、JR新宿東口方面へ大通りで戻る。",
     "beginnerNote": "歌舞伎町エリアに慣れていない場合は帰路を事前に固定する。",
     "ticketSearchLinks": [
       {
@@ -9477,7 +10391,7 @@
     "beginnerStrategy": "歌舞伎町エリアに慣れていない場合は帰路を事前に固定する。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "新宿駅、西武新宿駅、新宿サブナード",
     "signalNote": "地下会場では通信が弱く感じる場合があります。電子チケットは入口前で表示確認しておくと安心です。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "歌舞伎町エリアのため、終演後の帰り道と駅までのルートを事前確認。",
@@ -9493,7 +10407,16 @@
       "貴重品注意",
       "地下会場",
       "夜道注意",
-      "階段混雑注意"
+      "階段混雑注意",
+      "歌舞伎町注意",
+      "駅ロッカー推奨",
+      "待機注意",
+      "終演後は大通り推奨",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "コンビニ近い",
+      "雨の日注意",
+      "キャリー非推奨"
     ],
     "aliases": [],
     "region": "東京",
@@ -9579,24 +10502,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "会場前・ビル周辺の滞留は避け、整列開始時間までは明るい場所で待つ。",
+    "arrivalStrategy": "歌舞伎町の路上では待たず、新宿駅東口地下街、新宿サブナード、西武新宿駅側で調整する。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後はまず荷物回収と駅までのルート。余韻で長く残る日は、終電と夜行バス時刻だけ先に固定する。",
-    "beginnerOneLine": "初めてなら、入口、整列場所、ドリンク代、荷物の逃がし先だけ押さえればかなり楽になる。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は会場前待機がつらい。傘より先に、濡らしたくない荷物を小さくまとめる。",
-    "stationLockerNote": "新宿駅周辺ロッカーは埋まることがある。乗換駅や宿泊先預けも候補に入れる。",
+    "afterShowStrategy": "終演後は西武新宿南口、新宿三丁目E1、JR新宿東口方面へ大通りで戻る。",
+    "beginnerOneLine": "駅でトイレ、ドリンク代、チケット表示を済ませてから歌舞伎町へ入る。",
+    "soloOneLine": "歌舞伎町の裏道回避。女性ソロは大通り優先で駅へ戻る。",
+    "badWeatherNote": "地上歩行が長め。傘や荷物を整理してから移動する。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "会場情報サイトでロッカー45個。公式ではクローク常設確認中。大荷物は新宿駅で処理。",
+      "headline": "駅で荷物・トイレ・チケット表示を済ませてから歌舞伎町に入る。",
       "points": [
-        "ロッカー45個情報あり",
-        "公式設備ページ確認済み",
-        "クロークは確認中",
-        "歌舞伎町エリアの荷物移動注意"
+        "JR新宿東口、西武新宿南口、東新宿A1、新宿三丁目E1が候補",
+        "新宿駅、新宿三丁目駅、西武新宿駅側のロッカーを候補にする",
+        "待機は歌舞伎町の路上ではなく駅側・商業施設側で調整",
+        "終演後は大通りで駅方面へ戻る"
       ]
     },
     "blogSignals": [],
@@ -9636,51 +10558,211 @@
         "url": "https://www.livewalker.com/web/detail/24600",
         "type": "supporting_reference",
         "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 新宿club SCIENCE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BFclub+SCIENCE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
     "lockerInfo": {
       "venueLockerStatus": "available",
-      "venueLockerText": "LiveWalkerでフロア内コインロッカー45個を確認。公式ACCESS/EQUIPMENTではロッカー明記を確認できないため補助確認扱い。",
-      "lockerCountText": "45個（補助確認）",
-      "priceText": "確認中",
+      "venueLockerText": "会場情報サイトでロッカー45個情報あり。荷物が多い日は駅ロッカー先行。",
+      "lockerCountText": "45個情報あり。最新運用は当日確認。",
+      "priceText": "300円情報あり。最新運用は当日確認。",
       "beforeEntryUse": "unknown",
       "afterEntryUse": "unknown",
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
-      "stationLockerRecommended": "depends",
-      "bestMove": "小荷物なら会場ロッカー候補。歌舞伎町エリアでキャリーを持ち歩くより、新宿駅や宿泊先で先に処理する。",
+      "stationLockerRecommended": "yes",
+      "bestMove": "駅で全部済ませてから歌舞伎町に入る。",
       "sourceConfidence": "supporting_reference",
       "checkedAt": "2026-05-09",
-      "lastCheckedAt": "2026-05-09"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
-      "cloakStatus": "unknown",
-      "cloakText": "公式ACCESS/EQUIPMENT確認範囲では常設クロークの明記は確認できない。",
-      "priceText": "確認中",
-      "timingText": "確認中",
+      "cloakStatus": "event_dependent",
+      "cloakText": "クローク500円情報あり。公演ごとの案内を確認する。",
+      "priceText": "500円情報あり。最新案内優先。",
+      "timingText": "当日案内を確認。",
       "bagTypeText": "確認中",
-      "bestMove": "クロークは公演ごとの案内確認。大荷物は駅・宿泊先預けを優先。",
-      "sourceConfidence": "official",
+      "bestMove": "大荷物は駅ロッカー優先。クロークが出ていれば補助的に使う。",
+      "sourceConfidence": "supporting_reference",
       "checkedAt": "2026-05-09",
-      "lastCheckedAt": "2026-05-09"
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "スマホ・財布・チケット程度ならそのまま入場しやすい。貴重品は体の前で管理する。",
-      "backpack": "小荷物なら会場ロッカー候補。歌舞伎町エリアでキャリーを持ち歩くより、新宿駅や宿泊先で先に処理する。",
-      "suitcase": "キャリーケースは会場持ち込み前提にしない。駅ロッカー、宿泊先、荷物預かりを先に検討する。",
-      "afterMerch": "物販後に荷物が増える日は、終演まで持てる量に抑えるか、預け先を先に決める。",
-      "goodTicketNumber": "良番の日は、入場直前にロッカーやクロークで迷わないよう、駅到着時点で荷物を処理する。"
+      "smallBag": "小さい荷物なら駅でトイレと飲み物を済ませてから歌舞伎町に入る。",
+      "backpack": "リュックは新宿駅・新宿三丁目駅ロッカーへ。歌舞伎町で荷物を抱えて歩かない。",
+      "suitcase": "キャリーありの日は新宿駅ロッカーか宿泊先へ。会場周辺へ持って行かない。",
+      "afterMerch": "物販後に荷物が増える日はクロークや駅ロッカーを使い、終演後は大通りで戻る。",
+      "goodTicketNumber": "良番の日は駅側で全部済ませ、整列直前だけ会場へ向かう。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "地図アプリで直前確認。",
-      "stationLocker": "荷物が多い日は最寄り駅や主要駅ロッカーも候補。",
-      "waitingSpot": "整列開始までは会場前に長くたまらず、駅周辺で時間調整する。",
-      "rainShelter": "雨の日は駅周辺や商業施設など屋根のある場所で整える。",
-      "restroomBeforeEntry": "入場前に駅や周辺施設で済ませる。",
-      "cashAndCoin": "ドリンク代・ロッカー用に現金と小銭を残す。",
-      "afterShowRoute": "終演後は駅までの導線と荷物回収時間を先に決める。",
-      "nightSafety": "初めての会場は帰りの駅ルートを事前保存する。"
+      "nearestConvenienceStore": "ファミリーマート新宿歌舞伎町店、セブンイレブン新宿区役所通り店、ローソンシタディーンセントラル新宿店",
+      "stationLocker": "新宿駅",
+      "waitingSpot": "歌舞伎町の路上ではなく駅側・商業施設側で調整する。",
+      "rainShelter": "地上歩行が長め。傘や荷物を整理してから移動する。",
+      "restroomBeforeEntry": "新宿駅",
+      "cashAndCoin": "ドリンク代とロッカー用の現金・IC残高を残す。",
+      "afterShowRoute": "終演後は西武新宿南口、新宿三丁目E1、JR新宿東口方面へ大通りで戻る。",
+      "nightSafety": "歌舞伎町の裏道回避。女性ソロは大通り優先で駅へ戻る。",
+      "nearestExit": "JR新宿東口、西武新宿南口、東新宿A1、新宿三丁目E1",
+      "convenienceStores": [
+        "ファミリーマート新宿歌舞伎町店",
+        "セブンイレブン新宿区役所通り店",
+        "ローソンシタディーンセントラル新宿店"
+      ],
+      "stationLockers": [
+        "新宿駅",
+        "新宿三丁目駅",
+        "西武新宿駅側"
+      ],
+      "waitingRule": "歌舞伎町の路上ではなく駅側・商業施設側で調整する。",
+      "restrooms": [
+        "新宿駅",
+        "西武新宿駅",
+        "新宿サブナード"
+      ],
+      "rainPlan": "地上歩行が長め。傘や荷物を整理してから移動する。",
+      "soloBeginnerNote": "駅でトイレ、ドリンク代、チケット表示を済ませてから歌舞伎町へ入る。",
+      "cafes": [
+        "新宿駅東口地下街",
+        "新宿サブナード",
+        "西武新宿駅周辺"
+      ],
+      "arrivalRoute": "JR新宿東口、西武新宿南口、東新宿A1、新宿三丁目E1のどこへ戻るか先に決める。",
+      "tripNote": "キャリーは歌舞伎町に入る前に新宿駅大型ロッカー、宿泊先、荷物預かりへ。",
+      "baggageFlow": "駅で荷物・トイレ・チケット表示を済ませてから歌舞伎町に入る。",
+      "dayFlow": {
+        "stationArrival": "JR新宿東口、西武新宿南口、東新宿A1、新宿三丁目E1のどこへ戻るか先に決める。",
+        "baggageDrop": "新宿駅、新宿三丁目駅、西武新宿駅側で荷物を処理する。",
+        "beforeEntry": "歌舞伎町の路上では待たず、駅側・商業施設側で調整する。",
+        "entry": "駅でトイレ、ドリンク代、チケット表示を済ませてから歌舞伎町へ入る。",
+        "afterShow": "西武新宿南口、新宿三丁目E1、JR新宿東口方面へ大通りで戻る。",
+        "lastTrainNote": "夜道は裏道を避け、終電前は駅へ直行する。"
+      },
+      "places": [
+        {
+          "name": "JR新宿東口、西武新宿南口、東新宿A1、新宿三丁目E1",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=JR%E6%96%B0%E5%AE%BF%E6%9D%B1%E5%8F%A3%E3%80%81%E8%A5%BF%E6%AD%A6%E6%96%B0%E5%AE%BF%E5%8D%97%E5%8F%A3%E3%80%81%E6%9D%B1%E6%96%B0%E5%AE%BFA1%E3%80%81%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AEE1",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート新宿歌舞伎町店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E6%96%B0%E5%AE%BF%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン新宿区役所通り店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%96%B0%E5%AE%BF%E5%8C%BA%E5%BD%B9%E6%89%80%E9%80%9A%E3%82%8A%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ローソンシタディーンセントラル新宿店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%E3%82%B7%E3%82%BF%E3%83%87%E3%82%A3%E3%83%BC%E3%83%B3%E3%82%BB%E3%83%B3%E3%83%88%E3%83%A9%E3%83%AB%E6%96%B0%E5%AE%BF%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿駅",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿三丁目駅",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "西武新宿駅側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E6%AD%A6%E6%96%B0%E5%AE%BF%E9%A7%85%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "西武新宿駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E6%AD%A6%E6%96%B0%E5%AE%BF%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿サブナード",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E3%82%B5%E3%83%96%E3%83%8A%E3%83%BC%E3%83%89",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿駅東口地下街",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E9%A7%85%E6%9D%B1%E5%8F%A3%E5%9C%B0%E4%B8%8B%E8%A1%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "新宿サブナード",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E3%82%B5%E3%83%96%E3%83%8A%E3%83%BC%E3%83%89",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "西武新宿駅周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E6%AD%A6%E6%96%B0%E5%AE%BF%E9%A7%85%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -9689,14 +10771,14 @@
       "publicUrlPolicy": "確認メモ・note・参加記録のURLは公開しない。要点のみ独自表現で内部メモ扱い。"
     },
     "dayDecisionGuide": {
-      "baggageDay": "背中のリュックはフロアで邪魔になりやすい。足元に置かず、駅ロッカーかクロークへ回す。",
-      "goodNumberDay": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。",
-      "merchDay": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-      "rainyDay": "雨の日は会場前待機がつらい。傘より先に、濡らしたくない荷物を小さくまとめる。",
-      "soloDay": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-      "hurryAfterShowDay": "終演後はまず荷物回収と駅までのルート。余韻で長く残る日は、終電と夜行バス時刻だけ先に固定する。"
+      "baggageDay": "リュックは新宿駅・新宿三丁目駅ロッカーへ。歌舞伎町で荷物を抱えて歩かない。",
+      "goodNumberDay": "良番の日は駅側で全部済ませ、整列直前だけ会場へ向かう。",
+      "merchDay": "物販後に荷物が増える日はクロークや駅ロッカーを使い、終演後は大通りで戻る。",
+      "rainyDay": "地上歩行が長め。雨の日は新宿駅地下街や新宿サブナードで身支度し、傘と荷物を減らしてから歌舞伎町へ入る。",
+      "soloDay": "歌舞伎町の裏道回避。女性ソロや初参戦は駅側で全部済ませ、終演後も人通りの多い大通りで直帰する。",
+      "hurryAfterShowDay": "終演後は西武新宿南口または新宿三丁目E1へ大通りで戻る。裏道をショートカットに使わない。"
     },
-    "timeKillingNote": "会場前・ビル周辺の滞留は避け、整列開始時間までは明るい場所で待つ。",
+    "timeKillingNote": "歌舞伎町の路上ではなく駅側・商業施設側で調整する。",
     "lockerAlternativeNote": "新宿駅周辺ロッカーは埋まることがある。乗換駅や宿泊先預けも候補に入れる。",
     "venueExistenceConfidence": "official",
     "searchedSources": [
@@ -9706,7 +10788,53 @@
         "checkedAt": "2026-05-09"
       }
     ],
-    "researchStatus": "partial"
+    "researchStatus": "partial",
+    "stationLockerNote": "新宿駅、新宿三丁目駅、西武新宿駅側",
+    "convenienceNote": "ファミリーマート新宿歌舞伎町店、セブンイレブン新宿区役所通り店、ローソンシタディーンセントラル新宿店",
+    "publicSources": [
+      {
+        "label": "会場公式",
+        "url": "https://club-science.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "新宿club SCIENCE 公式アクセス",
+        "url": "https://club-science.com/access/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "新宿club SCIENCE 公式FLOOR MAP",
+        "url": "https://club-science.com/floormap/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "新宿club SCIENCE 公式ACCESS",
+        "url": "https://www.club-science.com/access/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "新宿club SCIENCE 公式EQUIPMENT",
+        "url": "https://www.club-science.com/equipment/",
+        "type": "official",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "LiveWalker 新宿club SCIENCE",
+        "url": "https://www.livewalker.com/web/detail/24600",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-09"
+      },
+      {
+        "label": "Googleマップ 新宿club SCIENCE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BFclub+SCIENCE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "shinjuku-heist",
@@ -11253,10 +12381,9 @@
     "nightSafetyNote": "巣鴨エリアは比較的落ち着いているが、夜の道順は事前確認推奨。",
     "lockerNote": "イベントによってクローク等の案内がある場合あり。必ず公式確認。",
     "baggageNote": "小箱のため荷物は最小限推奨。",
-    "convenienceNote": "駅周辺で事前購入推奨。",
-    "waitingNote": "公式注意に従い、近隣迷惑になる待機を避ける。",
-    "rainNote": "雨天時は開場前待機に注意。",
-    "returnNote": "終演後は駅までの導線を事前確認。",
+    "waitingNote": "北口周辺で整えて、整列時だけ路地に入る。会場前の路地で長く固まらない。",
+    "rainNote": "駅近で低リスク。雨の日は巣鴨駅北口側で身支度してから、整列直前に会場へ向かう。",
+    "returnNote": "終演後は来た道を戻って北口へ向かう。",
     "beginnerNote": "マイナーV系・地下寄りイベントの相性が高い。",
     "ticketSearchLinks": [
       {
@@ -11343,7 +12470,7 @@
     "beginnerStrategy": "マイナーV系・地下寄りイベントの相性が高い。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "小箱はトイレが少ない場合があります。開演直前や終演後の混雑を見込んで早めに済ませてください。",
+    "restroomNote": "巣鴨駅、アトレヴィ巣鴨周辺、北口周辺施設",
     "signalNote": "地下やビル内の会場では電波が弱い場合があります。電子チケットは入場前に表示確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "巣鴨エリアは比較的落ち着いているが、夜の道順は事前確認推奨。",
@@ -11362,7 +12489,14 @@
       "飲食物持込注意",
       "代替路線確認",
       "クローク確認",
-      "駅ロッカー推奨"
+      "駅ロッカー推奨",
+      "コンビニ近い",
+      "待機注意",
+      "雨でも行きやすい",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [
       "Live House 獅子王"
@@ -11470,24 +12604,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "開場前は駅周辺で待つ。会場前に長く固まらない。",
+    "arrivalStrategy": "北口周辺で整えて、整列時だけ路地に入る。会場前の路地で長く固まらない。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "巣鴨駅へ戻る導線は短い。終電がある日は山手線だけでなく乗換も見ておく。",
-    "beginnerOneLine": "獅子王は入口導線を先に押さえると迷いにくい。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は駅近くで待機して、整列開始に合わせる。",
-    "stationLockerNote": "会場設備が未確認のため、荷物が多い日は巣鴨駅ロッカーを先に確認する。",
+    "afterShowStrategy": "終演後は来た道を戻って北口へ向かう。",
+    "beginnerOneLine": "駅でトイレを済ませ、チケット表示とドリンク代を準備する。",
+    "soloOneLine": "寄り道せず駅へ戻る。",
+    "badWeatherNote": "駅近で低リスクだが、整列までは駅側で待つ。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "クローク500円案内あり。ロッカーは断定せず、荷物が多い日は巣鴨駅ロッカーも候補。",
+      "headline": "巣鴨駅北口で整えて、整列時だけ路地に入る。",
       "points": [
-        "会場ロッカーは確認中",
-        "クローク500円案内例あり",
-        "容量に限りがあるため駅ロッカーも見る",
-        "地下会場なので身軽に入る"
+        "巣鴨駅北口から向かう",
+        "都営三田線A2付近、JR巣鴨駅周辺のロッカーを候補にする",
+        "北口周辺で調整。会場前に長くたまらない",
+        "終演後は来た道を戻って北口へ"
       ]
     },
     "blogSignals": [
@@ -11546,6 +12679,12 @@
         "url": "https://iflyer.tv/en/venue/8867/about/",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 巣鴨獅子王周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E7%8D%85%E5%AD%90%E7%8E%8B+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -11650,7 +12789,7 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "開場前は駅周辺で待つ。会場前に長く固まらない。",
+    "timeKillingNote": "北口周辺で調整し、会場前に長くたまらない。整列時だけ路地に入る。",
     "lockerInfo": {
       "venueLockerStatus": "unknown",
       "venueLockerText": "会場内ロッカーの明記は確認中。地下会場のため荷物は少なめが安全。",
@@ -11660,9 +12799,9 @@
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "クローク500円案内あり。ロッカーは断定せず、荷物が多い日は巣鴨駅ロッカーも候補。",
+      "bestMove": "北口で整えて、整列時だけ路地に入る。荷物が多い日は駅ロッカーも候補。",
       "sourceConfidence": "supporting_reference",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "available",
@@ -11675,21 +12814,155 @@
       "lastCheckedAt": "2026-05-07"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。地下会場なので身軽に動く。",
-      "backpack": "リュックはクロークか駅ロッカーへ。フロアに持ち込む量を減らす。",
-      "suitcase": "キャリーは会場持ち込みを避ける。巣鴨駅ロッカーや宿泊先預けを優先する。",
-      "afterMerch": "物販後に袋が増えるなら、終演後の回収動線も見てクロークか駅ロッカーを選ぶ。",
-      "goodTicketNumber": "良番ならクローク列で遅れないよう、入場前に預け先を決めておく。"
+      "smallBag": "小さい荷物なら北口で飲み物とトイレを済ませ、整列時だけ路地に入る。",
+      "backpack": "リュックはクロークか駅ロッカーへ。地下会場では身軽に動く。",
+      "suitcase": "キャリーありの日は巣鴨駅ロッカーや宿泊先で先に預ける。",
+      "afterMerch": "物販後に増える荷物はクローク容量を当日確認し、駅ロッカーも候補にする。",
+      "goodTicketNumber": "良番の日は北口側で荷物処理を済ませ、整列時だけ会場前へ。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "巣鴨駅周辺で飲み物や軽食を済ませる。会場周辺で直前に探し回らない。",
-      "stationLocker": "巣鴨駅周辺ロッカーを候補にする。クローク容量が不安な日は先に駅で預ける。",
-      "waitingSpot": "会場前に長くたまらず、整列開始までは駅周辺で待つ。",
-      "rainShelter": "雨の日は駅近くの屋根がある場所で整列直前まで待つ方が負担が少ない。",
-      "restroomBeforeEntry": "駅で先にトイレを済ませる。地下会場では開演前に混みやすい。",
-      "cashAndCoin": "ドリンク代とクローク500円を現金で残す。",
-      "afterShowRoute": "終演後は巣鴨駅へ戻る。クローク回収がある日は出口付近で詰まりやすい。",
-      "nightSafety": "巣鴨周辺は比較的落ち着くが、夜は駅までのルートを先に確認する。"
+      "nearestConvenienceStore": "NewDays巣鴨、セブンイレブン巣鴨駅北口店、ファミリーマート巣鴨駅前店",
+      "stationLocker": "都営三田線A2付近",
+      "waitingSpot": "北口周辺で調整し、会場前に長くたまらない。整列時だけ路地に入る。",
+      "rainShelter": "駅近で低リスクだが、整列までは駅側で待つ。",
+      "restroomBeforeEntry": "巣鴨駅",
+      "cashAndCoin": "ドリンク代とクローク用の現金を残す。",
+      "afterShowRoute": "終演後は来た道を戻って北口へ向かう。",
+      "nightSafety": "寄り道せず駅へ戻る。",
+      "nearestExit": "巣鴨駅北口",
+      "convenienceStores": [
+        "NewDays巣鴨",
+        "セブンイレブン巣鴨駅北口店",
+        "ファミリーマート巣鴨駅前店"
+      ],
+      "stationLockers": [
+        "都営三田線A2付近",
+        "JR巣鴨駅周辺"
+      ],
+      "waitingRule": "北口周辺で調整し、会場前に長くたまらない。整列時だけ路地に入る。",
+      "restrooms": [
+        "巣鴨駅",
+        "アトレヴィ巣鴨周辺",
+        "北口周辺施設"
+      ],
+      "rainPlan": "駅近で低リスクだが、整列までは駅側で待つ。",
+      "soloBeginnerNote": "駅でトイレを済ませ、チケット表示とドリンク代を準備する。",
+      "cafes": [
+        "巣鴨駅北口周辺",
+        "アトレヴィ巣鴨周辺"
+      ],
+      "arrivalRoute": "巣鴨駅北口で出口と帰り道を確認する。",
+      "tripNote": "キャリーは巣鴨駅側で先に処理し、会場前の路地へ持ち込まない。",
+      "baggageFlow": "荷物が多い日は都営三田線A2付近やJR巣鴨駅周辺のロッカーを候補にする。",
+      "dayFlow": {
+        "stationArrival": "巣鴨駅北口で出口と帰り道を確認する。",
+        "baggageDrop": "都営三田線A2付近やJR巣鴨駅周辺のロッカーを候補にする。",
+        "beforeEntry": "北口周辺で調整し、整列時だけ路地に入る。",
+        "entry": "駅でトイレを済ませ、チケット表示とドリンク代を準備する。",
+        "afterShow": "来た道を戻って巣鴨駅北口へ向かう。",
+        "lastTrainNote": "夜は寄り道せず駅へ戻る。"
+      },
+      "places": [
+        {
+          "name": "巣鴨駅北口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E9%A7%85%E5%8C%97%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "NewDays巣鴨",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=NewDays%E5%B7%A3%E9%B4%A8",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン巣鴨駅北口店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E5%B7%A3%E9%B4%A8%E9%A7%85%E5%8C%97%E5%8F%A3%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート巣鴨駅前店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E5%B7%A3%E9%B4%A8%E9%A7%85%E5%89%8D%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "都営三田線A2付近",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%83%BD%E5%96%B6%E4%B8%89%E7%94%B0%E7%B7%9AA2%E4%BB%98%E8%BF%91",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "JR巣鴨駅周辺",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=JR%E5%B7%A3%E9%B4%A8%E9%A7%85%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "巣鴨駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "アトレヴィ巣鴨周辺",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%88%E3%83%AC%E3%83%B4%E3%82%A3%E5%B7%A3%E9%B4%A8%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "北口周辺施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E5%8F%A3%E5%91%A8%E8%BE%BA%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "巣鴨駅北口周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E9%A7%85%E5%8C%97%E5%8F%A3%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "アトレヴィ巣鴨周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%88%E3%83%AC%E3%83%B4%E3%82%A3%E5%B7%A3%E9%B4%A8%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -11704,15 +12977,49 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "ロッカー未確認なので駅ロッカー先行。リュック以上は会場に持ち込まない。",
-      "goodNumberDay": "良番なら荷物確認に時間を使わない。駅で預けてから向かう。",
-      "merchDay": "物販で荷物が増えるなら、終演まで持つ量に絞るか駅ロッカーへ戻す。",
-      "rainyDay": "雨の日は駅周辺で待機。会場前待機を短くする。",
-      "soloDay": "ぼっち参戦は巣鴨駅からの入口目印を先に確認すると不安が減る。",
-      "hurryAfterShowDay": "急ぐ日は山手線の乗車位置とロッカー位置を先に決める。"
+      "baggageDay": "リュックはクロークか駅ロッカーへ。地下会場では身軽に動く。",
+      "goodNumberDay": "良番の日は北口側で荷物処理を済ませ、整列時だけ会場前へ。",
+      "merchDay": "物販後に増える荷物はクローク容量を当日確認し、駅ロッカーも候補にする。",
+      "rainyDay": "駅近で低リスク。雨の日は巣鴨駅北口側で身支度してから、整列直前に会場へ向かう。",
+      "soloDay": "寄り道せず駅へ。女性ソロは北口まで人通りのある道を使い、路地に残らない。",
+      "hurryAfterShowDay": "終演後は来た道を戻って巣鴨駅北口へ。ロッカー回収がある人は駅側へ直行する。"
     },
     "lockerAlternativeNote": "会場設備が未確認のため、荷物が多い日は巣鴨駅ロッカーを先に確認する。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "都営三田線A2付近、JR巣鴨駅周辺",
+    "convenienceNote": "NewDays巣鴨、セブンイレブン巣鴨駅北口店、ファミリーマート巣鴨駅前店",
+    "publicSources": [
+      {
+        "label": "巣鴨獅子王公式",
+        "url": "https://sugamo-cco.com/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "巣鴨獅子王公式ABOUT",
+        "url": "https://www.sugamo-cco.com/about.php",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "巣鴨獅子王公式ACCESS",
+        "url": "https://sugamo-cco.com/access.php",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "iFLYER 巣鴨獅子王",
+        "url": "https://iflyer.tv/en/venue/8867/about/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 巣鴨獅子王周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E7%8D%85%E5%AD%90%E7%8E%8B+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "okubo-hot-shot",
@@ -12610,10 +13917,9 @@
     "nightSafetyNote": "池袋西口方面は夜も人通りがあるが、慣れていない場合は駅からの道順を事前確認推奨。",
     "lockerNote": "小箱公演ではロッカー・荷物置きの扱いが変わる可能性があるため公式確認推奨。",
     "baggageNote": "荷物は最小限推奨。",
-    "convenienceNote": "周辺コンビニは事前確認推奨。",
-    "waitingNote": "路上待機は近隣迷惑になりやすいため会場案内に従う。",
-    "rainNote": "雨の日は開場前待機の負担が大きいため装備注意。",
-    "returnNote": "終演後は池袋駅方面の混雑に注意。",
+    "waitingNote": "会場前は細い導線なので長時間たまらない。整列まではEchika池袋、東京芸術劇場周辺、池袋西口公園側で短時間調整する。",
+    "rainNote": "C6出口を使うと地上移動を短くできる。雨の日はEchika池袋側で傘と荷物を整えてから会場へ向かう。",
+    "returnNote": "終演後はC6方面へ戻り、池袋駅でロッカーを回収する。",
     "beginnerNote": "若手V系・小規模イベントと相性が高い会場。",
     "ticketSearchLinks": [
       {
@@ -12708,7 +14014,7 @@
     "beginnerStrategy": "若手V系・小規模イベントと相性が高い会場。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "小箱はトイレが少ない場合があります。開演直前や終演後の混雑を見込んで早めに済ませてください。",
+    "restroomNote": "池袋駅、Echika池袋、駅周辺商業施設",
     "signalNote": "地下やビル内の会場では電波が弱い場合があります。電子チケットは入場前に表示確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "池袋西口方面は夜も人通りがあるが、慣れていない場合は駅からの道順を事前確認推奨。",
@@ -12727,7 +14033,14 @@
       "公式ロッカーなし",
       "公式クロークなし",
       "C6出口",
-      "地下小箱"
+      "地下小箱",
+      "コンビニ近い",
+      "待機注意",
+      "雨でも行きやすい",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [
       "BlackHole"
@@ -12814,24 +14127,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "C6出口から近いので、早く着きすぎたら駅周辺で待機してから向かう。",
+    "arrivalStrategy": "会場前は細い導線なので長時間たまらない。整列まではEchika池袋、東京芸術劇場周辺、池袋西口公園側で短時間調整する。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後はC6出口方面から池袋駅へ戻る。人流が多いので改札を先に決める。",
-    "beginnerOneLine": "BlackHoleは荷物を持ち込まない判断が一番効く。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日はC6出口近くまで地下・駅側で引きつけて移動する。",
-    "stationLockerNote": "池袋駅ロッカー推奨。西口側だけで埋まる場合は、乗換動線側も候補にする。",
+    "afterShowStrategy": "終演後はC6方面へ戻り、池袋駅でロッカーを回収する。",
+    "beginnerOneLine": "入場直前までにトイレ、ドリンク代、チケット表示を済ませる。",
+    "soloOneLine": "池袋西口の繁華街側へ流れすぎず、横道に入らず駅へ戻る。",
+    "badWeatherNote": "C6出口経由で地上移動を短くする。駅地下で傘と荷物を整えてから会場へ向かう。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "公式でロッカーなし・クロークなし。池袋駅で荷物を処理してから向かう。",
+      "headline": "池袋駅で荷物を預けて、C6出口から向かう。会場前で長く待たず、終演後もC6方面へ戻る。",
       "points": [
-        "会場預けは期待しない",
-        "池袋駅ロッカーを先に確保する",
-        "キャリーは会場へ持ち込まない",
-        "良番の日は身軽になってから整列する"
+        "池袋駅構内、C6出口へ向かう地下通路周辺でロッカーを先に確認",
+        "会場前の滞留・座り込みは避け、駅地下やカフェで調整",
+        "雨の日はC6出口経由で地上移動を短くする",
+        "終演後はC6方面へ戻り、池袋駅でロッカーを回収する"
       ]
     },
     "blogSignals": [
@@ -12896,6 +14208,12 @@
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 池袋BlackHole周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BBlackHole+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -12989,46 +14307,180 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "C6出口から近いので、早く着きすぎたら駅周辺で待機してから向かう。",
+    "timeKillingNote": "会場前の滞留・座り込みは避け、整列までは駅地下やカフェで調整する。",
     "lockerInfo": {
       "venueLockerStatus": "none",
-      "venueLockerText": "公式アクセスでコインロッカー・クロークなしの案内あり。",
-      "lockerCountText": "会場内ロッカーなし",
+      "venueLockerText": "会場内ロッカーなし。池袋駅側で荷物を処理する。",
+      "lockerCountText": "なし",
       "beforeEntryUse": "unavailable",
       "afterEntryUse": "unavailable",
       "coinNeeded": "no",
       "largeBagFit": "no",
       "stationLockerRecommended": "yes",
-      "bestMove": "公式でロッカーなし・クロークなし。池袋駅で荷物を処理してから向かう。",
+      "bestMove": "池袋駅で荷物を預けて、C6出口から向かう。",
       "sourceConfidence": "official",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "none",
-      "cloakText": "公式アクセス上はクロークなし。受付預かりの体験談があっても公式情報を優先する。",
+      "cloakText": "クロークなし。会場預けを前提にしない。",
       "priceText": "なし",
       "timingText": "利用不可",
       "bagTypeText": "会場預け前提にしない",
-      "bestMove": "キャリーや大きい荷物は池袋駅ロッカー、ホテル、荷物預かりへ。物販後に増える荷物も会場へ持ち込まない前提で準備する。",
+      "bestMove": "キャリーや大きい荷物は池袋駅ロッカー、ホテル、荷物預かりへ。",
       "sourceConfidence": "official",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。貴重品だけ体の前で管理する。",
-      "backpack": "リュックは池袋駅ロッカーへ。背負ったままフロアに入らない。",
-      "suitcase": "キャリーは会場持ち込み非推奨。池袋駅の大型ロッカーや宿泊先へ先に預ける。",
-      "afterMerch": "物販後に袋が増えるなら、終演まで持てる量に絞るか、先に駅ロッカーを確保する。",
-      "goodTicketNumber": "良番の日は荷物処理を終えてから会場へ。入場直前に預け先を探さない。"
+      "smallBag": "小さい荷物ならそのまま入場しやすい。C6出口から会場へ直行する。",
+      "backpack": "リュックは池袋駅ロッカーへ。フロアでは背負わず体の前で管理できる量に減らす。",
+      "suitcase": "キャリーありの日は池袋駅や宿泊先で必ず先に預ける。会場へ持ち込まない。",
+      "afterMerch": "物販後に荷物が増える日は、駅ロッカーへ戻すか終演まで持てる量に絞る。",
+      "goodTicketNumber": "良番の日は荷物処理を済ませてからC6出口へ。入場直前に預け先を探さない。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "池袋駅周辺で飲み物や現金を整えてから向かう。近隣店舗は混雑前に地図で確認する。",
-      "stationLocker": "池袋駅ロッカー利用が基本。大きい荷物は駅到着時点で処理する。",
-      "waitingSpot": "会場前で長く待つより、駅周辺の商業施設やカフェで時間調整する。",
-      "rainShelter": "雨の日は駅周辺の屋内で整列直前まで待つ。傘を差したまま会場前に溜まらない。",
-      "restroomBeforeEntry": "入場前に駅や商業施設で済ませる。会場で荷物とトイレを同時に抱えない。",
-      "cashAndCoin": "ドリンク代用に現金を残す。駅ロッカー用の小銭やIC決済残高も確認する。",
-      "afterShowRoute": "終演後は池袋駅へ戻る。ロッカー回収がある人は終電までの余裕を見て動く。",
-      "nightSafety": "池袋西口方面は夜も人通りがあるが、初めてなら駅までのルートを事前保存する。"
+      "nearestConvenienceStore": "セブンイレブン池袋2丁目劇場通り店、ファミリーマート池袋西口店、ローソン Echika池袋店",
+      "stationLocker": "池袋駅構内",
+      "waitingSpot": "会場前の滞留・座り込みは避け、整列までは駅地下やカフェで調整する。",
+      "rainShelter": "C6出口経由で地上移動を短くする。駅地下で傘と荷物を整えてから会場へ向かう。",
+      "restroomBeforeEntry": "池袋駅",
+      "cashAndCoin": "ドリンク代と駅ロッカー用の現金・IC残高を残す。",
+      "afterShowRoute": "終演後はC6方面へ戻り、池袋駅でロッカーを回収する。",
+      "nightSafety": "池袋西口の繁華街側へ流れすぎず、横道に入らず駅へ戻る。",
+      "nearestExit": "池袋駅西口・C6出口",
+      "convenienceStores": [
+        "セブンイレブン池袋2丁目劇場通り店",
+        "ファミリーマート池袋西口店",
+        "ローソン Echika池袋店"
+      ],
+      "stationLockers": [
+        "池袋駅構内",
+        "C6出口へ向かう地下通路周辺"
+      ],
+      "waitingRule": "会場前の滞留・座り込みは避け、整列までは駅地下やカフェで調整する。",
+      "restrooms": [
+        "池袋駅",
+        "Echika池袋",
+        "駅周辺商業施設"
+      ],
+      "rainPlan": "C6出口経由で地上移動を短くする。駅地下で傘と荷物を整えてから会場へ向かう。",
+      "soloBeginnerNote": "入場直前までにトイレ、ドリンク代、チケット表示を済ませる。",
+      "cafes": [
+        "Echika池袋",
+        "池袋西口公園側のカフェ"
+      ],
+      "arrivalRoute": "池袋駅に着いたら西口・C6方面へ。荷物が多い日は地下通路周辺のロッカーを先に確認する。",
+      "tripNote": "キャリーは池袋駅大型ロッカー、宿泊先、荷物預かりで先に処理する。終演後の回収時間も見込む。",
+      "baggageFlow": "会場内ロッカー・クロークはなし。リュック以上は池袋駅で預けてから向かう。",
+      "dayFlow": {
+        "stationArrival": "池袋駅に着いたら西口・C6方面へ。荷物が多い日は地下通路周辺のロッカーを先に確認する。",
+        "baggageDrop": "会場内ロッカー・クロークはなし。リュックやキャリーは駅側で処理する。",
+        "beforeEntry": "会場前に長く待たず、Echika池袋や駅周辺カフェで調整する。",
+        "entry": "入場直前までにトイレ、ドリンク代、チケット表示を済ませる。",
+        "afterShow": "終演後はC6方面へ戻り、池袋駅でロッカーを回収する。",
+        "lastTrainNote": "夜行バスや終電前は西口繁華街に流れず、駅へ戻る時間を先に決める。"
+      },
+      "places": [
+        {
+          "name": "池袋駅西口・C6出口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E8%A5%BF%E5%8F%A3%E3%83%BBC6%E5%87%BA%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン池袋2丁目劇場通り店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%B1%A0%E8%A2%8B2%E4%B8%81%E7%9B%AE%E5%8A%87%E5%A0%B4%E9%80%9A%E3%82%8A%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート池袋西口店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E6%B1%A0%E8%A2%8B%E8%A5%BF%E5%8F%A3%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ローソン Echika池袋店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%BD%E3%83%B3%20Echika%E6%B1%A0%E8%A2%8B%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅構内",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%A7%8B%E5%86%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "C6出口へ向かう地下通路周辺",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=C6%E5%87%BA%E5%8F%A3%E3%81%B8%E5%90%91%E3%81%8B%E3%81%86%E5%9C%B0%E4%B8%8B%E9%80%9A%E8%B7%AF%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "Echika池袋",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Echika%E6%B1%A0%E8%A2%8B",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "駅周辺商業施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A7%85%E5%91%A8%E8%BE%BA%E5%95%86%E6%A5%AD%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "Echika池袋",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Echika%E6%B1%A0%E8%A2%8B",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋西口公園側のカフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E8%A5%BF%E5%8F%A3%E5%85%AC%E5%9C%92%E5%81%B4%E3%81%AE%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "researched",
@@ -13043,15 +14495,55 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "荷物ありなら池袋駅ロッカー一択。会場クローク待ちはしない。",
-      "goodNumberDay": "良番は入口前で荷物を抱えない。駅で預けてからC6出口へ。",
-      "merchDay": "物販後に荷物が増えるなら、終演まで持てる小袋か駅ロッカー戻しを決める。",
-      "rainyDay": "雨の日はC6出口近くまで屋根のある動線を使い、会場前滞留を短くする。",
-      "soloDay": "一人参戦はC6出口・会場入口・帰り改札を先に確認すれば動きやすい。",
-      "hurryAfterShowDay": "急ぐ日は駅ロッカー回収を避ける量にするか、ロッカー位置をスクショしておく。"
+      "baggageDay": "リュックは池袋駅ロッカーへ。フロアでは背負わず体の前で管理できる量に減らす。",
+      "goodNumberDay": "良番の日は荷物処理を済ませてからC6出口へ。入場直前に預け先を探さない。",
+      "merchDay": "物販後に荷物が増える日は、駅ロッカーへ戻すか終演まで持てる量に絞る。",
+      "rainyDay": "C6出口を使うと地上移動を短くできる。雨の日はEchika池袋側で傘と荷物を整えてから会場へ向かう。",
+      "soloDay": "西口繁華街の横道に入らず、C6から池袋駅へ直帰する。女性ソロは人通りの多い大通りと駅地下を優先する。",
+      "hurryAfterShowDay": "終演後は来た道を戻ってC6出口へ。池袋駅でロッカーを回収する人は西口側の人流に乗って戻る。"
     },
     "lockerAlternativeNote": "池袋駅ロッカー推奨。西口側だけで埋まる場合は、乗換動線側も候補にする。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "池袋駅構内、C6出口へ向かう地下通路周辺",
+    "convenienceNote": "セブンイレブン池袋2丁目劇場通り店、ファミリーマート池袋西口店、ローソン Echika池袋店",
+    "publicSources": [
+      {
+        "label": "会場公式アクセス",
+        "url": "https://www.black-hole.jp/contents/access.html",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "池袋BlackHole 公式PDF",
+        "url": "https://www.black-hole.jp/images/2018finaltime.pdf",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "イベここ 池袋BlackHole",
+        "url": "https://evecoco.net/livehouse/2541/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "LiveFans 池袋Black Hole",
+        "url": "https://www.livefans.jp/venues/5107",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 池袋BlackHole",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 池袋BlackHole周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BBlackHole+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "ikebukuro-edge",
@@ -13083,10 +14575,9 @@
     "nightSafetyNote": "池袋駅周辺は夜も人通りが多いが、終演後は駅までのルートを事前確認推奨。",
     "lockerNote": "会場・駅周辺ロッカーの事前確認推奨。",
     "baggageNote": "物販購入後は荷物が増えやすいため、軽装と小さめバッグ推奨。",
-    "convenienceNote": "周辺コンビニは事前に地図アプリで確認推奨。",
-    "waitingNote": "開場前の待機は近隣迷惑にならないよう会場案内に従う。",
-    "rainNote": "雨天時は折りたたみ傘推奨。",
-    "returnNote": "池袋駅方面へ戻る導線を事前確認。",
+    "waitingNote": "1Fファミマで飲み物を整え、整列までは東口地下街、西武池袋本店周辺、池袋PARCO周辺で調整する。会場前で長く固まらない。",
+    "rainNote": "駅近だが地上移動がある。雨の日は東口地下街や西武池袋本店側で身支度して、整列直前に会場へ向かう。",
+    "returnNote": "終演後は東口・西武口方面へ戻る。",
     "beginnerNote": "初参戦でも行きやすいが、会場名と入口位置は事前確認推奨。",
     "ticketSearchLinks": [
       {
@@ -13188,7 +14679,7 @@
     "beginnerStrategy": "初参戦でも行きやすいが、会場名と入口位置は事前確認推奨。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "トイレの場所と混みやすい時間は会場ごとに違います。入場前に済ませる選択肢も持ってください。",
+    "restroomNote": "池袋駅、池袋駅東口側商業施設、西武池袋本店周辺",
     "signalNote": "地下やビル内の会場では電波が弱い場合があります。電子チケットは入場前に表示確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "池袋駅周辺は夜も人通りが多いが、終演後は駅までのルートを事前確認推奨。",
@@ -13206,7 +14697,15 @@
       "屋外待機注意",
       "地下電波注意",
       "後方段差",
-      "入口確認"
+      "入口確認",
+      "コンビニ近い",
+      "待機注意",
+      "終演後は大通り推奨",
+      "初参戦向き",
+      "雨の日注意",
+      "終演後注意",
+      "女性ソロは駅直帰",
+      "キャリー非推奨"
     ],
     "aliases": [
       "EDGE ikebukuro",
@@ -13319,24 +14818,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "会場前に長く固まらず、整列開始までは池袋駅・駅ビル・周辺カフェで時間調整する。",
+    "arrivalStrategy": "1Fファミマで飲み物を整え、整列までは東口地下街、西武池袋本店周辺、池袋PARCO周辺で調整する。会場前で長く固まらない。",
     "entryStrategyPlain": "番号帯で待機場所が変わる可能性を見る。呼び出し前に電子チケット表示、トイレ、荷物処理を終える。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後は池袋駅の改札とロッカー回収がセット。預けたロッカーの位置をスクショしておく。",
-    "beginnerOneLine": "EDGEは小箱V系の定番。荷物と電波だけ先に潰すと初参戦でもかなり楽。",
-    "soloOneLine": "一人なら駅近くで待機して、整列時間になったら会場へ向かうのが楽。",
-    "badWeatherNote": "雨の日は会場前で待ち続けない。駅地下・商業施設側で待機して、整列時間に合わせて移動する。",
-    "stationLockerNote": "池袋駅構内、43・42番出口付近のロッカーに触れる記事あり。池袋駅は広いので、会場に近い出口だけでなく乗換側も候補にする。",
+    "afterShowStrategy": "終演後は東口・西武口方面へ戻る。",
+    "beginnerOneLine": "入場前に駅や商業施設でトイレを済ませ、チケット表示とドリンク代を準備する。",
+    "soloOneLine": "駅前大通りルートを優先し、細い横道で迷わない。",
+    "badWeatherNote": "駅近だが地上移動あり。傘を畳む場所を考えて早めに移動する。",
     "goodNumberWarning": "良番で荷物を抱えるのはもったいない。先に預けて、呼び出し前に入口へ。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "クローク500円案内あり。固定ロッカーは断定せず、荷物が多い日は池袋駅で先に処理する。",
+      "headline": "池袋駅で荷物を減らし、東口・西武口側から向かう。クロークはあるが駅ロッカー先行が安心。",
       "points": [
-        "固定ロッカー前提で行かない",
-        "クロークは使える可能性があるが保険扱い",
-        "キャリーは池袋駅や宿泊先へ先に預ける",
-        "良番の日は荷物処理を終えてから整列する"
+        "池袋駅東口・西武口方面、地下からなら42番出口方面も候補",
+        "会場内ロッカーはなし扱い。クロークは500円情報あり",
+        "会場前に長くたまらず、池袋駅東口側、カフェ、商業施設で調整",
+        "終演後は東口・西武口方面へ戻る"
       ]
     },
     "blogSignals": [
@@ -13373,16 +14871,28 @@
     ],
     "sourceLinks": [
       {
-        "label": "会場公式",
-        "url": "https://xxxrecords.jp/edge/index.html",
-        "type": "official",
-        "checkedAt": "2026-05-07"
-      },
-      {
         "label": "ライブハウスナビ 池袋EDGE",
         "url": "https://live-house.info/toshimaku/edge.html",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "イープラス EDGE ikebukuro会場情報",
+        "url": "https://eplus.jp/sf/venue/1710280",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "Googleマップ 池袋EDGE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BEDGE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "LiveWalker Ikebukuro EDGE",
+        "url": "https://www.livewalker.com/web/detail/14917",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -13487,7 +14997,7 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "会場前に長く固まらず、整列開始までは池袋駅・駅ビル・周辺カフェで時間調整する。",
+    "timeKillingNote": "会場前に長くたまらず、池袋駅東口側、カフェ、商業施設で調整する。",
     "lockerInfo": {
       "venueLockerStatus": "unknown",
       "venueLockerText": "固定ロッカーの明記は確認中。クローク案内はあるため、ロッカー前提で動かない。",
@@ -13497,9 +15007,9 @@
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "固定ロッカー前提は危険。キャリーや大きい荷物は池袋駅周辺で先に処理し、会場クロークは保険として考える。",
+      "bestMove": "固定ロッカー前提ではなく、池袋駅ロッカーを先に使う。",
       "sourceConfidence": "supporting_reference",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "available",
@@ -13512,21 +15022,165 @@
       "lastCheckedAt": "2026-05-07"
     },
     "baggageGuide": {
-      "smallBag": "スマホ・財布・チケット程度ならそのまま入場しやすい。貴重品は体の前で管理する。",
-      "backpack": "リュックはフロアで邪魔になりやすい。クロークか駅ロッカーへ預ける前提で動く。",
-      "suitcase": "キャリーは会場に持ち込まない。池袋駅ロッカー、ホテル、荷物預かりを先に済ませる。",
-      "afterMerch": "物販後に袋が増えるなら、終演まで持つ量に抑えるか、駅ロッカーへ戻す動線を決めておく。",
-      "goodTicketNumber": "良番ならロッカー探しで出遅れないよう、駅到着時点で荷物を処理する。"
+      "smallBag": "小さい荷物なら1Fファミマで飲み物を整えてから入場する。",
+      "backpack": "リュックは池袋駅ロッカーかクロークへ。背負ったままフロアに入らない。",
+      "suitcase": "キャリーありの日は池袋駅・ホテル・荷物預かりで先に処理する。",
+      "afterMerch": "物販後に荷物が増える日は駅ロッカーへ戻す動線を先に決める。",
+      "goodTicketNumber": "良番の日は駅で荷物処理を済ませ、整列直前まで東口側で待つ。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "池袋駅から会場へ向かう前にコンビニで飲み物と現金を整えると動きやすい。店舗位置は地図アプリで直前確認。",
-      "stationLocker": "池袋駅はロッカー候補が多いが、休日や大型公演日は埋まりやすい。駅到着直後に確保する。",
-      "waitingSpot": "会場前に長くたまらず、整列開始までは池袋駅周辺の商業施設やカフェで時間調整する。",
-      "rainShelter": "雨の日は会場前待機を長くしない。駅周辺の屋内で身支度してから移動する。",
-      "restroomBeforeEntry": "入場前に駅や商業施設でトイレを済ませる。入場直前に荷物とトイレで迷わない。",
-      "cashAndCoin": "ドリンク代とクローク用に千円札と小銭を残す。キャッシュレス前提にしない。",
-      "afterShowRoute": "終演後は池袋駅方面へ人が流れやすい。クローク回収がある日は終電まで余裕を見る。",
-      "nightSafety": "池袋は夜も人通りが多いが、初めてなら駅までのルートを事前に保存しておく。"
+      "nearestConvenienceStore": "ファミリーマートサウス池袋店、セブンイレブン豊島南池袋1丁目店、ファミリーマート南池袋一丁目店",
+      "stationLocker": "池袋駅東口・西武口側",
+      "waitingSpot": "会場前に長くたまらず、池袋駅東口側、カフェ、商業施設で調整する。",
+      "rainShelter": "駅近だが地上移動あり。傘を畳む場所を考えて早めに移動する。",
+      "restroomBeforeEntry": "池袋駅",
+      "cashAndCoin": "ドリンク代とクローク用の現金を残す。",
+      "afterShowRoute": "終演後は東口・西武口方面へ戻る。",
+      "nightSafety": "駅前大通りルートを優先し、細い横道で迷わない。",
+      "nearestExit": "池袋駅東口・西武口方面、地下からなら42番出口方面も候補",
+      "convenienceStores": [
+        "ファミリーマートサウス池袋店",
+        "セブンイレブン豊島南池袋1丁目店",
+        "ファミリーマート南池袋一丁目店"
+      ],
+      "stationLockers": [
+        "池袋駅東口・西武口側",
+        "池袋駅構内"
+      ],
+      "waitingRule": "会場前に長くたまらず、池袋駅東口側、カフェ、商業施設で調整する。",
+      "restrooms": [
+        "池袋駅",
+        "池袋駅東口側商業施設",
+        "西武池袋本店周辺"
+      ],
+      "rainPlan": "駅近だが地上移動あり。傘を畳む場所を考えて早めに移動する。",
+      "soloBeginnerNote": "入場前に駅や商業施設でトイレを済ませ、チケット表示とドリンク代を準備する。",
+      "cafes": [
+        "池袋駅東口側カフェ",
+        "西武池袋本店周辺",
+        "池袋PARCO周辺"
+      ],
+      "arrivalRoute": "池袋駅に着いたら東口・西武口方面へ。地下なら42番出口方面も候補にする。",
+      "tripNote": "キャリーは池袋駅か宿泊先へ。クローク利用時も終演後の回収列を見込む。",
+      "baggageFlow": "会場内ロッカーはなし扱い。クロークはあるが、荷物が多い日は駅ロッカー先行が安心。",
+      "dayFlow": {
+        "stationArrival": "池袋駅に着いたら東口・西武口方面へ。地下なら42番出口方面も候補にする。",
+        "baggageDrop": "荷物が多い日は池袋駅ロッカーを先に確認。クロークは当日案内を見て補助的に使う。",
+        "beforeEntry": "1Fファミマで飲み物を整え、東口側カフェや商業施設で待つ。",
+        "entry": "入場前に駅や商業施設でトイレを済ませ、チケット表示とドリンク代を準備する。",
+        "afterShow": "終演後は東口・西武口方面へ戻る。",
+        "lastTrainNote": "クローク回収がある日は終電まで余裕を見て動く。"
+      },
+      "places": [
+        {
+          "name": "池袋駅東口・西武口方面、地下からなら42番出口方面も候補",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%9D%B1%E5%8F%A3%E3%83%BB%E8%A5%BF%E6%AD%A6%E5%8F%A3%E6%96%B9%E9%9D%A2%E3%80%81%E5%9C%B0%E4%B8%8B%E3%81%8B%E3%82%89%E3%81%AA%E3%82%8942%E7%95%AA%E5%87%BA%E5%8F%A3%E6%96%B9%E9%9D%A2%E3%82%82%E5%80%99%E8%A3%9C",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマートサウス池袋店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B5%E3%82%A6%E3%82%B9%E6%B1%A0%E8%A2%8B%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン豊島南池袋1丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E8%B1%8A%E5%B3%B6%E5%8D%97%E6%B1%A0%E8%A2%8B1%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート南池袋一丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E5%8D%97%E6%B1%A0%E8%A2%8B%E4%B8%80%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅東口・西武口側",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%9D%B1%E5%8F%A3%E3%83%BB%E8%A5%BF%E6%AD%A6%E5%8F%A3%E5%81%B4",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅構内",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%A7%8B%E5%86%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅東口側商業施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%9D%B1%E5%8F%A3%E5%81%B4%E5%95%86%E6%A5%AD%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "西武池袋本店周辺",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E6%AD%A6%E6%B1%A0%E8%A2%8B%E6%9C%AC%E5%BA%97%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋駅東口側カフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8B%E9%A7%85%E6%9D%B1%E5%8F%A3%E5%81%B4%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "西武池袋本店周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E6%AD%A6%E6%B1%A0%E8%A2%8B%E6%9C%AC%E5%BA%97%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "池袋PARCO周辺",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BPARCO%E5%91%A8%E8%BE%BA",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -13541,15 +15195,43 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "荷物がある日は池袋駅ロッカー先行。会場で預け先を探す時間を作らない。",
-      "goodNumberDay": "良番ならロッカー探しで出遅れない。入場前に身軽にして入口へ。",
-      "merchDay": "物販で袋が増える日は、買った後に駅ロッカーへ戻すか、クロークがある日だけ会場預けにする。",
-      "rainyDay": "雨の日は駅・商業施設で待つ。会場前に濡れた荷物を持ったまま立たない。",
-      "soloDay": "一人なら駅側で待機して、整列時間になったら移動するのが楽。段上後方も候補にできる。",
-      "hurryAfterShowDay": "終演後に急ぐ日は、ロッカー位置と帰り改札をメモしてから入場する。"
+      "baggageDay": "リュックは池袋駅ロッカーかクロークへ。背負ったままフロアに入らない。",
+      "goodNumberDay": "良番の日は駅で荷物処理を済ませ、整列直前まで東口側で待つ。",
+      "merchDay": "物販後に荷物が増える日は駅ロッカーへ戻す動線を先に決める。",
+      "rainyDay": "駅近だが地上移動がある。雨の日は東口地下街や西武池袋本店側で身支度して、整列直前に会場へ向かう。",
+      "soloDay": "駅前大通りルートを優先し、南池袋の細い横道で迷わない。女性ソロは人通りの多い東口側へ戻る。",
+      "hurryAfterShowDay": "終演後は東口・西武口方面へ戻る。ロッカー回収がある人は池袋駅東口側へ直行する。"
     },
     "lockerAlternativeNote": "池袋駅構内、43・42番出口付近のロッカーに触れる記事あり。池袋駅は広いので、会場に近い出口だけでなく乗換側も候補にする。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "池袋駅東口・西武口側、池袋駅構内",
+    "convenienceNote": "ファミリーマートサウス池袋店、セブンイレブン豊島南池袋1丁目店、ファミリーマート南池袋一丁目店",
+    "publicSources": [
+      {
+        "label": "ライブハウスナビ 池袋EDGE",
+        "url": "https://live-house.info/toshimaku/edge.html",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "イープラス EDGE ikebukuro会場情報",
+        "url": "https://eplus.jp/sf/venue/1710280",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "Googleマップ 池袋EDGE周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BEDGE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "LiveWalker Ikebukuro EDGE",
+        "url": "https://www.livewalker.com/web/detail/14917",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "ikebukuro-livegarage-adm",
@@ -14548,10 +16230,9 @@
     "nightSafetyNote": "夜は大通り沿いを中心に戻ると安心。",
     "lockerNote": "ロッカーが使えない・埋まる可能性も想定。",
     "baggageNote": "手元に残す荷物は最低限にする。",
-    "convenienceNote": "駅周辺のコンビニや飲食店を事前確認。",
-    "waitingNote": "周辺の歩道や店舗前での長時間待機は避ける。",
-    "rainNote": "雨の日は傘の扱いに注意。",
-    "returnNote": "丸ノ内線で新宿方面へ戻りやすい。",
+    "waitingNote": "住宅地に近いため近隣でたむろしない。整列までは東高円寺駅前か青梅街道沿いで短時間調整する。",
+    "rainNote": "3番出口から会場は近いが、会場前に傘で固まらない。雨の日は駅側で待って整列直前に移動する。",
+    "returnNote": "終演後は3番出口方面へ戻る。",
     "beginnerNote": "小箱に慣れていない場合は後方や壁側を選ぶと安心。",
     "ticketSearchLinks": [
       {
@@ -14645,7 +16326,7 @@
     "beginnerStrategy": "小箱に慣れていない場合は後方や壁側を選ぶと安心。",
     "cashNote": "ドリンク代、ロッカー、クローク、物販で現金が必要になる場合があります。少額紙幣と小銭を分けて持つと安心です。",
     "coinNote": "ロッカー利用に100円玉が必要な場合があります。キャッシュレス前提にせず小銭も用意してください。",
-    "restroomNote": "小箱はトイレが少ない場合があります。開演直前や終演後の混雑を見込んで早めに済ませてください。",
+    "restroomNote": "東高円寺駅、駅前周辺施設",
     "signalNote": "地下会場のため、電子チケットや連絡手段は入場前に確認してください。",
     "stairsNote": "階段や狭い通路では立ち止まらず、スタッフ案内に従って移動してください。",
     "neighborhoodNote": "夜は大通り沿いを中心に戻ると安心。",
@@ -14666,7 +16347,15 @@
       "駅出口すぐ",
       "住宅地待機禁止",
       "自転車注意",
-      "駅ロッカー推奨"
+      "駅ロッカー推奨",
+      "待機注意",
+      "雨でも行きやすい",
+      "女性ソロは駅直帰",
+      "初参戦向き",
+      "コンビニ近い",
+      "雨の日注意",
+      "終演後注意",
+      "キャリー非推奨"
     ],
     "aliases": [],
     "prefecture": "東京都",
@@ -14732,24 +16421,23 @@
       "afterMerch": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
       "goodTicketNumber": "良番なら荷物処理で出遅れない。整列前にロッカー、トイレ、ドリンク代を済ませる。"
     },
-    "arrivalStrategy": "公式アクセスは駅出口から近いが、会場前に長く待たず駅周辺で時間調整する。",
+    "arrivalStrategy": "住宅地に近いため近隣でたむろしない。整列までは東高円寺駅前か青梅街道沿いで短時間調整する。",
     "entryStrategyPlain": "整理番号は入場順。呼び出しに遅れると番号の強みが消えるので、整列場所と時間だけは先に見る。",
     "merchBaggageStrategy": "物販を買うなら、買った後の袋をどこへ置くか先に決める。終演まで持つなら小さく畳めるバッグを使う。",
-    "afterShowStrategy": "終演後は東高円寺駅へ戻る。急ぐ日は出口と改札を先に確認する。",
-    "beginnerOneLine": "初めてなら、入口、整列場所、ドリンク代、荷物の逃がし先だけ押さえればかなり楽になる。",
-    "soloOneLine": "一人参戦は普通。開場前の待機場所と終演後の帰り道を決めておくと気持ちが軽い。",
-    "badWeatherNote": "雨の日は駅側で待つ。地下会場前で濡れた荷物を抱えない。",
-    "stationLockerNote": "駅ロッカーは事前確認。ロッカーなし前提なので、リュック以上は先に預ける。",
+    "afterShowStrategy": "終演後は3番出口方面へ戻る。",
+    "beginnerOneLine": "駅でトイレを済ませ、ドリンク代とチケット表示を確認する。",
+    "soloOneLine": "寄り道せず駅へ戻る。",
+    "badWeatherNote": "駅出口から近いが、整列までは駅側で待つ。",
     "goodNumberWarning": "良番ほど荷物の迷いが命取り。身軽な状態で整列に入る。",
     "carryCaseWarning": "キャリーケースはフロアに入れない。駅大型ロッカーかホテル預けが先。",
     "floorBaggageWarning": "フロアに荷物を置かない。踏まれる、蹴られる、動線をふさぐの三重苦になる。",
     "practicalSummary": {
-      "headline": "地下小箱。ロッカーは断定せず、クロークも確認中。荷物は先に減らす。",
+      "headline": "東高円寺駅3番出口を間違えない。住宅地寄りなので近隣でたまらない。",
       "points": [
-        "ロッカー常設は断定しない",
-        "クローク案内が出た公演は早めに使う",
-        "住宅地なので会場前に長居しない",
-        "キャリーは駅・宿泊先預けを優先"
+        "東高円寺駅3番出口を使う",
+        "駅ロッカーは少なめ想定。大荷物は新宿方面や宿泊先で処理",
+        "近隣住宅地でたむろしない。駅前で短時間調整",
+        "終演後は3番出口方面へ戻る"
       ]
     },
     "blogSignals": [
@@ -14796,6 +16484,12 @@
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
         "type": "supporting_reference",
         "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 東高円寺二万電圧周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E4%BA%8C%E4%B8%87%E9%9B%BB%E5%9C%A7+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -14889,7 +16583,7 @@
         "checkedAt": "2026-05-07"
       }
     ],
-    "timeKillingNote": "公式アクセスは駅出口から近いが、会場前に長く待たず駅周辺で時間調整する。",
+    "timeKillingNote": "近隣住宅地でたむろしない。整列までは駅前で短時間調整する。",
     "lockerInfo": {
       "venueLockerStatus": "unknown",
       "venueLockerText": "ロッカーの公式明記は確認中。地下小箱のため荷物は少なめが安全。",
@@ -14899,9 +16593,9 @@
       "coinNeeded": "unknown",
       "largeBagFit": "unknown",
       "stationLockerRecommended": "yes",
-      "bestMove": "地下小箱。ロッカーは断定せず、クロークも確認中。荷物は先に減らす。",
+      "bestMove": "東高円寺駅ロッカーは少なめ。大荷物は主要駅側で先に処理する。",
       "sourceConfidence": "supporting_reference",
-      "lastCheckedAt": "2026-05-07"
+      "lastCheckedAt": "2026-05-11"
     },
     "cloakInfo": {
       "cloakStatus": "unknown",
@@ -14914,21 +16608,145 @@
       "lastCheckedAt": "2026-05-07"
     },
     "baggageGuide": {
-      "smallBag": "小さめバッグならそのまま入場しやすい。地下会場では身軽さを優先する。",
-      "backpack": "リュックは駅ロッカーやクローク案内を確認。フロアに持ち込むなら体の前で管理できる量にする。",
-      "suitcase": "キャリーは会場周辺へ持ち込まない。東高円寺駅周辺や宿泊先で先に処理する。",
-      "afterMerch": "物販後に袋が増えるなら、終演まで抱えられる量に抑えるか預け先を先に決める。",
-      "goodTicketNumber": "良番なら駅到着時点で荷物を減らし、会場前では整列だけにする。"
+      "smallBag": "小さい荷物なら3番出口から短く移動し、会場前で長く待たない。",
+      "backpack": "リュックは駅ロッカーか主要駅側で処理。地下小箱では身軽さを優先する。",
+      "suitcase": "キャリーありの日は東高円寺駅だけに頼らず、新宿方面や宿泊先で先に預ける。",
+      "afterMerch": "物販後に荷物が増える日は終演まで持てる量に絞るか、駅ロッカーを早めに確保する。",
+      "goodTicketNumber": "良番の日はロッカー探しを先に済ませ、整列直前だけ会場前へ行く。"
     },
     "nearbyInfo": {
-      "nearestConvenienceStore": "東高円寺駅周辺で飲み物と現金を準備してから向かう。",
-      "stationLocker": "駅周辺ロッカーの有無を先に確認。大荷物は新宿方面や宿泊先で処理する方が安定する。",
-      "waitingSpot": "公式アクセス上、周辺は住宅地。会場前でたまらず、整列開始までは駅周辺で待つ。",
-      "rainShelter": "駅出口から近いが、雨の日は整列まで駅周辺で待つ。傘を広げたまま周辺に滞留しない。",
-      "restroomBeforeEntry": "駅や周辺施設で先に済ませる。地下小箱では開演前に混みやすい。",
-      "cashAndCoin": "ドリンク代とクロークが出た場合の現金を残す。",
-      "afterShowRoute": "終演後は駅が近い。荷物回収がある人は出口混雑を見て早めに動く。",
-      "nightSafety": "住宅地寄りなので、終演後は寄り道せず駅へ戻る。"
+      "nearestConvenienceStore": "ファミリーマート東高円寺駅前店、セブンイレブン杉並和田3丁目店、セブンイレブン高円寺陸橋南店",
+      "stationLocker": "東高円寺駅周辺は少なめ想定",
+      "waitingSpot": "近隣住宅地でたむろしない。整列までは駅前で短時間調整する。",
+      "rainShelter": "駅出口から近いが、整列までは駅側で待つ。",
+      "restroomBeforeEntry": "東高円寺駅",
+      "cashAndCoin": "ドリンク代とロッカー用の現金・IC残高を残す。",
+      "afterShowRoute": "終演後は3番出口方面へ戻る。",
+      "nightSafety": "寄り道せず駅へ戻る。",
+      "nearestExit": "東高円寺駅3番出口",
+      "convenienceStores": [
+        "ファミリーマート東高円寺駅前店",
+        "セブンイレブン杉並和田3丁目店",
+        "セブンイレブン高円寺陸橋南店"
+      ],
+      "stationLockers": [
+        "東高円寺駅周辺は少なめ想定",
+        "大荷物は新宿方面や宿泊先で処理"
+      ],
+      "waitingRule": "近隣住宅地でたむろしない。整列までは駅前で短時間調整する。",
+      "restrooms": [
+        "東高円寺駅",
+        "駅前周辺施設"
+      ],
+      "rainPlan": "駅出口から近いが、整列までは駅側で待つ。",
+      "soloBeginnerNote": "駅でトイレを済ませ、ドリンク代とチケット表示を確認する。",
+      "cafes": [
+        "東高円寺駅前",
+        "青梅街道沿いのカフェ"
+      ],
+      "arrivalRoute": "東高円寺駅3番出口を確認してから出る。",
+      "tripNote": "遠征荷物は主要駅・宿泊先で処理してから東高円寺へ向かうと楽。",
+      "baggageFlow": "東高円寺駅ロッカーは少なめ想定。キャリーは新宿方面や宿泊先で先に処理する。",
+      "dayFlow": {
+        "stationArrival": "東高円寺駅3番出口を確認してから出る。",
+        "baggageDrop": "大荷物は新宿方面や宿泊先で処理済みにしておく。",
+        "beforeEntry": "近隣住宅地でたむろせず、駅前で短時間調整する。",
+        "entry": "駅でトイレを済ませ、ドリンク代とチケット表示を確認する。",
+        "afterShow": "終演後は3番出口方面へ戻る。",
+        "lastTrainNote": "夜は寄り道せず駅直帰。新宿方面で乗り換える人は終電を先に見る。"
+      },
+      "places": [
+        {
+          "name": "東高円寺駅3番出口",
+          "type": "station_exit",
+          "directionNote": "最寄出口",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%853%E7%95%AA%E5%87%BA%E5%8F%A3",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "ファミリーマート東高円寺駅前店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E3%83%88%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%85%E5%89%8D%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン杉並和田3丁目店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E6%9D%89%E4%B8%A6%E5%92%8C%E7%94%B03%E4%B8%81%E7%9B%AE%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "セブンイレブン高円寺陸橋南店",
+          "type": "convenience_store",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%A4%E3%83%AC%E3%83%96%E3%83%B3%E9%AB%98%E5%86%86%E5%AF%BA%E9%99%B8%E6%A9%8B%E5%8D%97%E5%BA%97",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "東高円寺駅周辺は少なめ想定",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%85%E5%91%A8%E8%BE%BA%E3%81%AF%E5%B0%91%E3%81%AA%E3%82%81%E6%83%B3%E5%AE%9A",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "大荷物は新宿方面や宿泊先で処理",
+          "type": "station_locker",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E8%8D%B7%E7%89%A9%E3%81%AF%E6%96%B0%E5%AE%BF%E6%96%B9%E9%9D%A2%E3%82%84%E5%AE%BF%E6%B3%8A%E5%85%88%E3%81%A7%E5%87%A6%E7%90%86",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "東高円寺駅",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%85",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "駅前周辺施設",
+          "type": "restroom",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%A7%85%E5%89%8D%E5%91%A8%E8%BE%BA%E6%96%BD%E8%A8%AD",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "東高円寺駅前",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E9%A7%85%E5%89%8D",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        },
+        {
+          "name": "青梅街道沿いのカフェ",
+          "type": "cafe",
+          "directionNote": "",
+          "sourceLabel": "地図確認",
+          "sourceUrl": "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A2%85%E8%A1%97%E9%81%93%E6%B2%BF%E3%81%84%E3%81%AE%E3%82%AB%E3%83%95%E3%82%A7",
+          "sourceType": "map",
+          "lastCheckedAt": "2026-05-13"
+        }
+      ]
     },
     "blogResearch": {
       "status": "partial",
@@ -14943,15 +16761,37 @@
       "confidence": "supporting_reference"
     },
     "dayDecisionGuide": {
-      "baggageDay": "ロッカーなし前提。駅ロッカーかクロークで処理する。",
-      "goodNumberDay": "良番ならクローク受付時間で焦らないよう早めに到着。",
-      "merchDay": "物販後の袋は終演まで持てる量に絞る。大きい物販はクローク候補。",
-      "rainyDay": "駅近だが会場前待機は短く。雨具より荷物防水を優先。",
-      "soloDay": "一人参戦は駅出口から会場入口までを先に確認。地下入口を見落とさない。",
-      "hurryAfterShowDay": "終演後に急ぐ日はクローク返却待ちを見込み、駅までの戻りを先に確認。"
+      "baggageDay": "リュックは駅ロッカーか主要駅側で処理。地下小箱では身軽さを優先する。",
+      "goodNumberDay": "良番の日はロッカー探しを先に済ませ、整列直前だけ会場前へ行く。",
+      "merchDay": "物販後に荷物が増える日は終演まで持てる量に絞るか、駅ロッカーを早めに確保する。",
+      "rainyDay": "3番出口から会場は近いが、会場前に傘で固まらない。雨の日は駅側で待って整列直前に移動する。",
+      "soloDay": "駅直帰。女性ソロは青梅街道沿いと人流のある導線を優先し、住宅地の細道で迷わない。",
+      "hurryAfterShowDay": "終演後は来た道を戻って3番出口方面へ。住宅地側へ流れず、東高円寺駅へ直帰する。"
     },
     "lockerAlternativeNote": "駅ロッカーは事前確認。ロッカーなし前提なので、リュック以上は先に預ける。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "stationLockerNote": "東高円寺駅周辺は少なめ想定、大荷物は新宿方面や宿泊先で処理",
+    "convenienceNote": "ファミリーマート東高円寺駅前店、セブンイレブン杉並和田3丁目店、セブンイレブン高円寺陸橋南店",
+    "publicSources": [
+      {
+        "label": "東高円寺二万電圧公式ACCESS",
+        "url": "https://den-atsu.com/access/",
+        "type": "official",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Supernice! 東高円寺二万電圧",
+        "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-07"
+      },
+      {
+        "label": "Googleマップ 東高円寺二万電圧周辺",
+        "url": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E4%BA%8C%E4%B8%87%E9%9B%BB%E5%9C%A7+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
+        "type": "supporting_reference",
+        "checkedAt": "2026-05-13"
+      }
+    ]
   },
   {
     "slug": "nihonbashi",
