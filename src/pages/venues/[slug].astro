@@ -210,10 +210,17 @@ const placeValues = (type: string) =>
   (venue.nearbyInfo?.places ?? [])
     .filter((place) => place.type === type)
     .map((place) => {
+      const proximityNote =
+        ['convenience_store', 'station_locker', 'restroom', 'cafe'].includes(place.type) &&
+        typeof place.walkMinutes !== 'number' &&
+        typeof place.distanceMeters !== 'number'
+          ? '徒歩圏'
+          : '';
       const notes = [
-        place.directionNote,
         typeof place.walkMinutes === 'number' ? `徒歩目安${place.walkMinutes}分` : '',
         typeof place.distanceMeters === 'number' ? `約${place.distanceMeters}m` : '',
+        proximityNote,
+        place.directionNote,
       ].filter(Boolean);
       return notes.length > 0 ? `${place.name}（${notes.join('・')}）` : place.name;
     })

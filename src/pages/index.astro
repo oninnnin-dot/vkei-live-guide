@@ -10,8 +10,8 @@ import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 import { sortVenuesForTopPage } from '@/utils/venueSort';
 
-const title = '推し活遠征ナビ｜小規模ライブハウスの行き方・ロッカー・コンビニ・帰り方ガイド';
-const description = '小規模ライブハウスや推し活現場へ行く前に確認したい、最寄出口、ロッカー、クローク、近くのコンビニ、待機場所、雨の日、終演後の帰り方、一人参戦の不安をまとめる実用ナビです。';
+const title = '推し活遠征ナビ｜会場名の行き方・コンビニ・待機場所・終演後の帰り方ガイド';
+const description = '小規模ライブハウスや推し活現場へ行く前に確認したい、会場名の行き方、最寄出口、ロッカー、クローク、近くのコンビニ、待機場所、雨の日、終演後の帰り方、一人参戦の不安をまとめる実用ナビです。';
 
 const priorityVenues = sortVenuesForTopPage(venues as Venue[]);
 
@@ -121,8 +121,8 @@ const seoLinks = [
 <Layout title={title} description={description}>
   <Hero
     title="推し活遠征ナビ"
-    catchcopy="小規模ライブハウスや推し活現場へ行く前に、当日の動き方を確認する。"
-    description="荷物・ロッカー・コンビニ・待機場所・終演後の帰り方を、初めて行く人向けに整理しています。公演情報は公式で確認し、このサイトでは会場まわりの不安を減らします。"
+    catchcopy="会場名の行き方、コンビニ、待機場所、終演後の帰り方を出発前に確認する。"
+    description="小規模ライブハウスや推し活現場へ行く前に、荷物・ロッカー・最寄出口・近いコンビニ・待機場所・終演後の帰り方を整理します。公演情報は公式で確認し、このサイトでは会場まわりの不安を減らします。"
     actions={[
       { href: '/venues', label: '会場名で探す', primary: true },
       { href: '/areas', label: 'エリアで探す' },

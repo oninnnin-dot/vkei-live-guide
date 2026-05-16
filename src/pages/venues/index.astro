@@ -111,6 +111,36 @@ const hubLinks = [
     cta: 'カード比較へ',
   },
 ];
+
+const searchGuides = [
+  {
+    title: '会場名で探す',
+    text: '行きたい会場が決まっている人向け。30秒結論、最寄出口、駅ロッカー、コンビニ、終演後の帰り方をすぐ確認します。',
+    actions: [
+      { label: '池袋BlackHole', shortcut: { q: '池袋BlackHole' } },
+      { label: '渋谷REX', shortcut: { q: '渋谷REX' } },
+      { label: '新宿club SCIENCE', shortcut: { q: '新宿club SCIENCE' } },
+    ],
+  },
+  {
+    title: 'エリアで探す',
+    text: '池袋、渋谷、新宿など、現場前後に動く街から探します。会場前で長く待たないための駅側候補も見ます。',
+    actions: [
+      { label: '池袋', shortcut: { q: '池袋' } },
+      { label: '渋谷', shortcut: { q: '渋谷' } },
+      { label: '新宿', shortcut: { q: '新宿' } },
+    ],
+  },
+  {
+    title: '困りごとで探す',
+    text: 'キャリー、雨、待機場所、夜道など、初参戦や遠征で不安になりやすい条件から絞り込みます。',
+    actions: [
+      { label: '駅ロッカー推奨', shortcut: { tag: '駅ロッカー推奨' } },
+      { label: 'コンビニ近い', shortcut: { tag: 'コンビニ近い' } },
+      { label: '夜道注意', shortcut: { tag: '女性ソロ注意' } },
+    ],
+  },
+];
 ---
 
 <Layout title={title} description={description}>
@@ -141,6 +171,29 @@ const hubLinks = [
           </button>
         ))
       }
+    </div>
+  </section>
+
+  <section class="container-navi pb-8" id="venue-search-start">
+    <div class="grid gap-4 lg:grid-cols-3">
+      {searchGuides.map((guide) => (
+        <article class="gothic-card rounded-xl p-5">
+          <p class="gothic-label">Search route</p>
+          <h2 class="font-classical mt-2 text-xl font-black leading-tight text-mist">{guide.title}</h2>
+          <p class="mt-3 text-sm leading-7 text-muted">{guide.text}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {guide.actions.map((action) => (
+              <button
+                class="gothic-chip focus-ring min-h-10 rounded-md px-3 py-2 text-xs font-black transition hover:border-amber/70"
+                type="button"
+                data-shortcut={JSON.stringify(action.shortcut)}
+              >
+                {action.label}
+              </button>
+            ))}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 

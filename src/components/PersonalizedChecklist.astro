@@ -1,13 +1,14 @@
 ---
+import affiliateLinks from '@data/links.json';
+
 interface Props {
   compact?: boolean;
 }
 
 const { compact = false } = Astro.props;
-const amazonTag = 'AFFILIATE_ID';
-const rakutenId = 'AFFILIATE_ID';
-const amazonSearch = (keyword: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(keyword)}&tag=${amazonTag}`;
-const rakutenSearch = (keyword: string) => `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/?scid=af_pc_etc&rafct=i_${rakutenId}`;
+const rakutenBaseUrl = affiliateLinks.rakuten.urlTemplate;
+const rakutenSearch = (keyword: string) =>
+  `${rakutenBaseUrl}${rakutenBaseUrl.includes('?') ? '&' : '?'}keyword=${encodeURIComponent(keyword)}`;
 
 const baseItems = [
   { label: '電子チケット表示用のスマホ', keyword: 'スマホ 防水ポーチ' },
@@ -79,8 +80,8 @@ const baseItems = [
   </div>
 
   <div class="mt-4 grid gap-2 text-sm leading-6 text-muted md:grid-cols-2" data-check-affiliate>
-    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={amazonSearch('ライブ 遠征 持ち物')} target="_blank" rel="noopener noreferrer">Amazonで遠征グッズを探す</a>
     <a class="text-amber underline decoration-amber/40 underline-offset-4" href={rakutenSearch('ライブ 遠征 持ち物')} target="_blank" rel="noopener noreferrer">楽天で遠征グッズを探す</a>
+    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={rakutenSearch('推し活 遠征 便利グッズ')} target="_blank" rel="noopener noreferrer">楽天で推し活便利グッズを探す</a>
   </div>
 
   <p class="mt-4 text-xs leading-6 text-muted">

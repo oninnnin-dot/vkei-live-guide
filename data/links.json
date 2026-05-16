@@ -1,0 +1,9 @@
+{
+  "affiliateProvider": "rakuten",
+  "rakuten": {
+    "label": "楽天",
+    "program": "もしもアフィリエイト 楽天市場の商品購入",
+    "urlTemplate": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER}",
+    "placeholder": "{RAKUTEN_URL_PLACEHOLDER}"
+  }
+}
