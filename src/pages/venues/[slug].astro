@@ -59,13 +59,25 @@ const confidenceLabels: Record<string, string> = {
 const sourceTypeLabels: Record<string, string> = {
   official: '公式確認',
   supporting_reference: '補助確認',
+  map: '地図確認',
+  station_official: '駅・施設公式',
+  rail_official: '駅・交通情報',
   venue_database: '会場情報DB',
   ticket_site: 'チケット会社',
   ticket_site_or_user_list: 'チケット会社',
   unknown: '確認中',
 };
 
-const allowedPublicSourceTypes = new Set(['official', 'supporting_reference', 'venue_database', 'ticket_site', 'ticket_site_or_user_list']);
+const allowedPublicSourceTypes = new Set([
+  'official',
+  'supporting_reference',
+  'map',
+  'station_official',
+  'rail_official',
+  'venue_database',
+  'ticket_site',
+  'ticket_site_or_user_list',
+]);
 const privateSourceTypes = new Set(['personal_blog', 'blog', 'note', 'sns', 'q_and_a', 'mixed']);
 const privateSourceUrlPatterns = [
   'note.com',

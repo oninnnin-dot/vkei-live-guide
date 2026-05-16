@@ -2241,7 +2241,7 @@
         "label": "クローク限定運用のネット上の情報掲載情報あり",
         "body": "外部サイト上の公式案内掲載では、場内ロッカーと限定人数クロークに触れた投稿が見られる。通常運用とは限らないため、当日案内を確認する。",
         "sourceLabel": "TwStalker SHIBUYA THE GAME掲載表示",
-        "sourceUrl": "https://ww.twstalker.com/SHIBUYATHEGAME",
+        "sourceUrl": "",
         "sourceType": "social",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -2378,7 +2378,16 @@
       }
     ],
     "venueExistenceConfidence": "official",
-    "researchStatus": "partial"
+    "researchStatus": "partial",
+    "internalResearchSources": [
+      {
+        "label": "TwStalker SHIBUYA THE GAME掲載表示",
+        "url": "https://ww.twstalker.com/SHIBUYATHEGAME",
+        "type": "unknown",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
+      }
+    ]
   },
   {
     "slug": "shibuya-vident",
@@ -3669,7 +3678,7 @@
         "label": "周辺に飲食店や公園があるとの紹介",
         "body": "WACCA MUSIC SCHOOLの記事では、近隣に飲食店や公園があり待ち時間調整に使える趣旨で紹介されている。具体店舗は地図アプリで確認する。",
         "sourceLabel": "WACCA MUSIC SCHOOL WildSideTokyo紹介",
-        "sourceUrl": "https://wacca-music.co.jp/livehouse/13385/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -3763,20 +3772,38 @@
       {
         "label": "LiveFans Wild Side Tokyo",
         "url": "https://www.livefans.jp/venues/5040",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "ライブハウスナビ WildSide Tokyo",
         "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ WildSide Tokyo周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=WildSide+Tokyo+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿御苑前駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-gyoemmae/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -3811,7 +3838,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "WACCA MUSIC SCHOOL WildSideTokyo紹介",
-        "sourceUrl": "https://wacca-music.co.jp/livehouse/13385/",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -3822,7 +3849,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "確認メモ WildSideTokyo体験メモ",
-        "sourceUrl": "https://ameblo.jp/uno0530/entry-12443102295.html",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -4121,20 +4148,61 @@
       {
         "label": "LiveFans Wild Side Tokyo",
         "url": "https://www.livefans.jp/venues/5040",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "ライブハウスナビ WildSide Tokyo",
         "url": "https://live-house.info/sinjuku/wildside-tokyo.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ WildSide Tokyo周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=WildSide+Tokyo+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿御苑前駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-gyoemmae/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "WACCA MUSIC SCHOOL WildSideTokyo紹介",
+        "url": "https://wacca-music.co.jp/livehouse/13385/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "確認メモ WildSideTokyo体験メモ",
+        "url": "https://ameblo.jp/uno0530/entry-12443102295.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "WACCA MUSIC SCHOOL WildSideTokyo紹介",
+        "url": "https://wacca-music.co.jp/livehouse/13385/",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -6104,14 +6172,26 @@
       {
         "label": "イープラス 下北沢シャングリラ会場情報",
         "url": "https://eplus.jp/sf/venue/1550870",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 下北沢シャングリラ周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%A9+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "小田急電鉄 下北沢駅",
+        "url": "https://www.odakyu.jp/station/shimo_kitazawa/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "京王電鉄 下北沢駅",
+        "url": "https://www.keio.co.jp/train/station/in05_shimo-kitazawa/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -6124,7 +6204,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "ライブガイドドッグ 下北沢シャングリラ",
-        "sourceUrl": "https://trend-dogman.com/shimokitazawa-shangrila/",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -6135,7 +6215,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "colorful情報局 下北沢シャングリラ",
-        "sourceUrl": "https://colourfuls.hatenablog.com/entry/2025/11/27/063000",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -6446,14 +6526,42 @@
       {
         "label": "イープラス 下北沢シャングリラ会場情報",
         "url": "https://eplus.jp/sf/venue/1550870",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 下北沢シャングリラ周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%8C%97%E6%B2%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%A9+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "小田急電鉄 下北沢駅",
+        "url": "https://www.odakyu.jp/station/shimo_kitazawa/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "京王電鉄 下北沢駅",
+        "url": "https://www.keio.co.jp/train/station/in05_shimo-kitazawa/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "ライブガイドドッグ 下北沢シャングリラ",
+        "url": "https://trend-dogman.com/shimokitazawa-shangrila/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "colorful情報局 下北沢シャングリラ",
+        "url": "https://colourfuls.hatenablog.com/entry/2025/11/27/063000",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -6835,7 +6943,7 @@
         "label": "ロッカーは複数あるが最新確認必須",
         "body": "ライブガイドドッグでは、原宿RUIDOのラウンジ周辺にロッカーが複数設置されていると紹介されている。個数・料金・利用開始タイミングは当日案内で確認する。",
         "sourceLabel": "ライブガイドドッグ 原宿RUIDO",
-        "sourceUrl": "https://trend-dogman.com/harajuku-ruido/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -6846,7 +6954,7 @@
         "label": "クローク対応ありとの紹介",
         "body": "同記事では、クローク対応もあると紹介されている。公演ごとに受付時間が異なる可能性があるため、主催・会場案内を確認する。",
         "sourceLabel": "ライブガイドドッグ 原宿RUIDO",
-        "sourceUrl": "https://trend-dogman.com/harajuku-ruido/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -6857,7 +6965,7 @@
         "label": "トイレ個室数は少なめの可能性",
         "body": "同記事では、トイレは1階右手、男女共用と女性用が各1つという趣旨で紹介されている。混雑前に済ませる。",
         "sourceLabel": "ライブガイドドッグ 原宿RUIDO",
-        "sourceUrl": "https://trend-dogman.com/harajuku-ruido/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -7010,7 +7118,16 @@
         "checkedAt": "2026-05-09"
       }
     ],
-    "researchStatus": "partial"
+    "researchStatus": "partial",
+    "internalResearchSources": [
+      {
+        "label": "ライブガイドドッグ 原宿RUIDO",
+        "url": "https://trend-dogman.com/harajuku-ruido/",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
+      }
+    ]
   },
   {
     "slug": "takadanobaba-club-phase",
@@ -7365,14 +7482,26 @@
       {
         "label": "Supernice! 高田馬場CLUB PHASE",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 高田馬場CLUB PHASE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4CLUB+PHASE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 高田馬場駅",
+        "url": "https://www.tokyometro.jp/station/takadanobaba/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 高田馬場駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/takadanobaba/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -7681,14 +7810,26 @@
       {
         "label": "Supernice! 高田馬場CLUB PHASE",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3419/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 高田馬場CLUB PHASE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4CLUB+PHASE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 高田馬場駅",
+        "url": "https://www.tokyometro.jp/station/takadanobaba/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 高田馬場駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/takadanobaba/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ]
   },
@@ -8094,7 +8235,7 @@
         "label": "ロッカー数は少なめとして扱う",
         "body": "ライブガイドドッグと体験記事では、渋谷REXのロッカーは20〜30個程度の少数として紹介されている。人気公演や物販予定がある日は駅ロッカーやクロークを優先候補にする。",
         "sourceLabel": "ライブガイドドッグ SHIBUYA REX",
-        "sourceUrl": "https://trend-dogman.com/shibuya-rex/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -8105,7 +8246,7 @@
         "label": "クローク利用候補",
         "body": "体験記事では、ロッカーが少ないためクローク利用が現実的な選択肢として紹介されている。受付時間・料金・袋サイズは当日案内を確認する。",
         "sourceLabel": "渋谷REXレビュー記事",
-        "sourceUrl": "https://natsu-otoku.com/rex/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -8116,7 +8257,7 @@
         "label": "トイレは混みやすい可能性",
         "body": "体験記事では、トイレの個数が少ない旨が書かれている。入場後すぐ場所を把握し、開演直前を避ける。",
         "sourceLabel": "渋谷REXレビュー記事",
-        "sourceUrl": "https://natsu-otoku.com/rex/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -8127,7 +8268,7 @@
         "label": "マークシティ経由の導線候補",
         "body": "体験記事では、渋谷マークシティ内を通るルートが楽な導線として紹介されている。営業時間や混雑は変わるため、当日は地図アプリで補助確認する。",
         "sourceLabel": "渋谷REXレビュー記事",
-        "sourceUrl": "https://natsu-otoku.com/rex/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -8138,7 +8279,7 @@
         "label": "後方段差と高めステージの体感メモ",
         "body": "体験記事では、後方段差と高めのステージにより見やすい一方、混雑時は段上が早めに埋まりやすいと紹介されている。",
         "sourceLabel": "渋谷REXレビュー記事",
-        "sourceUrl": "https://natsu-otoku.com/rex/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -8230,16 +8371,22 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "東急 渋谷駅コインロッカー",
-        "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
-        "type": "official",
-        "checkedAt": "2026-05-07"
+        "label": "東急電鉄 渋谷駅コインロッカー",
+        "url": "https://www.tokyu.co.jp/area/shibuya/station/coin-locker/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       },
       {
         "label": "Googleマップ 渋谷REX周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7REX+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 渋谷駅",
+        "url": "https://www.tokyometro.jp/station/shibuya/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -8252,7 +8399,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "ライブガイドドッグ 渋谷REX",
-        "sourceUrl": "https://trend-dogman.com/shibuya-rex/",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -8285,7 +8432,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "渋谷REXレビュー記事",
-        "sourceUrl": "https://natsu-otoku.com/rex/",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -8562,16 +8709,52 @@
         "checkedAt": "2026-05-07"
       },
       {
-        "label": "東急 渋谷駅コインロッカー",
-        "url": "https://www.tokyu.co.jp/railway/guide/baggage/station/TY/ty01.html",
-        "type": "official",
-        "checkedAt": "2026-05-07"
+        "label": "東急電鉄 渋谷駅コインロッカー",
+        "url": "https://www.tokyu.co.jp/area/shibuya/station/coin-locker/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       },
       {
         "label": "Googleマップ 渋谷REX周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7REX+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 渋谷駅",
+        "url": "https://www.tokyometro.jp/station/shibuya/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "ライブガイドドッグ 渋谷REX",
+        "url": "https://trend-dogman.com/shibuya-rex/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "渋谷REXレビュー記事",
+        "url": "https://natsu-otoku.com/rex/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "ライブガイドドッグ SHIBUYA REX",
+        "url": "https://trend-dogman.com/shibuya-rex/",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "渋谷REXレビュー記事",
+        "url": "https://natsu-otoku.com/rex/",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -9980,32 +10163,50 @@
       {
         "label": "LiveFans 上野音横丁",
         "url": "https://www.livefans.jp/venues/1201",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "JREメディア 上野駅コインロッカー",
         "url": "https://media.jreast.co.jp/articles/1010",
-        "type": "official",
+        "type": "rail_official",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 上野音横丁周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%9F%B3%E6%A8%AA%E4%B8%81+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "LIVE HOUSE NAVI Ueno Otoyokocho",
         "url": "https://live-house.info/taitouku/otoyoko.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "eplus Ueno Otoyokocho venue",
         "url": "https://eplus.jp/sf/venue/1100330",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "JR東日本 上野駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=204",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 上野駅",
+        "url": "https://www.tokyometro.jp/station/ueno/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 上野駅 施設・店舗",
+        "url": "https://www.tokyometro.jp/station/ueno/shop/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -10227,32 +10428,50 @@
       {
         "label": "LiveFans 上野音横丁",
         "url": "https://www.livefans.jp/venues/1201",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "JREメディア 上野駅コインロッカー",
         "url": "https://media.jreast.co.jp/articles/1010",
-        "type": "official",
+        "type": "rail_official",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 上野音横丁周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E9%9F%B3%E6%A8%AA%E4%B8%81+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "LIVE HOUSE NAVI Ueno Otoyokocho",
         "url": "https://live-house.info/taitouku/otoyoko.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "eplus Ueno Otoyokocho venue",
         "url": "https://eplus.jp/sf/venue/1100330",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "JR東日本 上野駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=204",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 上野駅",
+        "url": "https://www.tokyometro.jp/station/ueno/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 上野駅 施設・店舗",
+        "url": "https://www.tokyometro.jp/station/ueno/shop/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ]
   },
@@ -10469,7 +10688,7 @@
         "label": "歌舞伎町エリアの自衛メモ",
         "body": "体験系ブログでは、会場周辺で女性はトラブル回避のため自衛意識を持つ旨が書かれている。夜は駅までのルートを事前に決め、寄り道を減らす。",
         "sourceLabel": "地下アイドルを推す会ブログ部 新宿club SCIENCE記事",
-        "sourceUrl": "https://ameblo.jp/idolopenchat/entry-12700780804.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -10556,14 +10775,32 @@
       {
         "label": "LiveWalker 新宿club SCIENCE",
         "url": "https://www.livewalker.com/web/detail/24600",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 新宿club SCIENCE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BFclub+SCIENCE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "JR東日本 新宿駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=866",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -10825,14 +11062,41 @@
       {
         "label": "LiveWalker 新宿club SCIENCE",
         "url": "https://www.livewalker.com/web/detail/24600",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-09"
       },
       {
         "label": "Googleマップ 新宿club SCIENCE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BFclub+SCIENCE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "JR東日本 新宿駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=866",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 新宿三丁目駅 コインロッカー",
+        "url": "https://www.tokyometro.jp/station/shinjuku-sanchome/shop/coinlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "地下アイドルを推す会ブログ部 新宿club SCIENCE記事",
+        "url": "https://ameblo.jp/idolopenchat/entry-12700780804.html",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -12571,7 +12835,7 @@
         "label": "山手線トラブル時の代替ルート意識",
         "body": "確認メモでは、巣鴨へ向かう途中で山手線トラブルに遭い、池袋経由などに切り替えた体験が書かれている。終演後も山手線一本に頼らず、都営三田線や別ルートを確認しておく。",
         "sourceLabel": "takepunks DISCOVERY BLOG 巣鴨獅子王記事",
-        "sourceUrl": "https://blog.takepunks.com/32829/",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -12677,14 +12941,26 @@
       {
         "label": "iFLYER 巣鴨獅子王",
         "url": "https://iflyer.tv/en/venue/8867/about/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 巣鴨獅子王周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E7%8D%85%E5%AD%90%E7%8E%8B+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京都交通局 巣鴨駅",
+        "url": "https://www.kotsu.metro.tokyo.jp/subway/stations/sugamo.html?id=solid",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "JR東日本 巣鴨駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=896",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -12719,7 +12995,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "takepunks DISCOVERY BLOG 巣鴨獅子王",
-        "sourceUrl": "https://blog.takepunks.com/32829/",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -13010,14 +13286,42 @@
       {
         "label": "iFLYER 巣鴨獅子王",
         "url": "https://iflyer.tv/en/venue/8867/about/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 巣鴨獅子王周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E5%B7%A3%E9%B4%A8%E7%8D%85%E5%AD%90%E7%8E%8B+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京都交通局 巣鴨駅",
+        "url": "https://www.kotsu.metro.tokyo.jp/subway/stations/sugamo.html?id=solid",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "JR東日本 巣鴨駅",
+        "url": "https://www.jreast.co.jp/estation/station/info.aspx?StationCd=896",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "takepunks DISCOVERY BLOG 巣鴨獅子王",
+        "url": "https://blog.takepunks.com/32829/",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "takepunks DISCOVERY BLOG 巣鴨獅子王記事",
+        "url": "https://blog.takepunks.com/32829/",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -14194,26 +14498,44 @@
       {
         "label": "イベここ 池袋BlackHole",
         "url": "https://evecoco.net/livehouse/2541/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "LiveFans 池袋Black Hole",
         "url": "https://www.livefans.jp/venues/5107",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Supernice! 池袋BlackHole",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 池袋BlackHole周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BBlackHole+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 池袋駅",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 池袋駅 メトロッカー",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/shop/metlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東武鉄道 池袋駅構内マップ",
+        "url": "https://www.tobu.co.jp/railway/guide/station/insidemap/7105/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -14522,26 +14844,44 @@
       {
         "label": "イベここ 池袋BlackHole",
         "url": "https://evecoco.net/livehouse/2541/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "LiveFans 池袋Black Hole",
         "url": "https://www.livefans.jp/venues/5107",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Supernice! 池袋BlackHole",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/27395/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 池袋BlackHole周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BBlackHole+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 池袋駅",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 池袋駅 メトロッカー",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/shop/metlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東武鉄道 池袋駅構内マップ",
+        "url": "https://www.tobu.co.jp/railway/guide/station/insidemap/7105/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       }
     ]
   },
@@ -14719,7 +15059,7 @@
         "label": "ロッカー/クロークは期待しない前提",
         "body": "ライブ研究室とライブハウスナビの会場情報では、池袋EDGEは会場内外のロッカーやクロークがない扱いで紹介されている。駅ロッカーを先に確保する前提で動くメモとして登録。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14730,7 +15070,7 @@
         "label": "最寄りの目印候補",
         "body": "体験記事では、会場付近の目印としてファミリーマートが挙げられている。店舗名や位置は変わる可能性があるため、当日は地図アプリで再確認する。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14741,7 +15081,7 @@
         "label": "整列場所は番号帯で変わる可能性",
         "body": "体験記事では、早番は建物内階段、遅めの番号は建物裏側で待機する運用が紹介されている。公演ごとに案内が変わるため、主催・会場スタッフの指示を優先する。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14752,7 +15092,7 @@
         "label": "屋外待機になる番号帯への備え",
         "body": "体験記事では、番号帯によって屋根のない屋外待機になるケースがあると紹介されている。雨天時は折りたたみ傘と荷物の防水を先に用意する。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14763,7 +15103,7 @@
         "label": "地下会場の電波は弱い可能性",
         "body": "体験記事では、電波がまったくないわけではないが弱いと紹介されている。電子チケットは入場前に表示確認しておく。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14774,7 +15114,7 @@
         "label": "トイレ位置の事前把握",
         "body": "体験記事では、トイレはロビー内・フロア入口近くの奥側として紹介されている。小箱は開演前に混みやすいため、入場後すぐ位置確認する。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14785,7 +15125,7 @@
         "label": "横長フロアと後方段差",
         "body": "体験記事では、横長フロアでステージが見やすい一方、後方段差やロビーの狭さに触れられている。混雑公演では立ち位置を早めに決める。",
         "sourceLabel": "ライブ研究室 池袋EDGE記事",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -14873,26 +15213,44 @@
       {
         "label": "ライブハウスナビ 池袋EDGE",
         "url": "https://live-house.info/toshimaku/edge.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "イープラス EDGE ikebukuro会場情報",
         "url": "https://eplus.jp/sf/venue/1710280",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "Googleマップ 池袋EDGE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BEDGE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "LiveWalker Ikebukuro EDGE",
         "url": "https://www.livewalker.com/web/detail/14917",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 池袋駅",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 池袋駅 メトロッカー",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/shop/metlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東武鉄道 池袋駅構内マップ",
+        "url": "https://www.tobu.co.jp/railway/guide/station/insidemap/7105/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -14916,7 +15274,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "ライブ研究室 池袋EDGE",
-        "sourceUrl": "https://live-kenkyushitsu.com/569.html",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -14927,7 +15285,7 @@
         "sourceType": "note",
         "confidence": "supporting_reference",
         "sourceName": "note 池袋EDGE体験メモ",
-        "sourceUrl": "https://note.com/ebitama/n/nb37867990132",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -15210,26 +15568,67 @@
       {
         "label": "ライブハウスナビ 池袋EDGE",
         "url": "https://live-house.info/toshimaku/edge.html",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "イープラス EDGE ikebukuro会場情報",
         "url": "https://eplus.jp/sf/venue/1710280",
-        "type": "supporting_reference",
+        "type": "ticket_site",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "Googleマップ 池袋EDGE周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A0%E8%A2%8BEDGE+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
       },
       {
         "label": "LiveWalker Ikebukuro EDGE",
         "url": "https://www.livewalker.com/web/detail/14917",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 池袋駅",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東京メトロ 池袋駅 メトロッカー",
+        "url": "https://www.tokyometro.jp/station/ikebukuro/shop/metlocker.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
+      },
+      {
+        "label": "東武鉄道 池袋駅構内マップ",
+        "url": "https://www.tobu.co.jp/railway/guide/station/insidemap/7105/",
+        "type": "rail_official",
+        "checkedAt": "2026-05-16"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "ライブ研究室 池袋EDGE",
+        "url": "https://live-kenkyushitsu.com/569.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "note 池袋EDGE体験メモ",
+        "url": "https://note.com/ebitama/n/nb37867990132",
+        "type": "note",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "ライブ研究室 池袋EDGE記事",
+        "url": "https://live-kenkyushitsu.com/569.html",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -15319,7 +15718,7 @@
         "label": "ロッカーなし・クロークありとの体験メモ",
         "body": "ライブハウス雑記では、池袋Admはロッカーなし、クローク500円ありとして紹介されている。料金や受付有無は公演で変わる可能性がある。",
         "sourceLabel": "ライブハウス雑記 池袋Adm",
-        "sourceUrl": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -15330,7 +15729,7 @@
         "label": "入口が分かりにくい可能性",
         "body": "同記事では、入口がライブハウスらしく見えにくく、階段を降りた先で受付に着く流れとして紹介されている。初参戦は建物入口と階段位置を地図で確認する。",
         "sourceLabel": "ライブハウス雑記 池袋Adm",
-        "sourceUrl": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -15341,7 +15740,7 @@
         "label": "後方段差と斜めステージのメモ",
         "body": "同記事では、ステージが斜め気味で、後方に段差があると紹介されている。混雑時は早めに視界を確認する。",
         "sourceLabel": "ライブハウス雑記 池袋Adm",
-        "sourceUrl": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -15352,7 +15751,7 @@
         "label": "音量への備え",
         "body": "同記事では音が大きい印象が書かれている。耳が疲れやすい人はライブ用耳栓を持っていく。",
         "sourceLabel": "ライブハウス雑記 池袋Adm",
-        "sourceUrl": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -15494,7 +15893,16 @@
         "checkedAt": "2026-05-09"
       }
     ],
-    "researchStatus": "partial"
+    "researchStatus": "partial",
+    "internalResearchSources": [
+      {
+        "label": "ライブハウス雑記 池袋Adm",
+        "url": "https://ameblo.jp/ksk-1994/entry-12860305944.html",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
+      }
+    ]
   },
   {
     "slug": "ikebukuro-red-zone-aneris",
@@ -16482,14 +16890,20 @@
       {
         "label": "Supernice! 東高円寺二万電圧",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 東高円寺二万電圧周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E4%BA%8C%E4%B8%87%E9%9B%BB%E5%9C%A7+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 東高円寺駅",
+        "url": "https://www.tokyometro.jp/station/higashi-koenji/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ],
     "infoFreshnessWarning": "ロッカー、クローク、整列、再入場、撮影可否は公演ごとに変わる。最後は公式・主催・当日案内を優先する。",
@@ -16782,14 +17196,20 @@
       {
         "label": "Supernice! 東高円寺二万電圧",
         "url": "https://super-nice.net/%E6%9D%B1%E4%BA%AC%E9%83%BD/3171/",
-        "type": "supporting_reference",
+        "type": "venue_database",
         "checkedAt": "2026-05-07"
       },
       {
         "label": "Googleマップ 東高円寺二万電圧周辺",
         "url": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%AB%98%E5%86%86%E5%AF%BA%E4%BA%8C%E4%B8%87%E9%9B%BB%E5%9C%A7+%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B+%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC",
-        "type": "supporting_reference",
+        "type": "map",
         "checkedAt": "2026-05-13"
+      },
+      {
+        "label": "東京メトロ 東高円寺駅",
+        "url": "https://www.tokyometro.jp/station/higashi-koenji/index.html",
+        "type": "station_official",
+        "checkedAt": "2026-05-16"
       }
     ]
   },
@@ -18467,7 +18887,7 @@
         "label": "椅子50席程度を置ける規模感メモ",
         "body": "関係者ブログでは、開業準備時にホールへ椅子を並べて50席は余裕だったという趣旨の記述がある。通常公演のキャパではなく、空間規模の目安として扱う。",
         "sourceLabel": "校長さんのブログ Music Lab.濱書房",
-        "sourceUrl": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -18478,7 +18898,7 @@
         "label": "ロビーとバーカウンターの存在メモ",
         "body": "同ブログでは、開業準備中のロビーとバーカウンターに触れられている。現在の配置や利用可否は会場・公演案内を確認する。",
         "sourceLabel": "校長さんのブログ Music Lab.濱書房",
-        "sourceUrl": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -18489,7 +18909,7 @@
         "label": "ドリンクメニューの変化に注意",
         "body": "同ブログでは、開業時のドリンクメニュー準備に触れられている。メニューや追加料金は時期で変わるため当日確認する。",
         "sourceLabel": "校長さんのブログ Music Lab.濱書房",
-        "sourceUrl": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "sourceUrl": "",
         "sourceType": "blog",
         "checkedAt": "2026-05-06",
         "confidence": "unknown",
@@ -18643,7 +19063,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "校長さんのブログ Music Lab.濱書房",
-        "sourceUrl": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -18785,6 +19205,22 @@
         "query": "Music Lab.濱書房 ロッカー クローク 公式",
         "result": "イベここ会場情報でクロークありを確認。ロッカー有無は明確でないためunknown。",
         "checkedAt": "2026-05-09"
+      }
+    ],
+    "internalResearchSources": [
+      {
+        "label": "校長さんのブログ Music Lab.濱書房",
+        "url": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      },
+      {
+        "label": "校長さんのブログ Music Lab.濱書房",
+        "url": "https://ameblo.jp/artpop-k/entry-12306468241.html",
+        "type": "blog",
+        "checkedAt": "2026-05-06",
+        "note": "Internal research source; do not show URL publicly."
       }
     ]
   },
@@ -19095,7 +19531,7 @@
         "sourceType": "personal_blog",
         "confidence": "supporting_reference",
         "sourceName": "確認メモ 横浜BAYSIS荷物メモ",
-        "sourceUrl": "https://ameblo.jp/jiu3jing3/entry-12076556646.html",
+        "sourceUrl": "",
         "checkedAt": "2026-05-07"
       },
       {
@@ -19238,7 +19674,16 @@
     },
     "timeKillingNote": "関内駅周辺・馬車道側のカフェや飲食店で時間調整。会場前に長くたまらない。",
     "lockerAlternativeNote": "個人レポでは関内駅ロッカーが埋まっていた体験あり。早めに確保し、空きがなければ別候補へ。",
-    "venueExistenceConfidence": "verified"
+    "venueExistenceConfidence": "verified",
+    "internalResearchSources": [
+      {
+        "label": "確認メモ 横浜BAYSIS荷物メモ",
+        "url": "https://ameblo.jp/jiu3jing3/entry-12076556646.html",
+        "type": "personal_blog",
+        "checkedAt": "2026-05-07",
+        "note": "Internal research source; do not show URL publicly."
+      }
+    ]
   },
   {
     "slug": "yokohama-club-sensation",

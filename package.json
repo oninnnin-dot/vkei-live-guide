@@ -14,7 +14,7 @@
     "verify:priority10": "node scripts/verify-priority-10.mjs",
     "check:venues": "node scripts/check-venues.mjs data/venues.json",
     "check:public-text": "node scripts/check-public-text.mjs dist",
-    "check:venue-data": "node scripts/check-tokyo-priority.mjs",
+    "check:venue-data": "node scripts/check-venue-data-quality.mjs",
     "check:tokyo-priority": "node scripts/check-tokyo-priority.mjs"
   },
   "dependencies": {

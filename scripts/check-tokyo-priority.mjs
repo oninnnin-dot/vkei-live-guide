@@ -41,7 +41,17 @@ const privateUrlPatterns = [
   'detail.chiebukuro.yahoo.co.jp',
 ];
 
-const allowedPublicTypes = new Set(['official', 'supporting_reference', 'venue_database', 'ticket_site', 'ticket_site_or_user_list', 'unknown']);
+const allowedPublicTypes = new Set([
+  'official',
+  'supporting_reference',
+  'map',
+  'station_official',
+  'rail_official',
+  'venue_database',
+  'ticket_site',
+  'ticket_site_or_user_list',
+  'unknown',
+]);
 const errors = [];
 const warnings = [];
 
