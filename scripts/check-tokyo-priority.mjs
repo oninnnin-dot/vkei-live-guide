@@ -41,7 +41,7 @@ const privateUrlPatterns = [
   'detail.chiebukuro.yahoo.co.jp',
 ];
 
-const allowedPublicTypes = new Set(['official', 'supporting_reference', 'unknown']);
+const allowedPublicTypes = new Set(['official', 'supporting_reference', 'venue_database', 'ticket_site', 'ticket_site_or_user_list', 'unknown']);
 const errors = [];
 const warnings = [];
 
@@ -54,6 +54,85 @@ const textIncludesGenericOnly = (value) => {
 const pass = (message) => console.log(`PASS: ${message}`);
 const warn = (message) => warnings.push(`WARN: ${message}`);
 const fail = (message) => errors.push(`FAIL: ${message}`);
+
+const cleanText = (value) =>
+  String(value || '')
+    .replace(/\bunknown\b/g, '確認中')
+    .replaceAll('未確認', '確認中')
+    .replaceAll('未調査', '確認中')
+    .trim();
+
+const isUsefulText = (value) => {
+  const text = cleanText(value);
+  return Boolean(text) && text !== '確認中' && !text.includes('確認中') && !genericPhrases.some((phrase) => text.includes(phrase));
+};
+
+const usefulListCount = (value) => {
+  const values = Array.isArray(value) ? value : [value];
+  return values.filter(isUsefulText).length;
+};
+
+const hasUsefulPlace = (venue, type) => (venue.nearbyInfo?.places || []).some((place) => place.type === type && isUsefulText(place.name));
+
+const getVenueInfoScore = (venue) => {
+  const nearby = venue.nearbyInfo || {};
+  let score = 0;
+  if (isUsefulText(venue.practicalSummary?.headline)) score += 8;
+  score += usefulListCount(venue.practicalSummary?.points) * 2;
+  if (isUsefulText(nearby.nearestExit)) score += 9;
+  if (usefulListCount(nearby.convenienceStores) > 0 || hasUsefulPlace(venue, 'convenience_store')) score += 9;
+  if (isUsefulText(nearby.waitingRule) || isUsefulText(nearby.waitingSpot)) score += 8;
+  if (usefulListCount(nearby.stationLockers) > 0 || isUsefulText(nearby.stationLocker) || hasUsefulPlace(venue, 'station_locker')) score += 7;
+  if (usefulListCount(nearby.restrooms) > 0 || isUsefulText(nearby.restroomBeforeEntry) || hasUsefulPlace(venue, 'restroom')) score += 7;
+  if (isUsefulText(nearby.rainPlan) || isUsefulText(nearby.rainShelter)) score += 7;
+  if (isUsefulText(nearby.afterShowRoute)) score += 9;
+  if (isUsefulText(nearby.nightSafety)) score += 8;
+  if (isUsefulText(nearby.soloBeginnerNote)) score += 5;
+  if (isUsefulText(nearby.tripNote)) score += 5;
+  if (isUsefulText(nearby.baggageFlow)) score += 5;
+  if (nearby.dayFlow?.stationArrival && nearby.dayFlow?.beforeEntry && nearby.dayFlow?.afterShow) score += 12;
+  if (nearby.dayFlow?.baggageDrop) score += 4;
+  if (nearby.dayFlow?.entry) score += 4;
+  if (nearby.dayFlow?.lastTrainNote) score += 4;
+  if ((venue.publicSources || venue.sourceLinks || []).length > 0) score += 6;
+  if (venue.archiveOnly || (venue.venueStatus ?? venue.status) !== 'active') score -= 100;
+  return score;
+};
+
+const getRegionSortRank = (venue) => {
+  if (venue.archiveOnly || (venue.venueStatus ?? venue.status) === 'closed') return 80;
+  if (venue.region === '東京' || venue.prefecture === '東京') return 0;
+  if (venue.prefecture === '神奈川') return 1;
+  if (venue.prefecture === '千葉') return 2;
+  if (venue.prefecture === '埼玉') return 3;
+  if (venue.region === '関東' || ['茨城', '栃木', '群馬'].includes(venue.prefecture)) return 4;
+  if (venue.region === '関西') return 5;
+  if (venue.region === '東海') return 6;
+  return 7;
+};
+
+const getAreaSortRank = (venue) => {
+  if (getRegionSortRank(venue) !== 0) return 99;
+  const areaText = `${venue.area} ${venue.areaGroup} ${venue.station} ${venue.name}`;
+  if (areaText.includes('池袋')) return 0;
+  if (areaText.includes('渋谷')) return 1;
+  if (areaText.includes('新宿')) return 2;
+  if (areaText.includes('高田馬場')) return 3;
+  if (areaText.includes('下北沢')) return 4;
+  if (areaText.includes('高円寺') || areaText.includes('東高円寺')) return 5;
+  if (areaText.includes('巣鴨')) return 6;
+  if (areaText.includes('上野')) return 7;
+  return 8;
+};
+
+const venueListComparator = (a, b) => {
+  const archiveDelta = Number(Boolean(a.archiveOnly || (a.venueStatus ?? a.status) === 'closed')) - Number(Boolean(b.archiveOnly || (b.venueStatus ?? b.status) === 'closed'));
+  if (archiveDelta !== 0) return archiveDelta;
+  return getVenueInfoScore(b) - getVenueInfoScore(a)
+    || getRegionSortRank(a) - getRegionSortRank(b)
+    || getAreaSortRank(a) - getAreaSortRank(b)
+    || `${a.prefecture}${a.area}${a.name}`.localeCompare(`${b.prefecture}${b.area}${b.name}`, 'ja');
+};
 
 for (const slug of prioritySlugs) {
   const venue = venueBySlug.get(slug);
@@ -114,6 +193,50 @@ if (missingPriorityResearch.length > 0) {
   fail(`priority-10.json is missing: ${missingPriorityResearch.join(', ')}`);
 } else {
   pass('priority-10.json contains Tokyo priority venues');
+}
+
+const topPageVenues = prioritySlugs
+  .map((slug) => venueBySlug.get(slug))
+  .filter(Boolean)
+  .filter((venue) => (venue.venueStatus ?? venue.status) === 'active' && venue.showInVenueList && !venue.archiveOnly);
+const topPageOrder = topPageVenues.map((venue) => venue.slug).join(',');
+const expectedTopPageOrder = prioritySlugs.join(',');
+topPageOrder === expectedTopPageOrder
+  ? pass('Tokyo priority venues resolve in the requested fixed order')
+  : fail(`Tokyo priority order mismatch: ${topPageOrder}`);
+
+const indexSource = fs.readFileSync('src/pages/index.astro', 'utf8');
+const venueIndexSource = fs.readFileSync('src/pages/venues/index.astro', 'utf8');
+const sortSource = fs.readFileSync('src/utils/venueSort.ts', 'utf8');
+
+indexSource.includes('sortVenuesForTopPage')
+  ? pass('top page uses sortVenuesForTopPage')
+  : fail('top page does not use sortVenuesForTopPage');
+venueIndexSource.includes('sortVenuesForVenueList')
+  ? pass('venue list uses sortVenuesForVenueList')
+  : fail('venue list does not use sortVenuesForVenueList');
+
+let lastIndex = -1;
+for (const slug of prioritySlugs) {
+  const currentIndex = sortSource.indexOf(`'${slug}'`);
+  if (currentIndex === -1) {
+    fail(`src/utils/venueSort.ts missing ${slug}`);
+  } else if (currentIndex < lastIndex) {
+    fail(`src/utils/venueSort.ts priority order is wrong around ${slug}`);
+  } else {
+    lastIndex = currentIndex;
+  }
+}
+if (lastIndex > -1) pass('src/utils/venueSort.ts keeps the requested Tokyo priority order');
+
+const sortedVenueList = [...venues].sort(venueListComparator);
+const activeList = sortedVenueList.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly);
+const firstThinVenue = activeList.find((venue) => getVenueInfoScore(venue) < 40);
+const firstPriorityVenueRank = Math.max(...prioritySlugs.map((slug) => activeList.findIndex((venue) => venue.slug === slug)));
+if (firstPriorityVenueRank >= 0 && (!firstThinVenue || firstPriorityVenueRank < activeList.indexOf(firstThinVenue))) {
+  pass('venue list sorting keeps Tokyo high-density venues ahead of thin entries');
+} else {
+  warn('venue list sorting may allow thin entries ahead of Tokyo priority venues');
 }
 
 for (const warning of warnings) console.warn(warning);

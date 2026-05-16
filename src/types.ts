@@ -320,6 +320,7 @@ export type SourceLink = {
     | 'sns'
     | 'q_and_a'
     | 'ticket_site'
+    | 'ticket_site_or_user_list'
     | 'mixed'
     | 'unknown'
     | 'venue_database'

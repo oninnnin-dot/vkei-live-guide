@@ -5,10 +5,12 @@ import NoticeBox from '@components/NoticeBox.astro';
 import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
+import { sortVenuesForVenueList } from '@/utils/venueSort';
 
 const title = '推し活会場一覧｜行き方・コンビニ・待機場所・終演後の帰り方';
 const description = 'ライブや推し活イベントで使われる会場の最寄出口、コンビニ、駅ロッカー、待機場所、雨の日、終演後の帰り方を会場別に確認できます。';
 const allVenues = venues as Venue[];
+const sortedVenues = sortVenuesForVenueList(allVenues);
 const activeCount = allVenues.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
 const preferredRegions = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
@@ -125,7 +127,7 @@ const shortcuts = [
         <div>
           <label class="gothic-label block" for="venue-sort-select">並び替え</label>
           <select class="gothic-input mt-2 min-h-12 rounded-md px-4 text-sm font-bold" id="venue-sort-select" data-sort-select>
-            <option value="recommended">おすすめ順</option>
+            <option value="recommended">情報密度順</option>
             <option value="name">会場名順</option>
             <option value="region">地域順</option>
             <option value="small">小規模優先</option>
@@ -206,7 +208,7 @@ const shortcuts = [
     </div>
 
     <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3" data-results>
-      {allVenues.map((venue) => <VenueCard venue={venue} compact />)}
+      {sortedVenues.map((venue) => <VenueCard venue={venue} compact />)}
     </div>
 
     <div class="gothic-card mt-6 hidden rounded-xl p-6 text-center" data-empty-state>
@@ -238,7 +240,6 @@ const shortcuts = [
       const chips = Array.from(root.querySelectorAll('[data-chip-kind]'));
       const resets = Array.from(root.querySelectorAll('[data-reset-filters]'));
       const shortcutButtons = Array.from(document.querySelectorAll('[data-shortcut]'));
-      const priorityRank = { A: 0, B: 1, C: 2, D: 3 };
       const affinityRank = { high: 0, medium: 1, low: 2, unknown: 3 };
       const scaleRank = { small: 0, 'small-mid': 1, mid: 2, large: 3, unknown: 4 };
       const labelMap = {
@@ -343,13 +344,15 @@ const shortcuts = [
       const sortCards = (visibleCards) => {
         return visibleCards.sort((a, b) => {
           if (state.sort === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'ja');
-          if (state.sort === 'region') return `${a.dataset.region}${a.dataset.prefecture}${a.dataset.name}`.localeCompare(`${b.dataset.region}${b.dataset.prefecture}${b.dataset.name}`, 'ja');
+          if (state.sort === 'region') return Number(a.dataset.regionRank || 99) - Number(b.dataset.regionRank || 99)
+            || Number(a.dataset.areaRank || 99) - Number(b.dataset.areaRank || 99)
+            || `${a.dataset.prefecture}${a.dataset.area}${a.dataset.name}`.localeCompare(`${b.dataset.prefecture}${b.dataset.area}${b.dataset.name}`, 'ja');
           if (state.sort === 'small') return (scaleRank[a.dataset.scale] ?? 9) - (scaleRank[b.dataset.scale] ?? 9) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
           if (state.sort === 'affinity') return (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
           if (state.sort === 'locker') return Number(b.dataset.lockerRank || 0) - Number(a.dataset.lockerRank || 0) || a.dataset.name.localeCompare(b.dataset.name, 'ja');
-          return (priorityRank[a.dataset.priority] ?? 9) - (priorityRank[b.dataset.priority] ?? 9)
-            || (affinityRank[a.dataset.affinity] ?? 9) - (affinityRank[b.dataset.affinity] ?? 9)
-            || (a.dataset.minor === b.dataset.minor ? 0 : a.dataset.minor === 'true' ? -1 : 1)
+          return Number(b.dataset.infoScore || 0) - Number(a.dataset.infoScore || 0)
+            || Number(a.dataset.regionRank || 99) - Number(b.dataset.regionRank || 99)
+            || Number(a.dataset.areaRank || 99) - Number(b.dataset.areaRank || 99)
             || a.dataset.name.localeCompare(b.dataset.name, 'ja');
         });
       };

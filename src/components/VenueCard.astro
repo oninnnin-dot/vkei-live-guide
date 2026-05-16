@@ -1,5 +1,6 @@
 ---
 import type { Venue } from '@/types';
+import { getAreaSortRank, getRegionSortRank, getVenueInfoScore, TOKYO_PRIORITY_SLUGS } from '@/utils/venueSort';
 
 interface Props {
   venue: Venue;
@@ -141,6 +142,10 @@ const normalizeStationLocker = (value: unknown) => {
 
 const effectiveVenueStatus = venue.venueStatus ?? venue.status;
 const isArchive = venue.archiveOnly || effectiveVenueStatus === 'closed';
+const infoScore = getVenueInfoScore(venue);
+const regionSortRank = getRegionSortRank(venue);
+const areaSortRank = getAreaSortRank(venue);
+const tokyoPriorityRank = TOKYO_PRIORITY_SLUGS.indexOf(venue.slug as (typeof TOKYO_PRIORITY_SLUGS)[number]);
 const lockerState = venue.lockerInfo?.venueLockerStatus ?? 'unknown';
 const cloakState = venue.cloakInfo?.cloakStatus ?? 'unknown';
 const stationLockerState = normalizeStationLocker(
@@ -300,6 +305,10 @@ const filterTags = [
   data-minor={venue.minorVkeiFriendly ? 'true' : 'false'}
   data-priority={venue.priority}
   data-locker-rank={lockerSortRank[lockerState] ?? 0}
+  data-info-score={infoScore}
+  data-region-rank={regionSortRank}
+  data-area-rank={areaSortRank}
+  data-tokyo-priority-rank={tokyoPriorityRank >= 0 ? tokyoPriorityRank : 999}
   data-tags={cardFilterTags.join('|')}
   data-search={searchText}
   data-filter-tags={filterTags}

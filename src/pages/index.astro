@@ -8,26 +8,12 @@ import SectionTitle from '@components/SectionTitle.astro';
 import VenueCard from '@components/VenueCard.astro';
 import venues from '@data/venues.json';
 import type { Venue } from '@/types';
+import { sortVenuesForTopPage } from '@/utils/venueSort';
 
 const title = '推し活遠征ナビ｜小規模ライブハウスの行き方・ロッカー・コンビニ・帰り方ガイド';
 const description = '小規模ライブハウスや推し活現場へ行く前に確認したい、最寄出口、ロッカー、クローク、近くのコンビニ、待機場所、雨の日、終演後の帰り方、一人参戦の不安をまとめる実用ナビです。';
 
-const prioritySlugs = [
-  'ikebukuro-blackhole',
-  'ikebukuro-edge',
-  'shibuya-rex',
-  'takadanobaba-club-phase',
-  'higashi-koenji-20000v',
-  'shimokitazawa-shangrila',
-  'sugamo-shishio',
-  'wildside-tokyo',
-  'shinjuku-club-science',
-  'ueno-otokoyokocho',
-];
-
-const priorityVenues = (venues as Venue[])
-  .filter((venue) => prioritySlugs.includes(venue.slug) && venue.status === 'active' && venue.showInVenueList && !venue.archiveOnly)
-  .sort((a, b) => prioritySlugs.indexOf(a.slug) - prioritySlugs.indexOf(b.slug));
+const priorityVenues = sortVenuesForTopPage(venues as Venue[]);
 
 const mainLinks = [
   {

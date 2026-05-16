@@ -553,11 +553,6 @@ const unknownRows = isArchive ? [] : [
         )}
       </section>
 
-      <MonetizationBox
-        title="この会場へ行く前に用意すると安心なもの"
-        lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
-      />
-
       {(beginnerRows.length > 0 || tripRows.length > 0) && (
         <section class="gothic-card rounded-xl p-5 md:p-6">
           <div class="section-title">
@@ -628,6 +623,13 @@ const unknownRows = isArchive ? [] : [
           <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">公式確認・補助確認の表示情報は確認中です。</p>
         )}
       </section>
+
+      {!isArchive && (
+        <MonetizationBox
+          title="この会場へ行く前に用意すると安心なもの"
+          lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
+        />
+      )}
 
       {!isArchive && unknownRows.length > 0 && (
         <section class="rounded-lg border border-amber/15 bg-black/20 p-4">
