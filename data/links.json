@@ -5,5 +5,75 @@
     "program": "もしもアフィリエイト 楽天市場の商品購入",
     "urlTemplate": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER}",
     "placeholder": "{RAKUTEN_URL_PLACEHOLDER}"
+  },
+  "products": {
+    "mobileBattery": {
+      "label": "Anker MagGo Power Bank (10000mAh, Slim)",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1664%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10002086%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/anker/cabinet/images/anker_2/a1664_normalv2.jpg?_ex=64x64",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "usbCable": {
+      "label": "Anker PowerLine III Flow USB-Cケーブル",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa855%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10000963%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/anker/cabinet/listing/tmb/a855/a855_normal_new_b.jpg?_ex=64x64",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "foldingUmbrella": {
+      "label": "晴雨兼用 自動開閉 折りたたみ傘",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhomeycozy%2Fzds04-1-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhomeycozy%2Fi%2F10000770%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/homeycozy/cabinet/11729214/13205270/imgrc0108880396.jpg?_ex=64x64",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "compressionBags": {
+      "label": "TripLux くるピタ衣類圧縮袋 10枚セット",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhiromu%2Ft0000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhiromu%2Fi%2F10000034%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/hiromu/cabinet/rma2.jpg?_ex=128x128",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "shoulderBag": {
+      "label": "小さめショルダーバッグ",
+      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_SHOULDER_BAG}"
+    },
+    "binoculars": {
+      "label": "Vixen・Kenko系ライブ用双眼鏡",
+      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_BINOCULARS}"
+    },
+    "earplugs": {
+      "label": "Crescendo Music 20 ライブ用耳栓",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fchuya-online%2F215541%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchuya-online%2Fi%2F10249675%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/chuya-online/cabinet/item216000/215541.jpg?_ex=128x128",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "travelPouch": {
+      "label": "薄型ガジェット・トラベルポーチ",
+      "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fzacca-15%2Faccessory-bag-fbsnb-00%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fzacca-15%2Fi%2F10001126%2F",
+      "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/zacca-15/cabinet/topimage/fbsnb2.jpg?_ex=128x128",
+      "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
+      "rel": "nofollow noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    },
+    "subBag": {
+      "label": "折りたたみサブバッグ",
+      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_SUB_BAG}"
+    },
+    "tripGoods": {
+      "label": "遠征グッズまとめ",
+      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_TRIP_GOODS}"
+    },
+    "oshiGoods": {
+      "label": "推し活便利グッズまとめ",
+      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_OSHI_GOODS}"
+    }
   }
 }

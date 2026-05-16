@@ -6,13 +6,11 @@ interface Props {
 }
 
 const { compact = false } = Astro.props;
-const rakutenBaseUrl = affiliateLinks.rakuten.urlTemplate;
-const rakutenSearch = (keyword: string) =>
-  `${rakutenBaseUrl}${rakutenBaseUrl.includes('?') ? '&' : '?'}keyword=${encodeURIComponent(keyword)}`;
+const productLinks = affiliateLinks.products;
 
 const baseItems = [
   { label: '電子チケット表示用のスマホ', keyword: 'スマホ 防水ポーチ' },
-  { label: '身分証・会員証・チケット控え', keyword: 'チケットホルダー' },
+  { label: '身分証・会員証・チケット控え', keyword: '電子チケット確認' },
   { label: 'ドリンク代とロッカー用の小銭', keyword: '小銭入れ 薄型' },
   { label: 'モバイルバッテリーと短いケーブル', keyword: 'モバイルバッテリー 軽量' },
   { label: '薄いサブバッグ', keyword: '折りたたみ サブバッグ' },
@@ -80,8 +78,8 @@ const baseItems = [
   </div>
 
   <div class="mt-4 grid gap-2 text-sm leading-6 text-muted md:grid-cols-2" data-check-affiliate>
-    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={rakutenSearch('ライブ 遠征 持ち物')} target="_blank" rel="noopener noreferrer">遠征グッズまとめ</a>
-    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={rakutenSearch('推し活 遠征 便利グッズ')} target="_blank" rel="noopener noreferrer">推し活便利グッズまとめ</a>
+    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={productLinks.tripGoods.url} target="_blank" rel="noopener noreferrer">{productLinks.tripGoods.label}</a>
+    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={productLinks.oshiGoods.url} target="_blank" rel="noopener noreferrer">{productLinks.oshiGoods.label}</a>
   </div>
 
   <p class="mt-4 text-xs leading-6 text-muted">
