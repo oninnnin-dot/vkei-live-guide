@@ -6,13 +6,23 @@
     "urlTemplate": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER}",
     "placeholder": "{RAKUTEN_URL_PLACEHOLDER}"
   },
+  "banners": {
+    "rakutenMarket": {
+      "label": "楽天市場で遠征準備アイテムを探す",
+      "url": "https://hb.afl.rakuten.co.jp/hsc/53de8cd7.fe35c08b.53de8cc7.a999cc00/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjo2MTcwODYsImFtcCI6ZmFsc2V9",
+      "imageUrl": "https://hbb.afl.rakuten.co.jp/hsb/53de8cd7.fe35c08b.53de8cc7.a999cc00/?me_id=2100001&me_adv_id=617086&t=pict",
+      "alt": "楽天市場で遠征やライブ前後に役立つ持ち物を探す",
+      "rel": "nofollow sponsored noopener",
+      "referrerPolicy": "no-referrer-when-downgrade"
+    }
+  },
   "products": {
     "mobileBattery": {
       "label": "Anker MagGo Power Bank (10000mAh, Slim)",
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1664%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10002086%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/anker/cabinet/images/anker_2/a1664_normalv2.jpg?_ex=64x64",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
     "usbCable": {
@@ -20,7 +30,7 @@
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa855%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10000963%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/anker/cabinet/listing/tmb/a855/a855_normal_new_b.jpg?_ex=64x64",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
     "foldingUmbrella": {
@@ -28,7 +38,7 @@
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhomeycozy%2Fzds04-1-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhomeycozy%2Fi%2F10000770%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/homeycozy/cabinet/11729214/13205270/imgrc0108880396.jpg?_ex=64x64",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
     "compressionBags": {
@@ -36,7 +46,7 @@
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhiromu%2Ft0000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhiromu%2Fi%2F10000034%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/hiromu/cabinet/rma2.jpg?_ex=128x128",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
     "earplugs": {
@@ -44,7 +54,7 @@
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fchuya-online%2F215541%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchuya-online%2Fi%2F10249675%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/chuya-online/cabinet/item216000/215541.jpg?_ex=128x128",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
     "travelPouch": {
@@ -52,8 +62,9 @@
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fzacca-15%2Faccessory-bag-fbsnb-00%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fzacca-15%2Fi%2F10001126%2F",
       "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/zacca-15/cabinet/topimage/fbsnb2.jpg?_ex=128x128",
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
-      "rel": "nofollow noopener",
+      "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     }
   }
 }
+

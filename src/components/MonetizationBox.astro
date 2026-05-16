@@ -14,17 +14,29 @@ interface Item {
   }>;
 }
 
+interface BannerLink {
+  label: string;
+  url: string;
+  imageUrl: string;
+  alt: string;
+  rel?: string;
+  referrerPolicy?: string;
+}
+
 interface Props {
   title?: string;
   lead?: string;
   items?: Item[];
+  banner?: BannerLink | false | null;
 }
 
 const productLinks = affiliateLinks.products;
+const defaultBanner = affiliateLinks.banners.rakutenMarket;
 
 const {
   title = '遠征前に用意しておくと安心なもの',
   lead = '楽天アフィリエイト経由の商品リンクを含みます。電子チケット、雨、音量、遠征荷物など、ライブ当日の不安に直結する実用品だけに絞っています。',
+  banner = defaultBanner,
   items = [
     {
       title: 'スマホ電池対策',
@@ -77,7 +89,7 @@ const {
                   class={`inline-flex gap-3 text-amber underline decoration-amber/40 underline-offset-4 transition hover:text-mist ${link.imageUrl ? 'items-center' : ''}`}
                   href={link.url}
                   target="_blank"
-                  rel={link.rel ?? 'nofollow noopener'}
+                  rel={link.rel ?? 'nofollow sponsored noopener'}
                   referrerpolicy={link.referrerPolicy ?? 'no-referrer-when-downgrade'}
                 >
                   {link.imageUrl && (
@@ -93,6 +105,29 @@ const {
       </div>
     ))}
   </div>
+  {banner && (
+    <div class="mt-5 rounded-md border border-amber/20 bg-black/20 p-4">
+      <div class="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.18em] text-amber/80">広告</p>
+          <h3 class="font-classical mt-2 text-lg font-black leading-tight text-mist">楽天市場で遠征準備アイテムを探す</h3>
+          <p class="mt-2 text-sm leading-7 text-muted">
+            電子チケット、地図、交通検索、終演後の連絡など、ライブ当日はスマホや小物まわりの準備が大事です。楽天市場で、遠征やライブ前後に役立つ持ち物を探せます。
+          </p>
+        </div>
+        <a
+          class="focus-ring inline-flex justify-center rounded-md border border-amber/20 bg-black/30 p-2 transition hover:border-amber/50"
+          href={banner.url}
+          target="_blank"
+          rel={banner.rel ?? 'nofollow sponsored noopener'}
+          referrerpolicy={banner.referrerPolicy ?? 'no-referrer-when-downgrade'}
+          aria-label={banner.label}
+        >
+          <img class="max-h-28 w-auto rounded-sm object-contain" src={banner.imageUrl} alt={banner.alt} loading="lazy" />
+        </a>
+      </div>
+    </div>
+  )}
   <p class="mt-4 text-xs leading-6 text-muted">
     このセクションにはアフィリエイトリンクを含みます。商品は実用性を優先して選定しており、購入により当サイトに報酬が入る場合があります。
   </p>
