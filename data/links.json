@@ -39,14 +39,6 @@
       "rel": "nofollow noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
     },
-    "shoulderBag": {
-      "label": "小さめショルダーバッグ",
-      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_SHOULDER_BAG}"
-    },
-    "binoculars": {
-      "label": "Vixen・Kenko系ライブ用双眼鏡",
-      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_BINOCULARS}"
-    },
     "earplugs": {
       "label": "Crescendo Music 20 ライブ用耳栓",
       "url": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fchuya-online%2F215541%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchuya-online%2Fi%2F10249675%2F",
@@ -62,18 +54,6 @@
       "impressionUrl": "https://i.moshimo.com/af/i/impression?a_id=5565907&p_id=54&pc_id=54&pl_id=616",
       "rel": "nofollow noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
-    },
-    "subBag": {
-      "label": "折りたたみサブバッグ",
-      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_SUB_BAG}"
-    },
-    "tripGoods": {
-      "label": "遠征グッズまとめ",
-      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_TRIP_GOODS}"
-    },
-    "oshiGoods": {
-      "label": "推し活便利グッズまとめ",
-      "url": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER_OSHI_GOODS}"
     }
   }
 }

@@ -4,7 +4,7 @@ export const commonTips: VenueTip[] = [
   {
     category: 'baggage',
     title: '荷物は最小限にする',
-    body: '大きい荷物はロッカー、クローク、駅ロッカーへ預ける前提で考えます。フロアに荷物を置かず、小さめショルダー、サコッシュ、ウエストポーチなど身につけられるバッグが安心です。',
+    body: '大きい荷物はロッカー、クローク、駅ロッカーへ預ける前提で考えます。フロアに荷物を置かず、身につけられる最小限の荷物量にするのが安心です。',
     confidence: 'general',
     sourceType: 'summary',
     lastVerifiedAt: '2026-05-05',

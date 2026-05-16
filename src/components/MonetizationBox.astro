@@ -24,10 +24,10 @@ const productLinks = affiliateLinks.products;
 
 const {
   title = '遠征前に用意しておくと安心なもの',
-  lead = '物販・雨・終演後移動がある日は、荷物を減らしつつ必要なものだけ持つのがおすすめです。',
+  lead = '楽天アフィリエイト経由の商品リンクを含みます。電子チケット、雨、音量、遠征荷物など、ライブ当日の不安に直結する実用品だけに絞っています。',
   items = [
     {
-      title: '電池切れ対策',
+      title: 'スマホ電池対策',
       text: '電子チケット、地図、終電確認を使う日は、軽いモバイルバッテリーと短いケーブルを先に入れておくと安心です。',
       links: [
         productLinks.mobileBattery,
@@ -35,28 +35,25 @@ const {
       ],
     },
     {
-      title: '雨と荷物増え対策',
-      text: '雨の日や物販後は、折りたたみ傘、圧縮袋、小さめショルダーを先に用意しておくと移動が楽です。',
+      title: '雨の日・整列対策',
+      text: '屋外整列や駅からの地上移動がある日は、晴雨兼用の軽い折りたたみ傘を先に入れておくと動きやすいです。',
       links: [
         productLinks.foldingUmbrella,
-        productLinks.compressionBags,
-        productLinks.shoulderBag,
       ],
     },
     {
-      title: '後方席の視界対策',
-      text: 'ホールや後方席の日は、双眼鏡があるとステージや表情を追いやすくなります。',
-      links: [
-        productLinks.binoculars,
-      ],
-    },
-    {
-      title: '音と移動疲れ対策',
-      text: '小規模ライブハウスや長距離移動の日は、耳栓や薄手ポーチで体力を残しやすくします。',
+      title: '音量が不安な人向け',
+      text: '小規模ライブハウスやスピーカー前が不安な日は、音楽用の耳栓を持っておくと耳の負担を減らしやすくなります。',
       links: [
         productLinks.earplugs,
+      ],
+    },
+    {
+      title: '遠征荷物対策',
+      text: '宿泊ありや物販後に荷物が増える日は、衣類圧縮袋と薄型ポーチでバッグ内を整理しておくと回収や移動が楽です。',
+      links: [
+        productLinks.compressionBags,
         productLinks.travelPouch,
-        productLinks.subBag,
       ],
     },
   ],
@@ -97,6 +94,6 @@ const {
     ))}
   </div>
   <p class="mt-4 text-xs leading-6 text-muted">
-    このセクションにはアフィリエイトリンクが含まれます。商品は実用性を優先して選定しており、購入により当サイトに報酬が入る場合があります。
+    このセクションにはアフィリエイトリンクを含みます。商品は実用性を優先して選定しており、購入により当サイトに報酬が入る場合があります。
   </p>
 </aside>
