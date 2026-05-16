@@ -2,7 +2,11 @@
 import Layout from '@layouts/Layout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import MonetizationBox from '@components/MonetizationBox.astro';
+import PersonalizedChecklist from '@components/PersonalizedChecklist.astro';
 import RelatedGuideLinks from '@components/RelatedGuideLinks.astro';
+import VenueReviewBox from '@components/VenueReviewBox.astro';
+import VenueSpotGuide from '@components/VenueSpotGuide.astro';
+import VenueTravelLinks from '@components/VenueTravelLinks.astro';
 import venues from '@data/venues.json';
 import type { SourceLink, Venue } from '@/types';
 
@@ -603,6 +607,8 @@ const unknownRows = isArchive ? [] : [
         </section>
       )}
 
+      <VenueSpotGuide venue={venue} />
+
         </>
       )}
 
@@ -637,10 +643,15 @@ const unknownRows = isArchive ? [] : [
       </section>
 
       {!isArchive && (
-        <MonetizationBox
-          title="この会場へ行く前に用意すると安心なもの"
-          lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
-        />
+        <>
+          <VenueTravelLinks venue={venue} />
+          <PersonalizedChecklist />
+          <MonetizationBox
+            title="この会場へ行く前に用意すると安心なもの"
+            lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
+          />
+          <VenueReviewBox venue={venue} />
+        </>
       )}
 
       {!isArchive && unknownRows.length > 0 && (

@@ -1,0 +1,68 @@
+---
+import type { Venue } from '@/types';
+
+interface Props {
+  venue: Venue;
+}
+
+const { venue } = Astro.props;
+const approvedReviews = venue.approvedReviews ?? [];
+---
+
+<section class="gothic-card rounded-xl p-5 md:p-6">
+  <div class="section-title">
+    <p>Community notes</p>
+    <h2>口コミ・現地メモ投稿</h2>
+    <p>ロッカーの埋まり方、整列時の混雑、終演後の帰りやすさなど、公式に載りにくい実用情報を承認後に掲載します。</p>
+  </div>
+
+  {approvedReviews.length > 0 ? (
+    <div class="grid gap-3">
+      {approvedReviews.map((review) => (
+        <article class="rounded-md border border-amber/20 bg-black/25 p-4">
+          <p class="gothic-label">{review.visitedAt || '時期確認済み'}</p>
+          <h3 class="mt-2 font-classical text-lg font-black text-mist">{review.title}</h3>
+          <p class="mt-2 text-sm leading-7 text-muted">{review.body}</p>
+          <p class="mt-2 text-xs leading-6 text-muted">掲載確認日: {review.approvedAt}</p>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p class="rounded-md border border-amber/15 bg-black/20 p-4 text-sm leading-7 text-muted">
+      掲載済みの口コミはまだありません。投稿内容は確認後、個人が特定されない形に整えて公開します。
+    </p>
+  )}
+
+  <form class="mt-5 grid gap-3" method="post" action="mailto:review@oshikatsu-ensei-navi.example.com" enctype="text/plain">
+    <input type="hidden" name="venue" value={venue.name} />
+    <div class="grid gap-3 md:grid-cols-2">
+      <label class="grid gap-2 text-sm font-bold text-mist">
+        ニックネーム
+        <input class="gothic-input min-h-11 rounded-md px-3" name="nickname" autocomplete="nickname" placeholder="公開名または匿名希望" />
+      </label>
+      <label class="grid gap-2 text-sm font-bold text-mist">
+        参戦時期
+        <input class="gothic-input min-h-11 rounded-md px-3" name="visited_month" placeholder="例: 2026年5月ごろ" />
+      </label>
+    </div>
+    <label class="grid gap-2 text-sm font-bold text-mist">
+      投稿内容
+      <textarea
+        class="gothic-input min-h-32 rounded-md px-3 py-3"
+        name="body"
+        placeholder="例: 終演後は駅方面へ戻る人が多く、ロッカー回収込みなら早めに動くと安心でした。"
+      ></textarea>
+    </label>
+    <label class="gothic-chip flex items-start gap-3 rounded-md px-3 py-3 text-sm font-bold leading-7">
+      <input class="mt-1 size-4 accent-violet" type="checkbox" name="moderation_consent" required />
+      誹謗中傷、個人情報、無断掲載にあたる内容を含めず、承認制で編集・要約されることに同意します。
+    </label>
+    <button class="gothic-button focus-ring min-h-11 rounded-md px-5 text-sm font-black transition" type="submit">
+      投稿内容を送る
+    </button>
+  </form>
+
+  <p class="mt-4 text-xs leading-6 text-muted">
+    静的サイト運用のため、投稿はメールまたは外部フォームで受け付け、管理者確認後に公開データへ反映します。公開ページには確認済みの内容だけを掲載します。
+  </p>
+</section>

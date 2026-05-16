@@ -342,6 +342,14 @@ export type InternalResearchSource = {
   note?: string;
 };
 
+export type ApprovedVenueReview = {
+  title: string;
+  body: string;
+  visitedAt?: string;
+  approvedAt: string;
+  sourceType: 'user_submission';
+};
+
 export type Venue = {
   slug: string;
   name: string;
@@ -434,6 +442,7 @@ export type Venue = {
   sourceLinks?: SourceLink[];
   publicSources?: SourceLink[];
   internalResearchSources?: InternalResearchSource[];
+  approvedReviews?: ApprovedVenueReview[];
   researchStatus?: string;
   searchedSources?: Array<{
     query: string;

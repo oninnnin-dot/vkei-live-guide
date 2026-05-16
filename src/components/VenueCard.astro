@@ -195,8 +195,8 @@ const derivedTipTags = [
   venue.baggageGuide?.suitcase || venue.nearbyInfo?.tripNote?.includes('キャリー') ? 'キャリー非推奨' : '',
 ].filter(Boolean);
 const cardFilterTags = [...new Set([...publicTipTags, ...derivedTipTags])];
-const visibleTipTags = publicTipTags.slice(0, 3);
-const hiddenTipCount = Math.max(publicTipTags.length - visibleTipTags.length, 0);
+const visibleTipTags = cardFilterTags.slice(0, compact ? 6 : 8);
+const hiddenTipCount = Math.max(cardFilterTags.length - visibleTipTags.length, 0);
 
 const logisticsSearchText = isArchive ? [] : [
   venue.lockerInfo?.venueLockerText,

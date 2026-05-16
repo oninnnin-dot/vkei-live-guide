@@ -1,0 +1,86 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import NoticeBox from '@components/NoticeBox.astro';
+import RelatedGuideLinks from '@components/RelatedGuideLinks.astro';
+
+const title = '推し活遠征向けカードの選び方｜交通費・宿泊費・チケット支払いの確認ポイント';
+const description = '推し活遠征で使うカードを選ぶ前に確認したい、年会費、ポイント、交通・宿泊支払い、旅行保険、チケット支払い、締め日を整理します。広告リンクを含む場合があります。';
+const affiliateId = 'AFFILIATE_ID';
+const cardLinks = [
+  {
+    title: '年会費とポイントを比較する',
+    text: '交通費や宿泊費の支払いが多い人は、年会費とポイント還元のバランスを先に確認します。',
+    url: `https://example.com/credit-card/compare?aff=${affiliateId}`,
+  },
+  {
+    title: '旅行保険・移動時の補償を見る',
+    text: '遠征回数が多い人は、移動中の補償、利用付帯条件、海外遠征時の条件を公式で確認します。',
+    url: `https://example.com/credit-card/travel?aff=${affiliateId}`,
+  },
+  {
+    title: 'チケット支払い向きのカードを見る',
+    text: '抽選や先着販売では、利用枠、本人認証、締め日、支払い遅延リスクを確認しておくと安心です。',
+    url: `https://example.com/credit-card/ticket?aff=${affiliateId}`,
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs items={[{ label: '推し活遠征向けカードの選び方' }]} />
+
+  <section class="container-navi py-8">
+    <div class="max-w-3xl">
+      <p class="gothic-label">Credit card guide</p>
+      <h1 class="font-classical mt-3 text-3xl font-black leading-tight text-mist md:text-5xl">推し活遠征向けカードの選び方</h1>
+      <p class="mt-4 text-base leading-8 text-muted md:text-lg">
+        交通費、宿泊費、チケット支払い、物販で使うカードは、還元率だけでなく年会費、利用枠、本人認証、締め日まで見ておくと遠征費管理が安定します。
+      </p>
+    </div>
+  </section>
+
+  <section class="container-navi py-8">
+    <NoticeBox title="カード条件は必ず公式で確認" tone="warning">
+      <p>年会費、ポイント、補償、優待、審査、キャンペーンは変わります。このページは選び方の整理であり、申し込み判断は各カード会社の公式情報を確認してください。</p>
+    </NoticeBox>
+  </section>
+
+  <section class="container-navi py-8">
+    <div class="grid gap-4 md:grid-cols-3">
+      {cardLinks.map((link) => (
+        <a class="gothic-card focus-ring rounded-xl p-5 transition hover:-translate-y-0.5 hover:border-amber/60" href={link.url} target="_blank" rel="noopener noreferrer">
+          <span class="font-classical block text-lg font-black leading-snug text-mist">{link.title}</span>
+          <span class="mt-2 block text-sm leading-7 text-muted">{link.text}</span>
+          <span class="gothic-button mt-5 inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2 text-center text-sm font-black leading-snug transition">比較ページへ</span>
+        </a>
+      ))}
+    </div>
+    <p class="mt-4 text-xs leading-6 text-muted">
+      このページには広告リンクが含まれます。成人向け商品やサービスは扱いません。
+    </p>
+  </section>
+
+  <section class="container-navi py-8">
+    <article class="gothic-card rounded-xl p-5 md:p-8">
+      <p class="gothic-label">Checklist</p>
+      <h2 class="font-classical mt-2 text-2xl font-black text-mist">申し込み前に見るポイント</h2>
+      <div class="mt-5 grid gap-3 md:grid-cols-2">
+        {[
+          ['年会費', '年1回の遠征だけなら無料カード、多遠征なら特典込みで回収できるかを見る。'],
+          ['利用枠', 'チケット、宿泊、交通を同月に払っても不足しないか確認する。'],
+          ['本人認証', 'チケットサイト決済で使う場合は、本人認証設定を先に済ませる。'],
+          ['締め日', '物販や宿泊費が重なる月に支払いが偏らないか確認する。'],
+          ['旅行保険', '利用付帯か自動付帯か、国内移動にどこまで効くかを見る。'],
+          ['ポイント交換', '交通系、宿泊、通販で実際に使いやすい交換先かを見る。'],
+        ].map(([label, text]) => (
+          <div class="rounded-md border border-amber/20 bg-black/25 p-4">
+            <p class="font-classical font-black text-mist">{label}</p>
+            <p class="mt-2 text-sm leading-7 text-muted">{text}</p>
+          </div>
+        ))}
+      </div>
+    </article>
+  </section>
+
+  <RelatedGuideLinks title="カード選びと一緒に確認" />
+</Layout>

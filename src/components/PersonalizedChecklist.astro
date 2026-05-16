@@ -1,0 +1,152 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const amazonTag = 'AFFILIATE_ID';
+const rakutenId = 'AFFILIATE_ID';
+const amazonSearch = (keyword: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(keyword)}&tag=${amazonTag}`;
+const rakutenSearch = (keyword: string) => `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/?scid=af_pc_etc&rafct=i_${rakutenId}`;
+
+const baseItems = [
+  { label: '電子チケット表示用のスマホ', keyword: 'スマホ 防水ポーチ' },
+  { label: '身分証・会員証・チケット控え', keyword: 'チケットホルダー' },
+  { label: 'ドリンク代とロッカー用の小銭', keyword: '小銭入れ 薄型' },
+  { label: 'モバイルバッテリーと短いケーブル', keyword: 'モバイルバッテリー 軽量' },
+  { label: '薄いサブバッグ', keyword: '折りたたみ サブバッグ' },
+];
+---
+
+<section class="gothic-card rounded-xl p-5 md:p-6" data-personal-checklist>
+  <div class="section-title">
+    <p>Checklist</p>
+    <h2>持ち物チェックリストを作る</h2>
+    <p>季節、会場タイプ、荷物量に合わせて、印刷・保存しやすい当日リストを作れます。</p>
+  </div>
+
+  <div class={`grid gap-3 ${compact ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
+    <label class="grid gap-2 text-sm font-bold text-mist">
+      季節
+      <select class="gothic-input min-h-11 rounded-md px-3" data-check-season>
+        <option value="normal">通常</option>
+        <option value="summer">夏・暑い日</option>
+        <option value="winter">冬・寒い日</option>
+        <option value="rain">雨の日</option>
+      </select>
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-mist">
+      会場
+      <select class="gothic-input min-h-11 rounded-md px-3" data-check-venue>
+        <option value="livehouse">地下・小規模ライブハウス</option>
+        <option value="hall">ホール・劇場</option>
+        <option value="outdoor">屋外・大型イベント</option>
+      </select>
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-mist">
+      荷物
+      <select class="gothic-input min-h-11 rounded-md px-3" data-check-baggage>
+        <option value="small">小さめバッグ</option>
+        <option value="backpack">リュック</option>
+        <option value="suitcase">キャリーあり</option>
+      </select>
+    </label>
+    <label class="grid gap-2 text-sm font-bold text-mist">
+      物販
+      <select class="gothic-input min-h-11 rounded-md px-3" data-check-merch>
+        <option value="none">少なめ</option>
+        <option value="many">増える予定</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="mt-5 rounded-md border border-amber/20 bg-black/25 p-4">
+    <ul class="grid gap-2 text-sm leading-7 text-mist" data-check-list>
+      {baseItems.map((item) => (
+        <li>
+          <label class="flex gap-3">
+            <input class="mt-1 size-4 accent-violet" type="checkbox" />
+            <span>{item.label}</span>
+          </label>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="mt-4 flex flex-wrap gap-3">
+    <button class="gothic-button-secondary focus-ring min-h-10 rounded-md px-4 text-sm font-black" type="button" data-check-print>印刷</button>
+    <button class="gothic-button-secondary focus-ring min-h-10 rounded-md px-4 text-sm font-black" type="button" data-check-download>テキスト保存</button>
+  </div>
+
+  <div class="mt-4 grid gap-2 text-sm leading-6 text-muted md:grid-cols-2" data-check-affiliate>
+    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={amazonSearch('ライブ 遠征 持ち物')} target="_blank" rel="noopener noreferrer">Amazonで遠征グッズを探す</a>
+    <a class="text-amber underline decoration-amber/40 underline-offset-4" href={rakutenSearch('ライブ 遠征 持ち物')} target="_blank" rel="noopener noreferrer">楽天で遠征グッズを探す</a>
+  </div>
+
+  <p class="mt-4 text-xs leading-6 text-muted">
+    商品リンクには広告が含まれます。会場ルール、持ち込み制限、天候、交通状況は当日案内を優先してください。
+  </p>
+</section>
+
+<script is:inline>
+  const checklistRoot = document.querySelector('[data-personal-checklist]');
+  if (checklistRoot) {
+    const listNode = checklistRoot.querySelector('[data-check-list]');
+    const season = checklistRoot.querySelector('[data-check-season]');
+    const venue = checklistRoot.querySelector('[data-check-venue]');
+    const baggage = checklistRoot.querySelector('[data-check-baggage]');
+    const merch = checklistRoot.querySelector('[data-check-merch]');
+    const printButton = checklistRoot.querySelector('[data-check-print]');
+    const downloadButton = checklistRoot.querySelector('[data-check-download]');
+    const baseItems = [
+      '電子チケット表示用のスマホ',
+      '身分証・会員証・チケット控え',
+      'ドリンク代とロッカー用の小銭',
+      'モバイルバッテリーと短いケーブル',
+      '薄いサブバッグ',
+    ];
+    const optionItems = {
+      summer: ['汗拭きシート', '小さめの飲み物', '冷房対策の薄手羽織り'],
+      winter: ['貼らないカイロ', '薄手の手袋', 'ロッカーに預ける上着袋'],
+      rain: ['折りたたみ傘', '濡れたもの用の袋', '防水ポーチ'],
+      livehouse: ['耳栓', '小さめショルダー', '床に置かない荷物量'],
+      hall: ['双眼鏡', '座席確認メモ', '終演後の駅ルート'],
+      outdoor: ['日焼け止め', 'レインポンチョ', '大きめのゴミ袋'],
+      backpack: ['駅ロッカー候補', 'リュックを体の前で持つ準備'],
+      suitcase: ['ホテル預け候補', '大型ロッカー候補', '終演後の回収時間'],
+      many: ['物販用エコバッグ', '圧縮袋', '購入上限メモ'],
+    };
+    const getItems = () => {
+      const items = new Set(baseItems);
+      [season.value, venue.value, baggage.value, merch.value].forEach((key) => {
+        (optionItems[key] || []).forEach((item) => items.add(item));
+      });
+      return Array.from(items);
+    };
+    const render = () => {
+      listNode.innerHTML = '';
+      getItems().forEach((item) => {
+        const li = document.createElement('li');
+        const label = document.createElement('label');
+        label.className = 'flex gap-3';
+        label.innerHTML = '<input class="mt-1 size-4 accent-violet" type="checkbox" /> <span></span>';
+        label.querySelector('span').textContent = item;
+        li.appendChild(label);
+        listNode.appendChild(li);
+      });
+    };
+    const textBody = () => getItems().map((item) => `□ ${item}`).join('\n');
+    [season, venue, baggage, merch].forEach((select) => select.addEventListener('change', render));
+    printButton.addEventListener('click', () => window.print());
+    downloadButton.addEventListener('click', () => {
+      const blob = new Blob([textBody()], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = 'oshikatsu-checklist.txt';
+      anchor.click();
+      URL.revokeObjectURL(url);
+    });
+    render();
+  }
+</script>

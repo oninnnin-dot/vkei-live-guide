@@ -9,13 +9,28 @@ const fields = [
   ['locker', 'ロッカー代', 500],
   ['other', 'その他', 1000],
 ];
+
+const affiliateId = 'AFFILIATE_ID';
 ---
 
 <section class="rounded-lg border border-line bg-panel p-5 shadow-glow" data-budget>
   <div>
       <p class="text-sm font-black text-amber">Budget Simulator</p>
     <h2 class="mt-1 text-2xl font-black text-white">遠征費シミュレーター</h2>
-    <p class="mt-3 text-sm leading-7 text-muted">入力値はブラウザ内で計算します。保存や送信はしません。</p>
+    <p class="mt-3 text-sm leading-7 text-muted">出発地と目的地からざっくり概算し、細かい金額は自分で調整できます。入力値はブラウザ内で計算します。</p>
+  </div>
+  <div class="mt-6 grid gap-4 md:grid-cols-[1fr_1fr_auto] md:items-end">
+    <label class="block rounded-md border border-line bg-black/20 p-4">
+      <span class="text-sm font-bold text-mist">出発地</span>
+      <input class="focus-ring mt-2 min-h-12 w-full rounded-md border border-line bg-ink px-3 text-base font-black text-white" type="text" data-origin placeholder="例: 名古屋 / 大阪 / 仙台" />
+    </label>
+    <label class="block rounded-md border border-line bg-black/20 p-4">
+      <span class="text-sm font-bold text-mist">目的地</span>
+      <input class="focus-ring mt-2 min-h-12 w-full rounded-md border border-line bg-ink px-3 text-base font-black text-white" type="text" data-destination placeholder="例: 池袋 / 渋谷 / 新宿" />
+    </label>
+    <button class="gothic-button focus-ring min-h-12 rounded-md px-4 text-sm font-black" type="button" data-estimate>
+      概算を反映
+    </button>
   </div>
   <div class="mt-6 grid gap-4 md:grid-cols-2">
     {
@@ -40,12 +55,26 @@ const fields = [
     <p class="mt-1 text-4xl font-black text-white" data-total>0円</p>
     <p class="mt-4 rounded-md border border-line bg-black/20 p-3 text-sm leading-7 text-mist" data-comment></p>
   </div>
+  <div class="mt-5 grid gap-3 md:grid-cols-3" data-booking-links>
+    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://travel.rakuten.co.jp/?f_teikei=${affiliateId}`} target="_blank" rel="noopener noreferrer">
+      <span class="font-black text-white">宿泊サイトを見る</span>
+      <span class="mt-1 block">終演後に帰りづらい日は、ホテル代を早めに予算へ入れる。</span>
+    </a>
+    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://www.bushikaku.net/search/?utm_source=oshikatsu-ensei-navi&utm_medium=affiliate&utm_campaign=${affiliateId}`} target="_blank" rel="noopener noreferrer">
+      <span class="font-black text-white">高速バスを比較</span>
+      <span class="mt-1 block">夜行バス前はロッカー回収と乗り場移動の時間を確保する。</span>
+    </a>
+    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('駅 コインロッカー')}`} target="_blank" rel="noopener noreferrer">
+      <span class="font-black text-white">駅ロッカーを確認</span>
+      <span class="mt-1 block">キャリーありの日は、会場へ行く前に荷物処理を済ませる。</span>
+    </a>
+  </div>
   <div class="mt-5 rounded-md border border-line bg-black/20 p-4">
     <p class="font-black text-white">節約ポイント</p>
     <ul class="mt-3 space-y-2 text-sm leading-7 text-muted" data-tips></ul>
   </div>
   <p class="mt-5 text-xs leading-6 text-muted">
-    金額は目安です。チケット手数料、交通機関の遅延、ホテルのキャンセル規定、終電時刻は必ず公式情報で確認してください。
+    金額は目安です。チケット手数料、交通機関の遅延、ホテルのキャンセル規定、終電時刻は必ず公式情報で確認してください。宿泊・交通リンクには広告が含まれる場合があります。
   </p>
 </section>
 
@@ -56,11 +85,40 @@ const fields = [
     const totalNode = budgetRoot.querySelector('[data-total]');
     const commentNode = budgetRoot.querySelector('[data-comment]');
     const tipsNode = budgetRoot.querySelector('[data-tips]');
+    const originInput = budgetRoot.querySelector('[data-origin]');
+    const destinationInput = budgetRoot.querySelector('[data-destination]');
+    const estimateButton = budgetRoot.querySelector('[data-estimate]');
     const yen = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 });
 
     const valueOf = (name) => {
       const input = budgetRoot.querySelector(`input[name="${name}"]`);
       return Number(input?.value || 0);
+    };
+    const setValue = (name, value) => {
+      const input = budgetRoot.querySelector(`input[name="${name}"]`);
+      if (input) input.value = String(value);
+    };
+    const estimateTransport = (origin) => {
+      const text = String(origin || '').toLowerCase();
+      if (!text) return 8000;
+      if (/東京|都内|池袋|渋谷|新宿|上野|下北沢|高円寺/.test(text)) return 1200;
+      if (/神奈川|横浜|川崎|千葉|埼玉|大宮|柏/.test(text)) return 2500;
+      if (/静岡|長野|新潟|山梨|宇都宮|水戸/.test(text)) return 9000;
+      if (/名古屋|愛知|岐阜|三重|浜松/.test(text)) return 15000;
+      if (/大阪|京都|神戸|奈良|兵庫/.test(text)) return 22000;
+      if (/仙台|福島|郡山|山形|秋田|盛岡/.test(text)) return 20000;
+      if (/札幌|北海道|福岡|熊本|鹿児島|沖縄/.test(text)) return 35000;
+      return 12000;
+    };
+    const applyEstimate = () => {
+      const transport = estimateTransport(originInput?.value || '');
+      const hotel = transport >= 15000 ? 9000 : 0;
+      setValue('transport', transport);
+      setValue('hotel', hotel);
+      if (destinationInput?.value) {
+        setValue('locker', 700);
+      }
+      render();
     };
 
     const render = () => {
@@ -93,6 +151,7 @@ const fields = [
     };
 
     inputs.forEach((input) => input.addEventListener('input', render));
+    estimateButton?.addEventListener('click', applyEstimate);
     render();
   }
 </script>
