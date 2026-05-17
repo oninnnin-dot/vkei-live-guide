@@ -7,7 +7,6 @@ interface Item {
   links?: Array<{
     label: string;
     url: string;
-    cta?: string;
     imageUrl?: string;
     impressionUrl?: string;
     rel?: string;
@@ -38,9 +37,8 @@ const rakutenSearchUrl = (keyword: string) =>
     '{RAKUTEN_SEARCH_URL}',
     encodeURIComponent(`https://search.rakuten.co.jp/search/mall/${keyword}/`)
   );
-const rakutenSearchLink = (label: string, keyword = label, cta = '楽天で探す') => ({
+const rakutenSearchLink = (label: string, keyword = label) => ({
   label,
-  cta,
   url: rakutenSearchUrl(keyword),
   rel: 'nofollow sponsored noopener',
   referrerPolicy: 'no-referrer-when-downgrade',
@@ -55,44 +53,44 @@ const {
       title: 'スマホ電池対策',
       text: '電子チケット、地図、交通検索、終演後の連絡でスマホの電池を使いがちです。遠征や終演が遅い日は、薄型のモバイルバッテリーや充電ケーブルを用意しておくと安心です。',
       links: [
-        { ...productLinks.mobileBattery, cta: '楽天で見る' },
-        { ...productLinks.usbCable, cta: '楽天で見る' },
-        rakutenSearchLink('ケーブル内蔵モバイルバッテリー', 'ケーブル内蔵 モバイルバッテリー', '楽天で探す'),
+        { ...productLinks.mobileBattery },
+        { ...productLinks.usbCable },
+        rakutenSearchLink('ケーブル内蔵モバイルバッテリー', 'ケーブル内蔵 モバイルバッテリー'),
       ],
     },
     {
       title: '雨の日・整列対策',
       text: '雨の日は、駅から会場までの移動や整列で靴や荷物が濡れやすくなります。軽い晴雨兼用傘や靴用防水グッズがあると、終演後まで動きやすくなります。',
       links: [
-        { ...productLinks.foldingUmbrella, cta: '楽天で見る' },
-        rakutenSearchLink('靴用防水スプレー', '靴 防水スプレー', '楽天で探す'),
-        rakutenSearchLink('レインシューズカバー', 'レインシューズカバー', '楽天で探す'),
+        { ...productLinks.foldingUmbrella },
+        rakutenSearchLink('靴用防水スプレー', '靴 防水スプレー'),
+        rakutenSearchLink('レインシューズカバー', 'レインシューズカバー'),
       ],
     },
     {
       title: '身だしなみ・体調対策',
       text: '地下ライブハウスや整列では、暑さ・寒さ・湿気で体力を削られやすいです。季節に合わせて汗拭きシート、冷却シート、カイロを用意しておくと安心です。',
       links: [
-        rakutenSearchLink('汗拭きシート', '汗拭きシート', '楽天で探す'),
-        rakutenSearchLink('制汗シート', '制汗シート', '楽天で探す'),
-        rakutenSearchLink('冷却シート', '冷却シート', '楽天で探す'),
-        rakutenSearchLink('使い捨てカイロ', '使い捨てカイロ', '楽天で探す'),
+        rakutenSearchLink('汗拭きシート', '汗拭きシート'),
+        rakutenSearchLink('制汗シート', '制汗シート'),
+        rakutenSearchLink('冷却シート', '冷却シート'),
+        rakutenSearchLink('使い捨てカイロ', '使い捨てカイロ'),
       ],
     },
     {
       title: '音量が不安な人向け',
       text: '小規模ライブハウスでは、スピーカーに近い位置になることがあります。音量が不安な人や、終演後の耳鳴りが気になりやすい人は、ライブ用耳栓を用意しておくと安心です。',
       links: [
-        { ...productLinks.earplugs, cta: '楽天で見る' },
-        rakutenSearchLink('音楽用イヤープラグ', '音楽用 イヤープラグ', '楽天で探す'),
+        { ...productLinks.earplugs },
+        rakutenSearchLink('音楽用イヤープラグ', '音楽用 イヤープラグ'),
       ],
     },
     {
       title: '遠征荷物対策',
       text: '遠征や物販の日は、着替えや購入品で荷物が増えやすくなります。衣類圧縮袋やトラベルポーチがあると、バッグの中を整理しやすくなります。',
       links: [
-        { ...productLinks.compressionBags, cta: '楽天で見る' },
-        { ...productLinks.travelPouch, cta: '楽天で見る' },
+        { ...productLinks.compressionBags },
+        { ...productLinks.travelPouch },
       ],
     },
   ],
@@ -122,10 +120,7 @@ const {
                   {link.imageUrl && (
                     <img class="size-12 rounded-md border border-amber/20 object-cover" src={link.imageUrl} alt={link.label} loading="lazy" />
                   )}
-                  <span class="grid gap-0.5">
-                    <span class="text-mist">{link.label}</span>
-                    <span>{link.cta ?? '楽天で見る'}</span>
-                  </span>
+                  <span class="text-mist">{link.label}</span>
                 </a>
                 {link.impressionUrl && <img src={link.impressionUrl} alt="" loading="lazy" width="1" height="1" style="border: 0px;" />}
               </li>
