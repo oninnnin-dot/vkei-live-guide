@@ -34,6 +34,7 @@ export type SourceType =
   | 'map'
   | 'station_official'
   | 'rail_official'
+  | 'internal_note'
   | 'social'
   | 'mixed'
   | 'unknown';
@@ -278,6 +279,8 @@ export type NearbyInfo = {
   places?: NearbyPlace[];
   waitingRule?: string;
   rainPlan?: string;
+  hotDayPlan?: string;
+  coldDayPlan?: string;
   soloBeginnerNote?: string;
   tripNote?: string;
   baggageFlow?: string;
@@ -327,6 +330,7 @@ export type SourceLink = {
     | 'map'
     | 'station_official'
     | 'rail_official'
+    | 'internal_note'
     | 'mixed'
     | 'unknown'
     | 'venue_database'

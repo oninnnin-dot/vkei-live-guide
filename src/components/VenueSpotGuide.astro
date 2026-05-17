@@ -8,13 +8,19 @@ interface Props {
 const { venue } = Astro.props;
 
 const cleanText = (value: unknown) => String(value ?? '').trim();
-const cafes = (venue.nearbyInfo?.cafes ?? []).map(cleanText).filter(Boolean);
-const areaQuery = venue.area || venue.station || venue.name;
+const looksBrokenPublicText = (value: unknown) => /\?{2,}/.test(String(value ?? ''));
+const isUsefulText = (value: unknown) => {
+  const text = cleanText(value);
+  return Boolean(text) && !looksBrokenPublicText(text) && text !== '確認中';
+};
+const cafes = (venue.nearbyInfo?.cafes ?? []).map(cleanText).filter(isUsefulText);
+const areaSource = [venue.area, venue.station].map(cleanText).find(isUsefulText);
+const areaQuery = areaSource || venue.name;
 
 const spotLinks = [
   {
     title: 'コンセントが使えるカフェ',
-    text: cafes.length > 0 ? cafes.slice(0, 3).join(' / ') : `${areaQuery}駅側で、長時間滞留しない待機先を探す。`,
+    text: cafes.length > 0 ? cafes.slice(0, 3).join(' / ') : areaSource ? `${areaSource}駅側で、長時間滞留しない待機先を探す。` : '会場周辺で、長時間滞留しない待機先を探す。',
     url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${areaQuery} カフェ コンセント`)}`,
   },
   {

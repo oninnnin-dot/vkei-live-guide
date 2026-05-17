@@ -62,6 +62,8 @@ export const getVenueInfoScore = (venue: Venue) => {
   if (usefulListCount(nearby?.stationLockers) > 0 || isUsefulText(nearby?.stationLocker) || hasUsefulPlace(venue, 'station_locker')) score += 7;
   if (usefulListCount(nearby?.restrooms) > 0 || isUsefulText(nearby?.restroomBeforeEntry) || hasUsefulPlace(venue, 'restroom')) score += 7;
   if (isUsefulText(nearby?.rainPlan) || isUsefulText(nearby?.rainShelter)) score += 7;
+  if (isUsefulText(nearby?.hotDayPlan)) score += 3;
+  if (isUsefulText(nearby?.coldDayPlan)) score += 3;
   if (isUsefulText(nearby?.afterShowRoute)) score += 9;
   if (isUsefulText(nearby?.nightSafety)) score += 8;
   if (isUsefulText(nearby?.soloBeginnerNote)) score += 5;

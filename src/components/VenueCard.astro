@@ -64,6 +64,8 @@ const cleanText = (value: unknown) =>
     .replaceAll('小箱', '小規模')
     .trim();
 
+const looksBrokenPublicText = (value: unknown) => /\?{2,}/.test(String(value ?? ''));
+
 const genericPublicPhrases = [
   '荷物が多い日は駅ロッカーかホテル預けを先に決める',
   '駅周辺で時間調整する',
@@ -85,10 +87,17 @@ const genericPublicPhrases = [
   '最寄り駅周辺ロッカーは埋まることがある',
   'コンビニは周辺にあり',
   '荷物が多い日は駅で確認',
+  '会場周辺のコンビニ位置は来場前に地図で確認する',
+  '駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する',
+  '整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する',
+  '雨の日は駅周辺や屋根のある場所で身支度してから移動する',
+  '終演後は駅までの導線と荷物回収時間を先に決める',
+  '初めての会場は帰りの駅ルートを事前保存する',
 ];
 
 const isGenericPublicText = (value: unknown) => {
   const text = cleanText(value);
+  if (looksBrokenPublicText(text)) return true;
   return genericPublicPhrases.some((phrase) => text.includes(phrase));
 };
 
@@ -102,6 +111,7 @@ const isUseful = (value: unknown) => {
     !text.includes('未確認') &&
     !text.includes('未調査') &&
     !text.includes('対象外') &&
+    !looksBrokenPublicText(text) &&
     !isGenericPublicText(text)
   );
 };
@@ -192,7 +202,12 @@ const quickRows = isArchive ? [] : [
 
 const hasHiddenUnknowns = false;
 
-const publicTipTags = (venue.tipTags ?? []).map(cleanText).filter(Boolean);
+const publicArea = isUseful(venue.area) ? cleanText(venue.area) : '';
+const publicPrefecture = isUseful(venue.prefecture) ? cleanText(venue.prefecture) : '';
+const publicRegion = isUseful(venue.region) ? cleanText(venue.region) : '';
+const publicStation = isUseful(venue.station) ? cleanText(venue.station) : '';
+const publicAreaLabel = [publicArea, publicPrefecture].filter(Boolean).join(' / ') || 'エリア確認中';
+const publicTipTags = (venue.tipTags ?? []).map(cleanText).filter(isUseful);
 const derivedTipTags = [
   lockerState === 'available' ? 'ロッカーあり' : '',
   cloakState === 'available' || cloakState === 'event_dependent' ? 'クロークあり' : '',
@@ -203,6 +218,8 @@ const derivedTipTags = [
   venue.nearbyInfo?.afterShowRoute ? '終演後注意' : '',
   venue.nearbyInfo?.nightSafety ? '女性ソロ注意' : '',
   venue.nearbyInfo?.soloBeginnerNote ? '初参戦向き' : '',
+  venue.nearbyInfo?.tripNote ? '遠征向き' : '',
+  venue.nearbyInfo?.tripNote || ['新宿', '渋谷', '池袋', '上野', '高田馬場', '下北沢', '横浜', '大阪', '名古屋'].some((area) => `${venue.area} ${venue.station}`.includes(area)) ? '宿泊導線あり' : '',
   venue.baggageGuide?.suitcase || venue.nearbyInfo?.tripNote?.includes('キャリー') ? 'キャリー非推奨' : '',
 ].filter(Boolean);
 const cardFilterTags = [...new Set([...publicTipTags, ...derivedTipTags])];
@@ -241,10 +258,10 @@ const logisticsSearchText = isArchive ? [] : [
 const searchText = [
   venue.name,
   ...(venue.aliases ?? []),
-  venue.area,
-  venue.prefecture,
-  venue.region,
-  venue.station,
+  publicArea,
+  publicPrefecture,
+  publicRegion,
+  publicStation,
   venue.venueType,
   venue.venueScale,
   venue.vkeiAffinity,
@@ -280,10 +297,10 @@ const filterTags = [
   venue.venueType,
   venue.vkeiAffinity === 'high' ? 'affinity-high' : '',
   venue.minorVkeiFriendly ? 'small-scene' : '',
-  venue.region,
-  venue.prefecture,
+  publicRegion,
+  publicPrefecture,
   venue.areaGroup,
-  venue.area,
+  publicArea,
   !isArchive && venue.lockerInfo ? 'locker-fact' : '',
   !isArchive && venue.nearbyInfo ? 'nearby-fact' : '',
   !isArchive && venue.nearbyInfo?.afterShowRoute ? 'return-fact' : '',
@@ -307,9 +324,9 @@ const filterTags = [
   data-archive={venue.archiveOnly ? 'true' : 'false'}
   data-status={effectiveVenueStatus}
   data-name={venue.name}
-  data-region={venue.region}
-  data-prefecture={venue.prefecture}
-  data-area={venue.area}
+  data-region={publicRegion}
+  data-prefecture={publicPrefecture}
+  data-area={publicArea}
   data-type={venue.venueType}
   data-scale={venue.venueScale}
   data-affinity={venue.vkeiAffinity}
@@ -325,7 +342,7 @@ const filterTags = [
   data-filter-tags={filterTags}
 >
   <div class="min-w-0 pt-2">
-    <span class="gothic-chip inline-flex rounded-md px-2.5 py-1 text-xs font-black">{venue.area} / {venue.prefecture}</span>
+    <span class="gothic-chip inline-flex rounded-md px-2.5 py-1 text-xs font-black">{publicAreaLabel}</span>
     <h3 class="font-classical mt-3 text-xl font-black leading-tight text-mist">{venue.name}</h3>
     <p class="mt-2 text-sm leading-6 text-muted">最寄り: {accessLabel}</p>
   </div>

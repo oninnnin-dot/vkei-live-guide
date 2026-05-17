@@ -154,6 +154,8 @@ const cleanText = (value: unknown) =>
     .replaceAll('小箱', '小規模')
     .trim();
 
+const looksBrokenPublicText = (value: unknown) => /\?{2,}/.test(String(value ?? ''));
+
 const genericPublicPhrases = [
   '荷物が多い日は駅ロッカーかホテル預けを先に決める',
   '荷物が多い日は、駅到着時点でロッカーや預け先を決めてから会場へ向かう',
@@ -174,23 +176,30 @@ const genericPublicPhrases = [
   '終演後はまず荷物回収と駅までのルート',
   '背中のリュックはフロアで邪魔になりやすい',
   '最寄り駅周辺ロッカーは埋まることがある',
+  '会場周辺のコンビニ位置は来場前に地図で確認する',
+  '駅ロッカーの有無と空きは当日変動するため、遠征荷物は早めに処理する',
+  '整列開始までは会場前に長くたまらず、駅周辺や近隣施設で時間調整する',
+  '雨の日は駅周辺や屋根のある場所で身支度してから移動する',
+  '終演後は駅までの導線と荷物回収時間を先に決める',
+  '初めての会場は帰りの駅ルートを事前保存する',
 ];
 
 const isGenericPublicText = (value: unknown) => {
   const text = cleanText(value);
+  if (looksBrokenPublicText(text)) return true;
   return genericPublicPhrases.some((phrase) => text.includes(phrase));
 };
 
 const isUnknownValue = (value: unknown) => {
   if (!value) return true;
   const text = cleanText(value);
-  return text === '確認中' || text === 'なし該当なし';
+  return looksBrokenPublicText(text) || text === '確認中' || text === 'なし該当なし';
 };
 
 const isUsefulText = (value: unknown) => {
   if (!value) return false;
   const text = cleanText(value);
-  return Boolean(text) && text !== '確認中' && text !== 'なし該当なし' && !isGenericPublicText(text);
+  return Boolean(text) && text !== '確認中' && text !== 'なし該当なし' && !looksBrokenPublicText(text) && !isGenericPublicText(text);
 };
 
 const toUsefulList = (value: unknown) => {
@@ -336,6 +345,10 @@ const rawSummaryHeadline = isArchive ? archiveSummary : venue.practicalSummary?.
 const summaryHeadline = isArchive || isUsefulText(rawSummaryHeadline) ? cleanText(rawSummaryHeadline) : '';
 const summaryPoints = isArchive ? [] : (venue.practicalSummary?.points ?? []).map(cleanText).filter(isUsefulText);
 const sourceLinks = dedupeSourceLinks(((venue.publicSources ?? venue.sourceLinks) ?? []).filter(isPublicSource));
+const publicArea = isUsefulText(venue.area) ? cleanText(venue.area) : '';
+const publicStation = isUsefulText(venue.station) ? cleanText(venue.station) : '';
+const publicAreaLabel = publicArea || 'エリア確認中';
+const publicTipTags = (venue.tipTags ?? []).map(cleanText).filter(isUsefulText).slice(0, 5);
 
 const title = isArchive
   ? `${venue.name}の閉館アーカイブ｜推し活遠征ナビ`
@@ -343,8 +356,8 @@ const title = isArchive
 const description = isArchive
   ? `${venue.name}は閉館アーカイブとして掲載しています。現在利用前提の設備案内ではなく、過去会場情報として整理しています。`
   : `${venue.name}へ行く前に確認したい、最寄出口、駅ロッカー、クローク、近くのコンビニ、開場前の待機場所、トイレ、雨の日、終演後の帰り方、夜道の注意点をまとめています。`;
-const accessText = venue.station
-  ? `${venue.station}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : ''}`
+const accessText = publicStation
+  ? `${publicStation}${typeof venue.walkMinutes === 'number' ? `から徒歩目安 ${venue.walkMinutes}分` : ''}`
   : '最寄り駅は確認中';
 
 const baggageRows = isArchive ? [] : [
@@ -354,7 +367,10 @@ const baggageRows = isArchive ? [] : [
   ['物販後に荷物が増える日', venue.baggageGuide?.afterMerch || venue.baggageDecision?.afterMerch],
   ['良番の日', venue.baggageGuide?.goodTicketNumber || venue.baggageDecision?.goodTicketNumber],
   ['雨の日', venue.dayDecisionGuide?.rainyDay || venue.nearbyInfo?.rainPlan || venue.nearbyInfo?.rainShelter],
+  ['暑い日', venue.nearbyInfo?.hotDayPlan],
+  ['寒い日', venue.nearbyInfo?.coldDayPlan],
   ['終演後に急ぐ日', venue.dayDecisionGuide?.hurryAfterShowDay || venue.nearbyInfo?.afterShowRoute],
+  ['初参戦の日', venue.nearbyInfo?.soloBeginnerNote || venue.beginnerOneLine],
 ].filter(([, text]) => isUsefulText(text));
 
 const dayFlowRows = isArchive ? [] : [
@@ -399,6 +415,8 @@ const nearbyRows = isArchive ? [] : [
   { label: '開場前の待機場所', values: firstUsefulList(venue.nearbyInfo?.waitingRule, venue.nearbyInfo?.waitingSpot) },
   { label: 'トイレ候補', values: firstUsefulList(placeValues('restroom'), venue.nearbyInfo?.restrooms, venue.nearbyInfo?.restroomBeforeEntry) },
   { label: '雨の日', values: firstUsefulList(venue.nearbyInfo?.rainPlan, venue.nearbyInfo?.rainShelter) },
+  { label: '暑い日', values: firstUsefulList(venue.nearbyInfo?.hotDayPlan) },
+  { label: '寒い日', values: firstUsefulList(venue.nearbyInfo?.coldDayPlan) },
   { label: '終演後の帰り方', values: firstUsefulList(venue.nearbyInfo?.afterShowRoute) },
   { label: '夜道・女性ソロ注意', values: firstUsefulList(venue.nearbyInfo?.nightSafety) },
 ].filter((row) => row.values.length > 0);
@@ -436,12 +454,12 @@ const unknownRows = isArchive ? [] : [
 
   <section class="container-navi py-8">
     <div class="gothic-panel rounded-xl p-5 md:p-8">
-      <p class="gothic-label">{venue.area} / {typeLabels[venue.venueType ?? 'unknown']}</p>
+      <p class="gothic-label">{publicAreaLabel} / {typeLabels[venue.venueType ?? 'unknown']}</p>
       <h1 class="font-classical mt-4 text-3xl font-black leading-tight text-mist md:text-5xl">{venue.name}</h1>
       <p class="mt-4 text-base leading-8 text-muted">{accessText}</p>
       <div class="mt-5 flex flex-wrap gap-2">
         {venue.minorVkeiFriendly && <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">小規模現場向き</span>}
-        {venue.tipTags?.slice(0, 5).map((tag) => <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{cleanText(tag)}</span>)}
+        {publicTipTags.map((tag) => <span class="gothic-chip rounded-md px-3 py-1 text-xs font-black">{tag}</span>)}
       </div>
     </div>
   </section>
@@ -619,46 +637,77 @@ const unknownRows = isArchive ? [] : [
         </>
       )}
 
-      <section class="gothic-card rounded-xl p-5 md:p-6">
-        <div class="section-title">
-          <h2>出典</h2>
-          <p>公開ページでは、公式確認と補助確認だけを表示します。</p>
-        </div>
-        {sourceLinks.length > 0 ? (
-          <ul class="space-y-3 text-sm leading-6 text-muted">
-            {sourceLinks.map((source) => (
-              <li class="rounded-md border border-amber/10 bg-black/20 p-3">
-                {source.url ? (
-                  <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
-                ) : (
-                  <span class="text-mist">{source.label}</span>
-                )}
-                <span class="mx-2 text-muted">｜</span>
-                <span>{sourceTypeLabels[source.type] ?? '確認中'}</span>
-                {source.checkedAt && (
-                  <>
-                    <span class="mx-2 text-muted">｜</span>
-                    <span>確認日：{source.checkedAt}</span>
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">公式確認・補助確認の表示情報は確認中です。</p>
-        )}
-      </section>
-
       {!isArchive && (
         <>
-          <VenueTravelLinks venue={venue} />
           <PersonalizedChecklist />
           <MonetizationBox
             title="この会場へ行く前に用意すると安心なもの"
-            lead="雨の日、物販後、終演後移動で困りにくい持ち物を中心にまとめています。"
+            lead="電子チケット、地図、交通検索、終演後の連絡など、ライブ当日はスマホや天候まわりの準備が大事です。必要なものだけ事前にそろえておくと、当日の不安を減らせます。"
           />
+          <VenueTravelLinks venue={venue} />
+          <section class="gothic-card rounded-xl p-5 md:p-6">
+            <div class="section-title">
+              <h2>出典</h2>
+              <p>公開ページでは、公式確認、駅・交通情報、地図確認、会場情報DBだけを表示します。</p>
+            </div>
+            {sourceLinks.length > 0 ? (
+              <ul class="space-y-3 text-sm leading-6 text-muted">
+                {sourceLinks.map((source) => (
+                  <li class="rounded-md border border-amber/10 bg-black/20 p-3">
+                    {source.url ? (
+                      <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+                    ) : (
+                      <span class="text-mist">{source.label}</span>
+                    )}
+                    <span class="mx-2 text-muted">｜</span>
+                    <span>{sourceTypeLabels[source.type] ?? '確認中'}</span>
+                    {source.checkedAt && (
+                      <>
+                        <span class="mx-2 text-muted">｜</span>
+                        <span>確認日：{source.checkedAt}</span>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">公式確認・補助確認の表示情報は確認中です。</p>
+            )}
+          </section>
           <VenueReviewBox venue={venue} />
         </>
+      )}
+
+      {isArchive && (
+        <section class="gothic-card rounded-xl p-5 md:p-6">
+          <div class="section-title">
+            <h2>出典</h2>
+            <p>公開ページでは、公式確認、駅・交通情報、地図確認、会場情報DBだけを表示します。</p>
+          </div>
+          {sourceLinks.length > 0 ? (
+            <ul class="space-y-3 text-sm leading-6 text-muted">
+              {sourceLinks.map((source) => (
+                <li class="rounded-md border border-amber/10 bg-black/20 p-3">
+                  {source.url ? (
+                    <a class="text-amber underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+                  ) : (
+                    <span class="text-mist">{source.label}</span>
+                  )}
+                  <span class="mx-2 text-muted">｜</span>
+                  <span>{sourceTypeLabels[source.type] ?? '確認中'}</span>
+                  {source.checkedAt && (
+                    <>
+                      <span class="mx-2 text-muted">｜</span>
+                      <span>確認日：{source.checkedAt}</span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="rounded-md border border-amber/20 bg-black/25 p-4 text-sm leading-7 text-muted">公式確認・補助確認の表示情報は確認中です。</p>
+          )}
+        </section>
       )}
 
       {!isArchive && unknownRows.length > 0 && (

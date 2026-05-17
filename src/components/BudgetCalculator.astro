@@ -1,4 +1,6 @@
 ---
+import affiliateLinks from '@data/links.json';
+
 const fields = [
   ['ticket', 'チケット代', 6000],
   ['transport', '交通費', 8000],
@@ -10,7 +12,8 @@ const fields = [
   ['other', 'その他', 1000],
 ];
 
-const affiliateId = 'AFFILIATE_ID';
+const rakutenTravel = affiliateLinks.travel.rakutenTravel;
+const rakutenTravelUrl = rakutenTravel.urlTemplate.replace('{KEYWORD}', encodeURIComponent('ライブ遠征 ホテル'));
 ---
 
 <section class="rounded-lg border border-line bg-panel p-5 shadow-glow" data-budget>
@@ -56,13 +59,13 @@ const affiliateId = 'AFFILIATE_ID';
     <p class="mt-4 rounded-md border border-line bg-black/20 p-3 text-sm leading-7 text-mist" data-comment></p>
   </div>
   <div class="mt-5 grid gap-3 md:grid-cols-3" data-booking-links>
-    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://travel.rakuten.co.jp/?f_teikei=${affiliateId}`} target="_blank" rel="noopener noreferrer">
-      <span class="font-black text-white">宿泊サイトを見る</span>
+    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={rakutenTravelUrl} target="_blank" rel={rakutenTravel.rel}>
+      <span class="font-black text-white">楽天トラベルで宿泊先を探す</span>
       <span class="mt-1 block">終演後に帰りづらい日は、ホテル代を早めに予算へ入れる。</span>
     </a>
-    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://www.bushikaku.net/search/?utm_source=oshikatsu-ensei-navi&utm_medium=affiliate&utm_campaign=${affiliateId}`} target="_blank" rel="noopener noreferrer">
-      <span class="font-black text-white">高速バスを比較</span>
-      <span class="mt-1 block">夜行バス前はロッカー回収と乗り場移動の時間を確保する。</span>
+    <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href="/venues">
+      <span class="font-black text-white">目的地の会場情報を見る</span>
+      <span class="mt-1 block">最寄出口、駅ロッカー、終演後の帰り方を先に確認する。</span>
     </a>
     <a class="rounded-md border border-line bg-black/20 p-4 text-sm leading-7 text-muted transition hover:border-amber/60" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('駅 コインロッカー')}`} target="_blank" rel="noopener noreferrer">
       <span class="font-black text-white">駅ロッカーを確認</span>
@@ -74,7 +77,7 @@ const affiliateId = 'AFFILIATE_ID';
     <ul class="mt-3 space-y-2 text-sm leading-7 text-muted" data-tips></ul>
   </div>
   <p class="mt-5 text-xs leading-6 text-muted">
-    金額は目安です。チケット手数料、交通機関の遅延、ホテルのキャンセル規定、終電時刻は必ず公式情報で確認してください。宿泊・交通リンクには広告が含まれる場合があります。
+    金額は目安です。チケット手数料、交通機関の遅延、ホテルのキャンセル規定、終電時刻は必ず公式情報で確認してください。楽天トラベルへのリンクにはアフィリエイトリンクを含みます。
   </p>
 </section>
 

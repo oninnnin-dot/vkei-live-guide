@@ -1,5 +1,6 @@
 ---
 import type { Venue } from '@/types';
+import affiliateLinks from '@data/links.json';
 
 interface Props {
   venue: Venue;
@@ -7,84 +8,34 @@ interface Props {
 
 const { venue } = Astro.props;
 
-const affiliateId = 'AFFILIATE_ID';
 const areaKeyword = encodeURIComponent(`${venue.area || venue.station || venue.name} ホテル`);
-const stationKeyword = encodeURIComponent(`${venue.station || venue.area || venue.name}`);
-const cloakKeyword = encodeURIComponent(`${venue.station || venue.area || venue.name} 荷物預かり`);
-
-const hotelLinks = [
-  {
-    label: '楽天トラベルで近隣ホテルを探す',
-    url: `https://travel.rakuten.co.jp/keyword/Search.do?f_keyword=${areaKeyword}&f_teikei=${affiliateId}`,
-  },
-  {
-    label: 'じゃらんで周辺ホテルを探す',
-    url: `https://www.jalan.net/uw/uwp2011/uww2011init.do?keyword=${areaKeyword}&affiliate=${affiliateId}`,
-  },
-  {
-    label: '高速バス予約を比較する',
-    url: `https://www.bushikaku.net/search/?utm_source=oshikatsu-ensei-navi&utm_medium=affiliate&utm_campaign=${affiliateId}&arrival=${stationKeyword}`,
-  },
-];
-
-const baggageLinks = [
-  {
-    label: 'ecbo cloakで荷物預かりを探す',
-    url: `https://cloak.ecbo.io/ja/search?keyword=${cloakKeyword}&utm_source=oshikatsu-ensei-navi&utm_medium=affiliate`,
-  },
-  {
-    label: 'ChargeSPOTでモバイルバッテリーを探す',
-    url: `https://chargespot.jp/?utm_source=oshikatsu-ensei-navi&utm_medium=affiliate&area=${stationKeyword}`,
-  },
-  {
-    label: '駅周辺のコインロッカーを地図で確認',
-    url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${venue.station || venue.area} コインロッカー`)}`,
-  },
-];
+const rakutenTravel = affiliateLinks.travel.rakutenTravel;
+const rakutenTravelUrl = rakutenTravel.urlTemplate.replace('{KEYWORD}', areaKeyword);
 ---
 
 <section class="gothic-card rounded-xl p-5 md:p-6">
   <div class="section-title">
-    <p>Trip booking</p>
-    <h2>宿泊・交通・荷物預かり</h2>
-    <p>終演後の帰りが遅い日、キャリーありの日、遠征で泊まりが必要な日に先に確認する導線です。</p>
+    <p>Travel</p>
+    <h2>遠征・終演後の宿泊先を探す</h2>
+    <p>終演が遅い日や、翌日も予定がある日は、会場近くか主要駅近くのホテルを先に押さえておくと安心です。</p>
   </div>
 
-  <div class="grid gap-4 lg:grid-cols-2">
-    <article class="rounded-md border border-amber/20 bg-black/25 p-4">
-      <p class="font-classical text-lg font-black text-mist">宿泊・交通</p>
-      <p class="mt-2 text-sm leading-7 text-muted">
-        {venue.station || venue.area}周辺で泊まるか、夜行バス・新幹線で帰るかを終演前に決めておくと、荷物回収や終電判断が崩れにくくなります。
-      </p>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted">
-        {hotelLinks.map((link) => (
-          <li>
-            <a class="text-amber underline decoration-amber/40 underline-offset-4 transition hover:text-mist" href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </article>
-
-    <article class="rounded-md border border-amber/20 bg-black/25 p-4">
-      <p class="font-classical text-lg font-black text-mist">荷物預かり・レンタル</p>
-      <p class="mt-2 text-sm leading-7 text-muted">
-        会場ロッカーだけに寄せず、駅ロッカー、荷物預かり、モバイルバッテリー補給を先に候補化しておきます。
-      </p>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted">
-        {baggageLinks.map((link) => (
-          <li>
-            <a class="text-amber underline decoration-amber/40 underline-offset-4 transition hover:text-mist" href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </article>
-  </div>
+  <article class="rounded-md border border-amber/20 bg-black/25 p-4">
+    <p class="font-classical text-lg font-black text-mist">{venue.area || venue.station || venue.name}周辺の宿泊候補</p>
+    <p class="mt-2 text-sm leading-7 text-muted">
+      キャリーあり、終演後に移動が長い日、翌日も予定がある日は、会場周辺だけでなく主要駅近くも候補に入れておくと戻りやすくなります。
+    </p>
+    <a
+      class="gothic-button focus-ring mt-4 inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-black transition"
+      href={rakutenTravelUrl}
+      target="_blank"
+      rel={rakutenTravel.rel}
+    >
+      {rakutenTravel.label}
+    </a>
+  </article>
 
   <p class="mt-4 text-xs leading-6 text-muted">
-    このセクションには広告リンクが含まれます。宿泊・交通・荷物預かりの条件や料金は、必ず各サービスの公式情報で確認してください。
+    このセクションにはアフィリエイトリンクを含みます。宿泊料金、空室、キャンセル条件、終電時刻は必ず楽天トラベルおよび交通機関の公式情報で確認してください。
   </p>
 </section>

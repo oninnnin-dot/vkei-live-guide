@@ -9,26 +9,29 @@ import venues from '@data/venues.json';
 import type { Venue } from '@/types';
 import { sortVenuesForVenueList } from '@/utils/venueSort';
 
-const title = '推し活会場一覧｜会場名の行き方・コンビニ・待機場所・終演後の帰り方';
-const description = '会場名や駅名から、最寄駅・出口、近いコンビニ、駅ロッカー、待機場所、雨の日、終演後の帰り方、夜道注意を探せる推し活遠征ナビです。持ち物チェックリスト、遠征費シミュレーター、初参戦ガイドにも移動できます。';
+const title = '推し活会場一覧｜行き方・コンビニ・待機場所・終演後の帰り方';
+const description = 'ライブハウスや推し活会場へ行く前に確認したい、最寄出口、コンビニ、ロッカー、待機場所、雨の日、終演後の帰り方、一人参戦の注意点を一覧で確認できます。';
 const allVenues = venues as Venue[];
 const sortedVenues = sortVenuesForVenueList(allVenues);
 const activeCount = allVenues.filter((venue) => (venue.venueStatus ?? venue.status) !== 'closed' && venue.showInVenueList && !venue.archiveOnly).length;
 
+const looksBrokenPublicText = (value: unknown) => /\?{2,}/.test(String(value ?? ''));
 const preferredRegions = ['東京', '神奈川', '関東', '北海道・東北', '甲信越・北陸', '東海', '関西', '中国・四国', '九州・沖縄'];
 const regionOptions = preferredRegions.filter((region) => allVenues.some((venue) => venue.region === region));
-const prefectureOptions = [...new Set(allVenues.map((venue) => venue.prefecture).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
-const sanitizePublicLabel = (value: unknown) =>
-  String(value ?? '')
+const prefectureOptions = [...new Set(allVenues.map((venue) => venue.prefecture).filter((value) => Boolean(value) && !looksBrokenPublicText(value)))].sort((a, b) => a.localeCompare(b, 'ja'));
+const sanitizePublicLabel = (value: unknown) => {
+  if (looksBrokenPublicText(value)) return '';
+  return String(value ?? '')
     .replaceAll('ヴィジュアル系', '推し活')
     .replaceAll('ビジュアル系', '推し活')
     .replaceAll('V系', '推し活')
     .replaceAll('小箱ライブ', '小規模会場')
     .replaceAll('小箱', '小規模')
     .trim();
+};
 
 const tipTagOptions = [...new Set(allVenues.flatMap((venue) => venue.tipTags ?? []).map(sanitizePublicLabel))]
-  .filter(Boolean)
+  .filter((tag) => Boolean(tag) && !looksBrokenPublicText(tag))
   .sort((a, b) => a.localeCompare(b, 'ja'));
 
 const venueTypeOptions = [

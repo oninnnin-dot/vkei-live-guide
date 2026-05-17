@@ -7,6 +7,7 @@ interface Item {
   links?: Array<{
     label: string;
     url: string;
+    cta?: string;
     imageUrl?: string;
     impressionUrl?: string;
     rel?: string;
@@ -32,40 +33,66 @@ interface Props {
 
 const productLinks = affiliateLinks.products;
 const defaultBanner = affiliateLinks.banners.rakutenMarket;
+const rakutenSearchUrl = (keyword: string) =>
+  affiliateLinks.rakuten.searchUrlTemplate.replace(
+    '{RAKUTEN_SEARCH_URL}',
+    encodeURIComponent(`https://search.rakuten.co.jp/search/mall/${keyword}/`)
+  );
+const rakutenSearchLink = (label: string, keyword = label, cta = '楽天で探す') => ({
+  label,
+  cta,
+  url: rakutenSearchUrl(keyword),
+  rel: 'nofollow sponsored noopener',
+  referrerPolicy: 'no-referrer-when-downgrade',
+});
 
 const {
   title = '遠征前に用意しておくと安心なもの',
-  lead = '楽天アフィリエイト経由の商品リンクを含みます。電子チケット、雨、音量、遠征荷物など、ライブ当日の不安に直結する実用品だけに絞っています。',
+  lead = 'アフィリエイトリンクを含みます。電子チケット、地図、交通検索、終演後の連絡など、ライブ当日はスマホや天候まわりの準備が大事です。必要なものだけ事前にそろえておくと、当日の不安を減らせます。',
   banner = defaultBanner,
   items = [
     {
       title: 'スマホ電池対策',
-      text: '電子チケット、地図、終電確認を使う日は、軽いモバイルバッテリーと短いケーブルを先に入れておくと安心です。',
+      text: '電子チケット、地図、交通検索、終演後の連絡でスマホの電池を使いがちです。遠征や終演が遅い日は、薄型のモバイルバッテリーや充電ケーブルを用意しておくと安心です。',
       links: [
-        productLinks.mobileBattery,
-        productLinks.usbCable,
+        { ...productLinks.mobileBattery, cta: '楽天で見る' },
+        { ...productLinks.usbCable, cta: '楽天で見る' },
+        rakutenSearchLink('ケーブル内蔵モバイルバッテリー', 'ケーブル内蔵 モバイルバッテリー', '楽天で探す'),
       ],
     },
     {
       title: '雨の日・整列対策',
-      text: '屋外整列や駅からの地上移動がある日は、晴雨兼用の軽い折りたたみ傘を先に入れておくと動きやすいです。',
+      text: '雨の日は、駅から会場までの移動や整列で靴や荷物が濡れやすくなります。軽い晴雨兼用傘や靴用防水グッズがあると、終演後まで動きやすくなります。',
       links: [
-        productLinks.foldingUmbrella,
+        { ...productLinks.foldingUmbrella, cta: '楽天で見る' },
+        rakutenSearchLink('靴用防水スプレー', '靴 防水スプレー', '楽天で探す'),
+        rakutenSearchLink('レインシューズカバー', 'レインシューズカバー', '楽天で探す'),
+      ],
+    },
+    {
+      title: '身だしなみ・体調対策',
+      text: '地下ライブハウスや整列では、暑さ・寒さ・湿気で体力を削られやすいです。季節に合わせて汗拭きシート、冷却シート、カイロを用意しておくと安心です。',
+      links: [
+        rakutenSearchLink('汗拭きシート', '汗拭きシート', '楽天で探す'),
+        rakutenSearchLink('制汗シート', '制汗シート', '楽天で探す'),
+        rakutenSearchLink('冷却シート', '冷却シート', '楽天で探す'),
+        rakutenSearchLink('使い捨てカイロ', '使い捨てカイロ', '楽天で探す'),
       ],
     },
     {
       title: '音量が不安な人向け',
-      text: '小規模ライブハウスやスピーカー前が不安な日は、音楽用の耳栓を持っておくと耳の負担を減らしやすくなります。',
+      text: '小規模ライブハウスでは、スピーカーに近い位置になることがあります。音量が不安な人や、終演後の耳鳴りが気になりやすい人は、ライブ用耳栓を用意しておくと安心です。',
       links: [
-        productLinks.earplugs,
+        { ...productLinks.earplugs, cta: '楽天で見る' },
+        rakutenSearchLink('音楽用イヤープラグ', '音楽用 イヤープラグ', '楽天で探す'),
       ],
     },
     {
       title: '遠征荷物対策',
-      text: '宿泊ありや物販後に荷物が増える日は、衣類圧縮袋と薄型ポーチでバッグ内を整理しておくと回収や移動が楽です。',
+      text: '遠征や物販の日は、着替えや購入品で荷物が増えやすくなります。衣類圧縮袋やトラベルポーチがあると、バッグの中を整理しやすくなります。',
       links: [
-        productLinks.compressionBags,
-        productLinks.travelPouch,
+        { ...productLinks.compressionBags, cta: '楽天で見る' },
+        { ...productLinks.travelPouch, cta: '楽天で見る' },
       ],
     },
   ],
@@ -93,9 +120,12 @@ const {
                   referrerpolicy={link.referrerPolicy ?? 'no-referrer-when-downgrade'}
                 >
                   {link.imageUrl && (
-                    <img class="size-12 rounded-md border border-amber/20 object-cover" src={link.imageUrl} alt="" loading="lazy" />
+                    <img class="size-12 rounded-md border border-amber/20 object-cover" src={link.imageUrl} alt={link.label} loading="lazy" />
                   )}
-                  <span>{link.label}</span>
+                  <span class="grid gap-0.5">
+                    <span class="text-mist">{link.label}</span>
+                    <span>{link.cta ?? '楽天で見る'}</span>
+                  </span>
                 </a>
                 {link.impressionUrl && <img src={link.impressionUrl} alt="" loading="lazy" width="1" height="1" style="border: 0px;" />}
               </li>

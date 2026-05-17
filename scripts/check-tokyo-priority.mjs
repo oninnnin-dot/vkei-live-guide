@@ -95,6 +95,8 @@ const getVenueInfoScore = (venue) => {
   if (usefulListCount(nearby.stationLockers) > 0 || isUsefulText(nearby.stationLocker) || hasUsefulPlace(venue, 'station_locker')) score += 7;
   if (usefulListCount(nearby.restrooms) > 0 || isUsefulText(nearby.restroomBeforeEntry) || hasUsefulPlace(venue, 'restroom')) score += 7;
   if (isUsefulText(nearby.rainPlan) || isUsefulText(nearby.rainShelter)) score += 7;
+  if (isUsefulText(nearby.hotDayPlan)) score += 3;
+  if (isUsefulText(nearby.coldDayPlan)) score += 3;
   if (isUsefulText(nearby.afterShowRoute)) score += 9;
   if (isUsefulText(nearby.nightSafety)) score += 8;
   if (isUsefulText(nearby.soloBeginnerNote)) score += 5;
@@ -164,6 +166,8 @@ for (const slug of prioritySlugs) {
   nearby.waitingRule || nearby.waitingSpot ? pass(`${slug} has waiting rule`) : fail(`${slug} missing waitingRule/waitingSpot`);
   Array.isArray(nearby.restrooms) && nearby.restrooms.length > 0 ? pass(`${slug} has restrooms`) : warn(`${slug} missing restrooms`);
   nearby.rainPlan || nearby.rainShelter ? pass(`${slug} has rain plan`) : warn(`${slug} missing rainPlan`);
+  nearby.hotDayPlan ? pass(`${slug} has hotDayPlan`) : warn(`${slug} missing hotDayPlan`);
+  nearby.coldDayPlan ? pass(`${slug} has coldDayPlan`) : warn(`${slug} missing coldDayPlan`);
   nearby.afterShowRoute ? pass(`${slug} has afterShowRoute`) : fail(`${slug} missing afterShowRoute`);
   nearby.nightSafety ? pass(`${slug} has nightSafety`) : fail(`${slug} missing nightSafety`);
   nearby.dayFlow?.stationArrival && nearby.dayFlow?.beforeEntry && nearby.dayFlow?.afterShow

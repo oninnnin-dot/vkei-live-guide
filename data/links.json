@@ -4,6 +4,7 @@
     "label": "楽天",
     "program": "もしもアフィリエイト 楽天市場の商品購入",
     "urlTemplate": "https://af.moshimo.com/af/rakuten/link?ref={RAKUTEN_URL_PLACEHOLDER}",
+    "searchUrlTemplate": "https://af.moshimo.com/af/c/click?a_id=5565907&p_id=54&pc_id=54&pl_id=616&url={RAKUTEN_SEARCH_URL}",
     "placeholder": "{RAKUTEN_URL_PLACEHOLDER}"
   },
   "banners": {
@@ -14,6 +15,13 @@
       "alt": "楽天市場で遠征やライブ前後に役立つ持ち物を探す",
       "rel": "nofollow sponsored noopener",
       "referrerPolicy": "no-referrer-when-downgrade"
+    }
+  },
+  "travel": {
+    "rakutenTravel": {
+      "label": "会場周辺のホテルを楽天トラベルで探す",
+      "urlTemplate": "https://travel.rakuten.co.jp/keyword/Search.do?f_keyword={KEYWORD}&f_teikei={RAKUTEN_TRAVEL_AFFILIATE_ID}",
+      "rel": "nofollow sponsored noopener"
     }
   },
   "products": {
